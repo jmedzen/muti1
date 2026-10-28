@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "luisang-museum",
+  "compatibility_date": "2026-01-01",
+
+  // Worker 入口：只為了修正快取標頭（見 src/worker.js 開頭的說明）。
+  // 沒有這支也能部署，但圖片與字型會失去 immutable 快取。
+  "main": "./src/worker.js",
+
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}

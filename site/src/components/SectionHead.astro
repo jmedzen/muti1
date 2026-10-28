@@ -1,0 +1,91 @@
+---
+/**
+ * SectionHead — 區塊標題（統一的節奏）
+ */
+const { eyebrow, title, lede = null, action = null, align = "left", level = "h2" } = Astro.props;
+const Tag = level;
+---
+
+<div class:list={["sh", `sh--${align}`]} data-reveal>
+  <div class="sh-main">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <Tag class="sh-title">{title}</Tag>
+    {lede && <p class="sh-lede">{lede}</p>}
+  </div>
+  {action && (
+    <a class="sh-action" href={action.href}>
+      {action.label}
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </a>
+  )}
+</div>
+
+<style>
+  .sh {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: var(--s-6);
+  }
+  .sh--center {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .sh-main {
+    max-width: 40em;
+  }
+  .sh-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .sh-lede {
+    margin: 0.85rem 0 0;
+    font-size: 0.92rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+    max-width: 34em;
+  }
+  .sh--center .sh-lede {
+    margin-inline: auto;
+  }
+  .sh-action {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--sans-zh);
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--paper-edge);
+    transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    white-space: nowrap;
+  }
+  .sh-action:hover {
+    color: var(--ochre);
+    border-color: var(--ochre);
+  }
+  .sh-action svg {
+    transition: transform var(--dur) var(--ease);
+  }
+  .sh-action:hover svg {
+    transform: translateX(3px);
+  }
+  @media (max-width: 640px) {
+    .sh {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+/**
+ * 關於藝術家 — /artist-luisang/<article>
+ *
+ * 原站的三篇文章：黃磊生年譜、黃磊生簡歷、我的繪畫觀。
+ * 全部保留原路徑（舊連結不會 404）。年譜與繪畫觀另有專屬版面，
+ * 佈局更好，所以這裡在文首放一條導引。
+ * 301 轉址交給 Cloudflare 的 _redirects 處理（--pretty --redirect）。
+ */
+import ArticleView from "../../components/ArticleView.astro";
+import { artistArticles } from "../../lib/content.js";
+
+export async function getStaticPaths() {
+  return artistArticles.map((a) => ({
+    params: { slug: a.route.replace("/artist-luisang/", "") },
+    props: { article: a },
+  }));
+}
+
+const { article } = Astro.props;
+
+const upgrades = {
+  "huang-leisheng": { href: "/about/painting-view", label: "我的繪畫觀（專屬版面）" },
+  spectral: { href: "/about/chronology", label: "黃磊生年譜（互動年表）" },
+};
+const upgrade = upgrades[article.route.split("/").pop()];
+---
+
+<ArticleView
+  article={article}
+  section={{ href: "/about", label: "關於藝術家" }}
+  upgrade={upgrade}
+  titleOverride={upgrade ? `${article.title}（原文）` : undefined}
+/>

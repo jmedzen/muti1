@@ -1,0 +1,19 @@
+# 依賴
+node_modules/
+site/node_modules/
+
+# 建置產物
+site/dist/
+site/.astro/
+
+# 快取與暫存
+.cache/
+.npm-cache/
+.npx-cache/
+.wrangler-home/
+.tmp-npmtest/
+.tmp-npmtest2/
+*.log
+
+# 系統
+.DS_Store

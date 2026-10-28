@@ -1,0 +1,277 @@
+---
+/**
+ * 新聞分類 — /news/[category]
+ * 由 CATEGORIES 產生：memorial / exhibition / auction / media / official
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { articlesSorted, CATEGORIES, media, excerpt } from "../../lib/content.js";
+
+export async function getStaticPaths() {
+  return CATEGORIES.filter((c) => ["memorial", "exhibition", "auction", "media", "official"].includes(c.id)).map((c) => ({
+    params: { category: c.route.replace("/news/", "") },
+    props: { cat: c },
+  }));
+}
+
+const { cat } = Astro.props;
+const list = articlesSorted.filter((a) => a.category === cat.id);
+const others = CATEGORIES.filter((c) => ["memorial", "exhibition", "auction", "media", "official"].includes(c.id) && c.id !== cat.id);
+
+// 這個分類的年份跨度
+const years = [...new Set(list.map((a) => a.eventDate?.year).filter(Boolean))].sort((a, b) => a - b);
+
+const intro = {
+  memorial: "紀念展覽與追思活動的紀錄。2011 年 7 月 25 日黃磊生辭世後，館方與學界陸續舉辦回顧展。",
+  exhibition: "歷年展覽新聞：開幕、展期、展出作品與主辦單位。",
+  auction: "拍賣成交紀錄。黃磊生作品見於香港保利、中誠國際、藝流國際等拍場。",
+  media: "報刊與電視媒體的報導原文，含人民日報海外版、新華網、京華時報、台聲雜誌等。",
+  official: "官方文書：總統賀電、副總統賀電、邀請函、政府新聞稿。",
+}[cat.id];
+---
+
+<BaseLayout title={cat.name} description={`${cat.name}：${intro}`}>
+  <header class="cat-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="麵包屑">
+        <a href="/">首頁</a><span aria-hidden="true">/</span>
+        <a href="/news">本站新聞</a><span aria-hidden="true">/</span>
+        <span aria-current="page">{cat.name}</span>
+      </nav>
+      <p class="eyebrow">{cat.en}</p>
+      <h1 class="cat-title">{cat.name}</h1>
+      <p class="cat-lede">{intro}</p>
+      <p class="cat-meta">
+        {list.length} 則
+        {years.length > 0 && <> · {years[0]}–{years.at(-1)}</>}
+      </p>
+    </div>
+  </header>
+
+  <div class="container cat-body">
+    <ul class="cat-list">
+      {list.map((a, i) => (
+        <li data-reveal style={`--i:${i}`}>
+          <a href={a.route} class="cat-item">
+            {(() => {
+              const cm = a.hero ? media(a.hero, { fallback: 480 }) : null;
+              return cm ? (
+                <span class="ci-media">
+                  <img
+                    src={cm.variants[0].file}
+                    srcset={cm.srcset}
+                    sizes="(max-width: 700px) 30vw, 180px"
+                    alt=""
+                    loading={i < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                    width={cm.width}
+                    height={cm.height}
+                  />
+                </span>
+              ) : (
+                <span class="ci-media ci-media--empty" aria-hidden="true"></span>
+              );
+            })()}
+            <span class="ci-body">
+              <span class="ci-meta">
+                <span class="ci-cat">{a.categoryName}</span>
+                <time datetime={a.eventDate?.iso ?? a.publishedAt}>
+                  {a.eventDate?.iso?.replace(/-/g, ".") ?? a.publishedAt?.slice(0, 10).replace(/-/g, ".")}
+                </time>
+                {a.isStub && <span class="ci-badge">影像</span>}
+              </span>
+              <span class="ci-title">{a.title}</span>
+              {excerpt(a, 130) && <span class="ci-excerpt">{excerpt(a, 130)}</span>}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    {list.length === 0 && <p class="empty">此分類目前沒有文章。</p>}
+
+    <nav class="cat-switch" aria-label="切換分類">
+      <span class="cs-label">其他分類</span>
+      {others.map((c) => (
+        <a href={c.route}>{c.name}</a>
+      ))}
+      <a href="/news">全部消息</a>
+    </nav>
+  </div>
+</BaseLayout>
+
+<style>
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: 1.8rem;
+  }
+  .crumbs a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  .crumbs a:hover {
+    color: var(--ochre);
+  }
+  .cat-hero {
+    padding: var(--s-8) 0 var(--s-6);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .cat-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    margin: 0;
+  }
+  .cat-lede {
+    max-width: 34em;
+    margin: 1.3rem 0 0;
+    font-size: 0.92rem;
+    line-height: 2;
+    color: var(--ink-muted);
+  }
+  .cat-meta {
+    margin: 1rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--ochre);
+  }
+
+  .cat-body {
+    padding: var(--s-7) 0 var(--s-9);
+  }
+  .cat-list {
+    display: grid;
+    gap: 0;
+  }
+  .cat-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: var(--s-5);
+    align-items: start;
+    padding: var(--s-5) 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--paper-edge) 65%, transparent);
+    text-decoration: none;
+    color: inherit;
+  }
+  .ci-media {
+    display: block;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--paper-warm);
+  }
+  .ci-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 800ms var(--ease-out);
+  }
+  .cat-item:hover .ci-media img {
+    transform: scale(1.04);
+  }
+  .ci-media--empty {
+    background: repeating-linear-gradient(45deg, var(--paper-warm) 0 6px, var(--paper-deep) 6px 12px);
+  }
+  .ci-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .ci-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--sans-zh);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+  }
+  .ci-cat {
+    color: var(--ochre);
+  }
+  .ci-meta time {
+    font-family: var(--mono);
+    letter-spacing: 0.04em;
+  }
+  .ci-badge {
+    padding: 0.05rem 0.4rem;
+    border: 1px solid var(--paper-edge);
+    font-size: 0.6rem;
+    color: var(--ink-faint);
+  }
+  .ci-title {
+    font-family: var(--serif-zh);
+    font-size: 1.1rem;
+    line-height: 1.65;
+    letter-spacing: 0.02em;
+    transition: color var(--dur) var(--ease);
+  }
+  .cat-item:hover .ci-title {
+    color: var(--ochre-deep);
+  }
+  .ci-excerpt {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: var(--ink-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .empty {
+    padding: var(--s-8) 0;
+    text-align: center;
+    color: var(--ink-faint);
+  }
+
+  .cat-switch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: var(--s-7);
+    padding-top: var(--s-5);
+    border-top: 1px solid var(--paper-edge);
+  }
+  .cs-label {
+    font-family: var(--sans-zh);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    color: var(--ink-faint);
+    margin-right: 0.5rem;
+  }
+  .cat-switch a {
+    padding: 0.35rem 0.85rem;
+    font-family: var(--sans-zh);
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    border: 1px solid var(--paper-edge);
+    text-decoration: none;
+    transition: all var(--dur) var(--ease);
+  }
+  .cat-switch a:hover {
+    border-color: var(--ochre);
+    color: var(--ochre);
+  }
+
+  @media (max-width: 700px) {
+    .cat-item {
+      grid-template-columns: 96px 1fr;
+      gap: 1rem;
+    }
+    .ci-excerpt {
+      display: none;
+    }
+    .ci-title {
+      font-size: 0.98rem;
+    }
+  }
+</style>

@@ -1,0 +1,36 @@
+# 由 tools/redirects.mjs 自動產生
+#
+# ⚠️ Cloudflare 會把「所有命中規則」的同名標頭串接起來，不是覆寫。
+#    所以 /* 絕對不能設 Cache-Control —— 否則 /media/* 的 immutable 會變成
+#    "public, max-age=0, must-revalidate, public, max-age=31536000, immutable"，
+#    瀏覽器取第一個 max-age=0，等於圖片完全沒有快取。
+#    安全性標頭可以放在 /*（各路徑不衝突），快取只能放在最具體的路徑規則上。
+#    HTML 的快取交給 Cloudflare 靜態資產的预设值（max-age=0, must-revalidate）。
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'self'
+
+# 指紋化的建置產物：一年不動
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 圖片：檔名含原檔名與尺寸，內容不會變
+/media/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# 字型
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# 搜尋結果頁不進索引（帶與不帶結尾斜線都涵蓋）
+/search
+  X-Robots-Tag: noindex, follow
+/search/*
+  X-Robots-Tag: noindex, follow

@@ -1,0 +1,4500 @@
+{
+ "/images/speasyimagegallery/albums/6/images/o001.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/o001.jpg",
+  "width": 1183,
+  "height": 1080,
+  "ratio": 0.9129,
+  "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACwBACdASoUABIAPu1ur1IppiQiqAgBMB2JYgCdMoMyTCFMtlsW7syjBiUSF0oAAP68kDNl0aSu6KeB8L7Ku5GPWqNImMshTD70NczmBGbsZU6elFW2ND89/61e1yr+QPcxXTh8Oj0X0xcbtJS3JoDTMLeHr2KJ8fkOvJMHVRMUdFc+BAZt5TFkAAA=",
+  "originalBytes": 240759,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/o001-480.webp",
+    "width": 480,
+    "height": 438,
+    "bytes": 29708
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/o001-960.webp",
+    "width": 960,
+    "height": 876,
+    "bytes": 75490
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/o002.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/o002.jpg",
+  "width": 962,
+  "height": 1920,
+  "ratio": 1.9958,
+  "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAABQBgCdASoUACgAPu1srVCppiQiqqgBMB2JZwDQzAxVK4MaofHQe/Y0RuPsrpUQQLzlTJFIRpOYDVl5AAD+hQbjJDnYVxXAdzItGnS2jvXlei5Nh/lU8bBZ2axPNjk8GfQQLP5bFZ2NFtEIK8RhVPlQ+RAB2Wvy5a22SOBzdKY9pSbkdKdyb82/MQGD7+9radeckJYFBqV+5cogtOGyUK0Jz+NCwT+fom3u49u3nxCnrxXW3hqHhsoYMe9insfJ26ASOFtskap6gLnvdKKHUM1MiAAIqgFw6xX1k+lOuC8AAAAA",
+  "originalBytes": 259682,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/o002-480.webp",
+    "width": 241,
+    "height": 480,
+    "bytes": 18418
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/o002-960.webp",
+    "width": 481,
+    "height": 960,
+    "bytes": 44940
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/o002-1600.webp",
+    "width": 802,
+    "height": 1600,
+    "bytes": 80624
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/o004.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/o004.jpg",
+  "width": 1080,
+  "height": 1902,
+  "ratio": 1.7611,
+  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAQBgCdASoUACMAPu1mqFEppSOiqrgMATAdiWcAwggJ+1Nj0/zMvCIqUn6dZ1iZmd/0k+TOUkt8PAAA/t6gFjIx4cj2sudiBU5iE91pVELWU+XTk6p2LHph1KxBE8Kiwa5Bb1ZcSIOzRgybks8wZ6GL5FHLZXp+uRzzSKQ06V83iiyHtUvQVZnyLlTkBX+McxsLinMWIniPcNpcAg4QZ0/OnxH4JJZhSbKpuGhkiraoVI5Ewzqmf5/JhV8kuT3TIkHs4w671EkX0rE9bsAAAA==",
+  "originalBytes": 249864,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/o004-480.webp",
+    "width": 273,
+    "height": 480,
+    "bytes": 16678
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/o004-960.webp",
+    "width": 545,
+    "height": 960,
+    "bytes": 40222
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/o004-1600.webp",
+    "width": 909,
+    "height": 1600,
+    "bytes": 74306
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/o003.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/o003.jpg",
+  "width": 1080,
+  "height": 1780,
+  "ratio": 1.6481,
+  "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAADwBQCdASoUACEAPu1srFEppaQipWzJMB2JZwDCCY0XfRJkjcGW0LjoZ+DX+j7Kxwd2jy8/eUVwAAD+7+5Z54/vG4OUZv95JOk790M90UwJaA8LXj2VXjfTJ9iL+rdPXKNzMCm2jDwITiJm+F7HUPR/yqvzBgVlqCQ81O+fVzvl6pnQGzXxmi2gp/rW4i8+Tez1dBxvsjcyJHlM1aplDQb2pMARzToBzEFotRqa4fogWCNWty+tN0oD0GnWB4ejsj4+ga41O/LgmBeclhJdSdM2CIZW0ONZ7Ohzwbx2AAA=",
+  "originalBytes": 248005,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/o003-480.webp",
+    "width": 291,
+    "height": 480,
+    "bytes": 19720
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/o003-960.webp",
+    "width": 582,
+    "height": 960,
+    "bytes": 45630
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/o003-1600.webp",
+    "width": 971,
+    "height": 1600,
+    "bytes": 82778
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m032-the-billow-surf-97108cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m032-the-billow-surf-97108cm-2011.jpg",
+  "width": 1229,
+  "height": 1080,
+  "ratio": 0.8788,
+  "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwBACdASoUABIAPu1ur1KppiQiqAgBMB2JZwDOdBIloxZFthr4u/Q2u9C3bvTz2EQA4gUkmz9Npc/qLLQFt8XgjgrXxLnb/mBRNAOk0rdhwUK+sGRhIa7wR3n6XmOIegxjWlChBBgAA5VNHm8tdPtxNqlb0PR+nOG1gAAA",
+  "originalBytes": 326426,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m032-the-billow-surf-97108cm-2011-480.webp",
+    "width": 480,
+    "height": 422,
+    "bytes": 44662
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m032-the-billow-surf-97108cm-2011-960.webp",
+    "width": 960,
+    "height": 844,
+    "bytes": 123244
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m030-75x109cm-2010.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m030-75x109cm-2010.jpg",
+  "width": 1570,
+  "height": 1080,
+  "ratio": 0.6879,
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwBACdASoUAA4APu1iqU2ppaOiMAgBMB2JZgCdMoADYjSQFZ+670VMilguAAD+j4sAWumSbzx0WPBVKe2OEZ/IyxE3/qWYilXfIJOCus8jT9w+yOR9MWCTeyL0JOlABp67dfLNXE0oLpx/B88agAAA",
+  "originalBytes": 319042,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m030-75x109cm-2010-480.webp",
+    "width": 480,
+    "height": 330,
+    "bytes": 29608
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m030-75x109cm-2010-960.webp",
+    "width": 960,
+    "height": 660,
+    "bytes": 79758
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m028-82x148cm-2010.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m028-82x148cm-2010.jpg",
+  "width": 1056,
+  "height": 1920,
+  "ratio": 1.8182,
+  "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAACQBgCdASoUACQAPu1srVIppaQjpWsxMB2JZwDO7zCgYJoEGMGED574zF5xgGCBaq+ue3yBehB3/YI6ni4AAPlShTcVrcS2sqHBuPJJp0N/Qt5fMeLBZFDexLmar0JtJBv65Z2rL65TRcpWZAIkFWgaSWfSxHE5mnenpV18L+98WBJSeSjNtB8+Fcb5+O44/vbjxF0LfIaq2DXKwWc5H1d+BC9BF4RlS71Qv4aFz4DuulPYbZdjllvi7yR3d9Pf3X/q2zOGIWjEJjGPU+JsLPN+oGvrR2mUGDowe6OARn3ArSduuMywWxKA8APQr3mnrAAAAA==",
+  "originalBytes": 291763,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m028-82x148cm-2010-480.webp",
+    "width": 264,
+    "height": 480,
+    "bytes": 22498
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m028-82x148cm-2010-960.webp",
+    "width": 528,
+    "height": 960,
+    "bytes": 57666
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m028-82x148cm-2010-1600.webp",
+    "width": 880,
+    "height": 1600,
+    "bytes": 103150
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m026-golden-earth-75x107cm-2009.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m026-golden-earth-75x107cm-2009.jpg",
+  "width": 1507,
+  "height": 1080,
+  "ratio": 0.7167,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBACdASoUAA4APu1iqU2ppaOiMAgBMB2JbACdMoAC+9mL3fjju/O4CAD+79c57RUNzhkDc6kvgsWjI3RIdeMfipx4YqcSlzRO4IDv4ZUE8boKZ9chru69Ry76G3wR/fSZASlEQiJjKMWO2Kwe1YVr8770nho754rsMTUMgAA=",
+  "originalBytes": 333905,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m026-golden-earth-75x107cm-2009-480.webp",
+    "width": 480,
+    "height": 344,
+    "bytes": 35004
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m026-golden-earth-75x107cm-2009-960.webp",
+    "width": 960,
+    "height": 688,
+    "bytes": 93678
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m029-70x62cm-2010.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m029-70x62cm-2010.jpg",
+  "width": 1645,
+  "height": 1080,
+  "ratio": 0.6565,
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADQAwCdASoUAA0APu1iqk2ppaQiMAgBMB2JZQAu/8BL0yynWCWre0AA/uqVe2lqDyhA1t413pPNWtzVHwgMOczp0EBn7UxTtu7L8sirMNlhryKZxLTa/pqeIWkh5V1MLi5ex6rLa4L8PWm4H9jbExHRbUTuXVWGdnbtpC9cxDoAAA==",
+  "originalBytes": 305740,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m029-70x62cm-2010-480.webp",
+    "width": 480,
+    "height": 315,
+    "bytes": 23872
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m029-70x62cm-2010-960.webp",
+    "width": 960,
+    "height": 630,
+    "bytes": 65980
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m029-70x62cm-2010-1600.webp",
+    "width": 1600,
+    "height": 1050,
+    "bytes": 123210
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m027-62x108cm-2010.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m027-62x108cm-2010.jpg",
+  "width": 1080,
+  "height": 1878,
+  "ratio": 1.7389,
+  "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAABQBgCdASoUACMAPu1qq1CppaOiqqgBMB2JZwDI22zQMX/vQd4mHEj6tJAodI3+pqcOt/7NUrlk9xf5sAD+5+4YzfzqvbNxbC3it0zuuXorMVV2NBVQEf0stqAe56CQKet564W6Z09twCUvOCJnVRtAhw78tzsfm5/bn5oWdC2eU1Y386Nkq8q3hbEB2LVcrorASf9Hp/AQw5B9O/wXZDJ4ECA47/iqe9J0QppPpKVMb5W4tno7u2W7SdlZTD+AjVuNmcpObLrVoiiLkoiUGW7Af2eSrlR4p7fWGq5mg+pz3AAA",
+  "originalBytes": 242747,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m027-62x108cm-2010-480.webp",
+    "width": 276,
+    "height": 480,
+    "bytes": 17458
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m027-62x108cm-2010-960.webp",
+    "width": 552,
+    "height": 960,
+    "bytes": 44570
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m027-62x108cm-2010-1600.webp",
+    "width": 920,
+    "height": 1600,
+    "bytes": 79596
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m024-main-peak-of-mt.jade-92x122cm-2009.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m024-main-peak-of-mt.jade-92x122cm-2009.jpg",
+  "width": 1458,
+  "height": 1080,
+  "ratio": 0.7407,
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACwAwCdASoUAA8APu1iqU2ppaOiMAgBMB2JZwAAW12n54XKTkVbAAD8cjCpnSi9bD6mYXPtBZlYKy3QkOQDkIaoKR2LWcU9mALUm/93bkj8CN658+kXMGpX14DyG9FUx+IOQYjfqSapgCLfR1EeQPLlF9QzvmdiNecjf2FoHw5v0agA",
+  "originalBytes": 252368,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m024-main-peak-of-mt.jade-92x122cm-2009-480.webp",
+    "width": 480,
+    "height": 356,
+    "bytes": 26764
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m024-main-peak-of-mt.jade-92x122cm-2009-960.webp",
+    "width": 960,
+    "height": 711,
+    "bytes": 62978
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m023-145x185cm-2006.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m023-145x185cm-2006.jpg",
+  "width": 1383,
+  "height": 1080,
+  "ratio": 0.7809,
+  "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAwCdASoUABAAPu1iqU2ppaOiMAgBMB2JZwDG9BSt3qq38btHc6nAAP6vatLQVWmihyo1OJVZWwN0DCSaven0hh+/mEx0B0a992dKe2RRnqZdIlXEOM+cRHB/5OD9jwltEytoTdpUsb+vgAA=",
+  "originalBytes": 303005,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m023-145x185cm-2006-480.webp",
+    "width": 480,
+    "height": 375,
+    "bytes": 32654
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m023-145x185cm-2006-960.webp",
+    "width": 960,
+    "height": 750,
+    "bytes": 92186
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008.jpg",
+  "width": 1920,
+  "height": 954,
+  "ratio": 0.4969,
+  "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoUAAoAPu1iqU2ppaOiMAgBMB2JYwCsABxMsXPKQo1kFwQA/tWW4RgPVMvKEInrh6zsJ18yRN0U35P0jTzIok8figE8xlmvP6X2Bf26K1U5hdkfMaAD2e+gtFiYIAAA",
+  "originalBytes": 322652,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008-480.webp",
+    "width": 480,
+    "height": 239,
+    "bytes": 24092
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008-960.webp",
+    "width": 960,
+    "height": 477,
+    "bytes": 65526
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008-1600.webp",
+    "width": 1600,
+    "height": 795,
+    "bytes": 120576
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm.jpg",
+  "width": 1920,
+  "height": 947,
+  "ratio": 0.4932,
+  "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwAwCdASoUAAoAPu1iqU2ppaOiMAgBMB2JQ4ABjn4YN3gAAP6OKJUCDFEm7QLmHVkpov0j4qR4sUy2SUwzqvbTuRz8BHK93EJQuYxsoE9b1YfVVC6GFbIP2eDTEU2v6+SmmGOrwAA=",
+  "originalBytes": 365331,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm-480.webp",
+    "width": 480,
+    "height": 237,
+    "bytes": 25404
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm-960.webp",
+    "width": 960,
+    "height": 474,
+    "bytes": 74910
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm-1600.webp",
+    "width": 1600,
+    "height": 789,
+    "bytes": 138508
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m019-moor-2008-70x73cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m019-moor-2008-70x73cm.jpg",
+  "width": 1188,
+  "height": 1080,
+  "ratio": 0.9091,
+  "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAAAQBQCdASoUABIAPu1wsFIppiSiqAgBMB2JYwC1GxgBqdAzRCn8Nn9EhMA4EBLEf23AAP7gBcaXf4nRx4Wsm3q2WBJ32dImlqPBZa+R0aOpZ5f96nrDD0BM924F1fpssTFbQstRSqIwCceyhSHpN6WbBU+TtH4OdvK1oa3t47vrgAknsAWYAPQwp8x+M5OAfFLkAcSng8MgpsJt3iOk1NvTxTDKA0KpYsAAAA==",
+  "originalBytes": 283617,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m019-moor-2008-70x73cm-480.webp",
+    "width": 480,
+    "height": 436,
+    "bytes": 36658
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m019-moor-2008-70x73cm-960.webp",
+    "width": 960,
+    "height": 873,
+    "bytes": 106892
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm.jpg",
+  "width": 1040,
+  "height": 1920,
+  "ratio": 1.8462,
+  "lqip": "data:image/webp;base64,UklGRjABAABXRUJQVlA4ICQBAADwBgCdASoUACUAPu1wr1KppiQipWmZMB2JZQC4MmwHXhRezlAHctkvyyYSXZlNw8Acr+K6FXmYaMn8HiQhtCgAAP7zmXmBZ1kW5j7og1Nkg+I5gSdmdIbkMrPQUAxn/nmv9iN9Z/DVQsTzXAtLuNqhoqtO/csyuN72tVPhgOYgbSiWZzC/JokwDaqcC4miKGYdgiEA5e7+dkx/1TvsO94DWgfVCnql1lp9yTdcQvTcDQfbI8X0Jm5cF2meBM/s7Ch+kykf5hAw2KD0bY2Ub/DcV3Ddl/oxWADw5FskxVOI1yPNTmMlm+oBzA5O2BMlwDAAw6MpYnij8Ka8832uMFCzfNg1pq/takEh5SXm2wrorlpGXNhfUZFmTJFoHaymKw8gAAAA",
+  "originalBytes": 280717,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm-480.webp",
+    "width": 260,
+    "height": 480,
+    "bytes": 21776
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm-960.webp",
+    "width": 520,
+    "height": 960,
+    "bytes": 54418
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm-1600.webp",
+    "width": 867,
+    "height": 1600,
+    "bytes": 96684
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m018-sea-of-clouds-mt.huang-shan-2006-145x185cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m018-sea-of-clouds-mt.huang-shan-2006-145x185cm.jpg",
+  "width": 1398,
+  "height": 1080,
+  "ratio": 0.7725,
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABQBACdASoUABAAPu1iqU2ppaOiMAgBMB2JZQCdACIG/sjVK5Z2slIdEzroAP5hS1C7r3uuHQ2VpwgqQ9biUXL4PaPZF3Av3rqW0Xo3csMXEFp9y2SWMYw6oDVlAsLNXQwrtdju2svI69Zyf2Y/pDZxbN1qv7RN0INuf8EdGM8N8nmLozu60S44dcOnKxymM3I1e2+6sOcAAA==",
+  "originalBytes": 285674,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m018-sea-of-clouds-mt.huang-shan-2006-145x185cm-480.webp",
+    "width": 480,
+    "height": 371,
+    "bytes": 32000
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m018-sea-of-clouds-mt.huang-shan-2006-145x185cm-960.webp",
+    "width": 960,
+    "height": 742,
+    "bytes": 81094
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m017-tbrraced-paddies-on-a-slope-2008-74x96cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m017-tbrraced-paddies-on-a-slope-2008-74x96cm.jpg",
+  "width": 1420,
+  "height": 1080,
+  "ratio": 0.7606,
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoUAA8APu1iqU2ppaOiMAgBMB2JZQDImCKqkEMf7IqyRO8Iu2AA/sXQJUA/xCO19mMP0Emz5Twikm4kFvB4A3U0QW7qYJwQ+CvqfzFJ5fH8Np2FM6BHMjjAioA4dMmMsBtg1L6urQZDF6bjyCsawU1I37llM66un5W0VokGAAA=",
+  "originalBytes": 402855,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m017-tbrraced-paddies-on-a-slope-2008-74x96cm-480.webp",
+    "width": 480,
+    "height": 365,
+    "bytes": 42120
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m017-tbrraced-paddies-on-a-slope-2008-74x96cm-960.webp",
+    "width": 960,
+    "height": 730,
+    "bytes": 130590
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m015-furious-billows-2006-145x185cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m015-furious-billows-2006-145x185cm.jpg",
+  "width": 1405,
+  "height": 1080,
+  "ratio": 0.7687,
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAQBACdASoUAA8APu1iqU2ppaOiMAgBMB2JYwCw/f/gJdY2JCwLayW4oAD+ZigBZDvyenjiv2kYeWwEijJ4FDSxs5AJk86TOWtLMnwVNQhyDwaSgxOQVdRGk9sE2Oy+l8ILQ9LK5INsGZx4EDAB0mG6XoE4FG5cDHGRLSQuwpRAvYAA",
+  "originalBytes": 302376,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m015-furious-billows-2006-145x185cm-480.webp",
+    "width": 480,
+    "height": 369,
+    "bytes": 32360
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m015-furious-billows-2006-145x185cm-960.webp",
+    "width": 960,
+    "height": 738,
+    "bytes": 86934
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m014-autumn-frost-2008-98x108cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m014-autumn-frost-2008-98x108cm.jpg",
+  "width": 1202,
+  "height": 1080,
+  "ratio": 0.8985,
+  "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoUABIAPu1ur1IppiQiqAgBMB2JaAB3AAJSZtgYae3XhG1vKxQeiYn4jYAA/mZGyoznvVRbdSUD4WLAjge3sdbu6YCJlFzBXBSvLknusiXaHEK1ACwZv/t3b6aAm36ICAz+viD8E6Y87opqTcVbVBU8lB1ct6t6MJqWH+VN1L5kxz3nOdNYpS7p12wdzQDJtu/TT3G0KOeA7QNu6oeimjTyozfgAAAA",
+  "originalBytes": 513254,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m014-autumn-frost-2008-98x108cm-480.webp",
+    "width": 480,
+    "height": 431,
+    "bytes": 72912
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m014-autumn-frost-2008-98x108cm-960.webp",
+    "width": 960,
+    "height": 863,
+    "bytes": 239130
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm.jpg",
+  "width": 1635,
+  "height": 1080,
+  "ratio": 0.6606,
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JQBOmUABYOUOiCYDRx3BdBgAA/tYWFvotVwMdBSWV9O9P93jMEQqpgB4TX72rSfUHrIGoFkotwapAUk13mfS34C3TRMMGpnwP4wxS6ju5/heGZ7ezooaZu1ffNrGvg6DhlkgW1jYsoAAA",
+  "originalBytes": 381346,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm-480.webp",
+    "width": 480,
+    "height": 317,
+    "bytes": 27022
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm-960.webp",
+    "width": 960,
+    "height": 634,
+    "bytes": 88550
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm-1600.webp",
+    "width": 1600,
+    "height": 1057,
+    "bytes": 183528
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm.jpg",
+  "width": 1920,
+  "height": 982,
+  "ratio": 0.5115,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBACdASoUAAoAPu1iqU2ppaOiMAgBMB2JZQCdMoACTc7OfgH8CurB4AD+6ydYLmOIKJO/yKjw33IV4YSTXKb7+pj9vYJSBqLAJXbRwFl05sq5SBHrd+3Kzjkn3u2ClhZktOSDGWWj28ptiXqqxNakiggpiqK1KZxfkMQAAAA=",
+  "originalBytes": 633268,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm-480.webp",
+    "width": 480,
+    "height": 246,
+    "bytes": 36316
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm-960.webp",
+    "width": 960,
+    "height": 491,
+    "bytes": 143378
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm-1600.webp",
+    "width": 1600,
+    "height": 818,
+    "bytes": 318764
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m012-2005-240x396cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m012-2005-240x396cm.jpg",
+  "width": 1772,
+  "height": 1080,
+  "ratio": 0.6095,
+  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoUAAwAPu1iqU2ppaOiMAgBMB2JYwC2yBmCsGOt78QEGFZBYAD+0WWDS24ncrgKAkdDxmeAtUppw0SKYjduOnq8PBmmwKVc853ogL3mBc1Apwa4Byo+Ovcu2mGnP6vZQfhTtWtCXIpgHxscXCZ1YAAA",
+  "originalBytes": 330929,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m012-2005-240x396cm-480.webp",
+    "width": 480,
+    "height": 293,
+    "bytes": 22688
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m012-2005-240x396cm-960.webp",
+    "width": 960,
+    "height": 585,
+    "bytes": 66172
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m012-2005-240x396cm-1600.webp",
+    "width": 1600,
+    "height": 975,
+    "bytes": 125698
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm.jpg",
+  "width": 1837,
+  "height": 1080,
+  "ratio": 0.5879,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwAwCdASoUAAwAPu1iqU2ppaOiMAgBMB2JagCdMoADAPhIxWS7wJgAAP7HedG7fxQyk0E5Xfv4uz+b6TLyGxZuGHl+tCy7D1DrsVYcVkyDGDo3+pelAahjxyPyivz3arIRUcFCA+GMBeCGnc9jckegRQsh7VE9dJNthtXJgAA=",
+  "originalBytes": 462662,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm-480.webp",
+    "width": 480,
+    "height": 282,
+    "bytes": 30688
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm-960.webp",
+    "width": 960,
+    "height": 564,
+    "bytes": 103426
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm-1600.webp",
+    "width": 1600,
+    "height": 941,
+    "bytes": 216136
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm.jpg",
+  "width": 1920,
+  "height": 777,
+  "ratio": 0.4047,
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoUAAgAPu1iqk2ppaQiMAgBMB2JQBOiP/wHnIAQdQZbpi6HAAD8aD1tHI29lNzYhvbbz+8aOS53iegY029uhuVsN65uXs/jeeSctmTjuEWIA0R99jA9iG3d5H879kqRjWMgNC9Xk42w6tfHf+NougjD8T5mE8d6TG5wAA==",
+  "originalBytes": 435230,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm-480.webp",
+    "width": 480,
+    "height": 194,
+    "bytes": 27984
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm-960.webp",
+    "width": 960,
+    "height": 389,
+    "bytes": 96356
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm-1600.webp",
+    "width": 1600,
+    "height": 648,
+    "bytes": 203042
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm.jpg",
+  "width": 729,
+  "height": 1920,
+  "ratio": 2.6337,
+  "lqip": "data:image/webp;base64,UklGRl4BAABXRUJQVlA4IFIBAABQCACdASoUADUAPu1ysVMppqSiqBgIATAdiWgAnTK0BbBDAF+lPRRQNlwc8XyjpJe9qbHB+sXyhEVdQ7UA/xfut1BkNKNR4CWz8cAA/vcQSnd+vAvBzqzAUhDdlQq0hOiQi2IM9NJB4CZYflqElbiqwjclMeIMmy4os4HSEQVCmB4dx0dHyJg3XTgJkKienXjQBQO0SrJ0ThBZ54K16u/4KRh5aSWPYM52/nSB0gNirodqst6k5QUiPCzW+1oBJPZfZoGj4AJ6Hqx16nL6xmoIm6Ss7iez7biFafauGHzoFGTXwMRILbBF3iidHZpuHncFm8V4ksTI5q5J9hf/UPo1/y0tlVadHM5BjkFcEq+oUKV1/yTCZS6CE6IRA00Oq5Ci3u+yvm0OHicbunmloVfz/qsaWKD1rVBaaGYoRiihR5gFFNSY00ncDd9WXq8ZhGKAAA==",
+  "originalBytes": 203171,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm-480.webp",
+    "width": 182,
+    "height": 480,
+    "bytes": 14822
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm-960.webp",
+    "width": 365,
+    "height": 960,
+    "bytes": 36990
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm-1600.webp",
+    "width": 608,
+    "height": 1600,
+    "bytes": 67550
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm.jpg",
+  "width": 408,
+  "height": 1920,
+  "ratio": 4.7059,
+  "lqip": "data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAAAQCQCdASoUAF4APu1sqU8ppiOiKrgM+TAdiWcAyRAJJJ9ci/LRRmOoqpthzDPEwgzQCvOSGpYppyydxjOgkQ8b7pKMPLJHpVm44Z5bKkxh04AA/udLRcD05+5eq/olZisfhOGtRzyzzPUUScxf+DXqSEiozOczekvIc7wykQgPRPF+4v8dWRSOz35VvlvrEcrSB2Y/wdaN+NNkPzrKUASTHYQRRELQp+VlVpYKd5pMc+XjccBh1NPeEaIPzptSJ6QLJMXxfXTewn5gj9W0/Hw+itmwylRZ/1K2t4N9T+sTQHk7OmBqTCZntBngJNU1LkVtehNtA0yY/dNIAAA=",
+  "originalBytes": 79542,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm-480.webp",
+    "width": 102,
+    "height": 480,
+    "bytes": 4904
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm-960.webp",
+    "width": 204,
+    "height": 960,
+    "bytes": 12196
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm-1600.webp",
+    "width": 340,
+    "height": 1600,
+    "bytes": 22498
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m008-first-snow-2007-74x70cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m008-first-snow-2007-74x70cm.jpg",
+  "width": 1080,
+  "height": 1150,
+  "ratio": 1.0648,
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACQBACdASoUABUAPu1ur1IppiQiqAgBMB2JagCdAApMZkKN9gzPE3jjriEj6AAA/raa6OBvKw1pMOlLR40TqB7pvXwRePGtIOlzFuKVXSwb3tXhImUAzBn8dQcJPpIaNIhENxIYlP6FyNqYjpCmLGdQ4ggunbfZMpvuH2DjFjxB4vXdNyB7nNodB4akv0l34gJGW2wVQeiB40p5E0/zdNBq3of13dxl7R+bIayIpGKQpCPAAAA=",
+  "originalBytes": 425091,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m008-first-snow-2007-74x70cm-480.webp",
+    "width": 451,
+    "height": 480,
+    "bytes": 64508
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m008-first-snow-2007-74x70cm-960.webp",
+    "width": 902,
+    "height": 960,
+    "bytes": 208052
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm.jpg",
+  "width": 1920,
+  "height": 665,
+  "ratio": 0.3464,
+  "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAwCdASoUAAcAPu1iqU2ppaQiMAgBMB2JYgC7LwABQBJoZTRrFMkAAP5hDtaB00R29YGeB4qxo2EIfL73Lswy+jZacB2zGWKOj5EtjoeRAu6VjZrOYdXow43BfE5F4AA=",
+  "originalBytes": 375572,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm-480.webp",
+    "width": 480,
+    "height": 166,
+    "bytes": 21884
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm-960.webp",
+    "width": 960,
+    "height": 333,
+    "bytes": 84188
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm-1600.webp",
+    "width": 1600,
+    "height": 554,
+    "bytes": 177584
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm.jpg",
+  "width": 1920,
+  "height": 650,
+  "ratio": 0.3385,
+  "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoUAAcAPu1kqU4ppaOiMAgBMB2JQBOgBDuK2XekGCok72wA/u1GwxQlITkwhMRttzc95NRe8NRp7DgmAxsCxqf52w8xmF2AMbVAeRC6SocAAA==",
+  "originalBytes": 169459,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm-480.webp",
+    "width": 480,
+    "height": 163,
+    "bytes": 9156
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm-960.webp",
+    "width": 960,
+    "height": 325,
+    "bytes": 28738
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm-1600.webp",
+    "width": 1600,
+    "height": 542,
+    "bytes": 55708
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm.jpg",
+  "width": 1920,
+  "height": 777,
+  "ratio": 0.4047,
+  "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwAwCdASoUAAgAPu1iqU2ppaQiMAgBMB2JZwAAWRs1wgMxUyliAAD+s7CWBEYKomJ7q9vzUNAiWtlhugCle7g1PeybkPPG+bojTyM2I63uRsTi2jQaBHWmiFSRVBpQpVkHAAAA",
+  "originalBytes": 412789,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm-480.webp",
+    "width": 480,
+    "height": 194,
+    "bytes": 24702
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm-960.webp",
+    "width": 960,
+    "height": 389,
+    "bytes": 89868
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm-1600.webp",
+    "width": 1600,
+    "height": 648,
+    "bytes": 192518
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm.jpg",
+  "width": 1759,
+  "height": 1080,
+  "ratio": 0.614,
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACQBACdASoUAAwAPu1iqU2ppaQiMAgBMB2JZACdMoR4Lf/gPNBen/gIDaF8fAAA/u1YTQJep7/jYyG9M9xgUGDeyog3KDwMnEprMwG63tQXQ4afVHaKueouNkIx+v8xb422HsuAq4UQeaUeH/aC6iv0z29fzurXIva5YirS+f5TitujuJwQRJAA",
+  "originalBytes": 626084,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm-480.webp",
+    "width": 480,
+    "height": 295,
+    "bytes": 38600
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm-960.webp",
+    "width": 960,
+    "height": 589,
+    "bytes": 156564
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm-1600.webp",
+    "width": 1600,
+    "height": 982,
+    "bytes": 340946
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm.jpg",
+  "width": 1920,
+  "height": 961,
+  "ratio": 0.5005,
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQBACdASoUAAoAPu1iqU2ppaQiMAgBMB2JZQAAV4hLxFHK0bGl2fj5AAD+yTzekyf9pz7dorSmMR6727zyf6M+JDbtZzv1fYa2RnrWMwR4DmDq/nTVLPc9LOcup/RFFKUgjOVCgS2aUZVlHgAAAA==",
+  "originalBytes": 672590,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm-480.webp",
+    "width": 480,
+    "height": 240,
+    "bytes": 42124
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm-960.webp",
+    "width": 960,
+    "height": 481,
+    "bytes": 154254
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm-1600.webp",
+    "width": 1600,
+    "height": 801,
+    "bytes": 339406
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l004.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l004.jpg",
+  "width": 1410,
+  "height": 1080,
+  "ratio": 0.766,
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAwBACdASoUAA8APu1iqU2ppaOiMAgBMB2JYwDE2Yx22KLFedjDu7CdykAA/u1ajNDH007cueJNfLPGay+/SDGuaPnISWJDxMfjqPq68ufd2TryUM3iaOIesNhIVXK8vysf3YKsyk1YYGqR5K/LNZTgB+nTjSMf1/Ojkow3JM1ajQAI5IE1eLyJrpk/whVa704+lyo3zrQ/4kAA",
+  "originalBytes": 294346,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l004-480.webp",
+    "width": 480,
+    "height": 368,
+    "bytes": 26430
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l004-960.webp",
+    "width": 960,
+    "height": 735,
+    "bytes": 68716
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/6/images/m001-the-moons-reflection-on-a-river-2008-98x108cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/6/images/m001-the-moons-reflection-on-a-river-2008-98x108cm.jpg",
+  "width": 1212,
+  "height": 1080,
+  "ratio": 0.8911,
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABwBQCdASoUABIAPu1sqlEppaOiqAqpMB2JYgCdMoKNmAUX2gxWWOA58L+1P1PasqyldDvQAP54vRLw2gvvjEWfFoiSryYL9em/fBR+VhnyAiuqgCPy1/zO5GMX2WD5RwkBLuTisK4P4SN1svApxpTlHtIon3V7/3QAWRxdXqytoHi6bkgPWBBOnVgZOUSryUNEzI/t8ttRY2Wt0v77ErEbmcqLzoygAAA=",
+  "originalBytes": 236621,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/6/images/m001-the-moons-reflection-on-a-river-2008-98x108cm-480.webp",
+    "width": 480,
+    "height": 428,
+    "bytes": 29132
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/6/images/m001-the-moons-reflection-on-a-river-2008-98x108cm-960.webp",
+    "width": 960,
+    "height": 855,
+    "bytes": 79658
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l003.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l003.jpg",
+  "width": 1106,
+  "height": 1080,
+  "ratio": 0.9765,
+  "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAAAQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZQC/7BGf9VF6sj80CzfmOJZy3bRq9zBQAP6ZQFIgkzH8C35S4PeN2NBzSCX5HI2dvcdHNPbbB69UXlZRGoPJ42n92t2cBwng1GxTufuKtn4DPC6/T7nlP5v98qXPQvBwz83qHMy8L9eBwNcZTy8+SfzVWu6cx9bOQ6WZS/6768dQdXipLXqmYAKV9x+ZMk2j9zFngL0N+8GyYC3oAAAA",
+  "originalBytes": 275144,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l003-480.webp",
+    "width": 480,
+    "height": 469,
+    "bytes": 37120
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l003-960.webp",
+    "width": 960,
+    "height": 937,
+    "bytes": 103824
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l009.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l009.jpg",
+  "width": 770,
+  "height": 1920,
+  "ratio": 2.4935,
+  "lqip": "data:image/webp;base64,UklGRmgBAABXRUJQVlA4IFwBAADwBwCdASoUADIAPu1wqVCppqOiqAwBMB2JZQDC/vJ1s7gzTSNElXULlYFUNH13WUwg2M4SnCFei89kmdhJc0C8fHhwPOkDigAA/udTE1PSWw+4MWMyb01orQC+GFdh9BomxgaIS+f47sdnPzkKNHTSEGM2XBGli/3zXDpHr/VoEfcTA5MUn4jKY9ri6VLCJssN3xjyUG0kZfO3RhqUGn9AFl4BcZO66gbIggWIEeIhvq9zTbkxfRquNzN+khQZyQ3JK6epRRBJFQR5Bcgf8jHbhDjV/k27DwcsykYRbWhB/1Iq6tmTcLzyv7oqDounjsdTZWVy096VsPmJ/9U0jJZ80rBm7eZjWw7QnbqhRxcHrKwZjKAJmfD92KmlDA0lgFZTDu6YqZtQsi850cu743XAOkDTRve5S/33Whuyvhj2EqUwTMXlN5j2KRrZ3yrwRWEfhqFhEKq5hKvgAAA=",
+  "originalBytes": 290780,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l009-480.webp",
+    "width": 193,
+    "height": 480,
+    "bytes": 21062
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l009-960.webp",
+    "width": 385,
+    "height": 960,
+    "bytes": 54998
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/l009-1600.webp",
+    "width": 642,
+    "height": 1600,
+    "bytes": 100308
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l002.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l002.jpg",
+  "width": 1920,
+  "height": 998,
+  "ratio": 0.5198,
+  "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwAwCdASoUAAoAPu1iqk2ppaQiMAgBMB2JYwCdABSZ0aAtLHyGAAD+1hYVGBYRR/GbodqZza0INv252r9tJuiVAFSJj0Ewqry9+S22hHZ5APcjthTNLR8vq1qwCGWHg24qE14AAAA=",
+  "originalBytes": 538790,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l002-480.webp",
+    "width": 480,
+    "height": 250,
+    "bytes": 27130
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l002-960.webp",
+    "width": 960,
+    "height": 499,
+    "bytes": 86700
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/l002-1600.webp",
+    "width": 1600,
+    "height": 832,
+    "bytes": 228620
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l006.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l006.jpg",
+  "width": 994,
+  "height": 1920,
+  "ratio": 1.9316,
+  "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAACQBgCdASoUACcAPu1wq1KppiOipWsxMB2JZgCuT4oEj4myMQUvNBPf12TiyVd3M31oq8xMNwz8QUbjePEAAP7yWxo27VpS6CAJYrvb1ZpiHo5wvHQGfobJSK5vI+V8GcC762TIAXybhNGy2AjSHDUZ12HVTUpR1GXhcSmrz34AnyPP+3udO+XL3TE4fgN+sliea/xbXLoCJGxFT91ENPMpxrwJK9FBC4jFnC63HpB5ryLixX1j2U22ML8IBB9IteKNZY1sUha1uOqKf8NrMguY2H/l5NX7NZiBxri26h2KVFCSqIJDmLzJbRHOgAAA",
+  "originalBytes": 425131,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l006-480.webp",
+    "width": 249,
+    "height": 480,
+    "bytes": 22982
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l006-960.webp",
+    "width": 497,
+    "height": 960,
+    "bytes": 71926
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/l006-1600.webp",
+    "width": 828,
+    "height": 1600,
+    "bytes": 151518
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l007.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l007.jpg",
+  "width": 999,
+  "height": 1920,
+  "ratio": 1.9219,
+  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAQBgCdASoUACcAPu1wsFOppiQipWgBMB2JQBlWsZpCdGNUb2C+SCT8MpX8AYg8XU5KI37Sxa5pa4AA/u/THqPVJ55EHLAMw8lvihpGn6qO1NvLMHVDwq5Ah5gHvKB22UadpxL8iHuX9DadNZ77Fgx5/EfqlhqnWl99BKx6FnicS+ZPxM/pS0cPIj2PYXT04bTDQCcqS0hQl6qcr4JYaAd7XdkFfJB5EwRv/SRqzdhZ55D2D7sEmYwqZcaNhEssF3VEs6KaT9xCnivw2bwkJg7AlWFqgAAA",
+  "originalBytes": 296893,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l007-480.webp",
+    "width": 250,
+    "height": 480,
+    "bytes": 18444
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l007-960.webp",
+    "width": 500,
+    "height": 960,
+    "bytes": 49238
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/l007-1600.webp",
+    "width": 833,
+    "height": 1600,
+    "bytes": 92810
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l008.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l008.jpg",
+  "width": 1546,
+  "height": 1080,
+  "ratio": 0.6986,
+  "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoUAA4APu1iqU2ppaOiMAgBMB2JYwCdMoADKpo+wEKSFUCAAP6vdszOzsA0OnFlkhwtG7X0zMFkqSp4jACNJHWBlAw2qZNkLLlsspXHPFAjh38vdAFugyTThgLGiNIQp/cnlI6bsirbnEVz3OWNT9WqJJxzFJAA",
+  "originalBytes": 286718,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l008-480.webp",
+    "width": 480,
+    "height": 335,
+    "bytes": 16844
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l008-960.webp",
+    "width": 960,
+    "height": 671,
+    "bytes": 50258
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f035-romance-in-the-mist-8490cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f035-romance-in-the-mist-8490cm-2011.jpg",
+  "width": 1175,
+  "height": 1080,
+  "ratio": 0.9191,
+  "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABQBACdASoUABIAPu1wsFIppiSiqAgBMB2JZwDKAA2ssuCLfWV+TNL7QAciAP5bMB7pDhEd222bwNpPq2FO+Mzy0akemxbqjX3Z2FGazlti6f2gCuYF+qcoCEES3mRkMLfrl/8hE1+/oFJJLo9YaT/WV2sjdEuL+15pSRWgVdPcm9WTIOQ0ooOpmmn7S44AAAA=",
+  "originalBytes": 286790,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f035-romance-in-the-mist-8490cm-2011-480.webp",
+    "width": 480,
+    "height": 441,
+    "bytes": 44364
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f035-romance-in-the-mist-8490cm-2011-960.webp",
+    "width": 960,
+    "height": 882,
+    "bytes": 107946
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l005.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l005.jpg",
+  "width": 992,
+  "height": 1920,
+  "ratio": 1.9355,
+  "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAAAQBgCdASoUACcAPu1srFEppaQipWzJMB2JYwC+SYvXfgBto82arKJWpTUuvXsKyW32xxr2rpMOFDAA/vOE06wak+LZz3CTpeAC07nCtUWFBMWQ7hbi4TYEky//ZPqlC22rnT1hRLAslPrBHSs/wobHYK8nHbl0yM8bS91ZVyg/yDb2+QKtpkHka2cxuYrW/1jpwkdcC1ppIYxZsRy29PMpQATnUBoBbR3PuSWyzta63NFvffXSAqiUGZRy340GgYd05l46Fv19uGM9Y9VaRnTA5mQsI6k/AAA=",
+  "originalBytes": 304842,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l005-480.webp",
+    "width": 248,
+    "height": 480,
+    "bytes": 17056
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l005-960.webp",
+    "width": 496,
+    "height": 960,
+    "bytes": 47402
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/l005-1600.webp",
+    "width": 827,
+    "height": 1600,
+    "bytes": 92296
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f034-the-leaping-carp-125125cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f034-the-leaping-carp-125125cm-2011.jpg",
+  "width": 1099,
+  "height": 1080,
+  "ratio": 0.9827,
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACQBACdASoUABQAPu1ur1IppiQiqAgBMB2JZwDG9BGSDV9WACl8RpUhYM3cHDAA/I/b8DDDuzkCgjd0p3tFsgiXIuJFTO7D0VlYyFOVZCRcizRHQiiZPixlz+n3Vb9ejr5KHJYHwAGvjXa1smEygP+t9eiBm8trGra4OjheFdxjB7hneGcwKgKtNANGAAAA",
+  "originalBytes": 203914,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f034-the-leaping-carp-125125cm-2011-480.webp",
+    "width": 480,
+    "height": 472,
+    "bytes": 29996
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f034-the-leaping-carp-125125cm-2011-960.webp",
+    "width": 960,
+    "height": 943,
+    "bytes": 74808
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/l001.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/l001.jpg",
+  "width": 1920,
+  "height": 965,
+  "ratio": 0.5026,
+  "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoUAAoAPu1iqU2ppaQiMAgBMB2JYwCw7CDk9F29yrC8AAD+1GkXys3uqakeWcJV0wYiYF7klIcSrXieuwcSTv5DLpfitq8pNmBxbHOd72g7AcsD+wJTKng4mEW2oxMw2XUPXAAA",
+  "originalBytes": 363733,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/l001-480.webp",
+    "width": 480,
+    "height": 241,
+    "bytes": 21508
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/l001-960.webp",
+    "width": 960,
+    "height": 483,
+    "bytes": 62782
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/l001-1600.webp",
+    "width": 1600,
+    "height": 804,
+    "bytes": 125418
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f033-butterfly-orchids-8592cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f033-butterfly-orchids-8592cm-2011.jpg",
+  "width": 1167,
+  "height": 1080,
+  "ratio": 0.9254,
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACQBQCdASoUABMAPu1ur1IppiQiqAgBMB2JZwDE2Yw6cO+lGBlJi9uIS3fJIo/aSyoSWrGrgAD+6nsS5eE3ull0OwejYLYgoWmbAaHPcG/5tB6D89cmX8y4XkLgQkqMop8rVtBJ+SQofsOa1+ohkm/K76DmBDIviIJnC4UBRAJ5cDFvFh0c1NpQ7X6fUrMFaONPiLxfk1yizl0wzOddPDDf4nvGvzkAAAA=",
+  "originalBytes": 278967,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f033-butterfly-orchids-8592cm-2011-480.webp",
+    "width": 480,
+    "height": 444,
+    "bytes": 43674
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f033-butterfly-orchids-8592cm-2011-960.webp",
+    "width": 960,
+    "height": 888,
+    "bytes": 107942
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f032-peonies-and-moonlight-8592cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f032-peonies-and-moonlight-8592cm-2011.jpg",
+  "width": 1185,
+  "height": 1080,
+  "ratio": 0.9114,
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBACdASoUABIAPu1srlIppaQjqAgBMB2JZwDDcAFN4gZVD0kRh8Pm/coA/pGTN6ZpYM5nHBiGm7HCm+VsDcLZJeOIvGHPT8rZs5tdfxkPBEtMqJhVNxn3bLDkdP0W72HSTHfu6Qgz8dU48RYPuFOcHn1lpW0Xej7ColjUVWY9gBOD5+C8HHs6fwAAAA==",
+  "originalBytes": 253380,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f032-peonies-and-moonlight-8592cm-2011-480.webp",
+    "width": 480,
+    "height": 437,
+    "bytes": 36384
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f032-peonies-and-moonlight-8592cm-2011-960.webp",
+    "width": 960,
+    "height": 875,
+    "bytes": 90592
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f031-fish-and-water-lily-98109-cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f031-fish-and-water-lily-98109-cm-2011.jpg",
+  "width": 1201,
+  "height": 1080,
+  "ratio": 0.8993,
+  "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBQCdASoUABIAPu1urlKppiQiqAgBMB2JZwDNwBEQazuXa4PJTejeTiVFw6R+77AAAP7U7xTonYq2WiePwfczBxric9XYE8Z71VQa4LNeeOdFMoF+NQDnidrpLbxW1GoqJyTbjIe8onTUdQdPHttVp+qJ3DtJIYwAAA==",
+  "originalBytes": 277844,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f031-fish-and-water-lily-98109-cm-2011-480.webp",
+    "width": 480,
+    "height": 432,
+    "bytes": 39976
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f031-fish-and-water-lily-98109-cm-2011-960.webp",
+    "width": 960,
+    "height": 863,
+    "bytes": 101412
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f030-plum-blossom-99109-cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f030-plum-blossom-99109-cm-2011.jpg",
+  "width": 1192,
+  "height": 1080,
+  "ratio": 0.906,
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACwBACdASoUABIAPu1ur1IppiQiqAgBMB2JZwDJEA3M4A8bBnH6AfoQ23s3zlQAAP5bY1dTXCCyjR++QBWqDSN1gq7zX5ONqNvazh2zujot7ejU024GJ76l9v2vHmo6Fx8+xnpro5YB976uIb4wr7ISsN+BQLB3QHCdczmwtYwD7Veh+3UmOGTrBWBf+9ZLH9Zs4aPQAAA=",
+  "originalBytes": 394931,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f030-plum-blossom-99109-cm-2011-480.webp",
+    "width": 480,
+    "height": 435,
+    "bytes": 64350
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f030-plum-blossom-99109-cm-2011-960.webp",
+    "width": 960,
+    "height": 870,
+    "bytes": 171792
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f028-fiery-autumn-98109cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f028-fiery-autumn-98109cm-2011.jpg",
+  "width": 1203,
+  "height": 1080,
+  "ratio": 0.8978,
+  "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBACdASoUABIAPu1mqk8ppaOiKA1RMB2JZQDG9AyZPcswNe80tjJKAAD+4GSPwhwnrffTg6Iktpc0l9YXm3MIxjbnzf6plO7ctgj+EHSOMruxX2KqOQU5UhNETncClF/xyGJ9MG1bLhtXUCmjWJootMlgAA==",
+  "originalBytes": 277556,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f028-fiery-autumn-98109cm-2011-480.webp",
+    "width": 480,
+    "height": 431,
+    "bytes": 40650
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f028-fiery-autumn-98109cm-2011-960.webp",
+    "width": 960,
+    "height": 862,
+    "bytes": 102076
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f029-leisurely-8590cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f029-leisurely-8590cm-2011.jpg",
+  "width": 1148,
+  "height": 1080,
+  "ratio": 0.9408,
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAQBQCdASoUABMAPu1oqk+ppiOiKA1RMB2JZwDQkYxibSWyG+lAAcx4lLW+EaqdffXwAP7qhLQhiRJi/LlgXuks0xtPcAUEVmPftssGaXqjl7Qkguc2PikRQp38+86svOQiBvU4c1TN4hOwakUQ8t/LkZektTUJxLaUwFtDZg7sRbMw8zCOZG+/7z5gm8gA",
+  "originalBytes": 292775,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f029-leisurely-8590cm-2011-480.webp",
+    "width": 480,
+    "height": 452,
+    "bytes": 44974
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f029-leisurely-8590cm-2011-960.webp",
+    "width": 960,
+    "height": 903,
+    "bytes": 116336
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f027-blessings-sky-lanterns-98109cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f027-blessings-sky-lanterns-98109cm-2011.jpg",
+  "width": 1211,
+  "height": 1080,
+  "ratio": 0.8918,
+  "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABQBQCdASoUABIAPu1ur1IppiQiqAgBMB2JYwC+SYw6d9mmrsLg5F0jljWRAgTnwqY/3ggA/t2e4jJIWpu64nkxVYyBFvwGtwh1bNgQiuHoNQGZhAbgztwPBqy9/6Ev94J0SOSE7HUkVniN44lZv+wjt9ozM88SJRPK8Z0uqOl0asjnfdYglxnSiAEGal04N1iCSZMko1G3EVMCAmGA97g/3yl25CSveW75V+q5FxFSoAAA",
+  "originalBytes": 273262,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f027-blessings-sky-lanterns-98109cm-2011-480.webp",
+    "width": 480,
+    "height": 428,
+    "bytes": 39072
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f027-blessings-sky-lanterns-98109cm-2011-960.webp",
+    "width": 960,
+    "height": 856,
+    "bytes": 94814
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f026-cascading-wisteria-98108cm-2011.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f026-cascading-wisteria-98108cm-2011.jpg",
+  "width": 1190,
+  "height": 1080,
+  "ratio": 0.9076,
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwBACdASoUABIAPu1urlIppiQiqAgBMB2JZwDM0A6yrU5oGOK5BX0bbuphK5wwHIAA/pKVNVOnL4jJTj4qzviR+l0YoryhKp2Cp727rSgFN0VE+qedkzZrUKd4duoj7ON+pg210SPoDD0UdzmlIvfMW06HDckgGb1Lkb6E0kAAAA==",
+  "originalBytes": 342713,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f026-cascading-wisteria-98108cm-2011-480.webp",
+    "width": 480,
+    "height": 436,
+    "bytes": 53652
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f026-cascading-wisteria-98108cm-2011-960.webp",
+    "width": 960,
+    "height": 871,
+    "bytes": 141214
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f025-75x185cm-2010.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f025-75x185cm-2010.jpg",
+  "width": 777,
+  "height": 1920,
+  "ratio": 2.471,
+  "lqip": "data:image/webp;base64,UklGRmQBAABXRUJQVlA4IFgBAAAQCACdASoUADEAPu1spk8ppiMiLBqsyTAdiWMAzcMwfgBpXGjwr8ccw1ledqQRpmOxSnwtXOuXvWtxF4YiZjYErzmHh8y4PEQAAP7qxWnw6fLWDm+r4n73Pt3eHtF1lKPkSIQ7+WNm4FQ15bumhuhMGV/A6YTD11n3kicUIn3qX8FNakQV2Wkc6vXBUR9/Ki7EQLCOOLuy2kmJETtMF8DOqpSW2cdyIn/NDUXPXrr/ezSgx/R87gNVl06TauNrIeYA6She299k+ndOSIUQbRc1S6gEJnpRFOXn3yyga3fzHurd35Ayf0AetFT2kpFw62PO7jQuU4I0tXtsHp6HkMT1ii17fhfD7dlwjd3ig8VL/4dm5nxt39zQc/JVpB3ctfLiQsPkWyhWX0j1ZgJxg3UJsUFwBRncBq4xfsS0qiPrPKE3orpbPsMFSN8x3Ofcdla7fTJIJgAAAA==",
+  "originalBytes": 212654,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f025-75x185cm-2010-480.webp",
+    "width": 194,
+    "height": 480,
+    "bytes": 18032
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f025-75x185cm-2010-960.webp",
+    "width": 389,
+    "height": 960,
+    "bytes": 39886
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f025-75x185cm-2010-1600.webp",
+    "width": 648,
+    "height": 1600,
+    "bytes": 71410
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f024-72x184cm-2010.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f024-72x184cm-2010.jpg",
+  "width": 758,
+  "height": 1920,
+  "ratio": 2.533,
+  "lqip": "data:image/webp;base64,UklGRkgBAABXRUJQVlA4IDwBAABQCACdASoUADMAPu1ur1GppiQiqAlZMB2JZwDMmAsJ95vnVsJlCX1SFCQ0GXi5cDZzU8qfujcVB402JeUfAkWEqsqTJVfVvaFNK8AA/pGlX/srpbw04/SiVaZDZ4OFIps6RKiooC6mahGIm/LwH3eutfPK1UtChmWpMEkZLJ67JeMy4DrLQCqcCikdxYWSv8l/G/cRGrWu7eY5NkRjIIdxG9MhlR+RaJeYADp+gW7bk4Mqny6jc+U3qI9Telvw3gYCHcYEd4LgJ9L+57t7WGzA4oFqdCrxL9ndDAwdhCegb9rALhUPvQsvvbbVdAJrpkgK4dS+Ntm/ONb0rXV66lU+bNqqO3EwzzUR8A65ewIDggvSaVV5SMN3woU8O1Ura4O4hLU0dYat4lbuRq7EBQwiCUT7cn9csMkUwAAA",
+  "originalBytes": 241392,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f024-72x184cm-2010-480.webp",
+    "width": 190,
+    "height": 480,
+    "bytes": 20590
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f024-72x184cm-2010-960.webp",
+    "width": 379,
+    "height": 960,
+    "bytes": 48782
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f024-72x184cm-2010-1600.webp",
+    "width": 632,
+    "height": 1600,
+    "bytes": 83928
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f022-73x180cm-2010.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f022-73x180cm-2010.jpg",
+  "width": 766,
+  "height": 1920,
+  "ratio": 2.5065,
+  "lqip": "data:image/webp;base64,UklGRj4BAABXRUJQVlA4IDIBAACQBwCdASoUADMAPu1uslEppqSiqAlZMB2JZwDPabLSC46vEDoYws1/FqEvEKyEx1huzexAY4vw8Et8yZHo/+QiQ8U4/wAA/t71fW0028kVq0PhzBsFCi5LvV0zD23k20N90MZoKT6JSjN2wQnTlm+iWvGy4A61hxR01a1YtYTZQsRBompQgXX9ErWkPYnLcmEsKKUfYaiHwy+HZcWfelAc0ILnwkU1xaCHu5jcUtseC/KAKetuZQkRZrVCqdEweVSIMUdLDXKKmLTG4l6yowXx57mbcZSkhYbBcQ5QjuuHE1tnc3eIJ52FVuoO+YnacBYvXre4AGMcfXJuDenc8v8MVPgiZkFN2J7uhjXRdyA2AopsoZW8bThQ5PJml8kujvwGO+Q3QrYJ55Be/35CgqSAAAA=",
+  "originalBytes": 174881,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f022-73x180cm-2010-480.webp",
+    "width": 192,
+    "height": 480,
+    "bytes": 13342
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f022-73x180cm-2010-960.webp",
+    "width": 383,
+    "height": 960,
+    "bytes": 29522
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f022-73x180cm-2010-1600.webp",
+    "width": 638,
+    "height": 1600,
+    "bytes": 51514
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f021-petals-in-the-rain-78x93cm-2009.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f021-petals-in-the-rain-78x93cm-2009.jpg",
+  "width": 1266,
+  "height": 1080,
+  "ratio": 0.8531,
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoUABEAPu1qqlEppaOiqAqpMB2JZQCnFADPbkIaJNhyZraAAM4e4sBGiQq0HEikGsjnIKMhYzZjhbOFVtX0F+bAqV5YLqjZZEKbuUSXfiNRgroFS0/Iz86Qp4ftQmtY7X+2mmMqwwYeLZfam1QsfXSEcO1o7FCb4umVAAAA",
+  "originalBytes": 190170,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f021-petals-in-the-rain-78x93cm-2009-480.webp",
+    "width": 480,
+    "height": 409,
+    "bytes": 20588
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f021-petals-in-the-rain-78x93cm-2009-960.webp",
+    "width": 960,
+    "height": 819,
+    "bytes": 49362
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f023-95x57cm-2010.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f023-95x57cm-2010.jpg",
+  "width": 1807,
+  "height": 1080,
+  "ratio": 0.5977,
+  "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAwCdASoUAAwAPu1iqU2ppaOiMAgBMB2JZwDLLB9vuvoKG37mte1AAPoP9yLfZiTm+c0bJEp8OPADQRHtN1Kpt7KrjllT2aQQCBzSRYtqfbU769VgXWPeLZ+CtQ7V5e0IA4hwEGAuWMdBAAA=",
+  "originalBytes": 440709,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f023-95x57cm-2010-480.webp",
+    "width": 480,
+    "height": 287,
+    "bytes": 33694
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f023-95x57cm-2010-960.webp",
+    "width": 960,
+    "height": 574,
+    "bytes": 97340
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f023-95x57cm-2010-1600.webp",
+    "width": 1600,
+    "height": 956,
+    "bytes": 185014
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009.jpg",
+  "width": 448,
+  "height": 1920,
+  "ratio": 4.2857,
+  "lqip": "data:image/webp;base64,UklGRsABAABXRUJQVlA4ILQBAAAwCgCdASoUAFYAPu1uq0+ppqOiKBqtUTAdiUAZbYFYt7DO1drekLv6KbgN/TfGqPG4FWA+m00DSXo98NSaPVbmc5UH92MoLZ3pb5ltY+vJdH8H3yDzoDptWgAA/u/S+tex9rNx0jlaOoAERTMV/4Kk5u9fGbgyE+WHp/7fOs+n5UtJhMXzzl3k/0eUtBNHK/0jGUeuNWgvn9qbYRQGDzlSucG02+wd0atk+AtJvJTmqnVUEL7bG0KeMKjvp9I9wZ6VYm7VjV657OxWiNoM8WN+4mnjFTK1WCZtDsi5FDiS5yLzE+Z/DWJ8r1mPygo8YwJd1HPGeb0LoBgsFRtbhoMrhK/uBHk7biw8JrMqKOoVUGHZFZfX3pUFyM0XZBo+tffJY7Z6q2kvNvjXtdGPCY1cCTMnSKs9Aagh0JCm0ZJYB6KzxMTwj8xmiUinntvCe3qP24kW2rs+LGwqVDfb+8YZ8D1Bp7uTGUU0JeULmgakjWaTKhcGtCEsEo0j9q8eLh9MFvt3WiLMXbJ8541gyYbdym3bNNVAEM7UcxQKrDonC5bamdWOEdZ3BZgoQryx0moAAAAA",
+  "originalBytes": 116098,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009-480.webp",
+    "width": 112,
+    "height": 480,
+    "bytes": 9958
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009-960.webp",
+    "width": 224,
+    "height": 960,
+    "bytes": 21620
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009-1600.webp",
+    "width": 373,
+    "height": 1600,
+    "bytes": 38326
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm.jpg",
+  "width": 1920,
+  "height": 797,
+  "ratio": 0.4151,
+  "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACwAwCdASoUAAgAPu1iqU2ppaQiMAgBMB2JQBOmUABWbzBGmmu8AAD+7Yi0tPj9q2isQ0gW92SetNJ5joct8dsZFaMoDNtDM5gFur5BQHCbS1Jja31oTKwFQLACDbq0AAA=",
+  "originalBytes": 201953,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm-480.webp",
+    "width": 480,
+    "height": 199,
+    "bytes": 12090
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm-960.webp",
+    "width": 960,
+    "height": 399,
+    "bytes": 38040
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm-1600.webp",
+    "width": 1600,
+    "height": 664,
+    "bytes": 79394
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f019-.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f019-.jpg",
+  "width": 970,
+  "height": 1920,
+  "ratio": 1.9794,
+  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAACwBQCdASoUACgAPu1sr1GppaQipWsxMB2JZwDG9CIeCKPUwVJ144I4CrM8BvXYpiMoQhFmQYAAsUnOARssmLvUVh4DRFp3bBLOmC3dPGy0MjenYDCScRho1VFFgeNFzEiiJvEbysH8bmg7RWQhWPrTDQVlzZTCQ2iXoxmw6c2rXI8mQuyL31PUcJKKVThM2ShjvAOdg6zgj8mDYXkM6oAmlBAFuID7vxo4V99tXF2luDLS463rZ1r2EVO2uBqlIOCoh4AA",
+  "originalBytes": 221440,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f019--480.webp",
+    "width": 243,
+    "height": 480,
+    "bytes": 15538
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f019--960.webp",
+    "width": 485,
+    "height": 960,
+    "bytes": 34924
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f019--1600.webp",
+    "width": 808,
+    "height": 1600,
+    "bytes": 63548
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm.jpg",
+  "width": 1920,
+  "height": 729,
+  "ratio": 0.3797,
+  "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABwAwCdASoUAAgAPu1iqU2ppaOiMAgBMB2JQAAIW0BJUlMyPYAA/P1rdcHsBnIST77G72/4wb/tuSj/N6iwWwiiN/lHYf0VwvvhYr+tnO4SigRONsFW1lc6G6hud+z+5caT4bdeB+WdK7PVAAA=",
+  "originalBytes": 315562,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm-480.webp",
+    "width": 480,
+    "height": 182,
+    "bytes": 24290
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm-960.webp",
+    "width": 960,
+    "height": 365,
+    "bytes": 68430
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm-1600.webp",
+    "width": 1600,
+    "height": 608,
+    "bytes": 127346
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm.jpg",
+  "width": 1920,
+  "height": 965,
+  "ratio": 0.5026,
+  "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACQAwCdASoUAAoAPu1iqU2ppaQiMAgBMB2JQBOgBDiUKbVjIrsAAP7v0hhmYxSU9MVXv84PmUi1IVFnhcM9yxMo/WhnLQLfEz2s6oYTYbQE55x6aE23TTHEAO/VYFGsWIAAAA==",
+  "originalBytes": 313713,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm-480.webp",
+    "width": 480,
+    "height": 241,
+    "bytes": 16668
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm-960.webp",
+    "width": 960,
+    "height": 483,
+    "bytes": 55944
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm-1600.webp",
+    "width": 1600,
+    "height": 804,
+    "bytes": 118144
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm.jpg",
+  "width": 722,
+  "height": 1920,
+  "ratio": 2.6593,
+  "lqip": "data:image/webp;base64,UklGRloBAABXRUJQVlA4IE4BAABQCACdASoUADUAPu1orE+ppiQiKBgNUTAdiUAZT2XYwA0gTQQMASBS67X5Qjpo2Dyq3dCLy90yMCoNWng8GOhtBxaiKjFY3z309AAA/u/qfRbzKiRRmrz/qhpX2NslPOlPKIbG2WJ6em6PIJV1EiEGL252lTqgOB+zmmavKoozpJITy+3SW569xmhFyO1Ob5YEw1/tzXI1kO19H8RkwjwpTP2dhxc+FU0eVox6RkbcgfOTpkbA9vIrabozqo77ZtD1ywfmmcz8+rREP51cT3BeDxP7djG+60G4J83qowgl56eRnOb5fYq+HPQooOTFr5l0BUKXtbgVwdkFh8Ny9dGSi3BJqyb2L7zSX50A+6y0J7VfzVhcrDEDHQUjY5qqTNf53sO76czNN3odLyxp2eyId7xwG7utaPoqSURxFT6/OcxPDH4beAMYTKY6fgAA",
+  "originalBytes": 156936,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm-480.webp",
+    "width": 181,
+    "height": 480,
+    "bytes": 11328
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm-960.webp",
+    "width": 361,
+    "height": 960,
+    "bytes": 29774
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm-1600.webp",
+    "width": 602,
+    "height": 1600,
+    "bytes": 53708
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f013-in-full-bloom-2006-98x110cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f013-in-full-bloom-2006-98x110cm.jpg",
+  "width": 1242,
+  "height": 1080,
+  "ratio": 0.8696,
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBQCdASoUABEAPu1sq1EppaOiqAqpMB2JZQDDgf/gH5FgmkgblZ7p3dbZsiJGS9v4AP3gKqeu8CnGif195U4hCpFddZXTtodKNrP2yYL71Fm76BTdrFKgf+gA6my6HzQOmPHItbazewyqxdnL47QUwaV9SZAwEB6rwjcZUQnis0JxL9/6ab/hGt639t3MQvJKpgVTTAA=",
+  "originalBytes": 208480,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f013-in-full-bloom-2006-98x110cm-480.webp",
+    "width": 480,
+    "height": 417,
+    "bytes": 24922
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f013-in-full-bloom-2006-98x110cm-960.webp",
+    "width": 960,
+    "height": 835,
+    "bytes": 59966
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f012-autumn-melody-2006-98x110cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f012-autumn-melody-2006-98x110cm.jpg",
+  "width": 1236,
+  "height": 1080,
+  "ratio": 0.8738,
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAQBQCdASoUABIAPu1wsFIppiSiqAgBMB2JZQC+SA1AZbIS9XEEwMLzA/T/aACY6wJwAP7EKnjFvh5GmxVqjb+OUsShT8waHke7FLu/x+BAS+gIvUpXwPPv8i2GZ/fxudHkWCt4u58EXapvhSfyNkqZYj9/d2+kGwUH3qEwU1mmJTGEo4TNf3mJDAzYwAAA",
+  "originalBytes": 259741,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f012-autumn-melody-2006-98x110cm-480.webp",
+    "width": 480,
+    "height": 419,
+    "bytes": 35412
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f012-autumn-melody-2006-98x110cm-960.webp",
+    "width": 960,
+    "height": 839,
+    "bytes": 85042
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm.jpg",
+  "width": 959,
+  "height": 1920,
+  "ratio": 2.0021,
+  "lqip": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4IBYBAAAwBwCdASoUACgAPu1srVCppaQiqqgBMB2JZwDQVzFoehogMDW6GWUitqihSW0jF6n/FKmoAvvz1glM6L5jazU5FgAA/rCXrPNUAESFfNH5XP2CSclIY7Jc+IfYL5LVHtUcg3/2PgJomQIxtMGZmfQ+KeypCLqy7uLVngWqH4dPxvJlpr1BJ2QGN76giJsVeshPlZO8PTbygjrR5DjLgXOOd9Js2QH22QBGrDV2ppL6xuCZ1hgu4cz52peMsaUpyuCy9Ev1M5b0naagvNICYOkDMQfmjuqHek/5PSYLClzWe7goE/w+QWoPtr86FHegJu8Ap3jLZDQmt4vMx2lMALK3T7rWJNviTQB+xLyfuayy+hxhERAAAA==",
+  "originalBytes": 230158,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm-480.webp",
+    "width": 240,
+    "height": 480,
+    "bytes": 17204
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm-960.webp",
+    "width": 480,
+    "height": 960,
+    "bytes": 39612
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm-1600.webp",
+    "width": 799,
+    "height": 1600,
+    "bytes": 71516
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f011-early-summer-2006-98x110cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f011-early-summer-2006-98x110cm.jpg",
+  "width": 1242,
+  "height": 1080,
+  "ratio": 0.8696,
+  "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACwBACdASoUABEAPu1urlIppiQiqAgBMB2JZwDO8agAluXaKW3kGNayHutW+CYAAP7UPDkkOzloqibwYXyWLNkK311U9EIMfR69U7vPqVGrzYVxVYC/sYyVHvCMuVIZOwYfVeGQT9hhfR2uwY7eUZ+8zqqeA90S+1fi1c7pBZXN8emXXA7FAxszaYaRyNPreZggAA==",
+  "originalBytes": 234081,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f011-early-summer-2006-98x110cm-480.webp",
+    "width": 480,
+    "height": 417,
+    "bytes": 30146
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f011-early-summer-2006-98x110cm-960.webp",
+    "width": 960,
+    "height": 835,
+    "bytes": 70978
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f010-winter-raythm-2006-98x110cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f010-winter-raythm-2006-98x110cm.jpg",
+  "width": 1223,
+  "height": 1080,
+  "ratio": 0.8831,
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAwBQCdASoUABIAPu1ur1IppiQiqAgBMB2JZwDKtBE0lnyTux5enaZQIf85lSS+hfSAAAD+06qFIOMOmHMiNvefoag68oAznVa8pL1V30Gm95oSwVeTfCY2+IQJLyTaQa1aW6L90SxlqPWENX8hTDkZnsWAY5METxxr+qSsd2uJkost3y82+Di3RolRLsVrzbNObbe6ZUP5yRgZBkQ0qwj19h7eXs0LPAA=",
+  "originalBytes": 291602,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f010-winter-raythm-2006-98x110cm-480.webp",
+    "width": 480,
+    "height": 424,
+    "bytes": 43192
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f010-winter-raythm-2006-98x110cm-960.webp",
+    "width": 960,
+    "height": 848,
+    "bytes": 102364
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f008-petals-in-the-rain-2004-76x89cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f008-petals-in-the-rain-2004-76x89cm.jpg",
+  "width": 1260,
+  "height": 1080,
+  "ratio": 0.8571,
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACwBACdASoUABEAPu1sq1EppaOiqAqpMB2JZwAAL5hJZHmVl5Ep8jtnizNvT9TAAP7KJpXyKVqmI9zPYJYtBFFL5KB/46+T8YZCl3pv5yJ9LPnNq24X6tv7r0b5A3vdDz6OoED+6PkeHtZkg7pKyh97g79hX27zFheudI5Ukm95qVQoAAA=",
+  "originalBytes": 186368,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f008-petals-in-the-rain-2004-76x89cm-480.webp",
+    "width": 480,
+    "height": 411,
+    "bytes": 19910
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f008-petals-in-the-rain-2004-76x89cm-960.webp",
+    "width": 960,
+    "height": 823,
+    "bytes": 47968
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm.jpg",
+  "width": 1920,
+  "height": 721,
+  "ratio": 0.3755,
+  "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoUAAgAPu1iqU2ppaOiMAgBMB2JZwDG9CFq7tzIQhW8HI4AAMsUVkz7rh6xDn1YW22BYx7+SWNNb4+E1PmoKzYyJs9N5KiX+abLxkZ2KOMhZjI9wfAAAA==",
+  "originalBytes": 363459,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm-480.webp",
+    "width": 480,
+    "height": 180,
+    "bytes": 19884
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm-960.webp",
+    "width": 960,
+    "height": 361,
+    "bytes": 75434
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm-1600.webp",
+    "width": 1600,
+    "height": 601,
+    "bytes": 163692
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f007-cycle-of-life2008-79x79cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f007-cycle-of-life2008-79x79cm.jpg",
+  "width": 1090,
+  "height": 1080,
+  "ratio": 0.9908,
+  "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADwBACdASoUABQAPu1urlKppiQiqAgBMB2JQBOgAXNQwqmPegJz/I9q9QsRL1jJG0AA/nT8f0Nq9ExMb17Epel/9Feq6OQGC34I0zxq/YbrhO4/jnVsEr8i8JdHxIDyidgsUBz1n1ySZxQZpbsnVQ+qLjWJgTXSbhcv4Q9uhYyK/3+EX81EBXYIgnfz6slDdpJg7gji7futwKuh4BPLrv6OyBvmZ0bCL9RRcEyHY9g30AAA",
+  "originalBytes": 233073,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f007-cycle-of-life2008-79x79cm-480.webp",
+    "width": 480,
+    "height": 476,
+    "bytes": 34022
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f007-cycle-of-life2008-79x79cm-960.webp",
+    "width": 960,
+    "height": 951,
+    "bytes": 90840
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f005-cycle-of-life-2008-79x79cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f005-cycle-of-life-2008-79x79cm.jpg",
+  "width": 1080,
+  "height": 1085,
+  "ratio": 1.0046,
+  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JYgCdMxs/2BnZbydchH3BJwyIOjvf5tnHAGNAAN5hKZoMYeSrqB1jK47wmCYQnJ0kKIs/MLu3gEZOJ8OUvvg+IeYBPsPQsrN5UStRGrAq4Lla7Zq4o8ywXZnDs8yYowUrhqiZbo47AmtAy9jAwc1rO2fIRThU6bwgPEJ/cjzHvOjB2gXvg8QYThJBAJfvbjGrrLQZw/davle5ERt0ObQ8SWHghEfUAVxAAAAA",
+  "originalBytes": 242091,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f005-cycle-of-life-2008-79x79cm-480.webp",
+    "width": 478,
+    "height": 480,
+    "bytes": 38158
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f005-cycle-of-life-2008-79x79cm-960.webp",
+    "width": 956,
+    "height": 960,
+    "bytes": 93714
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f006-cycle-of-life-2008-79x79cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f006-cycle-of-life-2008-79x79cm.jpg",
+  "width": 1080,
+  "height": 1088,
+  "ratio": 1.0074,
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAADQBACdASoUABQAPu1usFIppiSiqAgBMB2JYgCsAAm+2XB0lbMNohWvqG2XAhx4AAD+4YVwRK7OhVKNuOZarIrg91Bn3lpe0EUIA25vQhwWPIA0V7tO8WbdNMe1FJyazIzcXiy26OFjH6QO3gybb+O56RAoxy4NVQoDepQXFKVHJIFukWKMYzEQOkdGZfd4O0GeuWSVDFsKD89FBoQeQQM+YnWWIuWdyUFYuhDgPkcfIAGmAAA=",
+  "originalBytes": 344130,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f006-cycle-of-life-2008-79x79cm-480.webp",
+    "width": 476,
+    "height": 480,
+    "bytes": 59058
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f006-cycle-of-life-2008-79x79cm-960.webp",
+    "width": 953,
+    "height": 960,
+    "bytes": 163308
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f003-cycle-of-life-2008-98x96cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f003-cycle-of-life-2008-98x96cm.jpg",
+  "width": 1080,
+  "height": 1110,
+  "ratio": 1.0278,
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACQBACdASoUABQAPu1ur1IppiQiqAgBMB2JZwDDNA+xDx42xQV4xXvKlUXXwNAAzKH8zYw3wjTgVvvFYKrvni1WHk3JqlcI7KzsR3FbfgS+6U2FlsEP2n+TJ7lKAGvusx4aNSKaupCi1/My0W4pwOG9EaG4GTB6LwBQBww+dj2u0+4pRAAAAA==",
+  "originalBytes": 288288,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f003-cycle-of-life-2008-98x96cm-480.webp",
+    "width": 467,
+    "height": 480,
+    "bytes": 43680
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f003-cycle-of-life-2008-98x96cm-960.webp",
+    "width": 934,
+    "height": 960,
+    "bytes": 133614
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm.jpg",
+  "width": 991,
+  "height": 1920,
+  "ratio": 1.9374,
+  "lqip": "data:image/webp;base64,UklGRigBAABXRUJQVlA4IBwBAAAwBwCdASoUACcAPu1yslOppqSipWgBMB2JZQDGRAgdlU5QCRxiUdJh0/3Q3cYTWDRHKgHT4/rhHu4t71z3ebnAQAAA/vcsJEM6mrzrmiZymHcLbf5hX5+2tjUG1oJ2RCLsgofW0olDRe/ADa9qYaa/JmIAgidtu2hvJIvBKTK8vx1COeWenewgcJA1tkJrZrvYj2dnaHP8maMEpuZA3fhRgCfThscZX5ruLRmhTsSx7U6+r8V8nsf7hNEduOhRUdRKOKrmg3+E1s2/LmeazjE++8rC/dMI7kDH3DTzEMutBQ3fm1finXqrIkIIS8D4oe5t6nO/QmNJiypcObKA+vfkjv5O5oim/aovQqm434sIExKYnYQp5xcohoAAAA==",
+  "originalBytes": 272922,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm-480.webp",
+    "width": 248,
+    "height": 480,
+    "bytes": 20614
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm-960.webp",
+    "width": 496,
+    "height": 960,
+    "bytes": 53716
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm-1600.webp",
+    "width": 826,
+    "height": 1600,
+    "bytes": 96194
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f001-moonlight-2008-95x108cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f001-moonlight-2008-95x108cm.jpg",
+  "width": 1231,
+  "height": 1080,
+  "ratio": 0.8773,
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAwBQCdASoUABIAPu1wsFIppiSiqAgBMB2JZwDMWYx2PeDLDjM5dFFtlN0D+DyiGOVR8AD+sjrSBteHfDZcmklycmhrnSuKv04j3JfPZcZTNip0DY+yilbf48PSnxtFd8/0CrEk1v962A/rya2uTnD9Rf0A9tkgMOWUznNvJXsyZ0ZeBNBckxSqg9n5lbmG+5i8L5mfIBNgtD0SjzMxOoo7hMv8JXLeUzm/KirNAAAAAA==",
+  "originalBytes": 337840,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f001-moonlight-2008-95x108cm-480.webp",
+    "width": 480,
+    "height": 421,
+    "bytes": 52808
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f001-moonlight-2008-95x108cm-960.webp",
+    "width": 960,
+    "height": 842,
+    "bytes": 142240
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/7/images/f002-cycle-of-life-2008-79x79cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/7/images/f002-cycle-of-life-2008-79x79cm.jpg",
+  "width": 1096,
+  "height": 1080,
+  "ratio": 0.9854,
+  "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAAAwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZQCdM1XlswhPwuYUhRlTL5mxoYKIsYGEoAD+4gz3MRQ4DCXj8rpcbEvWzL8a4saBqobKSoyLAk+so0VLdBjHKE46iVqpDo/m5Y2hgNC76KpI+TJ85QGjt4VM6UzpiCGK9mY5OQotC6ljQwgFnT7oOpG3wJ3cIAmiHqCYRU3SkTY/5XIBfsCzulttyssVj+E0xZJtcFX5Z/cgR6jWweQRKAAAAA==",
+  "originalBytes": 433110,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/7/images/f002-cycle-of-life-2008-79x79cm-480.webp",
+    "width": 480,
+    "height": 473,
+    "bytes": 73230
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/7/images/f002-cycle-of-life-2008-79x79cm-960.webp",
+    "width": 960,
+    "height": 946,
+    "bytes": 222136
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m.jpg": {
+  "src": "/images/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m.jpg",
+  "width": 817,
+  "height": 1920,
+  "ratio": 2.3501,
+  "lqip": "data:image/webp;base64,UklGRk4BAABXRUJQVlA4IEIBAABQBwCdASoUAC8APu1osVCppaSiqrgKATAdiWkA0UtuORAugJVO2oagAKOMQ+RJFr0LNX4/tukmO1lrIzKi0pVALc8AAP7wJvEDZF8MQEtCqsA5Nd+zcM6qYZk2kQlWfpG9iOnVZzrAbDVTltzSwV6znO3ASmJo+nFJxIG4/T5nl95Z6UxQalrUEr5OvQKBSSgmaV2Ck7Ai/bVLmmnkxFYT2YrNNayH0EzgP5QUdTxj7ex8D3pwc0SsJmLAo02YAShSOzxWgg6nr/EabTNAjlD26ahlwOzAdxNRUECAf/f0f8CYgtH4wMMbCeJnz38i2TrBnqYxxNrl5rxcFmVejqpSS3FHGLiRaO5CU2P30UuiEThs73EEfm47R3a9Ojtguxrk8QLx5/cLYr9yO7T6EW3NTSa0MeTCX9/h1//7NAZSFZAA",
+  "originalBytes": 142261,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m-480.webp",
+    "width": 204,
+    "height": 480,
+    "bytes": 10480
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m-960.webp",
+    "width": 409,
+    "height": 960,
+    "bytes": 23762
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m-1600.webp",
+    "width": 681,
+    "height": 1600,
+    "bytes": 42738
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm.jpg": {
+  "src": "/images/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm.jpg",
+  "width": 1920,
+  "height": 809,
+  "ratio": 0.4214,
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwAwCdASoUAAgAPu1iqU2ppaOiMAgBMB2JaQAD5LGOTcnee1S64AD+4nZBYsgPEsSecNEz0QXJe2ZLz12YKUtvEOiErRoZ990+Vk+tSsH+lu5hK4lLa/uHu5D/g14dDNlgUoUqpI9xNwAgmicAoxQA",
+  "originalBytes": 183524,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm-480.webp",
+    "width": 480,
+    "height": 202,
+    "bytes": 12294
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm-960.webp",
+    "width": 960,
+    "height": 405,
+    "bytes": 30478
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm-1600.webp",
+    "width": 1600,
+    "height": 674,
+    "bytes": 60590
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c016-.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c016-.jpg",
+  "width": 1780,
+  "height": 1080,
+  "ratio": 0.6067,
+  "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoUAAwAPu1iqU2ppaOiMAgBMB2JQBdgBAr+vDrlZv25xBqwAP7XGMTiDOTHXTkEHTq4iKEKcGMhIl1pIQ07wPn0tTDKw7yAbYiCQxVZ9bpKDxvgOfQCF8t5Sny2lb47T655efa+LGgm3ugAAAA=",
+  "originalBytes": 259971,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c016--480.webp",
+    "width": 480,
+    "height": 291,
+    "bytes": 20016
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c016--960.webp",
+    "width": 960,
+    "height": 582,
+    "bytes": 48762
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/9/images/c016--1600.webp",
+    "width": 1600,
+    "height": 971,
+    "bytes": 87744
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c015-1996.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c015-1996.jpg",
+  "width": 1698,
+  "height": 1080,
+  "ratio": 0.636,
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADQAwCdASoUAA0APu1iqU2ppaQiMAgBMB2JYgCsABbKQfrTXEejfAAAzcrbUY24YIynkTh0yA1qDJaq+qeXnIT5afsOJD/6V+4kgAFxv7SXvJ+wUtoiLuezjgDFSOIMY/9TcxQIHrGCUYr8p5Yf0ENu5H9BzzV+Pujd2wAHxgBY9gAA",
+  "originalBytes": 253690,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c015-1996-480.webp",
+    "width": 480,
+    "height": 305,
+    "bytes": 21548
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c015-1996-960.webp",
+    "width": 960,
+    "height": 611,
+    "bytes": 50514
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/9/images/c015-1996-1600.webp",
+    "width": 1600,
+    "height": 1018,
+    "bytes": 91516
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c014-1996.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c014-1996.jpg",
+  "width": 1646,
+  "height": 1080,
+  "ratio": 0.6561,
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABQBACdASoUAA0APu1iqU2ppaOiMAgBMB2JYgDG9CLQpnJPTXWk6l6C5XvgAOABhF8vhYu1nUY8QXR4N8eaPwzSDksPhMewUu7A9VWC3D5J4pFRGvaa7tIk727NBLAgmE1p68cKwONOx62C+MQfphzsMJls2wuACMV1XbFJs4HHl9ozeZ3WX1xp4L/QgUh2iM3i0k3GsLdsAAAA",
+  "originalBytes": 259049,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c014-1996-480.webp",
+    "width": 480,
+    "height": 315,
+    "bytes": 22766
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c014-1996-960.webp",
+    "width": 960,
+    "height": 630,
+    "bytes": 54098
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/9/images/c014-1996-1600.webp",
+    "width": 1600,
+    "height": 1050,
+    "bytes": 99242
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c013-19961121.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c013-19961121.jpg",
+  "width": 1604,
+  "height": 1080,
+  "ratio": 0.6733,
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACwAwCdASoUAA4APu1iqU2ppaOiMAgBMB2JZQCdICXB6J0lrViEaAD+ZN7lzULQjz5SzAPPCxxHsOGOyCesKmgbNfex5mzsQiLLcSW6HLg8tScoVmy71QeuiZe5C1xYmUURW3GQDNNs+LdCJql9naiZlojO6V9hLWHafgVtzXoE3O4HAgpmxnzhlZ7SbtLa9dHlBIIAAAA=",
+  "originalBytes": 218957,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c013-19961121-480.webp",
+    "width": 480,
+    "height": 323,
+    "bytes": 18524
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c013-19961121-960.webp",
+    "width": 960,
+    "height": 646,
+    "bytes": 43594
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/9/images/c013-19961121-1600.webp",
+    "width": 1600,
+    "height": 1077,
+    "bytes": 80152
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c011-19932.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c011-19932.jpg",
+  "width": 1402,
+  "height": 1080,
+  "ratio": 0.7703,
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADwAwCdASoUAA8APu1iqU2ppaOiMAgBMB2JZQAAV99vpQ3DAkwoJolAAP7W/w5h2tneiwy1Az6iK1j1QoMhcJ3gbNG7jzaXsQR2yh20/s+Dg+wQvebplJEzYqIx/G0/2IV8wab5dXBPLY+4YYYDAJIBqpIkdFNq9gQOQZ4FFhmLH57ANLAdAAAA",
+  "originalBytes": 211795,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c011-19932-480.webp",
+    "width": 480,
+    "height": 370,
+    "bytes": 23906
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c011-19932-960.webp",
+    "width": 960,
+    "height": 740,
+    "bytes": 51768
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c012-1995.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c012-1995.jpg",
+  "width": 1701,
+  "height": 1080,
+  "ratio": 0.6349,
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQAwCdASoUAA0APu1iqU2ppaQiMAgBMB2JZQCsAYvq3vhTqk05dnAA/rIrcveSOt3Cu/LFoBHPHwohqncU8ZJxYVUZb5DsLfs67ENBrP11ApeLfqfPbhGTuV0E9lIaIF7/GD6IOPB7FrYvujNJe67lamh0Jksiwzzu/pEOQduNb0+AAAA=",
+  "originalBytes": 258695,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c012-1995-480.webp",
+    "width": 480,
+    "height": 305,
+    "bytes": 19758
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c012-1995-960.webp",
+    "width": 960,
+    "height": 610,
+    "bytes": 51280
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/9/images/c012-1995-1600.webp",
+    "width": 1600,
+    "height": 1016,
+    "bytes": 94382
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c008-1983.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c008-1983.jpg",
+  "width": 1562,
+  "height": 1080,
+  "ratio": 0.6914,
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADwAwCdASoUAA4APu1iqU2ppaOiMAgBMB2JQBOgMYEXNyhQoMf8MPXgAP49qJQW4v6gOsuGZbWtqUm9N0ziB1GQvB4Vv0BvRR+l6EfeKVi+4ROdYloYzfTrjvXT1IfaIciKwQSJM1Vp+yFfUEPJ5q3CpQywItfgPfvPiXrXLocPp/YxjdwclXl18/IMBIA1nKDH0Z1pDnrAAA==",
+  "originalBytes": 319701,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c008-1983-480.webp",
+    "width": 480,
+    "height": 332,
+    "bytes": 31040
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c008-1983-960.webp",
+    "width": 960,
+    "height": 664,
+    "bytes": 74174
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c009-1986.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c009-1986.jpg",
+  "width": 1830,
+  "height": 1080,
+  "ratio": 0.5902,
+  "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQAwCdASoUAAwAPu1iqU2ppaOiMAgBMB2JZwAAV8i9MPHghp8V+oAA/uJD2azP48MGJf8mWUi8BjLyZfl6RmQmAnu1dRFiua/010QoweM416PMUvf/S1zSMK4W6hHDG73wVyO5OJkBczgP/a4pf63P/AFmDIp90X2JYAAA",
+  "originalBytes": 192666,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c009-1986-480.webp",
+    "width": 480,
+    "height": 283,
+    "bytes": 12702
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c009-1986-960.webp",
+    "width": 960,
+    "height": 567,
+    "bytes": 27434
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/9/images/c009-1986-1600.webp",
+    "width": 1600,
+    "height": 944,
+    "bytes": 51548
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c010-19932.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c010-19932.jpg",
+  "width": 1694,
+  "height": 1080,
+  "ratio": 0.6375,
+  "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADwAwCdASoUAA0APu1iqU2ppaQiMAgBMB2JZwAAYYUS+jNr4hXgtfeoAP7XbpaxcqYhyvle9hRNQfYJCSvCjk97jbn6srYRh4rewMyX5Ruw5vsz0wIE3zR9Wfh0qp3lcTyA6IbByvR2Gvg0LX4HS1/lRGWxi3UjdusAAA==",
+  "originalBytes": 255036,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c010-19932-480.webp",
+    "width": 480,
+    "height": 306,
+    "bytes": 22944
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c010-19932-960.webp",
+    "width": 960,
+    "height": 612,
+    "bytes": 55094
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/9/images/c010-19932-1600.webp",
+    "width": 1600,
+    "height": 1020,
+    "bytes": 98116
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c007-1982.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c007-1982.jpg",
+  "width": 1575,
+  "height": 1080,
+  "ratio": 0.6857,
+  "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBACdASoUAA4APu1iqU2ppaOiMAgBMB2JZQC7ACLQlMytNv6WmT2MAAD+YMbIwPCubf7vA8c9OH+Jkk2gXoj8qP3ZprtBwU5EcD9DTpVBZiZpxPG7LGsbkFKptuUBnMJ8J64cMhbLN9EogAA=",
+  "originalBytes": 178118,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c007-1982-480.webp",
+    "width": 480,
+    "height": 329,
+    "bytes": 13442
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c007-1982-960.webp",
+    "width": 960,
+    "height": 658,
+    "bytes": 33150
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c006-1980720.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c006-1980720.jpg",
+  "width": 1080,
+  "height": 1393,
+  "ratio": 1.2898,
+  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABwBQCdASoUABoAPu1qrVCppaQiqAqpMB2JaQAD5PjvreGJlxB2d/avJW32jCqUQd0jpZgAAP6OLd3eRx0Fy+RiK0LJPk6WyklOn6WBRoHlVkF5OP0TYhyTYquboValztC5h8/kzOjKNbdBLoYzOe1BZ/NVO4XAOCrWWbGaZIncXeTWt56rRnPGCYygCszq2+ETNjaHDZcXo1/Qqs/dNSJpW4qx83iYC2xhFwpPWlJ5p5DmPD7Hpv3gw4YDhM9h5weXIAAA",
+  "originalBytes": 201563,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c006-1980720-480.webp",
+    "width": 372,
+    "height": 480,
+    "bytes": 18454
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c006-1980720-960.webp",
+    "width": 744,
+    "height": 960,
+    "bytes": 43474
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c003-1963.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c003-1963.jpg",
+  "width": 1080,
+  "height": 1512,
+  "ratio": 1.4,
+  "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAAAQBQCdASoUABwAPu1kq1AppSOisBgIATAdiWkAAB5EgSfdV1B6Et/+42TeyGcD5J3AANtZn3ZT073xE77HMSjzrJEbhLXq+q4gcuRjnRNNyS2MOWdGpmqlCbleXCQhVrwk/WVvyv2AVRcCzzKQdnC1dL4NAsqTa0vncgK8mxYxQBpy8DjApooPDJX4363Aq+/NfeGyHTdWPCeXNk3KGTwOBQWLKBdX2gIAAA==",
+  "originalBytes": 204168,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c003-1963-480.webp",
+    "width": 343,
+    "height": 480,
+    "bytes": 17142
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c003-1963-960.webp",
+    "width": 686,
+    "height": 960,
+    "bytes": 41604
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c004-1972.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c004-1972.jpg",
+  "width": 1549,
+  "height": 1080,
+  "ratio": 0.6972,
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwAwCdASoUAA4APu1iqU2ppaQiMAgBMB2JaQAAH6ZMHc54AM35GHfFEAxZz5gA6RMDGy3RyxCqlzbLcaNoVqkNncZ8f38/v0pmuPyS9neXDALNBPqPD3oMXcTtK+crnIQF/5WuXsfyiSlN3eOAAA==",
+  "originalBytes": 243877,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c004-1972-480.webp",
+    "width": 480,
+    "height": 335,
+    "bytes": 16280
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c004-1972-960.webp",
+    "width": 960,
+    "height": 669,
+    "bytes": 45914
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c002-1963.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c002-1963.jpg",
+  "width": 1554,
+  "height": 1080,
+  "ratio": 0.695,
+  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADQAwCdASoUAA4APu1iqU2ppaOiMAgBMB2JaQAAQd56qTzocoPvxaAA/uZtz0oUZRrxvfVLG3ksjDBcpUUDyNXtftZV8u8l4UZslcEDSc7tUz2TT0d/rJdCv489lmLg1zxR2hKorOVP4a1lrXLRQ8tY3EP1CgAA",
+  "originalBytes": 186152,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c002-1963-480.webp",
+    "width": 480,
+    "height": 334,
+    "bytes": 14724
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c002-1963-960.webp",
+    "width": 960,
+    "height": 667,
+    "bytes": 33172
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c001-1962.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c001-1962.jpg",
+  "width": 1539,
+  "height": 1080,
+  "ratio": 0.7018,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBACdASoUAA4APu1iqU2ppaOiMAgBMB2JaQAFEAGwbBoZgLImWoS0AADhWtsdP5RapnVhrkNMZhmPKUvY2X5ySYucWBtuaY1eNSSHky3DdzFQw6UY7ifap6yv0M20KPWumZU4wS2myL+QRMP++tbO4F/mGNhS/x1Pj8dFAAA=",
+  "originalBytes": 204784,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c001-1962-480.webp",
+    "width": 480,
+    "height": 337,
+    "bytes": 14058
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c001-1962-960.webp",
+    "width": 960,
+    "height": 674,
+    "bytes": 37122
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/images/c005-1977.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/images/c005-1977.jpg",
+  "width": 1632,
+  "height": 1080,
+  "ratio": 0.6618,
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQBACdASoUAA0APu1iqU2ppaOiMAgBMB2JQBadBH1a6TmiUCBOGPDJ6ADb/w6LTt+wgrbGY6EsUHe+JVF7dH99LqA+eAslDnFq2l7sy4ZVuHsyQpJVvYux7ccUTWH7CruT+HxWFNDfFcV8IZhwAA==",
+  "originalBytes": 183395,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/9/images/c005-1977-480.webp",
+    "width": 480,
+    "height": 318,
+    "bytes": 14162
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/9/images/c005-1977-960.webp",
+    "width": 960,
+    "height": 635,
+    "bytes": 30944
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/9/images/c005-1977-1600.webp",
+    "width": 1600,
+    "height": 1059,
+    "bytes": 58010
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/10/images/b008-.jpg": {
+  "src": "/images/speasyimagegallery/albums/10/images/b008-.jpg",
+  "width": 1619,
+  "height": 1080,
+  "ratio": 0.6671,
+  "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoUAA0APu1iqU2ppaQiMAgBMB2JQBdgMY7Wuh7BqWz7GSEUQAD+7Z4xDUTDLv4vltimVOh1JGIjniKJDhXgdX+FlfeY9wSIKZQf2fwWpkNgyuKZZIulQSy2kransz/uxxtf8/XcX5f/6x5syjvzICCqh/9K5eCfqje4fFuI97G/t+qHoLJ7rsqF0uAAAA==",
+  "originalBytes": 243208,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/10/images/b008--480.webp",
+    "width": 480,
+    "height": 320,
+    "bytes": 18352
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/10/images/b008--960.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 45114
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/10/images/b008--1600.webp",
+    "width": 1600,
+    "height": 1067,
+    "bytes": 86042
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/10/images/b007-.jpg": {
+  "src": "/images/speasyimagegallery/albums/10/images/b007-.jpg",
+  "width": 1619,
+  "height": 1080,
+  "ratio": 0.6671,
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JQBgbsXmWuovFvJT+OAwU/AAA/urcAvYJXIaiz5c96ySIf35WyeJn4N3pO7Ul/33sr1IxYCEnYQlY7vE5S1+oo3c4egUmK3ChuiTZkxlI//fUr/5f/6zRvWmNNPLwpGcj/mXdkr+9eyDv26uy8ik1S/hZtSAIPilnJnD+uAA=",
+  "originalBytes": 244055,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/10/images/b007--480.webp",
+    "width": 480,
+    "height": 320,
+    "bytes": 18562
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/10/images/b007--960.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 45140
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/10/images/b007--1600.webp",
+    "width": 1600,
+    "height": 1067,
+    "bytes": 85444
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/10/images/b006-19996.jpg": {
+  "src": "/images/speasyimagegallery/albums/10/images/b006-19996.jpg",
+  "width": 1674,
+  "height": 1080,
+  "ratio": 0.6452,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAACwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZwAAW3mPnn4Pjm82YAD+7Vq4IzIQ19NvIjyLg1chcmxVd6hH6QDggOAKmh6orwa2wePRVpjsLrDbDqkI7yq7lkrmbMda5ZRHz/62xfEHeNND5NB+1YdaymdJrtM5QRN3ToHwAAA=",
+  "originalBytes": 337576,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/10/images/b006-19996-480.webp",
+    "width": 480,
+    "height": 310,
+    "bytes": 34214
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/10/images/b006-19996-960.webp",
+    "width": 960,
+    "height": 619,
+    "bytes": 84292
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/10/images/b006-19996-1600.webp",
+    "width": 1600,
+    "height": 1032,
+    "bytes": 146738
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/10/images/b005-19978.jpg": {
+  "src": "/images/speasyimagegallery/albums/10/images/b005-19978.jpg",
+  "width": 1649,
+  "height": 1080,
+  "ratio": 0.6549,
+  "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoUAA0APu1iqU2ppaQiMAgBMB2JZQAAV/hVt52F58JKfoQA/qocLq1WzMSjXXxkjvNRn8u8KoUovotu+KrDbGkv68yTkd+7gIKoZFDat+vTzK1W2Jdup/3J3aCW6NInPOW72n6hXSw+DsAAAAA=",
+  "originalBytes": 384401,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/10/images/b005-19978-480.webp",
+    "width": 480,
+    "height": 315,
+    "bytes": 41610
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/10/images/b005-19978-960.webp",
+    "width": 960,
+    "height": 629,
+    "bytes": 105214
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/10/images/b005-19978-1600.webp",
+    "width": 1600,
+    "height": 1048,
+    "bytes": 184816
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/10/images/b002-1981627.jpg": {
+  "src": "/images/speasyimagegallery/albums/10/images/b002-1981627.jpg",
+  "width": 1391,
+  "height": 1080,
+  "ratio": 0.7764,
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBACdASoUABAAPu1iqU2ppaOiMAgBMB2JZQCdAYyUetXtd+fREmFG4AD9q2bmz+5UOpjV+RgJ31nSptkiEItWqyIt4SwDE1GG/s27H7sppZufww2z9rfR1vUV07ypsCZC5qZ1xeBlPHYtKLW9/lUEJtoon1J2Vx0VxRh6ICIEvn22o5W0AAAA",
+  "originalBytes": 262400,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/10/images/b002-1981627-480.webp",
+    "width": 480,
+    "height": 373,
+    "bytes": 33006
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/10/images/b002-1981627-960.webp",
+    "width": 960,
+    "height": 745,
+    "bytes": 76880
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/10/images/b003-19957.jpg": {
+  "src": "/images/speasyimagegallery/albums/10/images/b003-19957.jpg",
+  "width": 1728,
+  "height": 1080,
+  "ratio": 0.625,
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZQCdACG5dG7CyoOsbgAA/tcmiet23jAQl+rDOcGjUHQ1euzKyUFxY+6keWN87YfznmmyD/B+i/+9KNZbryA48swv5WKlEp9F0osVb1T9gKKdryFUSLqdmurRZgA8fhvx+I+R9CaEMl5pQ4tvFUIA",
+  "originalBytes": 254538,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/10/images/b003-19957-480.webp",
+    "width": 480,
+    "height": 300,
+    "bytes": 22324
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/10/images/b003-19957-960.webp",
+    "width": 960,
+    "height": 600,
+    "bytes": 52098
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/10/images/b003-19957-1600.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 94866
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/10/images/b004-1995.jpg": {
+  "src": "/images/speasyimagegallery/albums/10/images/b004-1995.jpg",
+  "width": 1666,
+  "height": 1080,
+  "ratio": 0.6483,
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZQAAPgMC2dXM/wV2jU8AAP5JC1aofIYXTc/p+/ToglNMT+aij/0BUUBEMFot3noYpa5A216UY3dFGdZSygoOTX4QT7vhcVD94NgtN10fEK6dkuEAAA==",
+  "originalBytes": 318977,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/10/images/b004-1995-480.webp",
+    "width": 480,
+    "height": 311,
+    "bytes": 32440
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/10/images/b004-1995-960.webp",
+    "width": 960,
+    "height": 622,
+    "bytes": 79750
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/10/images/b004-1995-1600.webp",
+    "width": 1600,
+    "height": 1037,
+    "bytes": 143546
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/10/images/b001-.jpg": {
+  "src": "/images/speasyimagegallery/albums/10/images/b001-.jpg",
+  "width": 1080,
+  "height": 1096,
+  "ratio": 1.0148,
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQBACdASoUABQAPu1qq1EppaOiqAqpMB2JZwDE2A7UKTX/nKJ2V65Lw3xdsmyIAADypI2aNI1bhyNMi/H2rIKsfwhUrGKMyBxPBYcfDJxueiptgZIdh1M0Npz7BNXJ6iKsJp8VKsQl8TCOF6I1WgZUaZ+3SMZx//MYqHuoStlWZyTHwAA=",
+  "originalBytes": 411692,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/10/images/b001--480.webp",
+    "width": 473,
+    "height": 480,
+    "bytes": 73022
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/10/images/b001--960.webp",
+    "width": 946,
+    "height": 960,
+    "bytes": 223110
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a011-1990.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a011-1990.jpg",
+  "width": 1551,
+  "height": 1080,
+  "ratio": 0.6963,
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBACdASoUAA4APu1iqU2ppaOiMAgBMB2JYwATwBQciQwAxzLXkYcFCgAA/t2e3bDkczDWoStDBnPMIcNyzgGJlqe+yYNRCb+STFAv4WzbxZEw1PufcQjO5WSAFzDUtfSp99sWcMMCnKQ4mEud73vcy9Y7Yg4PX3dhxv3r7ToGvE7bQXfzKDCwzcgMF7kKUcGOBwO++ivCtzvNbstl17iALNBoz/LjnnG9eHHFLCtIcfyHUAA=",
+  "originalBytes": 345235,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a011-1990-480.webp",
+    "width": 480,
+    "height": 334,
+    "bytes": 36836
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a011-1990-960.webp",
+    "width": 960,
+    "height": 668,
+    "bytes": 92842
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a010-1980.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a010-1980.jpg",
+  "width": 1566,
+  "height": 1080,
+  "ratio": 0.6897,
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQBACdASoUAA4APu1iqU2ppaOiMAgBMB2JQBUfNQAzBp1qGloWOhg0nS6AAP7sr+xsLvMxBkISIPwPLQ4qh5zERyW9MnzK6X3NnT4V1EarxTfdCcm2alwrvPf8DgGgA9gS9HtstJN4VXv8hVd4nu4vrIJ+/pfF78bje8+ZjmujuHfi83AAAA==",
+  "originalBytes": 203243,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a010-1980-480.webp",
+    "width": 480,
+    "height": 331,
+    "bytes": 17190
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a010-1980-960.webp",
+    "width": 960,
+    "height": 662,
+    "bytes": 39418
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a009-1973.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a009-1973.jpg",
+  "width": 1415,
+  "height": 1080,
+  "ratio": 0.7633,
+  "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAgCdASoUAA8APu1iqU2ppaQiMAgBMB2JZwAAUqCmIAD9zxXvZrL+WqG8cXal8AHastnPqM0PvY7AAAA=",
+  "originalBytes": 165152,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a009-1973-480.webp",
+    "width": 480,
+    "height": 366,
+    "bytes": 15780
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a009-1973-960.webp",
+    "width": 960,
+    "height": 733,
+    "bytes": 35282
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a013-1997827.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a013-1997827.jpg",
+  "width": 1718,
+  "height": 1080,
+  "ratio": 0.6286,
+  "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBACdASoUAA0APu1iqU2ppaOiMAgBMB2JYgCw7YuklfxeIY4BHGcUAAD+6ZzN/ubGZS8+fiJ/AsQIQPQKhDKwAd+Nqw5DkFBk6OO9ii88Ul/TXt0F3SdFmTPHJSJ85afJ3YvcdbuADpnLURz1DhwGfiZ/nBTw9vJq0Q5ymPf3jf54M3IJMxeX00R2LCznMB3MOzL3gBPXfjEEl7wAAA==",
+  "originalBytes": 307642,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a013-1997827-480.webp",
+    "width": 480,
+    "height": 302,
+    "bytes": 27994
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a013-1997827-960.webp",
+    "width": 960,
+    "height": 603,
+    "bytes": 67818
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/11/images/a013-1997827-1600.webp",
+    "width": 1600,
+    "height": 1006,
+    "bytes": 118270
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a012-1995.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a012-1995.jpg",
+  "width": 1620,
+  "height": 1080,
+  "ratio": 0.6667,
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JYgDCgYyKfsAa0vVWvFAA/oIad6+MXa/JtEIj8ZD2xptGrBGpLwnWf1Uo7s2cXDUssqtulXjtnWsQokDNvSEOplOof+ugWkQVSUSRc5Ls6lAu+SaXkqzJ5EQh3Bl/LJU7Z7l1IysTV7M05Z9EAAAA",
+  "originalBytes": 343123,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a012-1995-480.webp",
+    "width": 480,
+    "height": 320,
+    "bytes": 32458
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a012-1995-960.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 88130
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/11/images/a012-1995-1600.webp",
+    "width": 1600,
+    "height": 1067,
+    "bytes": 159628
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a007-1971swa.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a007-1971swa.jpg",
+  "width": 1384,
+  "height": 1080,
+  "ratio": 0.7803,
+  "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQBACdASoUABAAPu1iqU2ppaOiMAgBMB2JZQC06B6XU6M7Bisy9nbeAADc1gOgugjRNEFNvPpM/cil91TzsEWk0UaxhO5gAAA=",
+  "originalBytes": 186554,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a007-1971swa-480.webp",
+    "width": 480,
+    "height": 375,
+    "bytes": 17862
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a007-1971swa-960.webp",
+    "width": 960,
+    "height": 749,
+    "bytes": 42836
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a004-1963.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a004-1963.jpg",
+  "width": 1080,
+  "height": 1441,
+  "ratio": 1.3343,
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADwBACdASoUABsAPu1mqk8ppaOiKA1RMB2JaQAALnX4l0Hbt+As6jCVAgPOdTAnwAAA/uw9u+EGGNcO0fqQRi598k+U5YvSp3SA6K9oPNMYxyZTa+Mm4MkX4VJNsuNj7EvcQDD9wWQ5APr/Y71jUPaentDfCaVvcjTjiDqBY7xTJt19ckzxAAAA",
+  "originalBytes": 139661,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a004-1963-480.webp",
+    "width": 360,
+    "height": 480,
+    "bytes": 8452
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a004-1963-960.webp",
+    "width": 720,
+    "height": 960,
+    "bytes": 21792
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a008-1971.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a008-1971.jpg",
+  "width": 1606,
+  "height": 1080,
+  "ratio": 0.6725,
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAwBACdASoUAA4APu1iqU2ppaOiMAgBMB2JZACdEf/i10mafQsxErL64YAA/ug9Yxim+A3vGv7anmSoDucl0FGbf+1qOewsQ6fyW0dI7K2TnEB1tPGLg/aHeGF7FuSVjMmTSyvmfLEPKet5kba9HXlgJFdOykZjcw8WIqkko10HPZItNUd7S3Gr9yEDvzQgdwt5VH9ke9KQAAAA",
+  "originalBytes": 281176,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a008-1971-480.webp",
+    "width": 480,
+    "height": 323,
+    "bytes": 26630
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a008-1971-960.webp",
+    "width": 960,
+    "height": 646,
+    "bytes": 63436
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/11/images/a008-1971-1600.webp",
+    "width": 1600,
+    "height": 1076,
+    "bytes": 118932
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a005-827.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a005-827.jpg",
+  "width": 1920,
+  "height": 753,
+  "ratio": 0.3922,
+  "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBACdASoUAAgAPu1iqU2ppaOiMAgBMB2JZQC+SCBsu96mQNRnet5GAAD9mye12z6sOduGMlDTdNsd0yUmoFmCrhbg+3o16op8mz+E7urxLfULGB+TTTv//681YgDG0Me58kZhxWSMUeMxfu1kSbLmvCgAAA==",
+  "originalBytes": 287963,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a005-827-480.webp",
+    "width": 480,
+    "height": 188,
+    "bytes": 25276
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a005-827-960.webp",
+    "width": 960,
+    "height": 377,
+    "bytes": 61980
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/11/images/a005-827-1600.webp",
+    "width": 1600,
+    "height": 628,
+    "bytes": 107806
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a006-1963.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a006-1963.jpg",
+  "width": 1710,
+  "height": 1080,
+  "ratio": 0.6316,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAACQBACdASoUAA0APu1iqU2ppaOiMAgBMB2JZQCsAYwm7aQUCUiW37IUqss1FEAA/VNt9sV+HqDWuyAwQ5MELiNAWd0eFQkb96U+1lXam0eM45uptnT5TVdUzG0L7uU0RO4dgCMjVIFxX7/8jJKr4hGPueVMJ2EIVRC+fyoAAAA=",
+  "originalBytes": 244091,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a006-1963-480.webp",
+    "width": 480,
+    "height": 303,
+    "bytes": 19354
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a006-1963-960.webp",
+    "width": 960,
+    "height": 606,
+    "bytes": 46690
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/11/images/a006-1963-1600.webp",
+    "width": 1600,
+    "height": 1011,
+    "bytes": 85144
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a002-1962.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a002-1962.jpg",
+  "width": 1080,
+  "height": 1574,
+  "ratio": 1.4574,
+  "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABwBACdASoUAB0APu1qrVCppaQiqAqpMB2JaQAALhIH8qTx8cN+b/qqRlOoAADLTXMNL+A5eLQl5f1JA0JaATVarSuKWHm3qEtfSDDfIP6Wud/AYeoDzzxLezuT+UBAuFzODHjWBJkhXNMVktVjfSlLHTEiqCjHjZrptht0DVGDFCZEvXBupiFHTS+lEMKq1hZ82eyc/yyRiYrbaaL29Wkvp77M26ShDSgM0WoH/4MaoAAA",
+  "originalBytes": 229093,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a002-1962-480.webp",
+    "width": 329,
+    "height": 480,
+    "bytes": 17202
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a002-1962-960.webp",
+    "width": 659,
+    "height": 960,
+    "bytes": 44220
+   }
+  ]
+ },
+ "/images/2026/07/17/a522a6005d1cb428ea34ef1769cd7452_xl.jpg": {
+  "src": "/images/2026/07/17/a522a6005d1cb428ea34ef1769cd7452_xl.jpg",
+  "width": 885,
+  "height": 490,
+  "ratio": 0.5537,
+  "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoUAAsAPu1mqk4ppaOiMAgBMB2JaQAAUqfC9tIoc2k50AAA/C5/e4PBr/+nKs/Z98cEvd6aZOABL6YP/CpFWo4q9uqMjqU/jjZZyEc9a5pFj+Pv43e7SlAToe3icAAA",
+  "originalBytes": 240560,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/17/a522a6005d1cb428ea34ef1769cd7452_xl-480.webp",
+    "width": 480,
+    "height": 266,
+    "bytes": 15264
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/17/a522a6005d1cb428ea34ef1769cd7452_xl-640.webp",
+    "width": 640,
+    "height": 354,
+    "bytes": 23292
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a001-1961.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a001-1961.jpg",
+  "width": 1196,
+  "height": 1080,
+  "ratio": 0.903,
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwBACdASoUABIAPu1mqk8ppaOiKA1RMB2JaQAAHQZvs6Sa+8oKV7HnXgOAmgx4AM4ppdv1cKGSDWxdmrSyPaaYStO61s/oDXAfihsK3u2CDTVf/ZqSzsoVgVOFAQKKWLirJ7uZvLw4T0dJ6lBiywCwj50mRyhXFiS7YFQBQ4xNEQ1dYFb3KTTXXxUAAA==",
+  "originalBytes": 206799,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a001-1961-480.webp",
+    "width": 480,
+    "height": 433,
+    "bytes": 25804
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a001-1961-960.webp",
+    "width": 960,
+    "height": 867,
+    "bytes": 67170
+   }
+  ]
+ },
+ "/images/2026/07/17/620466077c427f141effa294382f5fba_xl.jpg": {
+  "src": "/images/2026/07/17/620466077c427f141effa294382f5fba_xl.jpg",
+  "width": 885,
+  "height": 387,
+  "ratio": 0.4373,
+  "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoUAAkAPu1iqU2ppaOiMAgBMB2JZwCAAAcX6onEluwugAD+aIHD0q1JPlJkldMnju8D0PxZk3ydXpS7LMMnPjUdcUyEO49rRJWBeEiCeVm4XHhN0gAAAA==",
+  "originalBytes": 212231,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/17/620466077c427f141effa294382f5fba_xl-480.webp",
+    "width": 480,
+    "height": 210,
+    "bytes": 18028
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/17/620466077c427f141effa294382f5fba_xl-640.webp",
+    "width": 640,
+    "height": 280,
+    "bytes": 27000
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/11/images/a003-1962.jpg": {
+  "src": "/images/speasyimagegallery/albums/11/images/a003-1962.jpg",
+  "width": 1080,
+  "height": 1745,
+  "ratio": 1.6157,
+  "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAAAwBQCdASoUACAAPu1mqk2ppaQiMAgBMB2JaQAAYZr3i2R/Q468aIou6ghrWiP0eWbwAAD90p97VusN6LscyDRhrVdCBle6v6IN32K+0l7QrVt90h9qyf2m7PH9bsovWjmmrEV297Iw8qWZinCs31qCJDAuPp1p9ldsASk7LR9X0uujs31N6kLTC6oJ6nRJzsaGIgN5FUnwFohOKDjhBUkxv0g2h7WZwp2gwDwW+M8TLuCtyEcpi1RjCPtEzVD6RBYTxICnGb+Wa9Gw6BUSM4G2EmwjVXAQAAA=",
+  "originalBytes": 282122,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/speasyimagegallery/albums/11/images/a003-1962-480.webp",
+    "width": 297,
+    "height": 480,
+    "bytes": 25198
+   },
+   {
+    "w": 960,
+    "file": "/media/speasyimagegallery/albums/11/images/a003-1962-960.webp",
+    "width": 594,
+    "height": 960,
+    "bytes": 56652
+   },
+   {
+    "w": 1600,
+    "file": "/media/speasyimagegallery/albums/11/images/a003-1962-1600.webp",
+    "width": 990,
+    "height": 1600,
+    "bytes": 99192
+   }
+  ]
+ },
+ "/images/2026/07/16/c1572c59821062c96d0fc33ad32a2983_xl.jpg": {
+  "src": "/images/2026/07/16/c1572c59821062c96d0fc33ad32a2983_xl.jpg",
+  "width": 885,
+  "height": 827,
+  "ratio": 0.9345,
+  "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACQBACdASoUABMAPu1ur1KppiQiqAgBMB2JaQAALmHeD7XjU2CJSGojqVDiDAAA/uDXk9+SRBm79Z8U7Q8lFxOF1boNDmNjn2QvA6zlQE451Ue7h3aT29+3O7SSdXdqy3fIsyPP1RnffdiVXTtiyFwAAAA=",
+  "originalBytes": 422126,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/c1572c59821062c96d0fc33ad32a2983_xl-480.webp",
+    "width": 480,
+    "height": 449,
+    "bytes": 29594
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/c1572c59821062c96d0fc33ad32a2983_xl-640.webp",
+    "width": 640,
+    "height": 598,
+    "bytes": 45834
+   }
+  ]
+ },
+ "/images/2026/07/17/eb6c7c01c4e98e1f2578f9959463b973_xl.jpg": {
+  "src": "/images/2026/07/17/eb6c7c01c4e98e1f2578f9959463b973_xl.jpg",
+  "width": 1439,
+  "height": 1080,
+  "ratio": 0.7505,
+  "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwBACdASoUAA8APu1iqU2ppaOiMAgBMB2JZgCdEf/gMCXF9xt5/yZsqkAA/rItJKupgChTPP17+XjcKhe9b44bo5WMcpR5XJxzKI4oNYTD9Y4BO2DbUf2pFUz2gJEaUj/9J3Ljr6hapNjBMHjK6gIHfF+/U+Er/NNEAAAA",
+  "originalBytes": 196794,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/17/eb6c7c01c4e98e1f2578f9959463b973_xl-480.webp",
+    "width": 480,
+    "height": 360,
+    "bytes": 19080
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/17/eb6c7c01c4e98e1f2578f9959463b973_xl-640.webp",
+    "width": 640,
+    "height": 480,
+    "bytes": 28300
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/17/eb6c7c01c4e98e1f2578f9959463b973_xl-960.webp",
+    "width": 960,
+    "height": 721,
+    "bytes": 44974
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/17/eb6c7c01c4e98e1f2578f9959463b973_xl-1280.webp",
+    "width": 1280,
+    "height": 961,
+    "bytes": 64326
+   }
+  ]
+ },
+ "/images/2026/07/16/542390225756f78888142d54f3d17e01_xl.jpg": {
+  "src": "/images/2026/07/16/542390225756f78888142d54f3d17e01_xl.jpg",
+  "width": 1187,
+  "height": 1080,
+  "ratio": 0.9099,
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADwBACdASoUABIAPu1wsFIppiSiqAgBMB2JYwC1Gw6BqdAyrFw2nLS7VUsmfKUJcaAA/uAFxpd/ibw/C1mFQkruHFv3c7NbbLVfJbX/QcaXi22oeOCHqOS8XwGY2l//Uj8oSa89OM23ijuceFN9IhKNRfVFed6snOtUNH8Z2uMONoABQwA9DCnzH4zk70XwP37i4Nk2LYZFrACTGlj5IYQWx/xDBtjIAAA=",
+  "originalBytes": 262510,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/542390225756f78888142d54f3d17e01_xl-480.webp",
+    "width": 480,
+    "height": 437,
+    "bytes": 34890
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/542390225756f78888142d54f3d17e01_xl-640.webp",
+    "width": 640,
+    "height": 582,
+    "bytes": 52998
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/542390225756f78888142d54f3d17e01_xl-960.webp",
+    "width": 960,
+    "height": 873,
+    "bytes": 91800
+   }
+  ]
+ },
+ "/images/2026/07/16/8fe3e0f34d3083cba6fe73d62a783d7f_xl.jpg": {
+  "src": "/images/2026/07/16/8fe3e0f34d3083cba6fe73d62a783d7f_xl.jpg",
+  "width": 885,
+  "height": 1000,
+  "ratio": 1.1299,
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACwBQCdASoUABcAPu1ur1IppiQiqAgBMB2JZQCviAgR4HvMIWaD/qPpbhHOq9fFTxeXvhfhCIAA/rQnxSUHxDbCMmyAEUMVDRpbg2T5wAQCjJ4MsCTXjqmPCISf2VHgv2p4NoEosINlD7GkbEziZP9fAkaXU9TP3fbxJ3LhecekemmsC3sUFZUbeb4A4Ed+/auPx+h/JEyXjcrW5FRWH/vUPdrJ1gpV3TXZ1aIL2uTpC2k6gAA=",
+  "originalBytes": 474658,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/8fe3e0f34d3083cba6fe73d62a783d7f_xl-480.webp",
+    "width": 425,
+    "height": 480,
+    "bytes": 27630
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/8fe3e0f34d3083cba6fe73d62a783d7f_xl-640.webp",
+    "width": 566,
+    "height": 640,
+    "bytes": 39862
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/8fe3e0f34d3083cba6fe73d62a783d7f_xl-960.webp",
+    "width": 850,
+    "height": 960,
+    "bytes": 66206
+   }
+  ]
+ },
+ "/images/2026/07/16/64d93d666355a43c4a86679a030d35b6_xl.jpg": {
+  "src": "/images/2026/07/16/64d93d666355a43c4a86679a030d35b6_xl.jpg",
+  "width": 1838,
+  "height": 1080,
+  "ratio": 0.5876,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwAwCdASoUAAwAPu1iqU2ppaOiMAgBMB2JagCdMoAC+h1Rmal3ZMQAAP7F+t9m1mYPzQWwBZlXm06aJ6PJWCtbRi/qxn0r+tepNCL1MWCGW/n1eYl87bkOPkKK/PdqshFTQ3vx/BjmRjCHndE/Cp33SvYWR4NJbB39iHDeAAA=",
+  "originalBytes": 384363,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/64d93d666355a43c4a86679a030d35b6_xl-480.webp",
+    "width": 480,
+    "height": 282,
+    "bytes": 28924
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/64d93d666355a43c4a86679a030d35b6_xl-640.webp",
+    "width": 640,
+    "height": 376,
+    "bytes": 46578
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/64d93d666355a43c4a86679a030d35b6_xl-960.webp",
+    "width": 960,
+    "height": 564,
+    "bytes": 84768
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/64d93d666355a43c4a86679a030d35b6_xl-1280.webp",
+    "width": 1280,
+    "height": 752,
+    "bytes": 119476
+   }
+  ]
+ },
+ "/images/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl1.jpg": {
+  "src": "/images/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl1.jpg",
+  "width": 885,
+  "height": 581,
+  "ratio": 0.6565,
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZQDLPf/gJeiqT/p32kAAAP7qlX+Jod1TR3ocXlNheXmh7RhArh0+rqRaLjRXRPnHMqjaha/8yzgGoj61Hr/xG/evk7zoZz7TdWwRJLWEPQ37XSoz3Rytf79vH9WAJ7RqI+g7DkAAAA==",
+  "originalBytes": 333003,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl1-480.webp",
+    "width": 480,
+    "height": 315,
+    "bytes": 23942
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl1-640.webp",
+    "width": 640,
+    "height": 420,
+    "bytes": 37366
+   }
+  ]
+ },
+ "/images/2026/07/16/37a06e4a72d6cb27621f1ed829bbee81_xl.jpg": {
+  "src": "/images/2026/07/16/37a06e4a72d6cb27621f1ed829bbee81_xl.jpg",
+  "width": 1406,
+  "height": 1080,
+  "ratio": 0.7681,
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwAwCdASoUAA8APu1iqU2ppaOiMAgBMB2JYwCw/f/gIYrnUCtz5MbAAP5mJ92a6gcnqwP4pGHlsBKgZ/h8nukoorIJpDAPv96Jv+MCLxRunCaU21ZzWv4xl0M+QJp9Zs+W8OFUlKT3tsxuU6a/jpGPhJYoYd9g59TlLJoO+p1agA/wAAA=",
+  "originalBytes": 273365,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/37a06e4a72d6cb27621f1ed829bbee81_xl-480.webp",
+    "width": 480,
+    "height": 369,
+    "bytes": 30166
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/37a06e4a72d6cb27621f1ed829bbee81_xl-640.webp",
+    "width": 640,
+    "height": 492,
+    "bytes": 45572
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/37a06e4a72d6cb27621f1ed829bbee81_xl-960.webp",
+    "width": 960,
+    "height": 737,
+    "bytes": 75224
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/37a06e4a72d6cb27621f1ed829bbee81_xl-1280.webp",
+    "width": 1280,
+    "height": 983,
+    "bytes": 104374
+   }
+  ]
+ },
+ "/images/2026/07/16/36fdb1a35cd2f54f95cf2119fb5bc7ed_xl.jpg": {
+  "src": "/images/2026/07/16/36fdb1a35cd2f54f95cf2119fb5bc7ed_xl.jpg",
+  "width": 885,
+  "height": 633,
+  "ratio": 0.7153,
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoUAA4APu1iqU2ppaOiMAgBMB2JZwAAUqpsTC9hfVgYAAD+6GsLoebgo5eyz9SyDIxU3sMXtagB0AOZJHcRU+kuKRiYPS0vbd+mu9QMAAA=",
+  "originalBytes": 323279,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/36fdb1a35cd2f54f95cf2119fb5bc7ed_xl-480.webp",
+    "width": 480,
+    "height": 343,
+    "bytes": 17036
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/36fdb1a35cd2f54f95cf2119fb5bc7ed_xl-640.webp",
+    "width": 640,
+    "height": 458,
+    "bytes": 30844
+   }
+  ]
+ },
+ "/images/2026/07/16/19f9cefdfb07230a68581d617885a3af_xl.jpg": {
+  "src": "/images/2026/07/16/19f9cefdfb07230a68581d617885a3af_xl.jpg",
+  "width": 1160,
+  "height": 1080,
+  "ratio": 0.931,
+  "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAwBQCdASoUABMAPu1ur1IppiQiqAgBMB2JZwDKtYtUW92EkHBwG3hTeoSdHk/zsG9bAAD+1O/CVF63YPh96P4AaCE5lkiV1nOklPXUCBvjjaYMbQfSG5bqhjFihG2v1pmSPkDzfF/cqAlUnwLc/q568CWCqLPShUW0kL6QuvMkWxhiRI7RYpfu6DyUoIQu4EQIplR7NxJKfrk8jjrKk8od+WR2Lvsn5ApMBHsKFx9ujCQVSPAAAA==",
+  "originalBytes": 201831,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/19f9cefdfb07230a68581d617885a3af_xl-480.webp",
+    "width": 480,
+    "height": 447,
+    "bytes": 26266
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/19f9cefdfb07230a68581d617885a3af_xl-640.webp",
+    "width": 640,
+    "height": 596,
+    "bytes": 37456
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/19f9cefdfb07230a68581d617885a3af_xl-960.webp",
+    "width": 960,
+    "height": 894,
+    "bytes": 61840
+   }
+  ]
+ },
+ "/images/2026/07/16/8b6e33345ac8d5ffd9cf0d107a7d9e9d_xl.jpg": {
+  "src": "/images/2026/07/16/8b6e33345ac8d5ffd9cf0d107a7d9e9d_xl.jpg",
+  "width": 1080,
+  "height": 1497,
+  "ratio": 1.3861,
+  "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABwBACdASoUABwAPu1srVEppiQiqAqpMB2JZwAAMX7mDZxIMtiNZA5H0FhvAAD+5+0C6Ba8Kzsm8cDclrb62mT+BiQMBsx2qtCcRoisnq4lXZ6pxW6g6gu5oWQ8TA8XSdmnnX7g8dQ2OhRKPDM3KNKvhv2AAA==",
+  "originalBytes": 236054,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/8b6e33345ac8d5ffd9cf0d107a7d9e9d_xl-480.webp",
+    "width": 347,
+    "height": 480,
+    "bytes": 20134
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/8b6e33345ac8d5ffd9cf0d107a7d9e9d_xl-640.webp",
+    "width": 462,
+    "height": 640,
+    "bytes": 31566
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/8b6e33345ac8d5ffd9cf0d107a7d9e9d_xl-960.webp",
+    "width": 693,
+    "height": 960,
+    "bytes": 54592
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/8b6e33345ac8d5ffd9cf0d107a7d9e9d_xl-1280.webp",
+    "width": 923,
+    "height": 1280,
+    "bytes": 79164
+   }
+  ]
+ },
+ "/images/2026/07/16/0b1ad7a7b79268a1f4558db78e092446_xl.jpg": {
+  "src": "/images/2026/07/16/0b1ad7a7b79268a1f4558db78e092446_xl.jpg",
+  "width": 885,
+  "height": 332,
+  "ratio": 0.3751,
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoUAAcAPu1iqk2ppaQiMAgBMB2JZwDG9BrdIRMP4j53IAAA8lrcMinBc2dpaCW4fFkcoOosBGxPNZS/aJEta/5RwVY2faOHS3erAi//gAA=",
+  "originalBytes": 263101,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/0b1ad7a7b79268a1f4558db78e092446_xl-480.webp",
+    "width": 480,
+    "height": 180,
+    "bytes": 20060
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/0b1ad7a7b79268a1f4558db78e092446_xl-640.webp",
+    "width": 640,
+    "height": 240,
+    "bytes": 34426
+   }
+  ]
+ },
+ "/images/2026/07/16/c99e3db826c0f4cc2688a36ce3b60e1a_xl.jpg": {
+  "src": "/images/2026/07/16/c99e3db826c0f4cc2688a36ce3b60e1a_xl.jpg",
+  "width": 1080,
+  "height": 1489,
+  "ratio": 1.3787,
+  "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwBACdASoUABwAPu1ur1IppiQiqAgBMB2JaQDKAYn+GC4obvHgL4l5Cwyh2MX+iAAA/u/Q3KB/1OnMFb2Uco+gi/vPcmtJEfrvIll7hkpF23YhNHzX/HxaoxugoHBPMvrVKKie+2GbsE+0u38IlqCwAAA=",
+  "originalBytes": 258623,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/c99e3db826c0f4cc2688a36ce3b60e1a_xl-480.webp",
+    "width": 348,
+    "height": 480,
+    "bytes": 23336
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/c99e3db826c0f4cc2688a36ce3b60e1a_xl-640.webp",
+    "width": 464,
+    "height": 640,
+    "bytes": 35512
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/c99e3db826c0f4cc2688a36ce3b60e1a_xl-960.webp",
+    "width": 696,
+    "height": 960,
+    "bytes": 61886
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/c99e3db826c0f4cc2688a36ce3b60e1a_xl-1280.webp",
+    "width": 928,
+    "height": 1280,
+    "bytes": 92466
+   }
+  ]
+ },
+ "/images/2026/07/16/39eee751af30032eeece2f48de2de4ba_xl.jpg": {
+  "src": "/images/2026/07/16/39eee751af30032eeece2f48de2de4ba_xl.jpg",
+  "width": 1080,
+  "height": 1500,
+  "ratio": 1.3889,
+  "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwBACdASoUABwAPu1mq08ppaOiKA1RMB2JZwDM0BGzN/6SPgHUBWx2agAA/u/X71UxJ3sc6DDEph6/dihtYuh1hRy+E/Bm0DPTqo7MElcrpuqK4EqNhkGXzufmhzSIHTwZlZ6TQzifRuCQAAA=",
+  "originalBytes": 197878,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/39eee751af30032eeece2f48de2de4ba_xl-480.webp",
+    "width": 346,
+    "height": 480,
+    "bytes": 15622
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/39eee751af30032eeece2f48de2de4ba_xl-640.webp",
+    "width": 461,
+    "height": 640,
+    "bytes": 23836
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/39eee751af30032eeece2f48de2de4ba_xl-960.webp",
+    "width": 691,
+    "height": 960,
+    "bytes": 42730
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/39eee751af30032eeece2f48de2de4ba_xl-1280.webp",
+    "width": 922,
+    "height": 1280,
+    "bytes": 63214
+   }
+  ]
+ },
+ "/images/2026/07/16/9ecd376e5371efaef9aad9bc9143aed8_xl.jpg": {
+  "src": "/images/2026/07/16/9ecd376e5371efaef9aad9bc9143aed8_xl.jpg",
+  "width": 1080,
+  "height": 1508,
+  "ratio": 1.3963,
+  "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwBACdASoUABwAPu1kq0+ppSOiMBgIATAdiWkAzYQQ9JhkGX7fxoPj8CRKYYcAAP7v0ivwXoiwEjtFzvnHVtmWQ6Aw5t+JKQe5zqcQPySqEC44rTH+CIu+hkJRrqpU+2iYoAAA",
+  "originalBytes": 215642,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/9ecd376e5371efaef9aad9bc9143aed8_xl-480.webp",
+    "width": 344,
+    "height": 480,
+    "bytes": 17708
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/9ecd376e5371efaef9aad9bc9143aed8_xl-640.webp",
+    "width": 458,
+    "height": 640,
+    "bytes": 27204
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/9ecd376e5371efaef9aad9bc9143aed8_xl-960.webp",
+    "width": 688,
+    "height": 960,
+    "bytes": 47586
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/9ecd376e5371efaef9aad9bc9143aed8_xl-1280.webp",
+    "width": 917,
+    "height": 1280,
+    "bytes": 70678
+   }
+  ]
+ },
+ "/images/2026/07/16/f710044bf79a4b1f5d8b085e5e5d9711_xl.jpg": {
+  "src": "/images/2026/07/16/f710044bf79a4b1f5d8b085e5e5d9711_xl.jpg",
+  "width": 1174,
+  "height": 1080,
+  "ratio": 0.9199,
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACQBACdASoUABIAPu1usFIppiSiqAgBMB2JZwDKAA3nbp6pWpjA5MWUmJi9vGAA/lswHukOFEFKWNx6RjmsKyIRpkJyrjUMBFvUMDMAaUsiBdWfJaFtl1uJIWFUJGDZolDsSALepRxbvQ91slJI7duJhuUeXNuxt8aZ4+H8hSbebS1XdDsmBGq6s8AAAA==",
+  "originalBytes": 274936,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/f710044bf79a4b1f5d8b085e5e5d9711_xl-480.webp",
+    "width": 480,
+    "height": 442,
+    "bytes": 42032
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/f710044bf79a4b1f5d8b085e5e5d9711_xl-640.webp",
+    "width": 640,
+    "height": 589,
+    "bytes": 61268
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/f710044bf79a4b1f5d8b085e5e5d9711_xl-960.webp",
+    "width": 960,
+    "height": 883,
+    "bytes": 100844
+   }
+  ]
+ },
+ "/images/2026/07/16/fa55c8bad0e242eb7986dc1135b50adb_xl.jpg": {
+  "src": "/images/2026/07/16/fa55c8bad0e242eb7986dc1135b50adb_xl.jpg",
+  "width": 885,
+  "height": 636,
+  "ratio": 0.7186,
+  "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoUAA4APu1iqU2ppaQiMAgBMB2JZwAAW/ElVxAfcRuC9sAAAP6wGzgBEbT7wqxMoJoZIr05zOZOLj/MWigycEgYQdy7fV2jgQ1trn4Jj0YywcagWjSKCFLll0okY84EAAA=",
+  "originalBytes": 305421,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/fa55c8bad0e242eb7986dc1135b50adb_xl-480.webp",
+    "width": 480,
+    "height": 345,
+    "bytes": 21616
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/fa55c8bad0e242eb7986dc1135b50adb_xl-640.webp",
+    "width": 640,
+    "height": 460,
+    "bytes": 33964
+   }
+  ]
+ },
+ "/images/2026/07/16/f7a0a54c92471ac4480e727e4ccf93df_xl.jpg": {
+  "src": "/images/2026/07/16/f7a0a54c92471ac4480e727e4ccf93df_xl.jpg",
+  "width": 885,
+  "height": 1355,
+  "ratio": 1.5311,
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBQCdASoUAB8APuVcpk2pJSOiMAwBIByJZwDLaCHhgQcvy65wOFC3+CPZrs+CoAchhAD+6EoqkWhaDAUf+kLKmrWAChJ/Le9WpjPtY4Laa/sqUhRoX2saZP8vVPiMxZxF5PmSfibSl3u9rXcOxmX81JbvPsxqqKyXeX3abViu0vGi4hwhQAAA",
+  "originalBytes": 649576,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/f7a0a54c92471ac4480e727e4ccf93df_xl-480.webp",
+    "width": 314,
+    "height": 480,
+    "bytes": 25958
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/f7a0a54c92471ac4480e727e4ccf93df_xl-640.webp",
+    "width": 418,
+    "height": 640,
+    "bytes": 41304
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/f7a0a54c92471ac4480e727e4ccf93df_xl-960.webp",
+    "width": 627,
+    "height": 960,
+    "bytes": 74136
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/f7a0a54c92471ac4480e727e4ccf93df_xl-1280.webp",
+    "width": 836,
+    "height": 1280,
+    "bytes": 110530
+   }
+  ]
+ },
+ "/images/2026/07/16/867519228d1d5325856fc61d710ded0e_xl.jpg": {
+  "src": "/images/2026/07/16/867519228d1d5325856fc61d710ded0e_xl.jpg",
+  "width": 885,
+  "height": 1702,
+  "ratio": 1.9232,
+  "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABQBgCdASoUACcAPu1yrVGppyQiqrgIATAdiWkAzJQLEOPIkwyu25TdCPmpVOt0r0I1jxmf+UqGQyZ6AAD9+h52En2rfoCaqhpUg8SSDFxnYn0+FgJ8oCf6z2IZ4wbE3Uzyr7eD4tkU/KAhZaKUW3e/yijtBgAasg7Q4z47CpbRILolvog7cpG1ou4cWPIG0lhAdEYK928u6zVD5ThYIzfhf0/XhTJTvg+CprznvkTjV7eEJeutAlgeSgegWQ2uSVKhQAAA",
+  "originalBytes": 741123,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/867519228d1d5325856fc61d710ded0e_xl-480.webp",
+    "width": 249,
+    "height": 480,
+    "bytes": 22356
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/867519228d1d5325856fc61d710ded0e_xl-640.webp",
+    "width": 333,
+    "height": 640,
+    "bytes": 34378
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/867519228d1d5325856fc61d710ded0e_xl-960.webp",
+    "width": 499,
+    "height": 960,
+    "bytes": 58266
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/867519228d1d5325856fc61d710ded0e_xl-1280.webp",
+    "width": 666,
+    "height": 1280,
+    "bytes": 84740
+   }
+  ]
+ },
+ "/images/2026/07/16/fc34f61d23b74be53ee07d469bd32064_xl.jpg": {
+  "src": "/images/2026/07/16/fc34f61d23b74be53ee07d469bd32064_xl.jpg",
+  "width": 885,
+  "height": 1193,
+  "ratio": 1.348,
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADQBACdASoUABsAPu1oq08ppiOiMBgIATAdiWcAysX/4B850sbibWR5nBoS0CAMgAD+W++PqT8rFrrxTtDwx9OUVETxAA3ICn7HOFKPOEhNKculJGuoBE6gwuI4kGEH85VRKQh5D0lEZl7PAzEYAA==",
+  "originalBytes": 562706,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/fc34f61d23b74be53ee07d469bd32064_xl-480.webp",
+    "width": 356,
+    "height": 480,
+    "bytes": 24270
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/fc34f61d23b74be53ee07d469bd32064_xl-640.webp",
+    "width": 475,
+    "height": 640,
+    "bytes": 38272
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/fc34f61d23b74be53ee07d469bd32064_xl-960.webp",
+    "width": 712,
+    "height": 960,
+    "bytes": 72846
+   }
+  ]
+ },
+ "/images/2026/07/16/1c0ae2205709722b62e843abc0471a55_xl.jpg": {
+  "src": "/images/2026/07/16/1c0ae2205709722b62e843abc0471a55_xl.jpg",
+  "width": 885,
+  "height": 1398,
+  "ratio": 1.5797,
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwBACdASoUACAAPtFUoU2oJKMiN+gBABoJZwAAjB10U32fTqlnIKldLAAA+FeViIWLcm1ts60eI6zWal18lQomBGpoQ+OwMAlCl9NT6kZAmRdXt1FBaVDCAAA=",
+  "originalBytes": 443618,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/1c0ae2205709722b62e843abc0471a55_xl-480.webp",
+    "width": 304,
+    "height": 480,
+    "bytes": 13436
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/1c0ae2205709722b62e843abc0471a55_xl-640.webp",
+    "width": 405,
+    "height": 640,
+    "bytes": 21882
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/1c0ae2205709722b62e843abc0471a55_xl-960.webp",
+    "width": 608,
+    "height": 960,
+    "bytes": 41460
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/1c0ae2205709722b62e843abc0471a55_xl-1280.webp",
+    "width": 810,
+    "height": 1280,
+    "bytes": 61550
+   }
+  ]
+ },
+ "/images/2026/07/16/01f1a05053c6242fcfa23075e5b963c1_xl.jpg": {
+  "src": "/images/2026/07/16/01f1a05053c6242fcfa23075e5b963c1_xl.jpg",
+  "width": 885,
+  "height": 980,
+  "ratio": 1.1073,
+  "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwBACdASoUABYAPu1wr1KppiQiqAgBMB2JaQDKtBZlzMpdsztVnpl/MAAA/u9oKw24UqETocDAJYYXeuFRstgjKF/X9qe8YlMfwFfkRtDVTxwSXAmcAA==",
+  "originalBytes": 483313,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/01f1a05053c6242fcfa23075e5b963c1_xl-480.webp",
+    "width": 433,
+    "height": 480,
+    "bytes": 29664
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/01f1a05053c6242fcfa23075e5b963c1_xl-640.webp",
+    "width": 578,
+    "height": 640,
+    "bytes": 46414
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/01f1a05053c6242fcfa23075e5b963c1_xl-960.webp",
+    "width": 867,
+    "height": 960,
+    "bytes": 83200
+   }
+  ]
+ },
+ "/images/2026/07/16/787ae9ec9023a82f5aa7e4c1a64f73cb_xl.jpg": {
+  "src": "/images/2026/07/16/787ae9ec9023a82f5aa7e4c1a64f73cb_xl.jpg",
+  "width": 759,
+  "height": 1920,
+  "ratio": 2.5296,
+  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAABQBgCdASoUADMAPu1mrE6ppaQiLBqrMTAdiWkAAC6EgUxcEAJZGet29V8cF9fmvzE5IfUSbe9Y+TvZgAD+VpwEq3ajRtlXLlt48qLC7udeoVtOotnJJpX+azx1tmVQjrmB+gfaLn99NOjvoawa25NAj997l/ALHnrk0LWsIDD/X/JYOEfkXBrhq+N3CM2jkbhksw44Ffz8dt93tuVPr+GcfK2LnXz1EgZnHEGYCtqDxN9W6wZXwtQw7tiWDp5BEWMgDdSsdeMfJm3jMgAAAA==",
+  "originalBytes": 268124,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/787ae9ec9023a82f5aa7e4c1a64f73cb_xl-480.webp",
+    "width": 190,
+    "height": 480,
+    "bytes": 16164
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/787ae9ec9023a82f5aa7e4c1a64f73cb_xl-640.webp",
+    "width": 253,
+    "height": 640,
+    "bytes": 24978
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/787ae9ec9023a82f5aa7e4c1a64f73cb_xl-960.webp",
+    "width": 380,
+    "height": 960,
+    "bytes": 46810
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/787ae9ec9023a82f5aa7e4c1a64f73cb_xl-1280.webp",
+    "width": 506,
+    "height": 1280,
+    "bytes": 67026
+   }
+  ]
+ },
+ "/images/2026/07/16/22c02097e4438bd2f2f3fe4a6a3ab0e1_xl.jpg": {
+  "src": "/images/2026/07/16/22c02097e4438bd2f2f3fe4a6a3ab0e1_xl.jpg",
+  "width": 1222,
+  "height": 1080,
+  "ratio": 0.8838,
+  "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAwBQCdASoUABIAPu1ur1IppiQiqAgBMB2JZwDKtBDX+ziocut6JBwnXp9yCoGwYB2+AAD+06qYcJYB44lm3bLsK53KrKR9kSfAwIVISFktDrAXvmSEVAgcNb6TmJ4sqks97qeUVu6dRyCTeh3p+4sUwrLVIblvJmB8NAAu06aHhq76T/qs7R9e3oz8xgaszSxfR9/zodaQMcho9PUlPAJ5lo0Jf3hR4AA=",
+  "originalBytes": 252518,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/22c02097e4438bd2f2f3fe4a6a3ab0e1_xl-480.webp",
+    "width": 480,
+    "height": 424,
+    "bytes": 35872
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/22c02097e4438bd2f2f3fe4a6a3ab0e1_xl-640.webp",
+    "width": 640,
+    "height": 566,
+    "bytes": 49190
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/22c02097e4438bd2f2f3fe4a6a3ab0e1_xl-960.webp",
+    "width": 960,
+    "height": 848,
+    "bytes": 79878
+   }
+  ]
+ },
+ "/images/2026/07/16/e2bf3b11df0b872112757f1c2fee6e32_xl.jpg": {
+  "src": "/images/2026/07/16/e2bf3b11df0b872112757f1c2fee6e32_xl.jpg",
+  "width": 885,
+  "height": 440,
+  "ratio": 0.4972,
+  "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoUAAoAPu1iqk2ppaQiMAgBMB2JYwCsABxMsXPKOCa1naIAAP7VluEYD1TKch6UATMCr6If14Yx/w9hyfpGnmebniJ1YuOTZt1PzZN9+vyHJMMq/sIo9LHR0Nl97HQOAAA=",
+  "originalBytes": 276248,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/e2bf3b11df0b872112757f1c2fee6e32_xl-480.webp",
+    "width": 480,
+    "height": 239,
+    "bytes": 24454
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/e2bf3b11df0b872112757f1c2fee6e32_xl-640.webp",
+    "width": 640,
+    "height": 318,
+    "bytes": 38068
+   }
+  ]
+ },
+ "/images/2026/07/16/feb4274796d93ff716e9650163a77fb8_xl.jpg": {
+  "src": "/images/2026/07/16/feb4274796d93ff716e9650163a77fb8_xl.jpg",
+  "width": 1920,
+  "height": 948,
+  "ratio": 0.4938,
+  "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwAwCdASoUAAoAPu1iqU2ppaOiMAgBMB2JQBdgBG8O9uWAAP6OKJUBVTJusfUPYtXUn1iTpXf5MPaGbCl1ddXUOfPUUdDjBA6laTSLzPJ9VULoYVsg/Z4NQvUjPW+oDlWY6vAAAAA=",
+  "originalBytes": 318106,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/feb4274796d93ff716e9650163a77fb8_xl-480.webp",
+    "width": 480,
+    "height": 237,
+    "bytes": 23696
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/feb4274796d93ff716e9650163a77fb8_xl-640.webp",
+    "width": 640,
+    "height": 316,
+    "bytes": 36166
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/feb4274796d93ff716e9650163a77fb8_xl-960.webp",
+    "width": 960,
+    "height": 474,
+    "bytes": 62602
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/feb4274796d93ff716e9650163a77fb8_xl-1280.webp",
+    "width": 1280,
+    "height": 632,
+    "bytes": 86692
+   }
+  ]
+ },
+ "/images/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl.jpg": {
+  "src": "/images/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl.jpg",
+  "width": 885,
+  "height": 581,
+  "ratio": 0.6565,
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZQDLPf/gJeiqT/p32kAAAP7qlX+Jod1TR3ocXlNheXmh7RhArh0+rqRaLjRXRPnHMqjaha/8yzgGoj61Hr/xG/evk7zoZz7TdWwRJLWEPQ37XSoz3Rytf79vH9WAJ7RqI+g7DkAAAA==",
+  "originalBytes": 333003,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl-480.webp",
+    "width": 480,
+    "height": 315,
+    "bytes": 23942
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl-640.webp",
+    "width": 640,
+    "height": 420,
+    "bytes": 37366
+   }
+  ]
+ },
+ "/images/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl1.jpg": {
+  "src": "/images/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl1.jpg",
+  "width": 1229,
+  "height": 1080,
+  "ratio": 0.8788,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBQCdASoUABIAPu1ur1KppiQiqAgBMB2JZwDO7BIloWG0jqMCyIc2GQnxNSJKnJpsAADiBSSbP02lz+ostAW3mAvbH4hPyP3MK4uGSy9cIz1XpvMOB3Yp+6VcZRubEWG+YLtw6XUGqrTyMS/hzPhq9OW07rJQd5HlVP/HKAA=",
+  "originalBytes": 305972,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl1-480.webp",
+    "width": 480,
+    "height": 422,
+    "bytes": 42604
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl1-640.webp",
+    "width": 640,
+    "height": 562,
+    "bytes": 65972
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl1-960.webp",
+    "width": 960,
+    "height": 844,
+    "bytes": 110544
+   }
+  ]
+ },
+ "/images/2026/07/16/233826a67be66a810b23a263230da62e_xl.jpg": {
+  "src": "/images/2026/07/16/233826a67be66a810b23a263230da62e_xl.jpg",
+  "width": 1457,
+  "height": 1080,
+  "ratio": 0.7412,
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQAwCdASoUAA8APu1iqU2ppaOiMAgBMB2JZwAAWzfMzT32G3AYAPxyMKmdKL1sPqZhc+0FmVgrItQdKYop6liKgHTWa4NKsRMVLG2dGUT3BBguxIAr2PfAMV06EjuwGGEGI36kmcfCNyxU8llx2ojD2l1fnPifjOswAA52JZn5EAAA",
+  "originalBytes": 238088,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/233826a67be66a810b23a263230da62e_xl-480.webp",
+    "width": 480,
+    "height": 356,
+    "bytes": 25028
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/233826a67be66a810b23a263230da62e_xl-640.webp",
+    "width": 640,
+    "height": 474,
+    "bytes": 36852
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/233826a67be66a810b23a263230da62e_xl-960.webp",
+    "width": 960,
+    "height": 712,
+    "bytes": 59528
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/233826a67be66a810b23a263230da62e_xl-1280.webp",
+    "width": 1280,
+    "height": 949,
+    "bytes": 81188
+   }
+  ]
+ },
+ "/images/2026/07/14/slide1.jpg": {
+  "src": "/images/2026/07/14/slide1.jpg",
+  "width": 710,
+  "height": 500,
+  "ratio": 0.7042,
+  "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAQBACdASoUAA4APu1iqU2ppaOiMAgBMB2JQBibA3HohPaNKCAkG7PpAAD+6twC9hYSefWfyMIHnU6qz2QIusO8sD32gcAGOcNI/E1urkAWy89qDDi1iumAYjwFp9hEDE7Wvh+ahy43h0t3pv/6SO4zmYC58t92TS3+TEpCKxHpDYK9GLtX7IfBdxf/8asEkHpTPEJw4QAAAA==",
+  "originalBytes": 87146,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/14/slide1-480.webp",
+    "width": 480,
+    "height": 338,
+    "bytes": 21364
+   }
+  ]
+ },
+ "/images/2026/07/16/71f67488b0857639cee631943a3fc6fa_xl.jpg": {
+  "src": "/images/2026/07/16/71f67488b0857639cee631943a3fc6fa_xl.jpg",
+  "width": 1508,
+  "height": 1080,
+  "ratio": 0.7162,
+  "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoUAA4APu1iqU2ppaOiMAgBMB2JbACdMoAC+9mJ7K7phw9fQAD+79c57RUNzhkEDHXEaRNLZhf+ZSe5cYynv80RwiOdOBQldtQOMqHnDscyGu7r1HLvobfB3V9JkBJ/S2JWT+nVUAiC/pxm5GEZO1tql0GJqGQA",
+  "originalBytes": 311055,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/71f67488b0857639cee631943a3fc6fa_xl-480.webp",
+    "width": 480,
+    "height": 344,
+    "bytes": 33032
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/71f67488b0857639cee631943a3fc6fa_xl-640.webp",
+    "width": 640,
+    "height": 458,
+    "bytes": 51470
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/71f67488b0857639cee631943a3fc6fa_xl-960.webp",
+    "width": 960,
+    "height": 688,
+    "bytes": 84682
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/71f67488b0857639cee631943a3fc6fa_xl-1280.webp",
+    "width": 1280,
+    "height": 917,
+    "bytes": 115334
+   }
+  ]
+ },
+ "/images/2026/07/14/xx.jpg": {
+  "src": "/images/2026/07/14/xx.jpg",
+  "width": 595,
+  "height": 462,
+  "ratio": 0.7765,
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADQAwCdASoUAA8APu1iqU2ppaOiMAgBMB2JZQCdABE8j5m5s0j8EIQA/atx3W7pbSG6VRqSjtamxPXvnM8OLdoFd+6XCp6dNjkNkeUEkKlIBpAW2LIMn3xf5QQTTa8keLk4EPBhyHrgcVa3TfoqCUG+8/kHenuDRjROZ8hHg6AAAA==",
+  "originalBytes": 187708,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/14/xx-480.webp",
+    "width": 480,
+    "height": 373,
+    "bytes": 36648
+   }
+  ]
+ },
+ "/images/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl.jpg": {
+  "src": "/images/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl.jpg",
+  "width": 1229,
+  "height": 1080,
+  "ratio": 0.8788,
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBQCdASoUABIAPu1ur1KppiQiqAgBMB2JZwDOdBIloWG0jqMCyIc2GQnxNSJKnJpsAADiBSSbP02lz+ostAW3mAvbH4hPyP3MK4uGSy9cIz1XpvMOB3Yp+sKSOhFJezdxMR1f4jEGqrTx1R4verR1mWDC0pbjfw12MomVcAA=",
+  "originalBytes": 305965,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl-480.webp",
+    "width": 480,
+    "height": 422,
+    "bytes": 42568
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl-640.webp",
+    "width": 640,
+    "height": 562,
+    "bytes": 65982
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl-960.webp",
+    "width": 960,
+    "height": 844,
+    "bytes": 110414
+   }
+  ]
+ },
+ "/images/2026/07/16/c889234799e865bbe90cee71f6cd2e53_xl.jpg": {
+  "src": "/images/2026/07/16/c889234799e865bbe90cee71f6cd2e53_xl.jpg",
+  "width": 1569,
+  "height": 1080,
+  "ratio": 0.6883,
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQBACdASoUAA4APu1iqU2ppaOiMAgBMB2JZgCdMoADYjSPDZerom+VmkSQAP6PiwBa6ZJuHOdMbRq0RgeeqynttkirniKVd191JjXbERrARbdnBx8lRhydVkYB5CKe6kyuEUT8tAa/AVq0xFcAAA==",
+  "originalBytes": 288962,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/16/c889234799e865bbe90cee71f6cd2e53_xl-480.webp",
+    "width": 480,
+    "height": 331,
+    "bytes": 27974
+   },
+   {
+    "w": 640,
+    "file": "/media/2026/07/16/c889234799e865bbe90cee71f6cd2e53_xl-640.webp",
+    "width": 640,
+    "height": 441,
+    "bytes": 42798
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/16/c889234799e865bbe90cee71f6cd2e53_xl-960.webp",
+    "width": 960,
+    "height": 661,
+    "bytes": 68946
+   },
+   {
+    "w": 1280,
+    "file": "/media/2026/07/16/c889234799e865bbe90cee71f6cd2e53_xl-1280.webp",
+    "width": 1280,
+    "height": 881,
+    "bytes": 96062
+   }
+  ]
+ },
+ "/images/speasyimagegallery/albums/9/thumb.jpg": {
+  "src": "/images/speasyimagegallery/albums/9/thumb.jpg",
+  "width": 400,
+  "height": 400,
+  "ratio": 1,
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAQBQCdASoUABQAPu1wsFIppiSiqAgBMB2JZwDA3Yz4Y8HMpQwvu+0cXO4ZSRf88kmAAP7eo++7GEI4yNucZO78esbph5jWnOw12WgWy+Q1Dzts7vDraFT/E2sDySoTV5NtdMOy7O3i6H8TB9RqacRWewCqwv/roxm+utkaATsppt4G51Jq0TN/P54pcfbnnLlB6dSSqyvlcLYSH0g25YV76qeR+6a3WjpQXR6WFLDBRpwAAAA=",
+  "originalBytes": 24265,
+  "variants": [
+   {
+    "w": 400,
+    "file": "/media/speasyimagegallery/albums/9/thumb-400.webp",
+    "width": 400,
+    "height": 400,
+    "bytes": 19092
+   }
+  ]
+ },
+ "/images/2021/03/03/serial1.png": {
+  "src": "/images/2021/03/03/serial1.png",
+  "width": 40,
+  "height": 40,
+  "ratio": 1,
+  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSG8AAAABcFTb1rLMftzl6YfGYEwZUjClBRlck7g7Of73/Q0iYgLiQGaIA9sYmSJlsYlCAS1cDBpdh+G41Bm+tjXgUC42eNyPaiBsZ0YvsTDm108TSWHlgfPzm4fC5u9slV6fkaycjpNHdT6iZmQbYxxsEAcAVlA4IDgAAABwAwCdASoUABQAPu1sqlEppaOiqAqpMB2JaQAAPnnsbqLqc0AA/u3NxAJeYy9MzHKYPKdCwTwAAA==",
+  "originalBytes": 435,
+  "variants": [
+   {
+    "w": 40,
+    "file": "/media/2021/03/03/serial1-40.webp",
+    "width": 40,
+    "height": 40,
+    "bytes": 248
+   }
+  ]
+ },
+ "/images/2021/03/03/serial2.png": {
+  "src": "/images/2021/03/03/serial2.png",
+  "width": 40,
+  "height": 40,
+  "ratio": 1,
+  "lqip": "data:image/webp;base64,UklGRgIBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSKQAAAABgFpt2/ImzEzfC+EBojhRUQw2Q8RGcYqurtXtFnVVjLo6p5oW+Nz7nXaCiJgAj0Jj5VFkRkD4l5xJkxFHXH5FJtH+6ayYJBFHd3qvX7JAAkrlfq8dKz0JswAh2y5ZDnQrJkJIejv6MsQo5nDt64YUiThR/ryNBBVKCfhdfzzt5760ACG9ODu/uJqGWYLgcTkdtjCjPJ3JZDKM/5yAzAg8ykx5AFZQOCA4AAAAcAMAnQEqFAAUAD7tbq9SKaYkIqgIATAdiWkAADz0evUXDl0wAP7tzwA5jNHcb6p63qMiDOAAAAA=",
+  "originalBytes": 632,
+  "variants": [
+   {
+    "w": 40,
+    "file": "/media/2021/03/03/serial2-40.webp",
+    "width": 40,
+    "height": 40,
+    "bytes": 304
+   }
+  ]
+ },
+ "/images/2021/03/03/serial3.png": {
+  "src": "/images/2021/03/03/serial3.png",
+  "width": 40,
+  "height": 40,
+  "ratio": 1,
+  "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSJ0AAAABgFtbe8LGFTNK/ycZR6DKE7A9BXeMEziMXSbgTMCruE4G8Dnqfp1kgoiYALcga+EWsIME/aVOaVgh5PRJWMhIZzfKJsBSkVuzN18pCY5U96eOhekEFYconC7f/RZjYOlw92CufJr4vlzl6lANKwaS+eeRo2HGHs0gkt/m7WdfiIODpNq+3pYjitgQXo8rpsgSWmtF/x0SdpBuYSfcAFZQOCA4AAAAkAMAnQEqFAAUAD7tcLBSqaYkoqgIATAdiWkAAEU4Iv9m2BjIAAD+7cxYgcLXLUx6B/bxe2TwoAA=",
+  "originalBytes": 750,
+  "variants": [
+   {
+    "w": 40,
+    "file": "/media/2021/03/03/serial3-40.webp",
+    "width": 40,
+    "height": 40,
+    "bytes": 322
+   }
+  ]
+ },
+ "/images/2026/07/14/aaa1.jpg": {
+  "src": "/images/2026/07/14/aaa1.jpg",
+  "width": 521,
+  "height": 672,
+  "ratio": 1.2898,
+  "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAACQBQCdASoUABoAPu1srFEppaQiqAqpMB2JaQAD5hjwTyV1EwgFjCXov6GxurjjL7r2K0JSkAD+ji3eDeA1F2ZTLMjE/s8nMClnjJZtxSdog2Bnr5p34tmVuBXATgTktV819SUKWunRcVxm6UXSp1HC8b/DaFgt1RF3C8W/v9uxUxr/gvgwfpwI/u9jMiOp0Q39lAFo5xLT/ntNG82BN+a4FLRxuwtx462K0EJFEIrKAvxeGFyeLF7mBrRQUe77sT7qC45RKUi18YAA",
+  "originalBytes": 52894,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/14/aaa1-480.webp",
+    "width": 372,
+    "height": 480,
+    "bytes": 20320
+   }
+  ]
+ },
+ "/images/2026/07/14/222.jpg": {
+  "src": "/images/2026/07/14/222.jpg",
+  "width": 1000,
+  "height": 909,
+  "ratio": 0.909,
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBQCdASoUABIAPu1wsFIppiSiqAgBMB2JYwCdMswBqdA3B4FQd5QTUSO31K+590d6AAD+4AXEJCrNdJf1EJZAUnYyBOaHGW76O9udLVy5Mcqr0xXEZI2mA1PV5D4CiXBxOv/kji3Ks3L1dwS/lMPgrP//HnlL3YMFZ0URd6RD8BoA4dQA9uALII6nOvO5avfDtUQH/bJN6F5bGp0x1402rpRu6HI0HrOFXWYAAAA=",
+  "originalBytes": 959421,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/14/222-480.webp",
+    "width": 480,
+    "height": 436,
+    "bytes": 44442
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/14/222-960.webp",
+    "width": 960,
+    "height": 873,
+    "bytes": 188542
+   }
+  ]
+ },
+ "/images/2026/07/14/l003.jpg": {
+  "src": "/images/2026/07/14/l003.jpg",
+  "width": 1106,
+  "height": 1080,
+  "ratio": 0.9765,
+  "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAAAQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZQC/7BGf9VF6sj80CzfmOJZy3bRq9zBQAP6ZQFIgkzH8C35S4PeN2NBzSCX5HI2dvcdHNPbbB69UXlZRGoPJ42n92t2cBwng1GxTufuKtn4DPC6/T7nlP5v98qXPQvBwz83qHMy8L9eBwNcZTy8+SfzVWu6cx9bOQ6WZS/6768dQdXipLXqmYAKV9x+ZMk2j9zFngL0N+8GyYC3oAAAA",
+  "originalBytes": 275144,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/14/l003-480.webp",
+    "width": 480,
+    "height": 469,
+    "bytes": 37120
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/14/l003-960.webp",
+    "width": 960,
+    "height": 937,
+    "bytes": 103824
+   }
+  ]
+ },
+ "/images/2026/07/14/33.jpg": {
+  "src": "/images/2026/07/14/33.jpg",
+  "width": 1000,
+  "height": 1008,
+  "ratio": 1.008,
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAQBQCdASoUABQAPu1usFIppiSiqAgBMB2JYgCdITYA2Z0X4GSccPCMXmbhnU+0h19gAP7hhXBiETI4PzAWU7Bmr0WIO9s8eloAscHF3IuTEvfZK0dLpzk+mdsvQB1hosZydElwX1e0kb0ddf1R0dA3HY3lYYOqAnAqOByp/qT2v50tFWiJyVoFNAA1gTCnS39JdUTC0JSf/0OIGACh3ITjc9HdljWyRYA/fZth/5LKZYXHAAA=",
+  "originalBytes": 1281511,
+  "variants": [
+   {
+    "w": 480,
+    "file": "/media/2026/07/14/33-480.webp",
+    "width": 476,
+    "height": 480,
+    "bytes": 71008
+   },
+   {
+    "w": 960,
+    "file": "/media/2026/07/14/33-960.webp",
+    "width": 952,
+    "height": 960,
+    "bytes": 269222
+   }
+  ]
+ }
+}

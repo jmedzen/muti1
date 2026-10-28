@@ -1,0 +1,375 @@
+---
+/**
+ * 本站新聞 — /news
+ * 全部消息，含分類篩選與年份歸檔。
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { articlesSorted, CATEGORIES, media, excerpt } from "../../lib/content.js";
+
+const newsCats = CATEGORIES.filter((c) => ["memorial", "exhibition", "auction", "media", "official"].includes(c.id));
+
+const byCategory = (id) => articlesSorted.filter((a) => a.category === id);
+const featured = articlesSorted[0];
+const featuredMedia = featured?.hero ? media(featured.hero, { fallback: 960 }) : null;
+
+// 年份歸檔
+const byYear = new Map();
+for (const a of articlesSorted) {
+  const y = a.eventDate?.year ?? (a.publishedAt ? Number(a.publishedAt.slice(0, 4)) : null);
+  if (!y) continue;
+  if (!byYear.has(y)) byYear.set(y, []);
+  byYear.get(y).push(a);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+---
+
+<BaseLayout
+  title="本站新聞"
+  description={`黃磊生相關新聞共 ${articlesSorted.length} 則：紀念展、展覽新聞、拍賣紀錄、媒體報導與官方報導。`}
+>
+  <header class="news-hero">
+    <div class="container">
+      <p class="eyebrow">本站新聞</p>
+      <h1 class="news-title">消息與紀錄</h1>
+      <p class="news-lede">
+        {articlesSorted.length} 則紀錄，從 1957 年獲獎到 2017 年拍賣成交。
+        包含紀念展、展覽新聞、拍賣紀錄、媒體報導與官方文書。
+      </p>
+      <nav class="cat-cards" aria-label="新聞分類">
+        {newsCats.map((c) => {
+          const n = byCategory(c.id).length;
+          return (
+            <a class="cat-card" href={c.route}>
+              <span class="cc-name">{c.name}</span>
+              <span class="cc-en">{c.en}</span>
+              <span class="cc-count">{String(n).padStart(2, "0")}</span>
+            </a>
+          );
+        })}
+        <a class="cat-card" href="/art-reviews">
+          <span class="cc-name">藝術評論</span>
+          <span class="cc-en">Art Criticism</span>
+          <span class="cc-count">{String(articlesSorted.filter((a) => a.category === "reviews").length).padStart(2, "0")}</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container news-body">
+    <div class="news-main">
+      {featured && (
+        <section class="lead">
+          <p class="section-label">最新</p>
+          <a class="lead-link" href={featured.route}>
+            <div class="lead-media">
+              {featuredMedia && (
+                <img
+                  src={featuredMedia.src}
+                  srcset={featuredMedia.srcset}
+                  sizes="(max-width: 980px) 94vw, 52vw"
+                  alt=""
+                  loading="eager"
+                  fetchpriority="high"
+                  width={featuredMedia.width}
+                  height={featuredMedia.height}
+                />
+              )}
+            </div>
+            <div class="lead-body">
+              <div class="lead-meta">
+                <span class="lead-cat">{featured.categoryName}</span>
+                <time datetime={featured.eventDate?.iso ?? featured.publishedAt}>
+                  {featured.eventDate?.iso?.replace(/-/g, ".") ?? featured.publishedAt?.slice(0, 10)}
+                </time>
+              </div>
+              <h2 class="lead-title">{featured.title}</h2>
+              <p class="lead-excerpt">{excerpt(featured, 180)}</p>
+            </div>
+          </a>
+        </section>
+      )}
+
+      <section class="archive-list">
+        <p class="section-label">全部消息</p>
+        <ul class="nl">
+          {articlesSorted.slice(1).map((a) => (
+            <li>
+              <a href={a.route} class="nl-item">
+                <span class="nl-date">
+                  {a.eventDate?.iso ? a.eventDate.iso.replace(/-/g, ".") : a.publishedAt?.slice(0, 10).replace(/-/g, ".")}
+                </span>
+                <span class="nl-cat">{a.categoryName}</span>
+                <span class="nl-title">{a.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+
+    <aside class="news-side">
+      <div class="side-block">
+        <p class="side-label">依年份</p>
+        <ul class="year-list">
+          {years.map((y) => (
+            <li>
+              <a href={`#y${y}`}>
+                <span>{y}</span>
+                <span class="yl-count">{byYear.get(y).length}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .news-hero {
+    padding: var(--s-9) 0 var(--s-6);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .news-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    margin: 0;
+  }
+  .news-lede {
+    max-width: 36em;
+    margin: 1.4rem 0 0;
+    font-size: 0.94rem;
+    line-height: 2.05;
+    color: var(--ink-muted);
+  }
+
+  .cat-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    margin-top: var(--s-6);
+    background: var(--paper-edge);
+    border: 1px solid var(--paper-edge);
+  }
+  .cat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 1rem 0.9rem;
+    background: var(--paper);
+    text-decoration: none;
+    color: inherit;
+    transition: background var(--dur) var(--ease);
+  }
+  .cat-card:hover {
+    background: var(--paper-warm);
+  }
+  .cc-name {
+    font-family: var(--serif-zh);
+    font-size: 0.92rem;
+    letter-spacing: 0.1em;
+  }
+  .cc-en {
+    font-family: var(--serif-en);
+    font-size: 0.6rem;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cc-count {
+    margin-top: 0.4rem;
+    font-family: var(--serif-en);
+    font-size: 1.2rem;
+    color: var(--ochre);
+    line-height: 1;
+  }
+
+  .news-body {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: var(--s-7);
+    padding: var(--s-7) 0 var(--s-9);
+  }
+  .section-label {
+    font-family: var(--sans-zh);
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 var(--s-4);
+  }
+
+  .lead {
+    margin-bottom: var(--s-7);
+  }
+  .lead-link {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--s-5);
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+  }
+  .lead-media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--paper-warm);
+  }
+  .lead-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 900ms var(--ease-out);
+  }
+  .lead-link:hover .lead-media img {
+    transform: scale(1.03);
+  }
+  .lead-meta {
+    display: flex;
+    gap: 0.8rem;
+    font-family: var(--sans-zh);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    margin-bottom: 0.7rem;
+  }
+  .lead-cat {
+    color: var(--ochre);
+  }
+  .lead-meta time {
+    font-family: var(--mono);
+    letter-spacing: 0.04em;
+  }
+  .lead-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    margin: 0 0 0.8rem;
+    transition: color var(--dur) var(--ease);
+  }
+  .lead-link:hover .lead-title {
+    color: var(--ochre-deep);
+  }
+  .lead-excerpt {
+    font-size: 0.88rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .nl {
+    display: grid;
+  }
+  .nl-item {
+    display: grid;
+    grid-template-columns: 6.2rem 4.6rem 1fr;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 0.3rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--paper-edge) 60%, transparent);
+    text-decoration: none;
+    color: inherit;
+    transition: background var(--dur) var(--ease), padding-left var(--dur) var(--ease);
+  }
+  .nl-item:hover {
+    background: var(--ochre-wash);
+    padding-left: 0.7rem;
+  }
+  .nl-date {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.03em;
+  }
+  .nl-cat {
+    font-family: var(--sans-zh);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    color: var(--ochre);
+    white-space: nowrap;
+  }
+  .nl-title {
+    font-family: var(--serif-zh);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  .news-side {
+    padding-left: var(--s-5);
+    border-left: 1px solid var(--paper-edge);
+  }
+  .side-label {
+    font-family: var(--sans-zh);
+    font-size: 0.64rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.8rem;
+  }
+  .year-list {
+    display: grid;
+    gap: 0.1rem;
+  }
+  .year-list a {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 1px dotted color-mix(in srgb, var(--paper-edge) 70%, transparent);
+  }
+  .year-list a:hover {
+    color: var(--ochre);
+  }
+  .yl-count {
+    color: var(--ink-faint);
+    font-size: 0.66rem;
+  }
+
+  @media (max-width: 980px) {
+    .cat-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .news-body {
+      grid-template-columns: 1fr;
+    }
+    .news-side {
+      padding-left: 0;
+      border-left: 0;
+      border-top: 1px solid var(--paper-edge);
+      padding-top: var(--s-5);
+    }
+    .lead-link {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .cat-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .nl-item {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+    .nl-date {
+      order: 2;
+    }
+    .nl-cat {
+      order: 1;
+    }
+    .nl-title {
+      order: 0;
+    }
+  }
+</style>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /search
+
+# 舊站的 /index.php/ 路徑已 301 到新網址，不需要另外封鎖
+Sitemap: https://luisang.rumotan.com/sitemap.xml

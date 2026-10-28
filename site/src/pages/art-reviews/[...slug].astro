@@ -1,0 +1,23 @@
+---
+/**
+ * 藝術評論 — /art-reviews/<article>
+ */
+import ArticleView from "../../components/ArticleView.astro";
+import { articles } from "../../lib/content.js";
+
+export async function getStaticPaths() {
+  return articles
+    .filter((a) => a.category === "reviews")
+    .map((a) => ({
+      params: { slug: a.route.replace("/art-reviews/", "") },
+      props: { article: a },
+    }));
+}
+
+const { article } = Astro.props;
+---
+
+<ArticleView
+  article={article}
+  section={{ href: "/art-reviews", label: "藝術評論" }}
+/>

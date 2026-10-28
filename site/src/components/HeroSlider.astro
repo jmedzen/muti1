@@ -1,0 +1,390 @@
+---
+/**
+ * HeroSlider — 首頁主視覺
+ *
+ * 三張大圖輪播，但不用輪播套件：
+ *   - 純 CSS 疊層 + 一個極小的 JS 控制索引
+ *   - 圖片全部預載（只有 3 張），交叉淡入
+ *   - 尊重 prefers-reduced-motion：不自動播放
+ *   - 鍵盤可操作（左右鍵、圓點）
+ */
+import { SITE } from "../lib/content.js";
+import { IMAGES } from "../lib/content.js";
+
+const { slides } = Astro.props;
+
+const prepared = slides.map((s, i) => {
+  const key = (s.image || "").replace("https://luisang.rumotan.com", "");
+  const meta = IMAGES[key];
+  const big = meta?.variants.at(-1)?.file ?? null;
+  const mid = meta?.variants.find((v) => v.w >= 1280)?.file ?? big;
+  return { ...s, key, meta, big, mid, idx: i };
+});
+---
+
+<section class="hero" id="hero" aria-label="主視覺">
+  <div class="hero-stage">
+    {prepared.map((s, i) => (
+      <div class:list={["hero-slide", { "is-active": i === 0 }]} data-slide={i} aria-hidden={i === 0 ? "false" : "true"}>
+        {s.big ? (
+          <img
+            src={s.big}
+            srcset={s.meta?.variants.map((v) => `${v.file} ${v.width}w`).join(", ")}
+            sizes="100vw"
+            alt=""
+            width={s.meta?.width}
+            height={s.meta?.height}
+            loading={i === 0 ? "eager" : "lazy"}
+            fetchpriority={i === 0 ? "high" : "auto"}
+            decoding={i === 0 ? "sync" : "async"}
+            class="hero-img"
+          />
+        ) : null}
+        <div class="hero-veil" aria-hidden="true"></div>
+      </div>
+    ))}
+
+    <div class="hero-content container">
+      <p class="hero-kicker">
+        <span class="rule-line" aria-hidden="true"></span>
+        嶺南畫派 · 1928—2011
+      </p>
+      <h1 class="hero-title">
+        <span class="hero-title-zh">黃磊生</span>
+        <span class="hero-title-en">Huang LuiSang</span>
+      </h1>
+      <p class="hero-sub">藝術生命紀念館暨數位美術館</p>
+      <p class="hero-lede">
+        自趙少昂門下承嶺南心法，六十年間行走大江南北與四海異域。<br />
+        山水、花鳥、書法，盡在此間。
+      </p>
+      <div class="hero-actions">
+        <a href="/collection" class="btn btn--light">瀏覽作品</a>
+        <a href="/about" class="btn btn--light">關於藝術家</a>
+      </div>
+    </div>
+
+    <div class="hero-controls">
+      <div class="hero-dots" role="tablist" aria-label="主視覺切換">
+        {prepared.map((s, i) => (
+          <button
+            role="tab"
+            class:list={["hero-dot", { "is-active": i === 0 }]}
+            aria-selected={i === 0 ? "true" : "false"}
+            aria-label={`第 ${i + 1} 張`}
+            data-goto={i}
+          ><span></span></button>
+        ))}
+      </div>
+      <p class="hero-caption" aria-live="polite">
+        {prepared.map((s, i) => (
+          <span class:list={{ "is-active": i === 0 }} data-caption={i}>{s.title}</span>
+        ))}
+      </p>
+    </div>
+
+    <a href="#intro" class="hero-scroll" aria-label="向下捲動">
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+  }
+  .hero-stage {
+    position: relative;
+    height: clamp(560px, 88vh, 900px);
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1400ms var(--ease-out);
+    will-change: opacity;
+  }
+  .hero-slide.is-active {
+    opacity: 1;
+  }
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 大幅油畫直幅裁切時，把主體留在偏上位置 */
+    object-position: center 42%;
+    transform: scale(1.04);
+    transition: transform 12s linear;
+  }
+  .hero-slide.is-active .hero-img {
+    transform: scale(1);
+  }
+  .hero-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(12, 10, 8, 0.76) 0%,
+        rgba(12, 10, 8, 0.5) 38%,
+        rgba(12, 10, 8, 0.14) 68%,
+        rgba(12, 10, 8, 0.3) 100%
+      ),
+      linear-gradient(to top, rgba(12, 10, 8, 0.72) 0%, transparent 42%);
+  }
+
+  .hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    color: var(--paper);
+    max-width: min(var(--container), 100%);
+  }
+
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-family: var(--sans-zh);
+    font-size: 0.74rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.72);
+    margin: 0 0 1.6rem;
+    animation: rise 1000ms var(--ease-out) 100ms both;
+  }
+  .rule-line {
+    width: 2.4rem;
+    height: 1px;
+    background: var(--ochre);
+    opacity: 0.9;
+  }
+
+  .hero-title {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    animation: rise 1100ms var(--ease-out) 220ms both;
+  }
+  .hero-title-zh {
+    font-family: var(--serif-zh);
+    font-size: clamp(3rem, 8.5vw, 6.5rem);
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    line-height: 1;
+    /* 移除最後一個字的字距，讓視覺左緣對齊 */
+    margin-right: -0.22em;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.35);
+  }
+  .hero-title-en {
+    font-family: var(--serif-en);
+    font-size: clamp(0.9rem, 1.8vw, 1.25rem);
+    font-style: italic;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.62);
+  }
+
+  .hero-sub {
+    margin: 1.35rem 0 0;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+    letter-spacing: 0.3em;
+    color: rgba(250, 248, 243, 0.9);
+    animation: rise 1100ms var(--ease-out) 340ms both;
+  }
+
+  .hero-lede {
+    margin: 1.5rem 0 0;
+    max-width: 30em;
+    font-size: 0.95rem;
+    line-height: 2.05;
+    color: rgba(250, 248, 243, 0.72);
+    animation: rise 1100ms var(--ease-out) 440ms both;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2.3rem;
+    animation: rise 1100ms var(--ease-out) 560ms both;
+  }
+
+  .hero-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2rem;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    color: rgba(250, 248, 243, 0.8);
+  }
+  .hero-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .hero-dot {
+    padding: 0.6rem 0;
+    width: 2.6rem;
+    display: grid;
+    place-items: center;
+  }
+  .hero-dot span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(250, 248, 243, 0.3);
+    transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+    transform-origin: left;
+  }
+  .hero-dot.is-active span {
+    background: var(--ochre);
+    transform: scaleY(2.5);
+  }
+  .hero-dot:hover span {
+    background: rgba(250, 248, 243, 0.7);
+  }
+
+  .hero-caption {
+    position: relative;
+    margin: 0;
+    height: 1.4em;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-align: right;
+    flex: 1;
+  }
+  .hero-caption span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 600ms var(--ease);
+    white-space: nowrap;
+  }
+  .hero-caption span.is-active {
+    opacity: 1;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 0.5rem;
+    transform: translateX(-50%);
+    width: 1.6rem;
+    height: 2.6rem;
+    display: grid;
+    place-items: center;
+  }
+  .hero-scroll span {
+    width: 1px;
+    height: 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(250, 248, 243, 0.6));
+    animation: scrollHint 2.4s var(--ease) infinite;
+  }
+  @keyframes scrollHint {
+    0%, 100% { transform: scaleY(0.4); opacity: 0.3; }
+    50% { transform: scaleY(1); opacity: 0.9; }
+  }
+
+  @media (max-width: 720px) {
+    .hero-stage {
+      height: clamp(520px, 84vh, 700px);
+    }
+    .hero-content {
+      padding-bottom: 7rem;
+    }
+    .hero-title-zh {
+      letter-spacing: 0.14em;
+      margin-right: -0.14em;
+    }
+    .hero-lede {
+      display: none;
+    }
+    .hero-caption {
+      display: none;
+    }
+    .hero-controls {
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.getElementById("hero");
+    if (!root) return;
+    const slides = root.querySelectorAll("[data-slide]");
+    const dots = root.querySelectorAll("[data-goto]");
+    const caps = root.querySelectorAll("[data-caption]");
+    if (slides.length < 2) return;
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+    let timer = null;
+
+    const show = (next) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((el, i) => {
+        el.classList.toggle("is-active", i === index);
+        el.setAttribute("aria-hidden", i === index ? "false" : "true");
+      });
+      dots.forEach((el, i) => {
+        el.classList.toggle("is-active", i === index);
+        el.setAttribute("aria-selected", i === index ? "true" : "false");
+      });
+      caps.forEach((el, i) => el.classList.toggle("is-active", i === index));
+    };
+
+    const start = () => {
+      if (reduce) return;
+      stop();
+      timer = setInterval(() => show(index + 1), 6500);
+    };
+    const stop = () => {
+      if (timer) clearInterval(timer);
+      timer = null;
+    };
+
+    dots.forEach((d) =>
+      d.addEventListener("click", () => {
+        show(Number(d.dataset.goto));
+        start();
+      })
+    );
+
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        show(index + 1);
+        start();
+      }
+      if (e.key === "ArrowLeft") {
+        show(index - 1);
+        start();
+      }
+    });
+
+    // 頁面不在前景時停掉計時器，省電
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    start();
+  })();
+</script>

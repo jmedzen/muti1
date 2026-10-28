@@ -1,0 +1,419 @@
+---
+/**
+ * 作品 — /collection 總覽
+ *
+ * 這裡是全站作品的入口：三個畫科 + 年份索引 + 一到兩件代表作。
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { galleries, artworks, media } from "../../lib/content.js";
+
+const collectionGalleries = galleries.filter((g) => g.counts.artwork > 0);
+const total = artworks.length;
+const withYear = artworks.filter((a) => a.year).length;
+const cues = artworks.filter((a) => a.code && ["M012", "F018", "O004", "M010", "L002", "F020"].includes(a.code));
+
+const yearsSpan = (() => {
+  const ys = artworks.map((a) => a.year).filter(Boolean);
+  return [Math.min(...ys), Math.max(...ys)];
+})();
+
+// 每年作品數，做成一條熱度尺
+const byYear = new Map();
+for (const a of artworks) if (a.year) byYear.set(a.year, (byYear.get(a.year) || 0) + 1);
+const yearRows = [];
+for (let y = yearsSpan[0]; y <= yearsSpan[1]; y++) yearRows.push({ year: y, n: byYear.get(y) || 0 });
+const peak = Math.max(...yearRows.map((r) => r.n));
+---
+
+<BaseLayout
+  title="作品"
+  description={`黃磊生作品數位典藏：山水、花鳥蟲魚、書法三科共 ${total} 件，每件標註編號、尺寸與創作年份。`}
+>
+  <header class="coll-hero">
+    <div class="container">
+      <p class="eyebrow">作品</p>
+      <h1 class="coll-title">典藏</h1>
+      <p class="coll-lede">
+        三科共 {total} 件作品。山水寫山川煙雲，花鳥見撞粉撞水，書法顯線條功力。
+        每件標註館方編號、原始尺寸與創作年份，可依原作比例檢視細節。
+      </p>
+      <dl class="coll-facts">
+        <div><dt>作品總數</dt><dd>{total}</dd></div>
+        <div><dt>可考年份</dt><dd>{withYear}</dd></div>
+        <div><dt>年份範圍</dt><dd class="sm">{yearsSpan[0]}–{yearsSpan[1]}</dd></div>
+        <div><dt>相簿</dt><dd>{collectionGalleries.length}</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <!-- 三個畫科 -->
+  <section class="coll-sections">
+    <div class="container">
+      <div class="sec-grid">
+        {collectionGalleries.map((g, i) => {
+          const cover = g.items.find((x) => x.kind === "artwork");
+          const cm = cover ? media(cover.src, { fallback: 960 }) : null;
+          return (
+            <a class="sec-card" href={g.route} data-reveal style={`--i:${i}`}>
+              <div class="sec-media">
+                {cm && (
+                  <img
+                    src={cm.src}
+                    srcset={cm.srcset}
+                    sizes="(max-width: 800px) 92vw, 44vw"
+                    alt={`${g.title}代表作：${cover.name ?? ""}`}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    width={cm.width}
+                    height={cm.height}
+                  />
+                )}
+              </div>
+              <div class="sec-body">
+                <div class="sec-top">
+                  <h2 class="sec-title">{g.title}</h2>
+                  <span class="sec-count">{g.count}</span>
+                </div>
+                <p class="sec-en">{g.en}</p>
+                <p class="sec-blurb">{g.blurb}</p>
+                <span class="sec-cta">進入作品集 →</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- 年份熱度 -->
+  <section class="coll-years">
+    <div class="container">
+      <p class="eyebrow">創作年份</p>
+      <h2 class="sec-h2">每一年畫了多少</h2>
+      <p class="years-lede">
+        館方標註的創作年份分布。點擊任一年份可看該年作品。
+      </p>
+      <div class="year-scale">
+        {yearRows.map((r) => (
+          <a
+            class:list={["year-cell", { "is-empty": r.n === 0 }]}
+            href={`/collection/years#y${r.year}`}
+            title={`${r.year} 年：${r.n} 件`}
+            aria-label={`${r.year} 年 ${r.n} 件作品`}
+          >
+            <span class="yc-bar" style={`--h:${r.n ? Math.max(8, (r.n / peak) * 100) : 3}%`}></span>
+            {r.year % 10 === 0 && <span class="yc-label">{r.year}</span>}
+          </a>
+        ))}
+      </div>
+      <a class="years-link" href="/collection/years">完整年份索引 →</a>
+    </div>
+  </section>
+
+  <!-- 代表作 -->
+  <section class="coll-cues">
+    <div class="container">
+      <p class="eyebrow">代表作</p>
+      <h2 class="sec-h2">六件</h2>
+      <div class="cue-grid">
+        {cues.map((a, i) => {
+          const am = media(a.src, { fallback: 480 });
+          return (
+            <a class="cue" href={`${a.albumRoute}#${a.id}`} data-reveal style={`--i:${i}`}>
+              <div class="cue-frame">
+                {am && (
+                  <img
+                    src={am.variants[0].file}
+                    srcset={am.srcset}
+                    sizes="(max-width: 640px) 90vw, (max-width: 1100px) 44vw, 300px"
+                    alt={a.name ?? a.caption}
+                    loading="lazy"
+                    decoding="async"
+                    width={am.width}
+                    height={am.height}
+                  />
+                )}
+              </div>
+              <p class="cue-name">{a.name}</p>
+              <p class="cue-spec">
+                {a.code} · {a.width}×{a.height} · {a.year}
+              </p>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .coll-hero {
+    padding: var(--s-9) 0 var(--s-7);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .coll-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    margin: 0;
+  }
+  .coll-lede {
+    max-width: 36em;
+    margin: 1.6rem 0 0;
+    font-size: 0.96rem;
+    line-height: 2.05;
+    color: var(--ink-muted);
+  }
+  .coll-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.6rem;
+    margin: 2.2rem 0 0;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--paper-edge);
+  }
+  .coll-facts div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .coll-facts dt {
+    font-family: var(--sans-zh);
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-faint);
+  }
+  .coll-facts dd {
+    margin: 0;
+    font-family: var(--serif-en);
+    font-size: 1.9rem;
+    line-height: 1;
+    color: var(--ochre);
+  }
+  .coll-facts dd.sm {
+    font-size: 1.2rem;
+  }
+
+  .coll-sections {
+    padding: var(--s-9) 0;
+  }
+  .sec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.2rem, 2.6vw, 2rem);
+  }
+  .sec-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--paper-edge);
+    background: var(--paper);
+    transition: all var(--dur) var(--ease);
+  }
+  .sec-card:hover {
+    border-color: var(--ochre-line);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .sec-media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--paper-deep);
+  }
+  .sec-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1000ms var(--ease-out);
+  }
+  .sec-card:hover .sec-media img {
+    transform: scale(1.04);
+  }
+  .sec-body {
+    padding: 1.5rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .sec-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .sec-title {
+    font-family: var(--serif-zh);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    margin: 0;
+  }
+  .sec-count {
+    font-family: var(--serif-en);
+    font-size: 1.5rem;
+    color: var(--ochre);
+    opacity: 0.5;
+  }
+  .sec-en {
+    margin: 0.2rem 0 0.9rem;
+    font-family: var(--serif-en);
+    font-size: 0.72rem;
+    font-style: italic;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .sec-blurb {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: var(--ink-muted);
+    margin: 0 0 1.2rem;
+    flex: 1;
+  }
+  .sec-cta {
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--ochre);
+  }
+
+  .coll-years {
+    padding: var(--s-9) 0;
+    background: var(--paper-warm);
+    border-block: 1px solid var(--paper-edge);
+  }
+  .sec-h2 {
+    font-family: var(--serif-zh);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin: 0 0 1rem;
+  }
+  .years-lede {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    margin: 0 0 var(--s-6);
+    max-width: 34em;
+  }
+  .year-scale {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 120px;
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .year-cell {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-decoration: none;
+    min-width: 0;
+  }
+  .yc-bar {
+    width: 100%;
+    height: var(--h);
+    background: var(--ochre);
+    opacity: 0.85;
+    transition: opacity var(--dur) var(--ease), background var(--dur) var(--ease);
+  }
+  .year-cell:hover .yc-bar {
+    background: var(--ochre-deep);
+    opacity: 1;
+  }
+  .year-cell.is-empty .yc-bar {
+    background: var(--paper-edge);
+    opacity: 1;
+  }
+  .yc-label {
+    position: absolute;
+    transform: translateY(1.4rem);
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--ink-faint);
+  }
+  .year-cell {
+    position: relative;
+  }
+  .years-link {
+    display: inline-block;
+    margin-top: var(--s-6);
+    font-family: var(--sans-zh);
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    color: var(--ochre);
+    text-decoration: none;
+  }
+
+  .coll-cues {
+    padding: var(--s-9) 0;
+  }
+  .cue-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-6) var(--s-5);
+    margin-top: var(--s-5);
+  }
+  .cue {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  .cue-frame {
+    aspect-ratio: 4 / 5;
+    background: var(--paper-warm);
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+  .cue-frame img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 2px 10px rgba(20, 17, 13, 0.14), 0 12px 30px rgba(20, 17, 13, 0.09);
+    transition: transform 700ms var(--ease-out);
+  }
+  .cue:hover .cue-frame img {
+    transform: scale(1.03);
+  }
+  .cue-name {
+    margin: 0.8rem 0 0.15rem;
+    font-family: var(--serif-zh);
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+  }
+  .cue-spec {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 900px) {
+    .sec-grid,
+    .cue-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .sec-grid > :last-child {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 620px) {
+    .sec-grid,
+    .cue-grid {
+      grid-template-columns: 1fr;
+    }
+    .sec-grid > :last-child {
+      grid-column: auto;
+    }
+  }
+</style>

@@ -1,0 +1,556 @@
+---
+/**
+ * Lightbox — 作品檢視器
+ *
+ * 需求：美術館網站的圖片檢視器必須能看細節、能鍵盤操作、能深連結。
+ * 做法：
+ *   - 純 HTML + 一個 custom element（無框架、約 3KB）
+ *   - 點縮圖開大圖，可用 ← → 換件、Esc 關閉、滑鼠滾輪縮放
+ *   - URL hash 同步（#M012），可分享、可上一頁返回
+ *   - 預載前後兩張，換件不卡
+ *   - 底部顯示編號、尺寸、年份、英文名
+ */
+import { media } from "../lib/content.js";
+
+const { items, albumTitle } = Astro.props;
+
+const payload = items.map((i) => {
+  const m = media(i.src, { fallback: 960 });
+  return {
+    id: i.id,
+    code: i.code,
+    name: i.name,
+    titleEn: i.titleEn,
+    caption: i.caption,
+    note: i.note,
+    medium: i.medium,
+    width: i.width,
+    height: i.height,
+    unit: i.dimUnit,
+    year: i.year,
+    yearGanzhi: i.yearGanzhi,
+    kind: i.kind,
+    thumb: m ? m.variants[0].file : null,
+    mid: m ? m.src : null,
+    srcset: m ? m.srcset : null,
+    big: m ? m.variants.at(-1).file : null,
+    natW: m ? m.variants.at(-1).width : 960,
+    ar: i.width && i.height ? i.height / i.width : m ? m.ratio : 1,
+  };
+});
+---
+
+<div class="lb" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="作品檢視器">
+  <div class="lb-backdrop" data-close></div>
+
+  <div class="lb-shell">
+    <header class="lb-bar">
+      <div class="lb-count">
+        <span id="lb-index">1</span><span class="lb-sep">/</span><span>{payload.length}</span>
+        <span class="lb-album">{albumTitle}</span>
+      </div>
+      <div class="lb-actions">
+        <button class="lb-btn" id="lb-zoom" aria-label="放大 / 縮小" title="縮放（Z）">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5L21 21M10.5 8v5M8 10.5h5" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button class="lb-btn" id="lb-close" aria-label="關閉" title="關閉（Esc）">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="lb-stage" id="lb-stage">
+      <button class="lb-nav lb-prev" id="lb-prev" aria-label="上一件">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div class="lb-canvas" id="lb-canvas">
+        <img id="lb-img" alt="" />
+        <div class="lb-spinner" id="lb-spinner" aria-hidden="true"></div>
+      </div>
+
+      <button class="lb-nav lb-next" id="lb-next" aria-label="下一件">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+
+    <footer class="lb-caption" id="lb-caption">
+      <div class="lb-cap-main">
+        <h2 id="lb-title"></h2>
+        <p id="lb-en"></p>
+      </div>
+      <dl class="lb-spec">
+        <div><dt>編號</dt><dd id="lb-code"></dd></div>
+        <div><dt>尺寸</dt><dd id="lb-dim"></dd></div>
+        <div><dt>年份</dt><dd id="lb-year"></dd></div>
+      </dl>
+      <p class="lb-note" id="lb-note"></p>
+    </footer>
+  </div>
+
+  <p class="lb-hint">← → 換件　·　Z 縮放　·　Esc 關閉</p>
+</div>
+
+<script type="application/json" id="lb-data" set:html={JSON.stringify(payload)} is:inline></script>
+
+<script>
+  (() => {
+    const dataEl = document.getElementById("lb-data");
+    if (!dataEl) return;
+    const data = JSON.parse(dataEl.textContent);
+    if (!data.length) return;
+
+    const lb = document.getElementById("lightbox");
+    const img = document.getElementById("lb-img");
+    const spinner = document.getElementById("lb-spinner");
+    const stage = document.getElementById("lb-stage");
+    const canvas = document.getElementById("lb-canvas");
+    const title = document.getElementById("lb-title");
+    const en = document.getElementById("lb-en");
+    const code = document.getElementById("lb-code");
+    const dim = document.getElementById("lb-dim");
+    const year = document.getElementById("lb-year");
+    const note = document.getElementById("lb-note");
+    const idxEl = document.getElementById("lb-index");
+
+    let index = 0;
+    let zoomed = false;
+    let lastFocus = null;
+    let loaded = new Map();
+
+    const preload = (i) => {
+      const item = data[(i + data.length) % data.length];
+      if (!item?.big || loaded.has(item.big)) return;
+      const im = new Image();
+      im.src = item.big;
+      loaded.set(item.big, im);
+    };
+
+    const render = (i) => {
+      index = (i + data.length) % data.length;
+      const item = data[index];
+      zoomed = false;
+      canvas.classList.remove("is-zoomed");
+
+      spinner.hidden = false;
+      img.style.opacity = "0";
+      img.src = item.mid;
+      img.srcset = item.srcset || "";
+      img.sizes = "(max-width: 900px) 96vw, 78vw";
+      img.alt = item.name ? `${item.name}${item.titleEn ? `（${item.titleEn}）` : ""}　${item.caption}` : item.caption;
+
+      const finish = () => {
+        spinner.hidden = true;
+        img.style.opacity = "1";
+      };
+      if (img.complete && img.naturalWidth) finish();
+      else img.onload = finish;
+
+      title.textContent = item.name || item.caption;
+      en.textContent = item.titleEn || "";
+      code.textContent = item.code || "—";
+      dim.textContent = item.width && item.height ? `${item.width} × ${item.height} ${item.unit || "cm"}` : "—";
+      year.textContent = item.year ? `${item.year}${item.yearGanzhi ? `（${item.yearGanzhi}）` : ""}` : "—";
+      note.textContent = item.note || "";
+      note.hidden = !item.note;
+      idxEl.textContent = String(index + 1);
+      document.getElementById("lb-caption").scrollTop = 0;
+
+      // 同步 hash，讓每一件作品都可直接連結
+      history.replaceState(null, "", `#${item.id}`);
+
+      preload(index + 1);
+      preload(index - 1);
+    };
+
+    const open = (i) => {
+      lastFocus = document.activeElement;
+      lb.hidden = false;
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      render(i);
+      document.getElementById("lb-close").focus();
+    };
+
+    const close = () => {
+      lb.hidden = true;
+      lb.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      history.replaceState(null, "", location.pathname + location.search);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    };
+
+    const step = (d) => render(index + d);
+
+    // 事件綁定
+    document.getElementById("lb-close").addEventListener("click", close);
+    document.getElementById("lb-prev").addEventListener("click", () => step(-1));
+    document.getElementById("lb-next").addEventListener("click", () => step(1));
+    lb.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", close));
+
+    document.getElementById("lb-zoom").addEventListener("click", () => {
+      zoomed = !zoomed;
+      canvas.classList.toggle("is-zoomed", zoomed);
+    });
+
+    // 點圖放大：以點擊位置為中心
+    img.addEventListener("click", (e) => {
+      if (!zoomed) {
+        zoomed = true;
+        canvas.classList.add("is-zoomed");
+        const r = img.getBoundingClientRect();
+        const px = ((e.clientX - r.left) / r.width) * 100;
+        const py = ((e.clientY - r.top) / r.height) * 100;
+        img.style.transformOrigin = `${px}% ${py}%`;
+        canvas.scrollTo({
+          left: (px / 100) * canvas.scrollWidth - canvas.clientWidth / 2,
+          top: (py / 100) * canvas.scrollHeight - canvas.clientHeight / 2,
+          behavior: "smooth",
+        });
+      } else {
+        zoomed = false;
+        canvas.classList.remove("is-zoomed");
+        img.style.transformOrigin = "center center";
+        canvas.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lb.hidden) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") step(-1);
+      else if (e.key === "ArrowRight") step(1);
+      else if (e.key === "z" || e.key === "Z") document.getElementById("lb-zoom").click();
+      else if (e.key === "Tab") {
+        // 焦點鎖在 dialog 內
+        const focusables = lb.querySelectorAll("button, [href]");
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    // 觸控滑動換件
+    let tx = 0,
+      ty = 0;
+    stage.addEventListener(
+      "touchstart",
+      (e) => {
+        tx = e.touches[0].clientX;
+        ty = e.touches[0].clientY;
+      },
+      { passive: true }
+    );
+    stage.addEventListener(
+      "touchend",
+      (e) => {
+        const dx = e.changedTouches[0].clientX - tx;
+        const dy = e.changedTouches[0].clientY - ty;
+        if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) step(dx > 0 ? -1 : 1);
+      },
+      { passive: true }
+    );
+
+    // 深連結：#M012 直接開
+    const fromHash = () => {
+      const id = decodeURIComponent(location.hash.replace("#", ""));
+      if (!id) return false;
+      const i = data.findIndex((d) => d.id === id || d.code === id);
+      if (i >= 0) {
+        open(i);
+        return true;
+      }
+      return false;
+    };
+
+    // 縮圖點擊
+    document.querySelectorAll("[data-lightbox]").forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const id = a.getAttribute("data-lightbox");
+        const i = data.findIndex((d) => d.id === id);
+        if (i >= 0) {
+          e.preventDefault();
+          open(i);
+        }
+      });
+    });
+
+    window.addEventListener("hashchange", () => {
+      if (lb.hidden) fromHash();
+    });
+
+    if (!fromHash()) {
+      // 沒有深連結就什麼都不做
+    }
+  })();
+</script>
+
+<style>
+  .lb[hidden] {
+    display: none;
+  }
+  .lb {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: var(--paper);
+    /* 不透明的底：0.96 的半透明會讓底下的網格透出來，看畫時很干擾 */
+    background: #0a0907;
+  }
+  .lb-backdrop {
+    position: absolute;
+    inset: 0;
+    background: #0a0907;
+  }
+  .lb-shell {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    max-height: 100dvh;
+  }
+
+  .lb-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem clamp(1rem, 3vw, 2.4rem);
+    border-bottom: 1px solid rgba(250, 248, 243, 0.1);
+  }
+  .lb-count {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: rgba(250, 248, 243, 0.6);
+  }
+  .lb-sep {
+    opacity: 0.4;
+  }
+  .lb-album {
+    margin-left: 1rem;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: rgba(250, 248, 243, 0.42);
+  }
+  .lb-actions {
+    display: flex;
+    gap: 0.3rem;
+  }
+  .lb-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    color: rgba(250, 248, 243, 0.7);
+    border-radius: 50%;
+    transition: all var(--dur) var(--ease);
+  }
+  .lb-btn:hover {
+    color: var(--paper);
+    background: rgba(250, 248, 243, 0.1);
+  }
+
+  .lb-stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3.5rem 1fr 3.5rem;
+    align-items: center;
+    min-height: 0;
+    padding: 0.5rem clamp(0.5rem, 2vw, 1.5rem);
+  }
+  /* 舞台高度：扣掉上下兩條 bar 與一點呼吸空間。
+     用 dvh 讓手機的網址列收合時也能正確計算。 */
+  .lb-canvas {
+    --stage-h: calc(100dvh - 15rem);
+    position: relative;
+    height: var(--stage-h);
+    max-height: var(--stage-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .lb-canvas.is-zoomed {
+    overflow: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: zoom-out;
+  }
+  /* 百分比 max-height 在 flex/grid 子項上常常失效（父層高度不確定時會被忽略），
+     導致圖片被放大到原始像素、糊掉。這裡直接寫死上限。 */
+  .lb-canvas img {
+    max-width: 100%;
+    max-height: var(--stage-h);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-in;
+    transition: opacity 240ms var(--ease), transform 380ms var(--ease-out);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  }
+  .lb-canvas.is-zoomed img {
+    max-width: none;
+    max-height: none;
+    width: 220%;
+    height: auto;
+    cursor: zoom-out;
+  }
+
+  .lb-spinner {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border: 1.5px solid rgba(250, 248, 243, 0.2);
+    border-top-color: var(--ochre);
+    border-radius: 50%;
+    animation: lbspin 800ms linear infinite;
+  }
+  .lb-spinner[hidden] {
+    display: none;
+  }
+  @keyframes lbspin {
+    to { transform: rotate(360deg); }
+  }
+
+  .lb-nav {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: grid;
+    place-items: center;
+    color: rgba(250, 248, 243, 0.55);
+    border: 1px solid rgba(250, 248, 243, 0.14);
+    border-radius: 50%;
+    transition: all var(--dur) var(--ease);
+    justify-self: center;
+  }
+  .lb-nav:hover {
+    color: var(--paper);
+    border-color: rgba(250, 248, 243, 0.4);
+    background: rgba(250, 248, 243, 0.07);
+  }
+
+  .lb-caption {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem 2.5rem;
+    padding: 1.1rem clamp(1rem, 3vw, 2.4rem) 1.4rem;
+    border-top: 1px solid rgba(250, 248, 243, 0.1);
+  }
+  .lb-cap-main h2 {
+    font-family: var(--serif-zh);
+    font-size: 1.22rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin: 0;
+    color: var(--paper);
+  }
+  .lb-cap-main p {
+    margin: 0.25rem 0 0;
+    font-family: var(--serif-en);
+    font-size: 0.8rem;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    color: rgba(250, 248, 243, 0.5);
+  }
+  .lb-cap-main p:empty {
+    display: none;
+  }
+  .lb-spec {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+  }
+  .lb-spec div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .lb-spec dt {
+    font-family: var(--sans-zh);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    color: rgba(250, 248, 243, 0.36);
+  }
+  .lb-spec dd {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: rgba(250, 248, 243, 0.8);
+    white-space: nowrap;
+  }
+  .lb-note {
+    grid-column: 1 / -1;
+    margin: 0.4rem 0 0;
+    font-family: var(--sans-zh);
+    font-size: 0.74rem;
+    color: var(--ochre);
+    letter-spacing: 0.04em;
+  }
+  .lb-note[hidden] {
+    display: none;
+  }
+
+  .lb-hint {
+    position: absolute;
+    bottom: 0.35rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: var(--sans-zh);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    color: rgba(250, 248, 243, 0.24);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 820px) {
+    .lb-stage {
+      grid-template-columns: 1fr;
+    }
+    .lb-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background: rgba(10, 9, 7, 0.6);
+    }
+    .lb-prev {
+      left: 0.6rem;
+    }
+    .lb-next {
+      right: 0.6rem;
+    }
+    .lb-caption {
+      grid-template-columns: 1fr;
+    }
+    .lb-spec {
+      gap: 1.4rem;
+    }
+    .lb-hint {
+      display: none;
+    }
+    .lb-canvas {
+      --stage-h: calc(100dvh - 19rem);
+    }
+  }
+</style>

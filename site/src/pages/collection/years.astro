@@ -1,0 +1,236 @@
+---
+/**
+ * 作品年份索引 — /collection/years
+ * 依創作年份列出全部作品，方便研究者與策展人查找。
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { artworks } from "../../lib/content.js";
+
+const withYear = artworks.filter((a) => a.year);
+const noYear = artworks.filter((a) => !a.year);
+
+const byYear = new Map();
+for (const a of withYear) {
+  if (!byYear.has(a.year)) byYear.set(a.year, []);
+  byYear.get(a.year).push(a);
+}
+const years = [...byYear.entries()].sort((a, b) => b[0] - a[0]);
+for (const [, list] of years) list.sort((x, y) => (x.code || "").localeCompare(y.code || ""));
+---
+
+<BaseLayout
+  title="作品年份索引"
+  description={`黃磊生作品年份索引，共 ${artworks.length} 件，按創作年份排列，可逐件跳至作品檢視器。`}
+>
+  <header class="idx-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="麵包屑">
+        <a href="/">首頁</a><span aria-hidden="true">/</span>
+        <a href="/collection">作品</a><span aria-hidden="true">/</span>
+        <span aria-current="page">年份索引</span>
+      </nav>
+      <p class="eyebrow">索引</p>
+      <h1 class="idx-title">作品索引</h1>
+      <p class="idx-lede">
+        依創作年份排列全部 {artworks.length} 件作品。{noYear.length > 0 ? `另有 ${noYear.length} 件館方未標年份，列於最末。` : ""}
+      </p>
+      <nav class="year-jump" aria-label="年份快速跳轉">
+        {years.map(([y, list]) => (
+          <a href={`#y${y}`}>{y}<span>{list.length}</span></a>
+        ))}
+      </nav>
+    </div>
+  </header>
+
+  <div class="container idx-body">
+    {years.map(([year, list]) => (
+      <section class="idx-year" id={`y${year}`}>
+        <h2 class="iy-head">
+          <span class="iy-num">{year}</span>
+          <span class="iy-count">{list.length} 件</span>
+        </h2>
+        <ul class="iy-list">
+          {list.map((a) => (
+            <li>
+              <a href={`${a.albumRoute}#${a.id}`} class="iy-item">
+                <span class="iy-code">{a.code}</span>
+                <span class="iy-name">{a.name}</span>
+                {a.titleEn && <span class="iy-en">{a.titleEn}</span>}
+                <span class="iy-dim">{a.width}×{a.height}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    {noYear.length > 0 && (
+      <section class="idx-year" id="ynone">
+        <h2 class="iy-head">
+          <span class="iy-num">未標年份</span>
+          <span class="iy-count">{noYear.length} 件</span>
+        </h2>
+        <ul class="iy-list">
+          {noYear.map((a) => (
+            <li>
+              <a href={`${a.albumRoute}#${a.id}`} class="iy-item">
+                <span class="iy-code">{a.code}</span>
+                <span class="iy-name">{a.name}</span>
+                <span class="iy-dim">—</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: 1.8rem;
+  }
+  .crumbs a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  .crumbs a:hover {
+    color: var(--ochre);
+  }
+
+  .idx-hero {
+    padding: var(--s-8) 0 var(--s-6);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .idx-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    margin: 0;
+  }
+  .idx-lede {
+    margin: 1.3rem 0 0;
+    max-width: 34em;
+    font-size: 0.92rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+  }
+  .year-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: var(--s-5);
+  }
+  .year-jump a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.28rem;
+    padding: 0.22rem 0.55rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+    border: 1px solid var(--paper-edge);
+    text-decoration: none;
+    transition: all var(--dur) var(--ease);
+  }
+  .year-jump a:hover {
+    border-color: var(--ochre);
+    color: var(--ochre);
+  }
+  .year-jump span {
+    font-size: 0.6rem;
+    opacity: 0.5;
+  }
+
+  .idx-body {
+    padding: var(--s-7) 0 var(--s-8);
+  }
+  .idx-year {
+    scroll-margin-top: 6rem;
+    margin-bottom: var(--s-7);
+  }
+  .iy-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: var(--s-4);
+  }
+  .iy-num {
+    font-family: var(--serif-en);
+    font-size: 1.7rem;
+    letter-spacing: 0.02em;
+  }
+  .iy-count {
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+  }
+  .iy-list {
+    display: grid;
+  }
+  .iy-item {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr minmax(0, 14rem) 5.5rem;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.55rem 0.4rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--paper-edge) 55%, transparent);
+    text-decoration: none;
+    color: inherit;
+    transition: background var(--dur) var(--ease), padding-left var(--dur) var(--ease);
+  }
+  .iy-item:hover {
+    background: var(--ochre-wash);
+    padding-left: 0.9rem;
+  }
+  .iy-code {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--ochre);
+  }
+  .iy-name {
+    font-family: var(--serif-zh);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+  }
+  .iy-en {
+    font-family: var(--serif-en);
+    font-size: 0.76rem;
+    font-style: italic;
+    color: var(--ink-faint);
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .iy-dim {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  @media (max-width: 700px) {
+    .iy-item {
+      grid-template-columns: 3.6rem 1fr auto;
+      gap: 0.6rem;
+    }
+    .iy-en {
+      display: none;
+    }
+  }
+</style>

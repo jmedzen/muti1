@@ -1,0 +1,17 @@
+---
+/**
+ * 藝術生活 — /life/exhibition-exchange、/life/art-exchange、/life/life-footprint
+ */
+import GalleryView from "../../components/GalleryView.astro";
+import { galleries } from "../../lib/content.js";
+
+export async function getStaticPaths() {
+  return galleries
+    .filter((g) => g.counts.photo > 0)
+    .map((g) => ({ params: { slug: g.slug }, props: { gallery: g } }));
+}
+
+const { gallery } = Astro.props;
+---
+
+<GalleryView gallery={gallery} kind="photo" />

@@ -1,0 +1,72 @@
+---
+/**
+ * ArtImage — 自適應圖片元件
+ *
+ * 用 images.json 裡的變體清單產生 srcset。沒有 JS、沒有 CLS：
+ * 寬高比直接寫進 style，圖片載入前空間就已佔好。
+ * 預設 lazy，首屏用 priority 改成 eager + fetchpriority=high。
+ */
+import { IMAGES } from "../lib/content.js";
+
+const {
+  src,
+  alt = "",
+  sizes = "(max-width: 720px) 100vw, 640px",
+  widths = [480, 960],
+  class: className = "",
+  priority = false,
+  ratio = null,
+  objectPosition = null,
+  caption = null,
+  captionClass = "",
+} = Astro.props;
+
+const meta = IMAGES[src];
+const variants = meta?.variants ?? [];
+const usable = variants.filter((v) => widths.includes(v.w));
+const list = usable.length ? usable : variants;
+
+const srcsetStr = list.map((v) => `${v.file} ${v.width}w`).join(", ");
+const fallback = list.at(-1)?.file ?? null;
+const w = meta?.width ?? 4;
+const h = meta?.height ?? 3;
+const ar = ratio ?? `${w} / ${h}`;
+
+const styleParts = [`aspect-ratio:${ar}`];
+if (objectPosition) styleParts.push(`--obj-pos:${objectPosition}`);
+---
+
+{
+  fallback ? (
+    <img
+      src={fallback}
+      srcset={srcsetStr || undefined}
+      sizes={sizes}
+      alt={alt}
+      width={w}
+      height={h}
+      loading={priority ? "eager" : "lazy"}
+      decoding={priority ? "sync" : "async"}
+      fetchpriority={priority ? "high" : "auto"}
+      class:list={["art-image", className]}
+      style={`aspect-ratio:${ar};${objectPosition ? `object-position:${objectPosition}` : ""}`}
+      data-lqip={meta?.lqip}
+    />
+  ) : (
+    <div class:list={["art-image", "art-image--missing", className]} style={`aspect-ratio:${ar}`} aria-hidden="true" />
+  )
+}
+
+<style>
+  .art-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background-color: var(--paper-warm);
+    transition: opacity 600ms var(--ease);
+  }
+  .art-image--missing {
+    background: linear-gradient(135deg, var(--paper-warm), var(--paper-deep));
+  }
+</style>

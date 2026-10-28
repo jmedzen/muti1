@@ -1,0 +1,213 @@
+---
+/**
+ * 我的繪畫觀 — 黃磊生自述全文
+ * 原文錄自 /index.php/artist-luisang/huang-leisheng，一字未改。
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { paintingView, biography } from "../../lib/content.js";
+
+const body = paintingView?.bodyHtml ?? "";
+const paras = (paintingView?.bodyText ?? "").split("\n").filter(Boolean);
+// 原站的 <p> 已經保留段落，直接渲染 HTML
+---
+
+<BaseLayout
+  title="我的繪畫觀"
+  description="黃磊生自述繪畫觀全文：從趙少昂的啟蒙，到嶺南畫派的撞粉撞水，再到西畫透視與寫生的融合。"
+>
+  <article class="essay">
+    <header class="essay-head container">
+      <p class="eyebrow">藝術家自述</p>
+      <h1 class="essay-title">我的繪畫觀</h1>
+      <p class="essay-byline">黃磊生　口述</p>
+      <p class="essay-meta">
+        全文 {paintingView?.charCount ?? paras.join("").length} 字 · 錄自館方原文
+      </p>
+    </header>
+
+    <div class="container essay-body">
+      <aside class="essay-rail no-print">
+        <p class="rail-label">目次</p>
+        <ol id="toc"></ol>
+        <a href="/about/chronology" class="rail-link">年譜 →</a>
+        <a href="/about" class="rail-link">生平 →</a>
+      </aside>
+
+      <div class="prose prose--wide essay-content" id="essay">
+        <div set:html={body} />
+      </div>
+    </div>
+
+    <footer class="essay-foot container">
+      <div class="foot-inner">
+        <p>
+          本文為黃磊生自述其繪畫觀，說明嶺南畫派的師承、技法與他對中西繪畫融合的主張。
+          文中提及的趙少昂為嶺南畫派第二代代表人物，黃磊生為其入室弟子。
+        </p>
+        <div class="foot-links">
+          <a href="/about" class="btn btn--ghost">生平與畫歷</a>
+          <a href="/about/chronology" class="btn btn--ghost">完整年譜</a>
+        </div>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .essay-head {
+    padding: var(--s-9) 0 var(--s-6);
+    border-bottom: 1px solid var(--paper-edge);
+    text-align: center;
+  }
+  .essay-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    margin: 0;
+    text-indent: 0.3em;
+  }
+  .essay-byline {
+    margin: 1.1rem 0 0;
+    font-family: var(--serif-zh);
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    color: var(--ochre);
+  }
+  .essay-meta {
+    margin: 0.5rem 0 0;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+  }
+
+  .essay-body {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--s-7);
+    padding-top: var(--s-8);
+    padding-bottom: var(--s-8);
+  }
+  .essay-rail {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+    font-family: var(--sans-zh);
+  }
+  .rail-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.8rem;
+  }
+  .essay-rail ol {
+    display: grid;
+    gap: 0.35rem;
+    counter-reset: toc;
+  }
+  .essay-rail :global(ol li) {
+    counter-increment: toc;
+  }
+  .essay-rail a {
+    display: block;
+    padding-left: 0.7rem;
+    border-left: 1px solid var(--paper-edge);
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: all var(--dur) var(--ease);
+  }
+  .essay-rail a:hover {
+    border-left-color: var(--ochre);
+    color: var(--ochre);
+  }
+  .rail-link {
+    display: inline-block;
+    margin-top: 1.4rem;
+    margin-right: 1rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--ochre);
+    text-decoration: none;
+  }
+
+  .essay-content {
+    max-width: 38em;
+    margin-inline: auto;
+  }
+  .essay-content :global(p) {
+    font-size: 1.05rem;
+    line-height: 2.25;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    margin-bottom: 1.6em;
+    text-align: justify;
+  }
+  .essay-content :global(p:first-of-type::first-letter) {
+    font-size: 3.1em;
+    float: left;
+    line-height: 0.9;
+    padding: 0.06em 0.12em 0 0;
+    color: var(--ochre);
+    font-family: var(--serif-zh);
+  }
+  .essay-content :global(br) {
+    content: "";
+    display: block;
+    margin-bottom: 0.6em;
+  }
+
+  .essay-foot {
+    padding-bottom: var(--s-8);
+  }
+  .foot-inner {
+    max-width: 38em;
+    margin-inline: auto;
+    padding-top: var(--s-6);
+    border-top: 1px solid var(--paper-edge);
+  }
+  .foot-inner p {
+    font-family: var(--sans-zh);
+    font-size: 0.82rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+  }
+  .foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.3rem;
+  }
+
+  @media (max-width: 900px) {
+    .essay-body {
+      grid-template-columns: 1fr;
+    }
+    .essay-rail {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // 目次：從 H2 產生，讓長文可跳讀
+  const essay = document.getElementById("essay");
+  const toc = document.getElementById("toc");
+  if (essay && toc) {
+    const heads = [...essay.querySelectorAll("h2, h3")];
+    heads.forEach((h, i) => {
+      const id = h.id || `sec-${i + 1}`;
+      h.id = id;
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `#${id}`;
+      a.textContent = h.textContent.trim().slice(0, 18);
+      li.appendChild(a);
+      toc.appendChild(li);
+    });
+    if (!heads.length) toc.parentElement.style.display = "none";
+  }
+</script>

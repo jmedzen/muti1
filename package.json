@@ -1,0 +1,25 @@
+{
+  "name": "luisang-museum-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "黃磊生官方網站 — 爬取、重構、驗證工具鏈",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node tools/dev.mjs",
+    "build": "node tools/sync.mjs && cd site && npm run build",
+    "preview": "node tools/preview.mjs",
+    "serve": "node tools/serve.mjs",
+    "sync": "node tools/sync.mjs",
+    "verify": "node tools/verify-all.mjs",
+    "verify:fast": "node tools/verify-all.mjs --fast",
+    "crawl": "node tools/crawl.mjs",
+    "extract": "node tools/extract.mjs",
+    "model": "node tools/model.mjs",
+    "images": "node tools/images.mjs",
+    "redirects": "node tools/redirects.mjs",
+    "pipeline": "node tools/crawl.mjs && node tools/extract.mjs && node tools/model.mjs && node tools/images.mjs && node tools/redirects.mjs"
+  }
+}

@@ -1,0 +1,381 @@
+---
+/**
+ * 年譜 — 完整編年
+ *
+ * 資料來源：原站「黃磊生年譜」文章（/index.php/artist-luisang/spectral），
+ * 由 tools/model.mjs 以 <br> 分年解析。每一年的文字一字未改。
+ *
+ * 呈現：虛擬滾動不需要 —— 59 個年份一次渲染，但 JS 提供「跳到年份」與「只看有照片的年份」。
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { timelineWithPhotos, timeline, media } from "../../lib/content.js";
+
+const years = timelineWithPhotos;
+const decades = [];
+for (const y of years) {
+  const d = Math.floor(y.year / 10) * 10;
+  if (!decades.length || decades.at(-1).decade !== d) decades.push({ decade: d, items: [] });
+  decades.at(-1).items.push(y);
+}
+
+const withPhotos = years.filter((y) => y.photos.length > 0).length;
+const totalPhotos = years.reduce((s, y) => s + y.photos.length, 0);
+---
+
+<BaseLayout
+  title="黃磊生年譜"
+  description={`黃磊生（1928–2011）完整年譜，${timeline.length} 個年份的展覽、講學、出版、獲獎與行旅紀錄，含辭世後的紀念展。`}
+>
+  <header class="page-hero">
+    <div class="container">
+      <p class="eyebrow">年譜</p>
+      <h1 class="page-title">編年</h1>
+      <p class="page-lede">
+        自 1928 年生於廣東臺山，2011 年辭世，其後仍有紀念展持續舉行。
+        {timeline.length} 個年份，記錄展覽、講學、出版、獲獎與行旅。
+        文字錄自館方年譜原文，未作改寫。
+      </p>
+      <div class="hero-meta">
+        <span><strong>{timeline.length}</strong> 個年份</span>
+        <span><strong>{withPhotos}</strong> 年附有照片</span>
+        <span><strong>{totalPhotos}</strong> 幀影像</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container chrono-layout">
+    <!-- 側邊：快速跳轉 -->
+    <aside class="chrono-side no-print">
+      <p class="side-label">快速跳轉</p>
+      <ul class="decade-jump">
+        {decades.map((d) => (
+          <li>
+            <a href={`#y-${d.decade}`}>
+              <span class="dj-year">{d.decade}s</span>
+              <span class="dj-count">{d.items.length}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a class="side-top" href="#top">↑ 回到頂端</a>
+    </aside>
+
+    <!-- 主體 -->
+    <div class="chrono-main" id="top">
+      {decades.map((d) => (
+        <section class="decade" id={`y-${d.decade}`}>
+          <h2 class="decade-head">
+            <span>{d.decade}s</span>
+            <em>{d.decade}—{d.decade + 9}</em>
+          </h2>
+
+          <ol class="year-list">
+            {d.items.map((y) => (
+              <li class:list={["year", { "year--photos": y.photos.length > 0 }]} data-reveal>
+                <div class="year-head">
+                  <h3 class="year-num">{y.year}</h3>
+                  {y.photos.length > 0 && <span class="year-badge">{y.photos.length} 幀</span>}
+                </div>
+
+                <div class="year-body">
+                  <ul class="year-events">
+                    {y.events.map((e) => <li>{e}</li>)}
+                  </ul>
+
+                  {y.photos.length > 0 && (
+                    <div class="year-photos">
+                      {y.photos.map((p) => {
+                        const pm = media(p.src, { fallback: 480 });
+                        if (!pm) return null;
+                        return (
+                          <figure class="year-photo">
+                            <img
+                              src={pm.variants[0].file}
+                              srcset={pm.srcset}
+                              sizes="(max-width: 700px) 30vw, 190px"
+                              alt={p.caption}
+                              loading="lazy"
+                              decoding="async"
+                              width={pm.width}
+                              height={pm.height}
+                            />
+                            <figcaption>{p.caption}</figcaption>
+                          </figure>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+
+      <p class="chrono-foot">
+        年譜原文錄自〈黃磊生年譜〉，部分年份原文合併敘述，本站保留原始分段。
+        照片來源為館方「展覽交流」「藝術交流」「生活足跡」影像檔案，依照片說明中的年份歸入對應年份。
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--s-9) 0 var(--s-7);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .page-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    margin: 0;
+  }
+  .page-lede {
+    max-width: 34em;
+    margin: 1.5rem 0 0;
+    font-size: 0.95rem;
+    line-height: 2.05;
+    color: var(--ink-muted);
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.8rem;
+    font-family: var(--sans-zh);
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+  }
+  .hero-meta strong {
+    font-family: var(--serif-en);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ochre);
+    margin-right: 0.35rem;
+  }
+
+  .chrono-layout {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: var(--s-7);
+    padding-top: var(--s-7);
+    padding-bottom: var(--s-8);
+  }
+
+  .chrono-side {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+    font-family: var(--sans-zh);
+  }
+  .side-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.8rem;
+  }
+  .decade-jump {
+    display: grid;
+    gap: 0.1rem;
+  }
+  .decade-jump a {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35rem 0 0.35rem 0.7rem;
+    border-left: 1px solid var(--paper-edge);
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: all var(--dur) var(--ease);
+  }
+  .decade-jump a:hover {
+    border-left-color: var(--ochre);
+    color: var(--ochre);
+    padding-left: 0.95rem;
+  }
+  .dj-count {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+  }
+  .dj-year {
+    font-family: var(--sans-zh);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+  .side-top {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    text-decoration: none;
+  }
+
+  .chrono-main {
+    min-width: 0;
+  }
+  .decade {
+    margin-bottom: var(--s-8);
+    scroll-margin-top: 6rem;
+  }
+  .decade-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    padding-bottom: 0.7rem;
+    margin-bottom: var(--s-5);
+    border-bottom: 2px solid var(--ink);
+  }
+  .decade-head span {
+    font-family: var(--serif-en);
+    font-size: 1.8rem;
+    letter-spacing: 0.03em;
+  }
+  .decade-head em {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+
+  .year-list {
+    display: grid;
+    gap: var(--s-6);
+  }
+  .year {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: var(--s-5);
+    padding-top: 1.1rem;
+    border-top: 1px solid color-mix(in srgb, var(--paper-edge) 65%, transparent);
+  }
+  .year-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .year-num {
+    font-family: var(--serif-en);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .year-badge {
+    align-self: flex-start;
+    font-family: var(--sans-zh);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    color: var(--ochre);
+    border: 1px solid var(--ochre-line);
+    padding: 0.1rem 0.4rem;
+  }
+
+  .year-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    min-width: 0;
+  }
+  .year-events {
+    display: grid;
+    gap: 0.45rem;
+    font-size: 0.92rem;
+    line-height: 2;
+    color: var(--ink-soft);
+  }
+  .year-events li {
+    position: relative;
+    padding-left: 1em;
+  }
+  .year-events li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.82em;
+    width: 4px;
+    height: 1px;
+    background: var(--ochre-line);
+  }
+
+  .year-photos {
+    display: flex;
+    gap: 0.6rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+  .year-photo {
+    flex: 0 0 190px;
+    scroll-snap-align: start;
+  }
+  .year-photo img {
+    width: 100%;
+    height: 132px;
+    object-fit: cover;
+    background: var(--paper-warm);
+    filter: grayscale(0.35);
+    transition: filter 500ms var(--ease);
+  }
+  .year-photo:hover img {
+    filter: grayscale(0);
+  }
+  .year-photo figcaption {
+    margin-top: 0.4rem;
+    font-family: var(--sans-zh);
+    font-size: 0.68rem;
+    line-height: 1.6;
+    color: var(--ink-faint);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .chrono-foot {
+    margin-top: var(--s-7);
+    padding-top: var(--s-5);
+    border-top: 1px solid var(--paper-edge);
+    font-family: var(--sans-zh);
+    font-size: 0.76rem;
+    line-height: 1.9;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 860px) {
+    .chrono-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .chrono-side {
+      position: static;
+      border-bottom: 1px solid var(--paper-edge);
+      padding-bottom: var(--s-4);
+    }
+    .decade-jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .decade-jump a {
+      border-left: 0;
+      border: 1px solid var(--paper-edge);
+      padding: 0.3rem 0.7rem;
+    }
+    .year {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.6rem;
+    }
+    .year-head {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 0.7rem;
+    }
+  }
+</style>

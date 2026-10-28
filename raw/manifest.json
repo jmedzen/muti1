@@ -1,0 +1,2993 @@
+{
+  "origin": "https://luisang.rumotan.com",
+  "crawledAt": "2026-10-28T07:07:51.379Z",
+  "durationMs": 24777,
+  "categories": [
+    {
+      "id": "news",
+      "path": "/index.php/news",
+      "title": "本站新聞",
+      "parent": null
+    },
+    {
+      "id": "memorial",
+      "path": "/index.php/news/memorial-exhibition",
+      "title": "紀念展",
+      "parent": "news"
+    },
+    {
+      "id": "auction",
+      "path": "/index.php/news/auction-news",
+      "title": "拍賣新聞",
+      "parent": "news"
+    },
+    {
+      "id": "media",
+      "path": "/index.php/news/media-coverage",
+      "title": "媒體報導",
+      "parent": "news"
+    },
+    {
+      "id": "official",
+      "path": "/index.php/news/official-reports",
+      "title": "官方報導",
+      "parent": "news"
+    },
+    {
+      "id": "exhibition",
+      "path": "/index.php/news/exhibition-news",
+      "title": "展覽新聞",
+      "parent": "news"
+    },
+    {
+      "id": "reviews",
+      "path": "/index.php/art-reviews",
+      "title": "藝術評論",
+      "parent": null
+    },
+    {
+      "id": "artist",
+      "path": "/index.php/artist-luisang",
+      "title": "關於黃磊生",
+      "parent": null
+    },
+    {
+      "id": "landscape",
+      "path": "/index.php/landscape/landscape",
+      "title": "山水",
+      "parent": null
+    },
+    {
+      "id": "flowers",
+      "path": "/index.php/flowers-birds-insects-fish/flowers-birds-insects-fish",
+      "title": "花鳥蟲魚",
+      "parent": null
+    },
+    {
+      "id": "calligraphy",
+      "path": "/index.php/calligraphy/calligraphy",
+      "title": "書法",
+      "parent": null
+    },
+    {
+      "id": "artlife",
+      "path": "/index.php/art-life",
+      "title": "藝術生活",
+      "parent": null
+    },
+    {
+      "id": "contact",
+      "path": "/index.php/contact",
+      "title": "收藏",
+      "parent": null
+    }
+  ],
+  "pages": [
+    {
+      "slug": "art-life",
+      "url": "https://luisang.rumotan.com/index.php/art-life",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 33106,
+      "assets": 44
+    },
+    {
+      "slug": "art-life-catid-25",
+      "url": "https://luisang.rumotan.com/index.php/art-life?catid=25",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 33106,
+      "assets": 44
+    },
+    {
+      "slug": "art-reviews",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 56660,
+      "assets": 52
+    },
+    {
+      "slug": "art-reviews-cheng-rong-ning",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/cheng-rong-ning",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 54679,
+      "assets": 47
+    },
+    {
+      "slug": "art-reviews-de-shui-mo-zheng-chuan-chuang-guo-hua-xin-jing-lun-huang-lei-sheng-xian-sheng-de-shui-mo-chuang-zuo",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/de-shui-mo-zheng-chuan-chuang-guo-hua-xin-jing-lun-huang-lei-sheng-xian-sheng-de-shui-mo-chuang-zuo",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 61711,
+      "assets": 47
+    },
+    {
+      "slug": "art-reviews-guang-dong-mei-shu-guan-zhang-wang-huang-sheng",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/guang-dong-mei-shu-guan-zhang-wang-huang-sheng",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 48620,
+      "assets": 47
+    },
+    {
+      "slug": "art-reviews-guo-li-guo-fu-ji-nian-guan-liu-yue-si",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/guo-li-guo-fu-ji-nian-guan-liu-yue-si",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 55003,
+      "assets": 47
+    },
+    {
+      "slug": "art-reviews-he-jin-can",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/he-jin-can",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 51859,
+      "assets": 47
+    },
+    {
+      "slug": "art-reviews-nan-jing-bo-wu-yuan-zhang-xu-hu-ping",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/nan-jing-bo-wu-yuan-zhang-xu-hu-ping",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 50193,
+      "assets": 47
+    },
+    {
+      "slug": "art-reviews-shang-hai-mei-shu-guan-zhang-fang-zeng-xian",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/shang-hai-mei-shu-guan-zhang-fang-zeng-xian",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 50433,
+      "assets": 47
+    },
+    {
+      "slug": "art-reviews-tai-bei-gu-gong-bo-wu-yuan-fu-yuan-zhang-lin-bai-ting",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/tai-bei-gu-gong-bo-wu-yuan-fu-yuan-zhang-lin-bai-ting",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 49336,
+      "assets": 47
+    },
+    {
+      "slug": "art-reviews-zhong-hua-yi-shu-wen-hua-xue-yuan-zhang-chen-shu-bai",
+      "url": "https://luisang.rumotan.com/index.php/art-reviews/zhong-hua-yi-shu-wen-hua-xue-yuan-zhang-chen-shu-bai",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 49885,
+      "assets": 47
+    },
+    {
+      "slug": "artist-luisang",
+      "url": "https://luisang.rumotan.com/index.php/artist-luisang",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 37976,
+      "assets": 46
+    },
+    {
+      "slug": "artist-luisang-huang-leisheng",
+      "url": "https://luisang.rumotan.com/index.php/artist-luisang/huang-leisheng",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 46352,
+      "assets": 46
+    },
+    {
+      "slug": "artist-luisang-huang-luisang-resume",
+      "url": "https://luisang.rumotan.com/index.php/artist-luisang/huang-luisang-resume",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 44554,
+      "assets": 46
+    },
+    {
+      "slug": "artist-luisang-spectral",
+      "url": "https://luisang.rumotan.com/index.php/artist-luisang/spectral",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 52481,
+      "assets": 46
+    },
+    {
+      "slug": "calligraphy-calligraphy",
+      "url": "https://luisang.rumotan.com/index.php/calligraphy/calligraphy",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 33611,
+      "assets": 47
+    },
+    {
+      "slug": "contact",
+      "url": "https://luisang.rumotan.com/index.php/contact",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 61103,
+      "assets": 57
+    },
+    {
+      "slug": "flowers-birds-insects-fish-flowers-birds-insects-fish",
+      "url": "https://luisang.rumotan.com/index.php/flowers-birds-insects-fish/flowers-birds-insects-fish",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 65543,
+      "assets": 131
+    },
+    {
+      "slug": "home",
+      "url": "https://luisang.rumotan.com/index.php",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 183605,
+      "assets": 132
+    },
+    {
+      "slug": "landscape-art-exchange",
+      "url": "https://luisang.rumotan.com/index.php/landscape/art-exchange",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 42659,
+      "assets": 69
+    },
+    {
+      "slug": "landscape-calligraphy",
+      "url": "https://luisang.rumotan.com/index.php/landscape/calligraphy",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 33603,
+      "assets": 47
+    },
+    {
+      "slug": "landscape-exhibition-exchange",
+      "url": "https://luisang.rumotan.com/index.php/landscape/exhibition-exchange",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 47405,
+      "assets": 75
+    },
+    {
+      "slug": "landscape-flowers-birds-insects-fish",
+      "url": "https://luisang.rumotan.com/index.php/landscape/flowers-birds-insects-fish",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 65451,
+      "assets": 131
+    },
+    {
+      "slug": "landscape-landscape",
+      "url": "https://luisang.rumotan.com/index.php/landscape/landscape",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 57998,
+      "assets": 111
+    },
+    {
+      "slug": "landscape-life-footprint",
+      "url": "https://luisang.rumotan.com/index.php/landscape/life-footprint",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 37497,
+      "assets": 59
+    },
+    {
+      "slug": "news",
+      "url": "https://luisang.rumotan.com/index.php/news",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 34459,
+      "assets": 43
+    },
+    {
+      "slug": "news-auction-news",
+      "url": "https://luisang.rumotan.com/index.php/news/auction-news",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 44209,
+      "assets": 48
+    },
+    {
+      "slug": "news-auction-news-chun-feng-ni-fensoft-spring-breeze-70-1x73-5cm-2008yi-liu-guo-ji-pai-mai-cheng-jiao-jia30wan",
+      "url": "https://luisang.rumotan.com/index.php/news/auction-news/chun-feng-ni-fensoft-spring-breeze-70-1x73-5cm-2008yi-liu-guo-ji-pai-mai-cheng-jiao-jia30wan",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 46973,
+      "assets": 47
+    },
+    {
+      "slug": "news-auction-news-fu-jian-hua-xia2014chun-pai3-2yi-yuan-yuan-man-shou-guan",
+      "url": "https://luisang.rumotan.com/index.php/news/auction-news/fu-jian-hua-xia2014chun-pai3-2yi-yuan-yuan-man-shou-guan",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 55144,
+      "assets": 47
+    },
+    {
+      "slug": "news-auction-news-huang-lei-sheng-shan-zhong-yi-ye-yu-jing-xin-cheng-jiao-jia377-600gang-bi-yu-xiang-gang-bao-li2017nian",
+      "url": "https://luisang.rumotan.com/index.php/news/auction-news/huang-lei-sheng-shan-zhong-yi-ye-yu-jing-xin-cheng-jiao-jia377-600gang-bi-yu-xiang-gang-bao-li2017nian-qiu-ji-pai-mai-hui",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47743,
+      "assets": 47
+    },
+    {
+      "slug": "news-auction-news-huang-lei-sheng-si-ji-yi-chun-cheng-jiao-jia240wan-yu2015zhong-cheng-guo-ji-yi-shu-chun-ji-pai-mai-hui",
+      "url": "https://luisang.rumotan.com/index.php/news/auction-news/huang-lei-sheng-si-ji-yi-chun-cheng-jiao-jia240wan-yu2015zhong-cheng-guo-ji-yi-shu-chun-ji-pai-mai-hui",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47892,
+      "assets": 47
+    },
+    {
+      "slug": "news-auction-news-xun-feng-huan-fan-sailing-along-soft-breeze-74x70-1cm-2008yi-liu-guo-ji-pai-mai-cheng-jiao-jia26wan",
+      "url": "https://luisang.rumotan.com/index.php/news/auction-news/xun-feng-huan-fan-sailing-along-soft-breeze-74x70-1cm-2008yi-liu-guo-ji-pai-mai-cheng-jiao-jia26wan",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47512,
+      "assets": 47
+    },
+    {
+      "slug": "news-exhibition-news",
+      "url": "https://luisang.rumotan.com/index.php/news/exhibition-news",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 39703,
+      "assets": 46
+    },
+    {
+      "slug": "news-exhibition-news-2008nian-guan-yu-huang-lei-sheng-da-shi-hua-zhan-ji-huo-dong-jin-xun",
+      "url": "https://luisang.rumotan.com/index.php/news/exhibition-news/2008nian-guan-yu-huang-lei-sheng-da-shi-hua-zhan-ji-huo-dong-jin-xun",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47306,
+      "assets": 46
+    },
+    {
+      "slug": "news-exhibition-news-2008nian-huang-lei-sheng-ba-shi-cai-mo-xin-yun-zhan",
+      "url": "https://luisang.rumotan.com/index.php/news/exhibition-news/2008nian-huang-lei-sheng-ba-shi-cai-mo-xin-yun-zhan",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47934,
+      "assets": 46
+    },
+    {
+      "slug": "news-exhibition-news-dong-fang-yi-shu-xie-hui-san-shi-zhou-nian-ji-nian-qing-zhu-wan-hui",
+      "url": "https://luisang.rumotan.com/index.php/news/exhibition-news/dong-fang-yi-shu-xie-hui-san-shi-zhou-nian-ji-nian-qing-zhu-wan-hui",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 44495,
+      "assets": 46
+    },
+    {
+      "slug": "news-media-coverage",
+      "url": "https://luisang.rumotan.com/index.php/news/media-coverage",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 47519,
+      "assets": 50
+    },
+    {
+      "slug": "news-media-coverage-2006-4-27-du-shu-zhen-yan-lai-yuan-ren-min-ri-bao-hai-wai-ban",
+      "url": "https://luisang.rumotan.com/index.php/news/media-coverage/2006-4-27-du-shu-zhen-yan-lai-yuan-ren-min-ri-bao-hai-wai-ban",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 46430,
+      "assets": 47
+    },
+    {
+      "slug": "news-media-coverage-2006-4-29-tai-wan-hua-jia-huang-lei-sheng-zhong-guo-mei-shu-guan-ban-hua-zhan-lai-yuan-xin-hua-wang",
+      "url": "https://luisang.rumotan.com/index.php/news/media-coverage/2006-4-29-tai-wan-hua-jia-huang-lei-sheng-zhong-guo-mei-shu-guan-ban-hua-zhan-lai-yuan-xin-hua-wang",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47695,
+      "assets": 47
+    },
+    {
+      "slug": "news-media-coverage-2006-4-30huang-lei-sheng-liu-shi-nian-hui-hua-yi-shu-zhan-lai-yuan-jing-hua-shi-bao",
+      "url": "https://luisang.rumotan.com/index.php/news/media-coverage/2006-4-30huang-lei-sheng-liu-shi-nian-hui-hua-yi-shu-zhan-lai-yuan-jing-hua-shi-bao",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47463,
+      "assets": 47
+    },
+    {
+      "slug": "news-media-coverage-2006-4-30zuo-pin-bei-mei-guo-zong-tong-shou-cang-huang-lei-sheng-shou-du-bei-jing-kai-zhan-lai-yuan-",
+      "url": "https://luisang.rumotan.com/index.php/news/media-coverage/2006-4-30zuo-pin-bei-mei-guo-zong-tong-shou-cang-huang-lei-sheng-shou-du-bei-jing-kai-zhan-lai-yuan-bei-jing-qing-nian-bao",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47902,
+      "assets": 47
+    },
+    {
+      "slug": "news-media-coverage-2006-5-9lu-mei-hua-jia-huang-lei-sheng-zai-jing-ban-zhan-lai-yuan-ren-min-ri-bao-hai-wai-ban",
+      "url": "https://luisang.rumotan.com/index.php/news/media-coverage/2006-5-9lu-mei-hua-jia-huang-lei-sheng-zai-jing-ban-zhan-lai-yuan-ren-min-ri-bao-hai-wai-ban",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47534,
+      "assets": 47
+    },
+    {
+      "slug": "news-media-coverage-2006-6gu-feng-gu-shao-feng-dan-jing-yi-ji-tai-wan-zhe-ming-hua-jia-huang-lei-sheng-qi-ren-qi-hua-lai",
+      "url": "https://luisang.rumotan.com/index.php/news/media-coverage/2006-6gu-feng-gu-shao-feng-dan-jing-yi-ji-tai-wan-zhe-ming-hua-jia-huang-lei-sheng-qi-ren-qi-hua-lai-yuan-tai-sheng-za-zhi",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 48144,
+      "assets": 47
+    },
+    {
+      "slug": "news-media-coverage-2008nian9yue22ri-huang-lei-sheng80cai-mo-xin-yun-zhan-zai-tai-wan-ju-xing-zhong-guo-shu-hua-bao",
+      "url": "https://luisang.rumotan.com/index.php/news/media-coverage/2008nian9yue22ri-huang-lei-sheng80cai-mo-xin-yun-zhan-zai-tai-wan-ju-xing-zhong-guo-shu-hua-bao",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47278,
+      "assets": 47
+    },
+    {
+      "slug": "news-memorial-exhibition",
+      "url": "https://luisang.rumotan.com/index.php/news/memorial-exhibition",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 42147,
+      "assets": 47
+    },
+    {
+      "slug": "news-memorial-exhibition-2013nian-huang-lei-sheng-da-shi-cai-mo-yi-shu-ji-nian-zhan-yan-huang-lei-luo-ju-bi-sheng",
+      "url": "https://luisang.rumotan.com/index.php/news/memorial-exhibition/2013nian-huang-lei-sheng-da-shi-cai-mo-yi-shu-ji-nian-zhan-yan-huang-lei-luo-ju-bi-sheng",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47411,
+      "assets": 47
+    },
+    {
+      "slug": "news-memorial-exhibition-2014nian-lin-li-jin-hua-zi-yi-huang-lei-sheng-de-shui-mo-feng-yun-zhan",
+      "url": "https://luisang.rumotan.com/index.php/news/memorial-exhibition/2014nian-lin-li-jin-hua-zi-yi-huang-lei-sheng-de-shui-mo-feng-yun-zhan",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 46369,
+      "assets": 47
+    },
+    {
+      "slug": "news-memorial-exhibition-huang-lei-sheng-da-shi-tao-yuan-guo-ji-ji-chang-xin-wen",
+      "url": "https://luisang.rumotan.com/index.php/news/memorial-exhibition/huang-lei-sheng-da-shi-tao-yuan-guo-ji-ji-chang-xin-wen",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 46545,
+      "assets": 47
+    },
+    {
+      "slug": "news-memorial-exhibition-jing-dao-2011nian-huang-lei-sheng-da-shi-xian-shi",
+      "url": "https://luisang.rumotan.com/index.php/news/memorial-exhibition/jing-dao-2011nian-huang-lei-sheng-da-shi-xian-shi",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 49951,
+      "assets": 47
+    },
+    {
+      "slug": "news-official-reports",
+      "url": "https://luisang.rumotan.com/index.php/news/official-reports",
+      "kind": "seed",
+      "status": "ok:200",
+      "bytes": 42985,
+      "assets": 48
+    },
+    {
+      "slug": "news-official-reports-2006-4-30tai-wan-hua-jia-huang-lei-sheng-ge-ren-hua-zhan-zai-zhong-guo-mei-shu-guan-ju-xing-lai-yu",
+      "url": "https://luisang.rumotan.com/index.php/news/official-reports/2006-4-30tai-wan-hua-jia-huang-lei-sheng-ge-ren-hua-zhan-zai-zhong-guo-mei-shu-guan-ju-xing-lai-yuan-zhong-hua-ren-min-gong-he-guo-zhong-yang-ren-min-zheng-fu",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 48003,
+      "assets": 47
+    },
+    {
+      "slug": "news-official-reports-2008nian-li-deng-hui-qian-zong-tong-xian-sheng-kang-li-li-lin-huang-lei-sheng-ba-shi-cai-mo-xin-yu",
+      "url": "https://luisang.rumotan.com/index.php/news/official-reports/2008nian-li-deng-hui-qian-zong-tong-xian-sheng-kang-li-li-lin-huang-lei-sheng-ba-shi-cai-mo-xin-yun-zhan-kai-mu-shi-zhi-ci",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 47885,
+      "assets": 47
+    },
+    {
+      "slug": "news-official-reports-2008nian8yue29ri-zong-tong-he-dian",
+      "url": "https://luisang.rumotan.com/index.php/news/official-reports/2008nian8yue29ri-zong-tong-he-dian",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 46365,
+      "assets": 47
+    },
+    {
+      "slug": "news-official-reports-2008nian9yue5ri-fu-zong-tong-he-dian",
+      "url": "https://luisang.rumotan.com/index.php/news/official-reports/2008nian9yue5ri-fu-zong-tong-he-dian",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 46457,
+      "assets": 47
+    },
+    {
+      "slug": "news-official-reports-xiang-gang-zhong-wen-da-xue-chong-ji-xue-yuan-yao-qing-han",
+      "url": "https://luisang.rumotan.com/index.php/news/official-reports/xiang-gang-zhong-wen-da-xue-chong-ji-xue-yuan-yao-qing-han",
+      "kind": "article",
+      "status": "ok:200",
+      "bytes": 46100,
+      "assets": 47
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://luisang.rumotan.com/components/com_speasyimagegallery/assets/css/style-min.css",
+      "file": "components/com_speasyimagegallery/assets/css/style-min.css",
+      "bytes": 19897,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_speasyimagegallery/assets/js/script-min.js",
+      "file": "components/com_speasyimagegallery/assets/js/script-min.js",
+      "bytes": 4090,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_speasyimagegallery/assets/js/speasygallery-main.js",
+      "file": "components/com_speasyimagegallery/assets/js/speasygallery-main.js",
+      "bytes": 619,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/animate.min.css",
+      "file": "components/com_sppagebuilder/assets/css/animate.min.css",
+      "bytes": 70920,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/dynamic-content.css",
+      "file": "components/com_sppagebuilder/assets/css/dynamic-content.css",
+      "bytes": 1993,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/font-awesome-6.min.css",
+      "file": "components/com_sppagebuilder/assets/css/font-awesome-6.min.css",
+      "bytes": 97995,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/font-awesome-v4-shims.css",
+      "file": "components/com_sppagebuilder/assets/css/font-awesome-v4-shims.css",
+      "bytes": 26701,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/jquery.bxslider.min.css",
+      "file": "components/com_sppagebuilder/assets/css/jquery.bxslider.min.css",
+      "bytes": 2178,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/js_slider.css",
+      "file": "components/com_sppagebuilder/assets/css/js_slider.css",
+      "bytes": 6031,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/magnific-popup.css",
+      "file": "components/com_sppagebuilder/assets/css/magnific-popup.css",
+      "bytes": 5920,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/slick-theme.css",
+      "file": "components/com_sppagebuilder/assets/css/slick-theme.css",
+      "bytes": 2367,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/slick.css",
+      "file": "components/com_sppagebuilder/assets/css/slick.css",
+      "bytes": 1327,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/css/sppagebuilder.css",
+      "file": "components/com_sppagebuilder/assets/css/sppagebuilder.css",
+      "bytes": 207464,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/addons/image.js",
+      "file": "components/com_sppagebuilder/assets/js/addons/image.js",
+      "bytes": 9342,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/addons/text_block.js",
+      "file": "components/com_sppagebuilder/assets/js/addons/text_block.js",
+      "bytes": 690,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/common.js",
+      "file": "components/com_sppagebuilder/assets/js/common.js",
+      "bytes": 144,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/dynamic-content.js",
+      "file": "components/com_sppagebuilder/assets/js/dynamic-content.js",
+      "bytes": 7593,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/jquery.bxslider.min.js",
+      "file": "components/com_sppagebuilder/assets/js/jquery.bxslider.min.js",
+      "bytes": 24069,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/jquery.magnific-popup.min.js",
+      "file": "components/com_sppagebuilder/assets/js/jquery.magnific-popup.min.js",
+      "bytes": 20321,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/jquery.parallax.js",
+      "file": "components/com_sppagebuilder/assets/js/jquery.parallax.js",
+      "bytes": 898,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/js_slider.js",
+      "file": "components/com_sppagebuilder/assets/js/js_slider.js",
+      "bytes": 52478,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/slick.js",
+      "file": "components/com_sppagebuilder/assets/js/slick.js",
+      "bytes": 42882,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/components/com_sppagebuilder/assets/js/sppagebuilder.js",
+      "file": "components/com_sppagebuilder/assets/js/sppagebuilder.js",
+      "bytes": 90060,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css",
+      "file": "css",
+      "bytes": 0,
+      "status": "pending"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/1.gif",
+      "file": "images/1.gif",
+      "bytes": 1247,
+      "status": "ok",
+      "type": "image/gif"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2021/03/03/serial1.png",
+      "file": "images/2021/03/03/serial1.png",
+      "bytes": 435,
+      "status": "ok",
+      "type": "image/png"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2021/03/03/serial2.png",
+      "file": "images/2021/03/03/serial2.png",
+      "bytes": 632,
+      "status": "ok",
+      "type": "image/png"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2021/03/03/serial3.png",
+      "file": "images/2021/03/03/serial3.png",
+      "bytes": 750,
+      "status": "ok",
+      "type": "image/png"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/222.jpg",
+      "file": "images/2026/07/14/222.jpg",
+      "bytes": 959421,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/33.jpg",
+      "file": "images/2026/07/14/33.jpg",
+      "bytes": 1281511,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/aaa1.jpg",
+      "file": "images/2026/07/14/aaa1.jpg",
+      "bytes": 52894,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/b008%20.jpg",
+      "file": "images/2026/07/14/b008 .jpg",
+      "bytes": 243208,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/c006%201980720.jpg",
+      "file": "images/2026/07/14/c006 1980720.jpg",
+      "bytes": 201563,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/e003.jpg",
+      "file": "images/2026/07/14/e003.jpg",
+      "bytes": 202931,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/l001.jpg",
+      "file": "images/2026/07/14/l001.jpg",
+      "bytes": 363733,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com//images/2026/07/14/l002.jpg",
+      "file": "images/2026/07/14/l002.jpg",
+      "bytes": 538790,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/l002.jpg",
+      "file": "images/2026/07/14/l002.jpg",
+      "bytes": 538790,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/l003.jpg",
+      "file": "images/2026/07/14/l003.jpg",
+      "bytes": 275144,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com//images/2026/07/14/m016-water-fall-200864x97cm.jpg",
+      "file": "images/2026/07/14/m016-water-fall-200864x97cm.jpg",
+      "bytes": 140866,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/m016-water-fall-200864x97cm.jpg",
+      "file": "images/2026/07/14/m016-water-fall-200864x97cm.jpg",
+      "bytes": 140866,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com//images/2026/07/14/o001.jpg",
+      "file": "images/2026/07/14/o001.jpg",
+      "bytes": 179650,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/o001.jpg",
+      "file": "images/2026/07/14/o001.jpg",
+      "bytes": 179650,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/sasa.jpg",
+      "file": "images/2026/07/14/sasa.jpg",
+      "bytes": 421941,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/slide1.jpg",
+      "file": "images/2026/07/14/slide1.jpg",
+      "bytes": 87146,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/14/xx.jpg",
+      "file": "images/2026/07/14/xx.jpg",
+      "bytes": 187708,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/01f1a05053c6242fcfa23075e5b963c1_xl.jpg",
+      "file": "images/2026/07/16/01f1a05053c6242fcfa23075e5b963c1_xl.jpg",
+      "bytes": 483313,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/0b1ad7a7b79268a1f4558db78e092446_xl.jpg",
+      "file": "images/2026/07/16/0b1ad7a7b79268a1f4558db78e092446_xl.jpg",
+      "bytes": 263101,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/19f9cefdfb07230a68581d617885a3af_xl.jpg",
+      "file": "images/2026/07/16/19f9cefdfb07230a68581d617885a3af_xl.jpg",
+      "bytes": 201831,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/1c0ae2205709722b62e843abc0471a55_xl.jpg",
+      "file": "images/2026/07/16/1c0ae2205709722b62e843abc0471a55_xl.jpg",
+      "bytes": 443618,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/22c02097e4438bd2f2f3fe4a6a3ab0e1_xl.jpg",
+      "file": "images/2026/07/16/22c02097e4438bd2f2f3fe4a6a3ab0e1_xl.jpg",
+      "bytes": 252518,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/233826a67be66a810b23a263230da62e_xl.jpg",
+      "file": "images/2026/07/16/233826a67be66a810b23a263230da62e_xl.jpg",
+      "bytes": 238088,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/36fdb1a35cd2f54f95cf2119fb5bc7ed_xl.jpg",
+      "file": "images/2026/07/16/36fdb1a35cd2f54f95cf2119fb5bc7ed_xl.jpg",
+      "bytes": 323279,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/37a06e4a72d6cb27621f1ed829bbee81_xl.jpg",
+      "file": "images/2026/07/16/37a06e4a72d6cb27621f1ed829bbee81_xl.jpg",
+      "bytes": 273365,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/39eee751af30032eeece2f48de2de4ba_xl.jpg",
+      "file": "images/2026/07/16/39eee751af30032eeece2f48de2de4ba_xl.jpg",
+      "bytes": 197878,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/542390225756f78888142d54f3d17e01_xl.jpg",
+      "file": "images/2026/07/16/542390225756f78888142d54f3d17e01_xl.jpg",
+      "bytes": 262510,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/64d93d666355a43c4a86679a030d35b6_xl.jpg",
+      "file": "images/2026/07/16/64d93d666355a43c4a86679a030d35b6_xl.jpg",
+      "bytes": 384363,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/71f67488b0857639cee631943a3fc6fa_xl.jpg",
+      "file": "images/2026/07/16/71f67488b0857639cee631943a3fc6fa_xl.jpg",
+      "bytes": 311055,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/787ae9ec9023a82f5aa7e4c1a64f73cb_xl.jpg",
+      "file": "images/2026/07/16/787ae9ec9023a82f5aa7e4c1a64f73cb_xl.jpg",
+      "bytes": 268124,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/867519228d1d5325856fc61d710ded0e_xl.jpg",
+      "file": "images/2026/07/16/867519228d1d5325856fc61d710ded0e_xl.jpg",
+      "bytes": 741123,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/8b6e33345ac8d5ffd9cf0d107a7d9e9d_xl.jpg",
+      "file": "images/2026/07/16/8b6e33345ac8d5ffd9cf0d107a7d9e9d_xl.jpg",
+      "bytes": 236054,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/8fe3e0f34d3083cba6fe73d62a783d7f_xl.jpg",
+      "file": "images/2026/07/16/8fe3e0f34d3083cba6fe73d62a783d7f_xl.jpg",
+      "bytes": 474658,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl.jpg",
+      "file": "images/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl.jpg",
+      "bytes": 333003,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl1.jpg",
+      "file": "images/2026/07/16/9b2c4b44fb86522964124ed80d03c5e8_xl1.jpg",
+      "bytes": 333003,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/9ecd376e5371efaef9aad9bc9143aed8_xl.jpg",
+      "file": "images/2026/07/16/9ecd376e5371efaef9aad9bc9143aed8_xl.jpg",
+      "bytes": 215642,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/c1572c59821062c96d0fc33ad32a2983_xl.jpg",
+      "file": "images/2026/07/16/c1572c59821062c96d0fc33ad32a2983_xl.jpg",
+      "bytes": 422126,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/c889234799e865bbe90cee71f6cd2e53_xl.jpg",
+      "file": "images/2026/07/16/c889234799e865bbe90cee71f6cd2e53_xl.jpg",
+      "bytes": 288962,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/c99e3db826c0f4cc2688a36ce3b60e1a_xl.jpg",
+      "file": "images/2026/07/16/c99e3db826c0f4cc2688a36ce3b60e1a_xl.jpg",
+      "bytes": 258623,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/e2bf3b11df0b872112757f1c2fee6e32_xl.jpg",
+      "file": "images/2026/07/16/e2bf3b11df0b872112757f1c2fee6e32_xl.jpg",
+      "bytes": 276248,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl.jpg",
+      "file": "images/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl.jpg",
+      "bytes": 305965,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl1.jpg",
+      "file": "images/2026/07/16/f4b6dca0e2911082f0eb6e1df1a0e11d_xl1.jpg",
+      "bytes": 305972,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/f710044bf79a4b1f5d8b085e5e5d9711_xl.jpg",
+      "file": "images/2026/07/16/f710044bf79a4b1f5d8b085e5e5d9711_xl.jpg",
+      "bytes": 274936,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/f7a0a54c92471ac4480e727e4ccf93df_xl.jpg",
+      "file": "images/2026/07/16/f7a0a54c92471ac4480e727e4ccf93df_xl.jpg",
+      "bytes": 649576,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/fa55c8bad0e242eb7986dc1135b50adb_xl.jpg",
+      "file": "images/2026/07/16/fa55c8bad0e242eb7986dc1135b50adb_xl.jpg",
+      "bytes": 305421,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/fc34f61d23b74be53ee07d469bd32064_xl.jpg",
+      "file": "images/2026/07/16/fc34f61d23b74be53ee07d469bd32064_xl.jpg",
+      "bytes": 562706,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/16/feb4274796d93ff716e9650163a77fb8_xl.jpg",
+      "file": "images/2026/07/16/feb4274796d93ff716e9650163a77fb8_xl.jpg",
+      "bytes": 318106,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/17/620466077c427f141effa294382f5fba_xl.jpg",
+      "file": "images/2026/07/17/620466077c427f141effa294382f5fba_xl.jpg",
+      "bytes": 212231,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/17/a522a6005d1cb428ea34ef1769cd7452_xl.jpg",
+      "file": "images/2026/07/17/a522a6005d1cb428ea34ef1769cd7452_xl.jpg",
+      "bytes": 240560,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/2026/07/17/eb6c7c01c4e98e1f2578f9959463b973_xl.jpg",
+      "file": "images/2026/07/17/eb6c7c01c4e98e1f2578f9959463b973_xl.jpg",
+      "bytes": 196794,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b001-_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b001-_thumb.jpg",
+      "bytes": 41142,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b001-.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b001-.jpg",
+      "bytes": 411692,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b002-1981627_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b002-1981627_thumb.jpg",
+      "bytes": 27809,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b002-1981627.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b002-1981627.jpg",
+      "bytes": 262400,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b003-19957_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b003-19957_thumb.jpg",
+      "bytes": 27489,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b003-19957.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b003-19957.jpg",
+      "bytes": 254538,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b004-1995_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b004-1995_thumb.jpg",
+      "bytes": 34321,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b004-1995.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b004-1995.jpg",
+      "bytes": 318977,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b005-19978_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b005-19978_thumb.jpg",
+      "bytes": 36299,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b005-19978.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b005-19978.jpg",
+      "bytes": 384401,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b006-19996_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b006-19996_thumb.jpg",
+      "bytes": 34285,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b006-19996.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b006-19996.jpg",
+      "bytes": 337576,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b007-_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b007-_thumb.jpg",
+      "bytes": 22965,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b007-.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b007-.jpg",
+      "bytes": 244055,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b008-_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b008-_thumb.jpg",
+      "bytes": 22780,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/images/b008-.jpg",
+      "file": "images/speasyimagegallery/albums/10/images/b008-.jpg",
+      "bytes": 243208,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/10/thumb.jpg",
+      "file": "images/speasyimagegallery/albums/10/thumb.jpg",
+      "bytes": 27809,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a001-1961_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a001-1961_thumb.jpg",
+      "bytes": 22937,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a001-1961.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a001-1961.jpg",
+      "bytes": 206799,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a002-1962_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a002-1962_thumb.jpg",
+      "bytes": 21299,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a002-1962.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a002-1962.jpg",
+      "bytes": 229093,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a003-1962_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a003-1962_thumb.jpg",
+      "bytes": 25429,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a003-1962.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a003-1962.jpg",
+      "bytes": 282122,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a004-1963_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a004-1963_thumb.jpg",
+      "bytes": 14256,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a004-1963.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a004-1963.jpg",
+      "bytes": 139661,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a005-827_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a005-827_thumb.jpg",
+      "bytes": 31575,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a005-827.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a005-827.jpg",
+      "bytes": 287963,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a006-1963_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a006-1963_thumb.jpg",
+      "bytes": 23920,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a006-1963.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a006-1963.jpg",
+      "bytes": 244091,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a007-1971swa_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a007-1971swa_thumb.jpg",
+      "bytes": 21821,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a007-1971swa.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a007-1971swa.jpg",
+      "bytes": 186554,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a008-1971_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a008-1971_thumb.jpg",
+      "bytes": 28717,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a008-1971.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a008-1971.jpg",
+      "bytes": 281176,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a009-1973_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a009-1973_thumb.jpg",
+      "bytes": 19792,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a009-1973.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a009-1973.jpg",
+      "bytes": 165152,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a010-1980_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a010-1980_thumb.jpg",
+      "bytes": 21064,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a010-1980.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a010-1980.jpg",
+      "bytes": 203243,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a011-1990_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a011-1990_thumb.jpg",
+      "bytes": 36476,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a011-1990.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a011-1990.jpg",
+      "bytes": 345235,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a012-1995_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a012-1995_thumb.jpg",
+      "bytes": 32585,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a012-1995.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a012-1995.jpg",
+      "bytes": 343123,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a013-1997827_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a013-1997827_thumb.jpg",
+      "bytes": 31293,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/images/a013-1997827.jpg",
+      "file": "images/speasyimagegallery/albums/11/images/a013-1997827.jpg",
+      "bytes": 307642,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/11/thumb.jpg",
+      "file": "images/speasyimagegallery/albums/11/thumb.jpg",
+      "bytes": 22937,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m001-the-moons-reflection-on-a-river-2008-98x108cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m001-the-moons-reflection-on-a-river-2008-98x108cm_thumb.jpg",
+      "bytes": 23150,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m001-the-moons-reflection-on-a-river-2008-98x108cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m001-the-moons-reflection-on-a-river-2008-98x108cm.jpg",
+      "bytes": 236621,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm_thumb.jpg",
+      "bytes": 15934,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m002-wild-geese-2008-48x141cm.jpg",
+      "bytes": 169459,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm_thumb.jpg",
+      "bytes": 35583,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m003-mountiade-taiwan-2008145x369cm.jpg",
+      "bytes": 412789,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm_thumb.jpg",
+      "bytes": 51968,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m004-cycle-of-life-2008-69x137cm.jpg",
+      "bytes": 672590,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm_thumb.jpg",
+      "bytes": 36512,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m005-sunrise-2006-58x94cm.jpg",
+      "bytes": 626084,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm_thumb.jpg",
+      "bytes": 12677,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m006-solitude2004-146x34cm.jpg",
+      "bytes": 79542,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm_thumb.jpg",
+      "bytes": 37057,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m007-a-pasture-2008-48x141cm.jpg",
+      "bytes": 375572,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m008-first-snow-2007-74x70cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m008-first-snow-2007-74x70cm_thumb.jpg",
+      "bytes": 41054,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m008-first-snow-2007-74x70cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m008-first-snow-2007-74x70cm.jpg",
+      "bytes": 425091,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm_thumb.jpg",
+      "bytes": 19591,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m009-golden-earth-2006-365x144cm.jpg",
+      "bytes": 203171,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm_thumb.jpg",
+      "bytes": 31329,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m010-sea-of-clouds-mt.-ali-2008-145x369cm.jpg",
+      "bytes": 435230,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm_thumb.jpg",
+      "bytes": 31987,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m011-the-ideal-place-of-hermit-2007-57x95cm.jpg",
+      "bytes": 462662,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m012-2005-240x396cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m012-2005-240x396cm_thumb.jpg",
+      "bytes": 27258,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m012-2005-240x396cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m012-2005-240x396cm.jpg",
+      "bytes": 330929,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm_thumb.jpg",
+      "bytes": 47686,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m013-jiuzhaiguo-valleychina2007-74x142cm.jpg",
+      "bytes": 633268,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m014-autumn-frost-2008-98x108cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m014-autumn-frost-2008-98x108cm_thumb.jpg",
+      "bytes": 45991,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m014-autumn-frost-2008-98x108cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m014-autumn-frost-2008-98x108cm.jpg",
+      "bytes": 513254,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m015-furious-billows-2006-145x185cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m015-furious-billows-2006-145x185cm_thumb.jpg",
+      "bytes": 25877,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m015-furious-billows-2006-145x185cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m015-furious-billows-2006-145x185cm.jpg",
+      "bytes": 302376,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm_thumb.jpg",
+      "bytes": 28111,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m016-water-fall-200864x97cm.jpg",
+      "bytes": 381346,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m017-tbrraced-paddies-on-a-slope-2008-74x96cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m017-tbrraced-paddies-on-a-slope-2008-74x96cm_thumb.jpg",
+      "bytes": 33769,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m017-tbrraced-paddies-on-a-slope-2008-74x96cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m017-tbrraced-paddies-on-a-slope-2008-74x96cm.jpg",
+      "bytes": 402855,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m018-sea-of-clouds-mt.huang-shan-2006-145x185cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m018-sea-of-clouds-mt.huang-shan-2006-145x185cm_thumb.jpg",
+      "bytes": 26926,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m018-sea-of-clouds-mt.huang-shan-2006-145x185cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m018-sea-of-clouds-mt.huang-shan-2006-145x185cm.jpg",
+      "bytes": 285674,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m019-moor-2008-70x73cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m019-moor-2008-70x73cm_thumb.jpg",
+      "bytes": 26636,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m019-moor-2008-70x73cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m019-moor-2008-70x73cm.jpg",
+      "bytes": 283617,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm_thumb.jpg",
+      "bytes": 26673,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m020-an-ink-pouring-scenery-painting-2007-121x66cm.jpg",
+      "bytes": 280717,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm_thumb.jpg",
+      "bytes": 27974,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m021-touring-the-red-cliff-in-the-evening-2006-69x135cm.jpg",
+      "bytes": 365331,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m023-145x185cm-2006_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m023-145x185cm-2006_thumb.jpg",
+      "bytes": 28200,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m023-145x185cm-2006.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m023-145x185cm-2006.jpg",
+      "bytes": 303005,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m024-main-peak-of-mt.jade-92x122cm-2009_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m024-main-peak-of-mt.jade-92x122cm-2009_thumb.jpg",
+      "bytes": 26467,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m024-main-peak-of-mt.jade-92x122cm-2009.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m024-main-peak-of-mt.jade-92x122cm-2009.jpg",
+      "bytes": 252368,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008_thumb.jpg",
+      "bytes": 23025,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m025-evening-tour-at-the-cliff-68x134cm-2008.jpg",
+      "bytes": 322652,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m026-golden-earth-75x107cm-2009_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m026-golden-earth-75x107cm-2009_thumb.jpg",
+      "bytes": 30907,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m026-golden-earth-75x107cm-2009.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m026-golden-earth-75x107cm-2009.jpg",
+      "bytes": 333905,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m027-62x108cm-2010_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m027-62x108cm-2010_thumb.jpg",
+      "bytes": 20687,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m027-62x108cm-2010.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m027-62x108cm-2010.jpg",
+      "bytes": 242747,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m028-82x148cm-2010_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m028-82x148cm-2010_thumb.jpg",
+      "bytes": 25866,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m028-82x148cm-2010.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m028-82x148cm-2010.jpg",
+      "bytes": 291763,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m029-70x62cm-2010_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m029-70x62cm-2010_thumb.jpg",
+      "bytes": 25026,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m029-70x62cm-2010.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m029-70x62cm-2010.jpg",
+      "bytes": 305740,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m030-75x109cm-2010_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m030-75x109cm-2010_thumb.jpg",
+      "bytes": 28191,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m030-75x109cm-2010.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m030-75x109cm-2010.jpg",
+      "bytes": 319042,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m032-the-billow-surf-97108cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m032-the-billow-surf-97108cm-2011_thumb.jpg",
+      "bytes": 32198,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/m032-the-billow-surf-97108cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/m032-the-billow-surf-97108cm-2011.jpg",
+      "bytes": 326426,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/o001_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/o001_thumb.jpg",
+      "bytes": 24403,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/o001.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/o001.jpg",
+      "bytes": 240759,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/o002_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/o002_thumb.jpg",
+      "bytes": 22635,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/o002.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/o002.jpg",
+      "bytes": 259682,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/o003_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/o003_thumb.jpg",
+      "bytes": 23992,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/o003.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/o003.jpg",
+      "bytes": 248005,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/o004_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/o004_thumb.jpg",
+      "bytes": 23164,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/images/o004.jpg",
+      "file": "images/speasyimagegallery/albums/6/images/o004.jpg",
+      "bytes": 249864,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/6/thumb.jpg",
+      "file": "images/speasyimagegallery/albums/6/thumb.jpg",
+      "bytes": 23150,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f001-moonlight-2008-95x108cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f001-moonlight-2008-95x108cm_thumb.jpg",
+      "bytes": 38192,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f001-moonlight-2008-95x108cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f001-moonlight-2008-95x108cm.jpg",
+      "bytes": 337840,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f002-cycle-of-life-2008-79x79cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f002-cycle-of-life-2008-79x79cm_thumb.jpg",
+      "bytes": 45504,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f002-cycle-of-life-2008-79x79cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f002-cycle-of-life-2008-79x79cm.jpg",
+      "bytes": 433110,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f003-cycle-of-life-2008-98x96cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f003-cycle-of-life-2008-98x96cm_thumb.jpg",
+      "bytes": 30163,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f003-cycle-of-life-2008-98x96cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f003-cycle-of-life-2008-98x96cm.jpg",
+      "bytes": 288288,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm_thumb.jpg",
+      "bytes": 27701,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f004-cycle-of-life-2008-136x69cm.jpg",
+      "bytes": 272922,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f005-cycle-of-life-2008-79x79cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f005-cycle-of-life-2008-79x79cm_thumb.jpg",
+      "bytes": 27252,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f005-cycle-of-life-2008-79x79cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f005-cycle-of-life-2008-79x79cm.jpg",
+      "bytes": 242091,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f006-cycle-of-life-2008-79x79cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f006-cycle-of-life-2008-79x79cm_thumb.jpg",
+      "bytes": 36971,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f006-cycle-of-life-2008-79x79cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f006-cycle-of-life-2008-79x79cm.jpg",
+      "bytes": 344130,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f007-cycle-of-life2008-79x79cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f007-cycle-of-life2008-79x79cm_thumb.jpg",
+      "bytes": 25043,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f007-cycle-of-life2008-79x79cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f007-cycle-of-life2008-79x79cm.jpg",
+      "bytes": 233073,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f008-petals-in-the-rain-2004-76x89cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f008-petals-in-the-rain-2004-76x89cm_thumb.jpg",
+      "bytes": 19780,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f008-petals-in-the-rain-2004-76x89cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f008-petals-in-the-rain-2004-76x89cm.jpg",
+      "bytes": 186368,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm_thumb.jpg",
+      "bytes": 29344,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f009-glider-2008-64x163cm.jpg",
+      "bytes": 363459,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f010-winter-raythm-2006-98x110cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f010-winter-raythm-2006-98x110cm_thumb.jpg",
+      "bytes": 33540,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f010-winter-raythm-2006-98x110cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f010-winter-raythm-2006-98x110cm.jpg",
+      "bytes": 291602,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f011-early-summer-2006-98x110cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f011-early-summer-2006-98x110cm_thumb.jpg",
+      "bytes": 24635,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f011-early-summer-2006-98x110cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f011-early-summer-2006-98x110cm.jpg",
+      "bytes": 234081,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f012-autumn-melody-2006-98x110cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f012-autumn-melody-2006-98x110cm_thumb.jpg",
+      "bytes": 27080,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f012-autumn-melody-2006-98x110cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f012-autumn-melody-2006-98x110cm.jpg",
+      "bytes": 259741,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f013-in-full-bloom-2006-98x110cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f013-in-full-bloom-2006-98x110cm_thumb.jpg",
+      "bytes": 22445,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f013-in-full-bloom-2006-98x110cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f013-in-full-bloom-2006-98x110cm.jpg",
+      "bytes": 208480,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm_thumb.jpg",
+      "bytes": 20760,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f014-morning-dew2006-156x79cm.jpg",
+      "bytes": 230158,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm_thumb.jpg",
+      "bytes": 12490,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f015-persimmon-and-squirrel-2008-96x37cm.jpg",
+      "bytes": 156936,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm_thumb.jpg",
+      "bytes": 23233,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f016-golden-dragon-2008-72x140cm.jpg",
+      "bytes": 313713,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm_thumb.jpg",
+      "bytes": 20873,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f017-harvest-2008-52x124cm.jpg",
+      "bytes": 201953,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm_thumb.jpg",
+      "bytes": 27597,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f018-kapok-in-bloom-2006-145x369cm.jpg",
+      "bytes": 315562,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f019-_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f019-_thumb.jpg",
+      "bytes": 20272,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f019-.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f019-.jpg",
+      "bytes": 221440,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009_thumb.jpg",
+      "bytes": 10560,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f020-kapok-in-bloom-206x49cm-2009.jpg",
+      "bytes": 116098,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f021-petals-in-the-rain-78x93cm-2009_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f021-petals-in-the-rain-78x93cm-2009_thumb.jpg",
+      "bytes": 20098,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f021-petals-in-the-rain-78x93cm-2009.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f021-petals-in-the-rain-78x93cm-2009.jpg",
+      "bytes": 190170,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f022-73x180cm-2010_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f022-73x180cm-2010_thumb.jpg",
+      "bytes": 18009,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f022-73x180cm-2010.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f022-73x180cm-2010.jpg",
+      "bytes": 174881,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f023-95x57cm-2010_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f023-95x57cm-2010_thumb.jpg",
+      "bytes": 34499,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f023-95x57cm-2010.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f023-95x57cm-2010.jpg",
+      "bytes": 440709,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f024-72x184cm-2010_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f024-72x184cm-2010_thumb.jpg",
+      "bytes": 26011,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f024-72x184cm-2010.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f024-72x184cm-2010.jpg",
+      "bytes": 241392,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f025-75x185cm-2010_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f025-75x185cm-2010_thumb.jpg",
+      "bytes": 23221,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f025-75x185cm-2010.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f025-75x185cm-2010.jpg",
+      "bytes": 212654,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f026-cascading-wisteria-98108cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f026-cascading-wisteria-98108cm-2011_thumb.jpg",
+      "bytes": 35225,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f026-cascading-wisteria-98108cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f026-cascading-wisteria-98108cm-2011.jpg",
+      "bytes": 342713,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f027-blessings-sky-lanterns-98109cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f027-blessings-sky-lanterns-98109cm-2011_thumb.jpg",
+      "bytes": 31844,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f027-blessings-sky-lanterns-98109cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f027-blessings-sky-lanterns-98109cm-2011.jpg",
+      "bytes": 273262,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f028-fiery-autumn-98109cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f028-fiery-autumn-98109cm-2011_thumb.jpg",
+      "bytes": 30914,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f028-fiery-autumn-98109cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f028-fiery-autumn-98109cm-2011.jpg",
+      "bytes": 277556,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f029-leisurely-8590cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f029-leisurely-8590cm-2011_thumb.jpg",
+      "bytes": 32849,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f029-leisurely-8590cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f029-leisurely-8590cm-2011.jpg",
+      "bytes": 292775,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f030-plum-blossom-99109-cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f030-plum-blossom-99109-cm-2011_thumb.jpg",
+      "bytes": 45226,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f030-plum-blossom-99109-cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f030-plum-blossom-99109-cm-2011.jpg",
+      "bytes": 394931,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f031-fish-and-water-lily-98109-cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f031-fish-and-water-lily-98109-cm-2011_thumb.jpg",
+      "bytes": 29118,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f031-fish-and-water-lily-98109-cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f031-fish-and-water-lily-98109-cm-2011.jpg",
+      "bytes": 277844,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f032-peonies-and-moonlight-8592cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f032-peonies-and-moonlight-8592cm-2011_thumb.jpg",
+      "bytes": 28944,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f032-peonies-and-moonlight-8592cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f032-peonies-and-moonlight-8592cm-2011.jpg",
+      "bytes": 253380,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f033-butterfly-orchids-8592cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f033-butterfly-orchids-8592cm-2011_thumb.jpg",
+      "bytes": 33388,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f033-butterfly-orchids-8592cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f033-butterfly-orchids-8592cm-2011.jpg",
+      "bytes": 278967,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f034-the-leaping-carp-125125cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f034-the-leaping-carp-125125cm-2011_thumb.jpg",
+      "bytes": 23487,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f034-the-leaping-carp-125125cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f034-the-leaping-carp-125125cm-2011.jpg",
+      "bytes": 203914,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f035-romance-in-the-mist-8490cm-2011_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f035-romance-in-the-mist-8490cm-2011_thumb.jpg",
+      "bytes": 32666,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/f035-romance-in-the-mist-8490cm-2011.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/f035-romance-in-the-mist-8490cm-2011.jpg",
+      "bytes": 286790,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l001_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l001_thumb.jpg",
+      "bytes": 24041,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l001.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l001.jpg",
+      "bytes": 363733,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l002_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l002_thumb.jpg",
+      "bytes": 31568,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l002.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l002.jpg",
+      "bytes": 538790,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l003_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l003_thumb.jpg",
+      "bytes": 28225,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l003.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l003.jpg",
+      "bytes": 275144,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l004_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l004_thumb.jpg",
+      "bytes": 25073,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l004.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l004.jpg",
+      "bytes": 294346,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l005_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l005_thumb.jpg",
+      "bytes": 26656,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l005.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l005.jpg",
+      "bytes": 304842,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l006_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l006_thumb.jpg",
+      "bytes": 32867,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l006.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l006.jpg",
+      "bytes": 425131,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l007_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l007_thumb.jpg",
+      "bytes": 25721,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l007.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l007.jpg",
+      "bytes": 296893,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l008_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l008_thumb.jpg",
+      "bytes": 19246,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l008.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l008.jpg",
+      "bytes": 286718,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l009_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l009_thumb.jpg",
+      "bytes": 28549,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/images/l009.jpg",
+      "file": "images/speasyimagegallery/albums/7/images/l009.jpg",
+      "bytes": 290780,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/7/thumb.jpg",
+      "file": "images/speasyimagegallery/albums/7/thumb.jpg",
+      "bytes": 38192,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm_thumb.jpg",
+      "bytes": 17137,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm.jpg",
+      "file": "images/speasyimagegallery/albums/8/images/c001-calligraphy-2008-75x178cm.jpg",
+      "bytes": 183524,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m_thumb.jpg",
+      "bytes": 15774,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m.jpg",
+      "file": "images/speasyimagegallery/albums/8/images/c002-calligraphy-2008-178x31m.jpg",
+      "bytes": 142261,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/8/thumb.jpg",
+      "file": "images/speasyimagegallery/albums/8/thumb.jpg",
+      "bytes": 18044,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c001-1962_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c001-1962_thumb.jpg",
+      "bytes": 19186,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c001-1962.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c001-1962.jpg",
+      "bytes": 204784,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c002-1963_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c002-1963_thumb.jpg",
+      "bytes": 19653,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c002-1963.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c002-1963.jpg",
+      "bytes": 186152,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c003-1963_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c003-1963_thumb.jpg",
+      "bytes": 20843,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c003-1963.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c003-1963.jpg",
+      "bytes": 204168,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c004-1972_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c004-1972_thumb.jpg",
+      "bytes": 20903,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c004-1972.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c004-1972.jpg",
+      "bytes": 243877,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c005-1977_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c005-1977_thumb.jpg",
+      "bytes": 18471,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c005-1977.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c005-1977.jpg",
+      "bytes": 183395,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c006-1980720_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c006-1980720_thumb.jpg",
+      "bytes": 21659,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c006-1980720.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c006-1980720.jpg",
+      "bytes": 201563,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c007-1982_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c007-1982_thumb.jpg",
+      "bytes": 17657,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c007-1982.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c007-1982.jpg",
+      "bytes": 178118,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c008-1983_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c008-1983_thumb.jpg",
+      "bytes": 30545,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c008-1983.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c008-1983.jpg",
+      "bytes": 319701,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c009-1986_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c009-1986_thumb.jpg",
+      "bytes": 15278,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c009-1986.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c009-1986.jpg",
+      "bytes": 192666,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c010-19932_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c010-19932_thumb.jpg",
+      "bytes": 25989,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c010-19932.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c010-19932.jpg",
+      "bytes": 255036,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c011-19932_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c011-19932_thumb.jpg",
+      "bytes": 24265,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c011-19932.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c011-19932.jpg",
+      "bytes": 211795,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c012-1995_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c012-1995_thumb.jpg",
+      "bytes": 23367,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c012-1995.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c012-1995.jpg",
+      "bytes": 258695,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c013-19961121_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c013-19961121_thumb.jpg",
+      "bytes": 21604,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c013-19961121.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c013-19961121.jpg",
+      "bytes": 218957,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c014-1996_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c014-1996_thumb.jpg",
+      "bytes": 25214,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c014-1996.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c014-1996.jpg",
+      "bytes": 259049,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c015-1996_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c015-1996_thumb.jpg",
+      "bytes": 24537,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c015-1996.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c015-1996.jpg",
+      "bytes": 253690,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c016-_thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c016-_thumb.jpg",
+      "bytes": 24252,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/images/c016-.jpg",
+      "file": "images/speasyimagegallery/albums/9/images/c016-.jpg",
+      "bytes": 259971,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/images/speasyimagegallery/albums/9/thumb.jpg",
+      "file": "images/speasyimagegallery/albums/9/thumb.jpg",
+      "bytes": 24265,
+      "status": "ok",
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/com_finder/js/finder.min.js",
+      "file": "media/com_finder/js/finder.min.js",
+      "bytes": 1381,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/mod_menu/js/menu.min.js",
+      "file": "media/mod_menu/js/menu.min.js",
+      "bytes": 5104,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/system/css/joomla-fontawesome.min.css",
+      "file": "media/system/css/joomla-fontawesome.min.css",
+      "bytes": 102652,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/system/js/core.min.js",
+      "file": "media/system/js/core.min.js",
+      "bytes": 7786,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/system/js/messages.min.js",
+      "file": "media/system/js/messages.min.js",
+      "bytes": 5542,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/system/js/showon.min.js",
+      "file": "media/system/js/showon.min.js",
+      "bytes": 3634,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/awesomplete/css/awesomplete.css",
+      "file": "media/vendor/awesomplete/css/awesomplete.css",
+      "bytes": 1755,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/awesomplete/js/awesomplete.min.js",
+      "file": "media/vendor/awesomplete/js/awesomplete.min.js",
+      "bytes": 8003,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/alert.min.js",
+      "file": "media/vendor/bootstrap/js/alert.min.js",
+      "bytes": 979,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/button.min.js",
+      "file": "media/vendor/bootstrap/js/button.min.js",
+      "bytes": 779,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/carousel.min.js",
+      "file": "media/vendor/bootstrap/js/carousel.min.js",
+      "bytes": 5518,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/collapse.min.js",
+      "file": "media/vendor/bootstrap/js/collapse.min.js",
+      "bytes": 3994,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/dropdown.min.js",
+      "file": "media/vendor/bootstrap/js/dropdown.min.js",
+      "bytes": 6229,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/modal.min.js",
+      "file": "media/vendor/bootstrap/js/modal.min.js",
+      "bytes": 7319,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/offcanvas.min.js",
+      "file": "media/vendor/bootstrap/js/offcanvas.min.js",
+      "bytes": 3552,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/popover.min.js",
+      "file": "media/vendor/bootstrap/js/popover.min.js",
+      "bytes": 11363,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/scrollspy.min.js",
+      "file": "media/vendor/bootstrap/js/scrollspy.min.js",
+      "bytes": 4096,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/tab.min.js",
+      "file": "media/vendor/bootstrap/js/tab.min.js",
+      "bytes": 4957,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/bootstrap/js/toast.min.js",
+      "file": "media/vendor/bootstrap/js/toast.min.js",
+      "bytes": 2789,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/joomla-custom-elements/css/joomla-alert.min.css",
+      "file": "media/vendor/joomla-custom-elements/css/joomla-alert.min.css",
+      "bytes": 3654,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/jquery/js/jquery-noconflict.min.js",
+      "file": "media/vendor/jquery/js/jquery-noconflict.min.js",
+      "bytes": 30,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/media/vendor/jquery/js/jquery.min.js",
+      "file": "media/vendor/jquery/js/jquery.min.js",
+      "bytes": 87533,
+      "status": "ok",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/modules/mod_jovisitorcounter/assets/css/mod_jovisitorcounter.css",
+      "file": "modules/mod_jovisitorcounter/assets/css/mod_jovisitorcounter.css",
+      "bytes": 5570,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/modules/mod_jovisitorcounter/assets/flag-icons/css/flag-icons.min.css",
+      "file": "modules/mod_jovisitorcounter/assets/flag-icons/css/flag-icons.min.css",
+      "bytes": 28018,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/plugins/system/helixultimate/assets/css/chosen.css",
+      "file": "plugins/system/helixultimate/assets/css/chosen.css",
+      "bytes": 10168,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/plugins/system/helixultimate/assets/css/system-j4.min.css",
+      "file": "plugins/system/helixultimate/assets/css/system-j4.min.css",
+      "bytes": 5202,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/plugins/system/helixultimate/assets/js/chosen.jquery.js",
+      "file": "plugins/system/helixultimate/assets/js/chosen.jquery.js",
+      "bytes": 47262,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/templates/shaper_helixultimate/css/bootstrap.min.css",
+      "file": "templates/shaper_helixultimate/css/bootstrap.min.css",
+      "bytes": 194854,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/templates/shaper_helixultimate/css/presets/preset6.css",
+      "file": "templates/shaper_helixultimate/css/presets/preset6.css",
+      "bytes": 4024,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/templates/shaper_helixultimate/css/template.css",
+      "file": "templates/shaper_helixultimate/css/template.css",
+      "bytes": 82505,
+      "status": "ok",
+      "type": "text/css"
+    },
+    {
+      "url": "https://luisang.rumotan.com/templates/shaper_helixultimate/js/inert.min.js",
+      "file": "templates/shaper_helixultimate/js/inert.min.js",
+      "bytes": 8191,
+      "status": "ok",
+      "type": "application/x-javascript"
+    },
+    {
+      "url": "https://luisang.rumotan.com/templates/shaper_helixultimate/js/main.js",
+      "file": "templates/shaper_helixultimate/js/main.js",
+      "bytes": 20777,
+      "status": "ok",
+      "type": "application/x-javascript"
+    }
+  ],
+  "stats": {
+    "pages": 56,
+    "pagesOk": 56,
+    "assets": 350,
+    "assetsOk": 349,
+    "assetBytes": 55232795
+  }
+}

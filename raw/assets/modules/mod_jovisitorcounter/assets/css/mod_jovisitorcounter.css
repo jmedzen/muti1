@@ -1,0 +1,221 @@
+/* General Styles */
+.mod_jovisitorcounter {
+    color: #333; /* Default text color for light theme */
+}
+
+/* Light Theme */
+.mod_jovisitorcounter.light-theme {
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark text */
+}
+
+.mod_jovisitorcounter.light-theme h4 {
+    border-bottom: 1px solid #f3f3f3; /* Light gray border */
+}
+
+.mod_jovisitorcounter.light-theme .list-group-item {
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #f3f3f3 !important; /* Light gray border */
+}
+
+.mod_jovisitorcounter.light-theme .badge {
+    background-color: #fff !important; /* White badge */
+    color: #333; /* Dark text */
+}
+
+.mod_jovisitorcounter.light-theme table th,
+.mod_jovisitorcounter.light-theme table td {
+    border: 1px solid #f3f3f3; /* Light gray table borders */
+}
+
+.mod_jovisitorcounter.light-theme table tr:nth-child(even) {
+    background-color: #f8f9fa; /* Light gray alternate rows */
+}
+
+.mod_jovisitorcounter.light-theme table tr:hover {
+    background-color: #e9ecef; /* Light gray hover effect */
+}
+
+.mod_jovisitorcounter.light-theme .visitor-counter p {
+    color: #28a745; /* Green visitor counter */
+}
+
+.mod_jovisitorcounter.light-theme .odometer {
+    color: #28a745; /* Green odometer */
+}
+
+/* Dark Theme */
+.mod_jovisitorcounter.dark-theme {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+}
+
+.mod_jovisitorcounter.dark-theme h4 {
+    border-bottom: 1px solid #333; /* Darker border */
+}
+
+.mod_jovisitorcounter.dark-theme .list-group-item {
+    background-color: #444; /* Light gray in dark mode */
+    border: 1px solid #333 !important; /* Darker border */
+    color: #ffffff; /* White text */
+}
+
+.mod_jovisitorcounter.dark-theme .badge {
+  background-color: #121212 !important;
+  color: #ffffff;
+  border: 1px solid #444;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mod_jovisitorcounter.dark-theme table th,
+.mod_jovisitorcounter.dark-theme table td {
+    border: 1px solid #555; /* Slightly lighter border for visibility */
+    color: #ffffff; /* White text for all table cells */
+}
+
+.mod_jovisitorcounter.dark-theme table tr:nth-child(odd) {
+    background-color: #333; /* Darker background for odd rows */
+    color: #ffffff; /* White text for odd rows */
+}
+
+.mod_jovisitorcounter.dark-theme table tr:nth-child(even) {
+    background-color: #444; /* Slightly lighter dark gray for even rows */
+    color: #ffffff; /* White text for even rows */
+}
+
+.mod_jovisitorcounter.dark-theme table tr:hover {
+    background-color: #666; /* Dark gray hover effect */
+    color: #ffffff; /* White text on hover */
+}
+
+.mod_jovisitorcounter.dark-theme .visitor-counter p {
+    color: #38c172; /* Bright green visitor counter */
+}
+
+.mod_jovisitorcounter.dark-theme .odometer {
+    color: #38c172; /* Bright green odometer */
+}
+
+/* Shared Styles (Apply to Both Themes) */
+.mod_jovisitorcounter h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.mod_jovisitorcounter ul.list-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mod_jovisitorcounter .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.mod_jovisitorcounter .badge {
+    font-size: 0.875rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.25rem !important;
+    min-width: 100px;
+}
+
+/* Focus styles for accessibility */
+.mod_jovisitorcounter a:focus,
+.mod_jovisitorcounter button:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Visitor Counter Section */
+.mod_jovisitorcounter .visitor-counter {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mod_jovisitorcounter .visitor-counter h4 {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.mod_jovisitorcounter .visitor-counter p {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Recent Visitors Table */
+.mod_jovisitorcounter table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.mod_jovisitorcounter table th,
+.mod_jovisitorcounter table td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.mod_jovisitorcounter table th {
+    font-weight: bold;
+}
+
+.mod_jovisitorcounter table tr {
+    transition: background-color 0.3s ease;
+}
+
+/* Visitor by Country Table */
+.mod_jovisitorcounter .visitor-by-country table {
+    margin-top: 1rem;
+}
+
+.mod_jovisitorcounter .visitor-by-country .fi {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+/* Badge Style */
+.mod_jovisitorcounter .badge.h1 {
+    font-size: 2.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+/* Odometer Style */
+.mod_jovisitorcounter .odometer {
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+/* Add borders to all flag icons */
+.mod_jovisitorcounter .fi {
+    border: 1px solid #f3f3f3;
+    border-radius: 0.25rem;
+    padding: 0.2rem;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .mod_jovisitorcounter h4 {
+        font-size: 1.4rem;
+    }
+
+    .mod_jovisitorcounter .visitor-counter p {
+        font-size: 2rem;
+    }
+
+    /* Make tables scrollable on small screens */
+    .mod_jovisitorcounter table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

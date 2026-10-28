@@ -1,0 +1,125 @@
+---
+/**
+ * BaseLayout — 全站外殼
+ * 負責：<head> meta、OG、JSON-LD、字型預載、header/footer 插槽、reveal 觀察器。
+ */
+import "../styles/base.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { SITE, media } from "../lib/content.js";
+
+const {
+  title,
+  description = SITE.description,
+  image = null,
+  imageAlt = "",
+  type = "website",
+  noindex = false,
+  bodyClass = "",
+  wide = false,
+  schema = null,
+} = Astro.props;
+
+const fullTitle = title ? `${title}｜${SITE.name}` : `${SITE.name}｜${SITE.tagline}`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://luisang.rumotan.com").href;
+const siteBase = Astro.site ?? "https://luisang.rumotan.com";
+// image 傳進來的可能是原始路徑（/images/...），要換成實際存在的 WebP 變體。
+// 直接拿原圖當 og:image 會 404 —— 原圖沒有複製到 dist。
+const ogImage = (() => {
+  if (!image) return new URL("/og-default.jpg", siteBase).href;
+  if (/^https?:\/\//.test(image)) return image;
+  const m = media(image, { fallback: 1200 });
+  return new URL(m ? m.variants.at(-1).file : "/og-default.jpg", siteBase).href;
+})();
+
+const baseSchema = {
+  "@context": "https://schema.org",
+  "@type": "ArtGallery",
+  name: SITE.name,
+  alternateName: SITE.nameEn,
+  url: "https://luisang.rumotan.com",
+  description: SITE.description,
+  inLanguage: "zh-Hant",
+  address: { "@type": "PostalAddress", addressCountry: "TW", addressLocality: "新北市" },
+  sameAs: ["https://luisang.rumotan.com"],
+};
+---
+
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="theme-color" content="#faf8f3" />
+    <meta name="color-scheme" content="light" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {ogImage && imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="preload" href="/fonts/ebgaramond-400.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — 最新消息`} href="/rss.xml" />
+
+    <script is:inline>
+      // 先標記「有 JS」，CSS 才敢把 reveal 元素暫時隱藏
+      document.documentElement.classList.add("js");
+    </script>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema ?? baseSchema)} is:inline />
+  </head>
+  <body class={bodyClass}>
+    <a href="#main" class="skip-link">跳到主要內容</a>
+    <SiteHeader />
+    <main id="main" class:list={{ "site-main": true, "site-main--wide": wide }}>
+      <slot />
+    </main>
+    <SiteFooter />
+
+    <script>
+      // 進場動畫：只有真的進到視窗才觸發，減少不必要的重排
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-visible");
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+      );
+      document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+
+      // 錨點平滑捲動由 CSS 處理；這裡只補「返回頂端」的鍵盤可達性
+      document.querySelector("main")?.setAttribute("tabindex", "-1");
+    </script>
+  </body>
+</html>
+
+<style>
+  .site-main {
+    min-height: 60vh;
+  }
+</style>

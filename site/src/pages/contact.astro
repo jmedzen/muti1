@@ -1,0 +1,223 @@
+---
+/**
+ * 聯絡 — /contact
+ *
+ * 資料全部來自原站頁尾與聯絡頁，未經推測。
+ * 重點：這是一個紀念館，主要聯絡管道是電話與 email，不是表單 ——
+ * 所以頁面不放大表單，而是把「找誰、為什麼找」講清楚。
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE, contact } from "../lib/content.js";
+---
+
+<BaseLayout
+  title="聯絡"
+  description={`${SITE.name}聯絡方式：電話 ${contact.phones[0].value}、email ${contact.emails[0].value}。`}
+>
+  <header class="ct-hero">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h1 class="ct-title">聯絡</h1>
+      <p class="ct-lede">
+        關於作品圖像授權、展覽合作、學術研究與畫冊資料，歡迎與館方聯繫。
+      </p>
+    </div>
+  </header>
+
+  <div class="container ct-body">
+    <div class="ct-grid">
+      <section class="ct-block">
+        <h2 class="ct-h2">電話</h2>
+        <ul class="ct-list">
+          {contact.phones.map((p) => (
+            <li>
+              <span class="ct-label">{p.label}</span>
+              <a href={`tel:${p.tel}`} class="ct-value">{p.value}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="ct-block">
+        <h2 class="ct-h2">電子郵件</h2>
+        <ul class="ct-list">
+          {contact.emails.map((e) => (
+            <li>
+              <span class="ct-label">{e.label}</span>
+              <a href={`mailto:${e.value}`} class="ct-value">{e.value}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="ct-block">
+        <h2 class="ct-h2">即時通訊</h2>
+        <ul class="ct-list">
+          {contact.im.map((m) => (
+            <li>
+              <span class="ct-label">{m.label}</span>
+              <span class="ct-value">{m.value}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="ct-hint">加好友時請註明來意，館方會盡快回覆。</p>
+      </section>
+
+      <section class="ct-block">
+        <h2 class="ct-h2">網站</h2>
+        <ul class="ct-list">
+          <li>
+            <span class="ct-label">本站</span>
+            <a href={SITE.url} class="ct-value">{SITE.url.replace("https://", "")}</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="ct-uses">
+      <h2 class="ct-h2">常見來信</h2>
+      <div class="use-grid">
+        <div class="use">
+          <h3>圖像授權</h3>
+          <p>出版、學術論文、紀錄片使用作品圖像，請說明用途、發行範圍與期間。館方可提供高解析度檔案。</p>
+        </div>
+        <div class="use">
+          <h3>展覽合作</h3>
+          <p>借展、巡迴展、策展提案，請附上機構簡介、展期規劃與場地條件。</p>
+        </div>
+        <div class="use">
+          <h3>學術研究</h3>
+          <p>年譜、畫歷、作品編年的查證需求，可預約調閱館方檔案。</p>
+        </div>
+        <div class="use">
+          <h3>畫冊與出版</h3>
+          <p>《黃磊生畫集》八輯、《畫荷專輯》兩輯、《牡丹花畫集》一輯的庫存與版權洽詢。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ct-note">
+      <p>
+        本站為{SITE.name}的數位重建版本。館藏作品圖像與文字資料版權屬館方及家屬所有，
+        未經書面同意請勿轉載或用於商業用途。
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .ct-hero {
+    padding: var(--s-9) 0 var(--s-7);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .ct-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    margin: 0;
+  }
+  .ct-lede {
+    max-width: 32em;
+    margin: 1.4rem 0 0;
+    font-size: 0.96rem;
+    line-height: 2.05;
+    color: var(--ink-muted);
+  }
+
+  .ct-body {
+    padding: var(--s-8) 0 var(--s-9);
+    max-width: 62rem;
+  }
+  .ct-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-7) var(--s-8);
+  }
+  .ct-h2 {
+    font-family: var(--serif-zh);
+    font-size: 0.86rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--ink-faint);
+    margin: 0 0 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .ct-list {
+    display: grid;
+    gap: 0.7rem;
+  }
+  .ct-list li {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 0.7rem;
+    align-items: baseline;
+  }
+  .ct-label {
+    font-family: var(--sans-zh);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+  }
+  .ct-value {
+    font-family: var(--serif-en);
+    font-size: 1.02rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color var(--dur) var(--ease);
+  }
+  a.ct-value:hover {
+    color: var(--ochre);
+  }
+  .ct-hint {
+    margin: 0.8rem 0 0;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    line-height: 1.8;
+  }
+
+  .ct-uses {
+    margin-top: var(--s-8);
+  }
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-5) var(--s-7);
+  }
+  .use h3 {
+    font-family: var(--serif-zh);
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    margin: 0 0 0.5rem;
+  }
+  .use p {
+    font-size: 0.86rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .ct-note {
+    margin-top: var(--s-8);
+    padding-top: var(--s-5);
+    border-top: 1px solid var(--paper-edge);
+  }
+  .ct-note p {
+    font-family: var(--sans-zh);
+    font-size: 0.75rem;
+    line-height: 1.95;
+    color: var(--ink-faint);
+    margin: 0;
+    max-width: 44em;
+  }
+
+  @media (max-width: 700px) {
+    .ct-grid,
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

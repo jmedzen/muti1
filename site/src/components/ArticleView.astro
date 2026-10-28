@@ -1,0 +1,604 @@
+---
+/**
+ * ArticleView — 文章頁（新聞、評論、藝術家文稿共用）
+ *
+ * 重點：
+ *   1. 20 篇「圖檔型」文章（原站只有圖、沒有文字）要長得正常，不能像壞掉 —— 大圖 + 說明 + 可下載原圖。
+ *   2. 保留原文段落，不改寫。
+ *   3. 上一篇 / 下一篇、同分類其他文章、回到分類。
+ *   4. 文章內的圖片抽出成圖版，可點開放大（沿用 Lightbox 的深連結慣例）。
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE, media, mediaFull } from "../lib/content.js";
+
+const { article, section, upgrade = null, titleOverride = null } = Astro.props;
+
+const hero = article.hero ? media(article.hero, { fallback: 960 }) : null;
+const heroFull = article.hero ? mediaFull(article.hero) : null;
+const paras = (article.bodyText || "").split(/\n+/).map((p) => p.trim()).filter(Boolean);
+
+/* 圖檔型文章的說明文字：原站常寫成「展覽日期：2013.7.4～2013.7.8」「地點：廈門美術館」，
+ * 這些是觀眾真正需要的信息，不能因為是「圖檔型」就丟掉。 */
+const stubLines = (() => {
+  if (!article.isStub) return [];
+  const out = [];
+  for (const line of paras) {
+    const m = /^(.{2,10}?)[：:]\s*(.+)$/.exec(line);
+    if (m) out.push([m[1].trim(), m[2].trim()]);
+    else if (/^Open publication/i.test(line)) continue; // issuu 的嵌入文案，不是內容
+    else if (line.length >= 3) out.push(["說明", line]);
+  }
+  return out;
+})();
+
+const dateText = article.eventDate?.iso
+  ? article.eventDate.iso.replace(/-/g, ".")
+  : article.publishedAt?.slice(0, 10).replace(/-/g, ".");
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: article.title,
+  datePublished: article.publishedAt,
+  author: { "@type": "Organization", name: SITE.name },
+  publisher: { "@type": "Organization", name: SITE.name },
+  image: hero ? `${SITE.url}${hero.src}` : undefined,
+  articleSection: article.categoryName,
+  inLanguage: "zh-Hant-TW",
+};
+
+const series = article.series ?? [];
+const allInSeries = series;
+---
+
+<BaseLayout title={titleOverride ?? article.title} description={article.bodyText?.slice(0, 110) || article.title} image={article.hero} schema={schema}>
+  <article class="art">
+    <header class="art-head">
+      <div class="container art-head-inner">
+        <nav class="crumbs" aria-label="麵包屑">
+          <a href="/">首頁</a><span aria-hidden="true">/</span>
+          <a href={section.href}>{section.label}</a><span aria-hidden="true">/</span>
+          <a href={article.categoryRoute}>{article.categoryName}</a>
+        </nav>
+
+        <p class="art-cat">
+          <a href={article.categoryRoute}>{article.categoryName}</a>
+        </p>
+
+        <h1 class="art-title">{article.title}</h1>
+
+        <div class="art-meta">
+          <time datetime={article.eventDate?.iso ?? article.publishedAt}>{dateText}</time>
+          {article.author && <span class="art-author">文／{article.author}</span>}
+          {article.isStub && <span class="art-badge">影像紀錄</span>}
+        </div>
+      </div>
+    </header>
+
+    <div class="container art-body">
+      <div class="art-main">
+        {upgrade && (
+          <a class="art-upgrade" href={upgrade.href}>
+            <span class="au-label">另有更好讀的版本</span>
+            <span class="au-title">{upgrade.label}</span>
+            <span class="au-arrow" aria-hidden="true">→</span>
+          </a>
+        )}
+
+        {article.isStub && hero ? (
+          /* 圖檔型文章：整篇就是一張大圖 */
+          <figure class="art-plate art-plate--full">
+            <a href={heroFull.file} target="_blank" rel="noopener" class="plate-link" title="點擊看原尺寸">
+              <img
+                src={hero.src}
+                srcset={hero.srcset}
+                sizes="(max-width: 900px) 94vw, 880px"
+                alt={article.title}
+                width={hero.width}
+                height={hero.height}
+                loading="eager"
+                fetchpriority="high"
+              />
+            </a>
+            <figcaption>
+              <span>{article.title}</span>
+              <span class="plate-hint">點擊放大 · 原尺寸另開</span>
+            </figcaption>
+          </figure>
+        ) : (
+          <>
+            {/* 一般文章：主圖 + 正文 */}
+            {hero && (
+              <figure class="art-hero-img">
+                <img
+                  src={hero.src}
+                  srcset={hero.srcset}
+                  sizes="(max-width: 900px) 94vw, 880px"
+                  alt=""
+                  width={hero.width}
+                  height={hero.height}
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </figure>
+            )}
+
+            <div class="prose art-prose">
+              {paras.map((p) => <p>{p}</p>)}
+            </div>
+          </>
+        )}
+
+        {/* 圖檔型文章：原站的說明文字（日期、地點、主辦單位）也要留下 */}
+        {article.isStub && stubLines.length > 0 && (
+          <div class="stub-meta">
+            <dl>
+              {stubLines.map(([k, v]) => (
+                <div>
+                  <dt>{k}</dt>
+                  <dd>{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        )}
+
+        {/* 原始出處 */}
+        <footer class="art-source">
+          <p>
+            本文錄自館方原文
+            {article.legacyRoute && (
+              <>
+                ，原始網址為{" "}
+                <a href={`https://luisang.rumotan.com${article.legacyRoute}`} rel="noopener nofollow" target="_blank">
+                  luisang.rumotan.com{article.legacyRoute}
+                </a>
+              </>
+            )}
+            。
+          </p>
+        </footer>
+      </div>
+
+      <aside class="art-side">
+        <div class="side-block">
+          <p class="side-label">分類</p>
+          <a class="side-cat" href={article.categoryRoute}>
+            <span>{article.categoryName}</span>
+            <span class="side-arrow">→</span>
+          </a>
+        </div>
+
+        {article.eventDate?.year && (
+          <div class="side-block">
+            <p class="side-label">發生年份</p>
+            <p class="side-year">{article.eventDate.year}</p>
+          </div>
+        )}
+
+        <div class="side-block">
+          <p class="side-label">分享</p>
+          <div class="side-share">
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${SITE.url}${article.route}`)}`}
+              target="_blank"
+              rel="noopener"
+              >Facebook</a
+            >
+            <button type="button" class="copy-link" data-url={`${SITE.url}${article.route}`}>複製連結</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- 上下篇 -->
+    <nav class="art-pager no-print" aria-label="文章導覽">
+      <div class="container pager-inner">
+        {article.prev ? (
+          <a class="pager pager--prev" href={article.prev.route}>
+            <span class="pager-label">← 上一篇</span>
+            <span class="pager-title">{article.prev.title}</span>
+          </a>
+        ) : (
+          <span class="pager pager--empty"></span>
+        )}
+        {article.next ? (
+          <a class="pager pager--next" href={article.next.route}>
+            <span class="pager-label">下一篇 →</span>
+            <span class="pager-title">{article.next.title}</span>
+          </a>
+        ) : (
+          <span class="pager pager--empty"></span>
+        )}
+      </div>
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: 2rem;
+  }
+  .crumbs a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  .crumbs a:hover {
+    color: var(--ochre);
+  }
+
+  .art-head {
+    padding: var(--s-8) 0 var(--s-6);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .art-head-inner {
+    max-width: 60rem;
+  }
+  .art-cat {
+    margin: 0 0 1rem;
+    font-family: var(--sans-zh);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .art-cat a {
+    color: var(--ochre);
+    text-decoration: none;
+  }
+  .art-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    margin: 0;
+    max-width: 26em;
+    text-wrap: balance;
+  }
+  .art-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 1.4rem;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+  }
+  .art-meta time {
+    font-family: var(--mono);
+    letter-spacing: 0.04em;
+  }
+  .art-badge {
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--paper-edge);
+    font-size: 0.64rem;
+  }
+
+  .art-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 170px;
+    gap: var(--s-7);
+    padding: var(--s-7) 0 var(--s-8);
+  }
+  .art-main {
+    max-width: 44rem;
+  }
+
+  .art-upgrade {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: var(--s-6);
+    background: var(--ochre-wash);
+    border-left: 2px solid var(--ochre);
+    text-decoration: none;
+    color: inherit;
+    transition: background var(--dur) var(--ease);
+  }
+  .art-upgrade:hover {
+    background: color-mix(in srgb, var(--ochre) 12%, var(--paper));
+  }
+  .au-label {
+    font-family: var(--sans-zh);
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+    color: var(--ink-faint);
+  }
+  .au-title {
+    font-family: var(--serif-zh);
+    font-size: 0.92rem;
+    letter-spacing: 0.06em;
+    color: var(--ochre-deep);
+  }
+  .au-arrow {
+    margin-left: auto;
+    color: var(--ochre-deep);
+    transition: transform var(--dur) var(--ease);
+  }
+  .art-upgrade:hover .au-arrow {
+    transform: translateX(4px);
+  }
+
+  .art-hero-img {
+    margin: 0 0 var(--s-6);
+    background: var(--paper-warm);
+  }
+  .art-hero-img img {
+    width: 100%;
+    height: auto;
+    max-height: 62vh;
+    object-fit: contain;
+  }
+
+  .art-plate {
+    margin: 0 0 var(--s-6);
+  }
+  /* 圖檔型文章：那張圖就是全文，給它整欄的寬度。
+     不要用 100vw 的負 margin 硬拉出去 —— 在 grid 容器裡會算錯，
+     圖片會溢出到視窗外（實測左邊被切掉 200px）。 */
+  .art-plate--full {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  /* 桌機上讓長條形的報紙掃描可以寬一點，但用「置中放大」而不是負 margin，
+     負 margin 會把圖片推到視窗外，左邊被切掉。 */
+  @media (min-width: 1100px) {
+    .art-plate--full {
+      width: min(140%, 46rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .plate-link {
+    display: block;
+    background: var(--paper-deep);
+    line-height: 0;
+  }
+  .plate-link img {
+    width: 100%;
+    height: auto;
+    cursor: zoom-in;
+  }
+  .art-plate figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+  }
+  .plate-hint {
+    opacity: 0.7;
+  }
+
+  .art-prose p {
+    font-size: 1rem;
+    line-height: 2.15;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    margin-bottom: 1.5em;
+    text-align: justify;
+  }
+
+  .stub-meta {
+    margin: 0 0 var(--s-6);
+    padding: 1.1rem 1.3rem;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--ochre-line);
+  }
+  .stub-meta dl {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+  }
+  .stub-meta dl > div {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.8rem;
+    align-items: baseline;
+  }
+  .stub-meta dt {
+    font-family: var(--sans-zh);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
+  }
+  .stub-meta dd {
+    margin: 0;
+    font-family: var(--serif-zh);
+    font-size: 0.94rem;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .art-source {
+    margin-top: var(--s-7);
+    padding-top: var(--s-5);
+    border-top: 1px solid var(--paper-edge);
+  }
+  .art-source p {
+    font-family: var(--sans-zh);
+    font-size: 0.74rem;
+    line-height: 1.9;
+    color: var(--ink-faint);
+    margin: 0;
+    word-break: break-all;
+  }
+  .art-source a {
+    color: var(--ink-muted);
+    text-decoration: underline;
+    text-decoration-color: var(--paper-edge);
+    text-underline-offset: 3px;
+  }
+
+  .art-side {
+    padding-left: var(--s-5);
+    border-left: 1px solid var(--paper-edge);
+  }
+  .side-block {
+    margin-bottom: var(--s-5);
+  }
+  .side-label {
+    font-family: var(--sans-zh);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.6rem;
+  }
+  .side-cat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--sans-zh);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .side-cat:hover {
+    color: var(--ochre);
+  }
+  .side-year {
+    font-family: var(--serif-en);
+    font-size: 1.6rem;
+    color: var(--ochre);
+    margin: 0;
+    line-height: 1;
+  }
+  .side-share {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-start;
+  }
+  .side-share a,
+  .side-share button {
+    font-family: var(--sans-zh);
+    font-size: 0.76rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 0.2rem 0;
+    transition: color var(--dur) var(--ease);
+  }
+  .side-share a:hover,
+  .side-share button:hover {
+    color: var(--ochre);
+  }
+  .copy-link.is-done {
+    color: var(--ochre);
+  }
+
+  .art-pager {
+    border-top: 1px solid var(--paper-edge);
+    background: var(--paper-warm);
+  }
+  .pager-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-5);
+    padding-block: var(--s-6);
+  }
+  .pager {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.6rem 0;
+  }
+  .pager--next {
+    text-align: right;
+    align-items: flex-end;
+  }
+  .pager-label {
+    font-family: var(--sans-zh);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    color: var(--ochre);
+  }
+  .pager-title {
+    font-family: var(--serif-zh);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    transition: color var(--dur) var(--ease);
+  }
+  .pager:hover .pager-title {
+    color: var(--ochre-deep);
+  }
+
+  @media (max-width: 900px) {
+    .art-body {
+      grid-template-columns: 1fr;
+    }
+    .art-side {
+      padding-left: 0;
+      border-left: 0;
+      padding-top: var(--s-5);
+      border-top: 1px solid var(--paper-edge);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-5);
+    }
+    .side-block {
+      margin-bottom: 0;
+    }
+    .art-plate--full {
+      margin-left: 0;
+      width: 100%;
+    }
+    .pager-inner {
+      grid-template-columns: 1fr;
+    }
+    .pager--next {
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll(".copy-link").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const url = btn.dataset.url;
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch {
+        // clipboard 不可用時退回選取
+        const ta = document.createElement("textarea");
+        ta.value = url;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
+      const old = btn.textContent;
+      btn.textContent = "已複製";
+      btn.classList.add("is-done");
+      setTimeout(() => {
+        btn.textContent = old;
+        btn.classList.remove("is-done");
+      }, 1600);
+    });
+  });
+</script>

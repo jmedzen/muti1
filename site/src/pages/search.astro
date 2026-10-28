@@ -1,0 +1,410 @@
+---
+/**
+ * 搜尋 — /search
+ *
+ * 訪客打一個字就要有結果，所以索引在 build 時內嵌（約 90KB gzip 後 ~35KB），
+ * 前端只做 substring + 加權排序，不需要任何後端或 API。
+ *
+ * 加權：標題命中 ×8、分類 ×3、內文 ×1；同分時文章優先於作品。
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { searchDocs } from "../lib/content.js";
+
+const docs = searchDocs;
+const payload = JSON.stringify(docs);
+---
+
+<BaseLayout title="搜尋" description="搜尋黃磊生的作品、新聞、評論與年譜。" noindex={true}>
+  <header class="s-hero">
+    <div class="container">
+      <p class="eyebrow">Search</p>
+      <h1 class="s-title">搜尋</h1>
+      <p class="s-lede">
+        共 {docs.length} 筆資料可搜尋：作品、影像、新聞、評論與年譜。
+        輸入作品名、編號（如 M012）、年份或關鍵字。
+      </p>
+
+      <form class="s-form" role="search" onsubmit="return false">
+        <label class="s-field">
+          <span class="s-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5L21 21" stroke-linecap="round" />
+            </svg>
+          </span>
+          <input
+            type="search"
+            id="q"
+            placeholder="搜尋作品、新聞、年譜…"
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="搜尋關鍵字"
+            autofocus
+          />
+          <button type="button" id="clear" class="s-clear" aria-label="清除" hidden>×</button>
+        </label>
+      </form>
+
+      <div class="s-suggests" id="suggests">
+        <span class="sg-label">試試</span>
+        <button data-q="荷花">荷花</button>
+        <button data-q="山水">山水</button>
+        <button data-q="趙少昂">趙少昂</button>
+        <button data-q="M012">M012</button>
+        <button data-q="拍賣">拍賣</button>
+        <button data-q="1960">1960</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container s-body">
+    <div class="s-status" id="status" aria-live="polite"></div>
+    <ul class="s-results" id="results"></ul>
+    <p class="s-empty" id="empty" hidden>
+      沒有找到符合的資料。試試更短的關鍵字，或直接瀏覽
+      <a href="/collection">作品</a>、<a href="/news">新聞</a>、<a href="/about/chronology">年譜</a>。
+    </p>
+  </div>
+</BaseLayout>
+
+<script type="application/json" id="s-data" set:html={payload} is:inline></script>
+
+<script>
+  (() => {
+    const dataEl = document.getElementById("s-data");
+    if (!dataEl) return;
+    const docs = JSON.parse(dataEl.textContent);
+    const q = document.getElementById("q");
+    const results = document.getElementById("results");
+    const status = document.getElementById("status");
+    const empty = document.getElementById("empty");
+    const clearBtn = document.getElementById("clear");
+
+    const typeName = { a: "文章", w: "作品", p: "影像", y: "年譜" };
+    const typeHref = { a: "文章", w: "作品", p: "影像", y: "年譜" };
+
+    // 預先小寫化，避免每次搜尋都做
+    const index = docs.map((d) => ({
+      ...d,
+      nl: (d.n || "").toLowerCase(),
+      cl: (d.c || "").toLowerCase(),
+      xl: (d.x || "").toLowerCase(),
+    }));
+
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+    const mark = (text, terms) => {
+      let out = esc(text);
+      for (const t of terms) {
+        if (!t) continue;
+        const re = new RegExp(`(${t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi");
+        out = out.replace(re, "<mark>$1</mark>");
+      }
+      return out;
+    };
+
+    const snippet = (d, terms) => {
+      if (!d.xl) return "";
+      let at = -1;
+      for (const t of terms) {
+        const i = d.xl.indexOf(t);
+        if (i >= 0 && (at < 0 || i < at)) at = i;
+      }
+      if (at < 0) return esc((d.x || "").slice(0, 110));
+      const start = Math.max(0, at - 40);
+      const text = (d.x || "").slice(start, start + 150);
+      return (start > 0 ? "…" : "") + mark(text, terms) + "…";
+    };
+
+    const search = (raw) => {
+      const query = raw.trim().toLowerCase();
+      if (!query) {
+        results.innerHTML = "";
+        status.textContent = "";
+        empty.hidden = true;
+        clearBtn.hidden = true;
+        return;
+      }
+      clearBtn.hidden = false;
+
+      const terms = query.split(/\s+/).filter(Boolean);
+
+      const hits = [];
+      for (const d of index) {
+        let score = 0;
+        let allHit = true;
+        for (const t of terms) {
+          let s = 0;
+          if (d.nl.includes(t)) {
+            s += 8;
+            if (d.nl.startsWith(t)) s += 4;
+          }
+          if (d.cl.includes(t)) s += 3;
+          if (d.xl.includes(t)) s += 1;
+          if (t.length > 1 && /^\d+$/.test(t) && String(d.y) === t) s += 6;
+          if (s === 0) {
+            allHit = false;
+            break;
+          }
+          score += s;
+        }
+        if (allHit && score > 0) hits.push({ d, score });
+      }
+
+      hits.sort((a, b) => b.score - a.score || (a.d.t === "a" ? -1 : 1));
+
+      status.textContent = hits.length ? `找到 ${hits.length} 筆` : "";
+
+      if (!hits.length) {
+        results.innerHTML = "";
+        empty.hidden = false;
+        return;
+      }
+      empty.hidden = true;
+
+      const top = hits.slice(0, 80);
+      results.innerHTML = top
+        .map(({ d }) => {
+          const title = mark(d.n, terms);
+          const kind = typeName[d.t] || "資料";
+          const meta = [d.c, d.y && `${d.y}`, kind].filter(Boolean).join(" · ");
+          // 標題先、資訊後：使用者在搜尋結果裡是「找名字」，
+          // 把相簿名放在標題前面會變成「山水 · 2007 · 作品　潑墨山水」——
+          // 開頭的「山水」既是分類又像標題的一部份，讀起來像重複。
+          return `<li class="s-item s-item--${d.t}">
+            <a href="${d.r}">
+              <span class="si-title">${title}</span>
+              <span class="si-meta">${esc(meta)}</span>
+              <span class="si-snip">${snippet(d, terms)}</span>
+            </a>
+          </li>`;
+        })
+        .join("");
+
+      if (hits.length > top.length) {
+        status.textContent = `找到 ${hits.length} 筆，顯示前 ${top.length} 筆`;
+      }
+    };
+
+    let timer;
+    q.addEventListener("input", () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        search(q.value);
+        const url = new URL(location.href);
+        if (q.value.trim()) url.searchParams.set("q", q.value.trim());
+        else url.searchParams.delete("q");
+        history.replaceState(null, "", url);
+      }, 110);
+    });
+
+    clearBtn.addEventListener("click", () => {
+      q.value = "";
+      q.focus();
+      search("");
+      const url = new URL(location.href);
+      url.searchParams.delete("q");
+      history.replaceState(null, "", url);
+    });
+
+    document.querySelectorAll("[data-q]").forEach((b) =>
+      b.addEventListener("click", () => {
+        q.value = b.dataset.q;
+        search(q.value);
+        q.focus();
+      })
+    );
+
+    // 深連結 ?q=荷花
+    const initial = new URLSearchParams(location.search).get("q");
+    if (initial) {
+      q.value = initial;
+      search(initial);
+    }
+
+    // 鍵盤：/ 聚焦搜尋框
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/" && document.activeElement !== q) {
+        e.preventDefault();
+        q.focus();
+        q.select();
+      }
+    });
+  })();
+</script>
+
+<style>
+  .s-hero {
+    padding: var(--s-9) 0 var(--s-6);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .s-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    margin: 0;
+  }
+  .s-lede {
+    max-width: 34em;
+    margin: 1.3rem 0 0;
+    font-size: 0.92rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+  }
+
+  .s-form {
+    margin-top: var(--s-6);
+    max-width: 44rem;
+  }
+  .s-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--ink);
+    transition: border-color var(--dur) var(--ease);
+  }
+  .s-field:focus-within {
+    border-color: var(--ochre);
+  }
+  .s-icon {
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    color: var(--ink-faint);
+  }
+  .s-field input {
+    flex: 1;
+    padding: 0.85rem 0;
+    font-family: var(--serif-zh);
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    background: transparent;
+    border: 0;
+    outline: none;
+  }
+  .s-field input::placeholder {
+    color: var(--ink-faint);
+    opacity: 0.7;
+  }
+  .s-field input::-webkit-search-cancel-button {
+    display: none;
+  }
+  .s-clear {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: var(--ink-faint);
+    transition: color var(--dur) var(--ease);
+  }
+  .s-clear:hover {
+    color: var(--ink);
+  }
+
+  .s-suggests {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.2rem;
+  }
+  .sg-label {
+    font-family: var(--sans-zh);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    color: var(--ink-faint);
+    margin-right: 0.3rem;
+  }
+  .s-suggests button {
+    padding: 0.25rem 0.7rem;
+    font-family: var(--sans-zh);
+    font-size: 0.76rem;
+    color: var(--ink-muted);
+    border: 1px solid var(--paper-edge);
+    border-radius: 999px;
+    transition: all var(--dur) var(--ease);
+  }
+  .s-suggests button:hover {
+    border-color: var(--ochre);
+    color: var(--ochre);
+    background: var(--ochre-wash);
+  }
+
+  .s-body {
+    padding: var(--s-6) 0 var(--s-9);
+    max-width: 56rem;
+  }
+  .s-status {
+    font-family: var(--sans-zh);
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    min-height: 1.2rem;
+  }
+  /* 搜尋結果由 JS 以 innerHTML 產生，不會帶 Astro 的 scope 屬性，
+     所以這一段必須是 global —— 放在 scoped <style> 裡選擇器永遠不會命中（實測整份結果沒有樣式）。 */
+
+  .s-empty {
+    padding: var(--s-7) 0;
+    font-family: var(--sans-zh);
+    font-size: 0.86rem;
+    line-height: 2;
+    color: var(--ink-muted);
+  }
+  .s-empty a {
+    color: var(--ochre);
+  }
+</style>
+
+<style is:global>
+  /* 以下選擇器對應 JS 產生的搜尋結果節點（見下方 render），
+     必須是 global，不能加 Astro 的 scope。 */
+  .s-results {
+    display: grid;
+  }
+  .s-item a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 0.6rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--paper-edge) 60%, transparent);
+    text-decoration: none;
+    color: inherit;
+    transition: background var(--dur) var(--ease), padding-left var(--dur) var(--ease);
+  }
+  .s-item a:hover,
+  .s-item a:focus-visible {
+    background: var(--ochre-wash);
+    padding-left: 0.9rem;
+  }
+  .si-meta {
+    font-family: var(--sans-zh);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    color: var(--ochre);
+  }
+  .si-title {
+    font-family: var(--serif-zh);
+    font-size: 1.02rem;
+    line-height: 1.65;
+    letter-spacing: 0.02em;
+  }
+  .si-snip {
+    font-size: 0.82rem;
+    line-height: 1.85;
+    color: var(--ink-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .si-snip:empty {
+    display: none;
+  }
+  .s-item mark {
+    background: color-mix(in srgb, var(--ochre) 22%, transparent);
+    color: inherit;
+    padding: 0 0.1em;
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+/**
+ * 新聞文章 — /news/<category>/<article>
+ * 由 model.json 的 articles 產生，路徑沿用原站 Joomla 別名以保住 SEO。
+ */
+import ArticleView from "../../components/ArticleView.astro";
+import { articles } from "../../lib/content.js";
+
+export async function getStaticPaths() {
+  return articles
+    .filter((a) => a.route.startsWith("/news/"))
+    .map((a) => ({
+      params: { slug: a.route.replace("/news/", "") },
+      props: { article: a },
+    }));
+}
+
+const { article } = Astro.props;
+---
+
+<ArticleView
+  article={article}
+  section={{ href: "/news", label: "本站新聞" }}
+/>

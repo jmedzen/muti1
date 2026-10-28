@@ -1,0 +1,182 @@
+---
+/**
+ * ArtworkCard — 作品卡
+ *
+ * 直幅作品在格子裡用 object-fit: contain 還是 cover？
+ * 用 cover 會裁掉畫作，對美術館網站是不可接受的。所以：
+ *   - 卡片用固定的「畫框」比例（4/5）
+ *   - 圖片 contain，底色是紙色，四周留白 —— 像掛在牆上的裱框
+ *   - hover 時才輕微放大並浮起
+ */
+import { IMAGES, dims } from "../lib/content.js";
+
+const { item, href = null, priority = false, showMeta = true, sizes = "(max-width: 640px) 50vw, (max-width: 1100px) 33vw, 320px" } = Astro.props;
+
+const meta = IMAGES[item.src];
+const variants = meta?.variants ?? [];
+const srcsetStr = variants.map((v) => `${v.file} ${v.width}w`).join(", ");
+const fallback = variants.at(-1)?.file ?? null;
+const dim = dims(item);
+const landscape = item.width && item.height && item.width > item.height;
+---
+
+<figure class:list={["aw-card", { "aw-card--landscape": landscape }]}>
+  <a class="aw-frame" href={href ?? `/collection/${item.album}#${item.id}`} aria-label={`${item.name ?? item.caption}${dim ? `，${dim}` : ""}`}>
+    <span class="aw-mat">
+      {fallback ? (
+        <img
+          src={fallback}
+          srcset={srcsetStr || undefined}
+          sizes={sizes}
+          alt={item.name ? `${item.name}${item.titleEn ? `（${item.titleEn}）` : ""}` : item.caption}
+          width={item.width ?? 800}
+          height={item.height ?? 1000}
+          loading={priority ? "eager" : "lazy"}
+          fetchpriority={priority ? "high" : "auto"}
+          decoding="async"
+        />
+      ) : (
+        <span class="aw-missing" aria-hidden="true"></span>
+      )}
+    </span>
+    <span class="aw-zoom" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4">
+        <circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5L21 21M10.5 8v5M8 10.5h5" stroke-linecap="round" />
+      </svg>
+    </span>
+  </a>
+
+  {showMeta && (
+    <figcaption class="aw-meta">
+      <span class="aw-name">{item.name ?? item.caption}</span>
+      {item.titleEn && <span class="aw-en">{item.titleEn}</span>}
+      <span class="aw-spec">
+        {item.code && <span class="aw-code">{item.code}</span>}
+        {dim && <span>{dim}</span>}
+        {item.year && <span>{item.year}</span>}
+      </span>
+    </figcaption>
+  )}
+</figure>
+
+<style>
+  .aw-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .aw-frame {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    background: var(--paper-warm);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--paper-edge) 80%, transparent);
+    transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+    overflow: hidden;
+  }
+
+  /* 裱框留白：四周內縮，畫作像掛在紙上 */
+  .aw-mat {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 5;
+    padding: clamp(0.75rem, 4%, 1.6rem);
+    background: linear-gradient(160deg, #fdfbf7, var(--paper-warm) 60%, var(--paper-deep));
+  }
+  .aw-card--landscape .aw-mat {
+    aspect-ratio: 5 / 4;
+  }
+
+  .aw-mat img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 2px 10px rgba(20, 17, 13, 0.14), 0 12px 32px rgba(20, 17, 13, 0.1);
+    transition: transform 700ms var(--ease-out), box-shadow var(--dur) var(--ease);
+  }
+
+  .aw-missing {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg, var(--paper-deep) 0 8px, var(--paper-warm) 8px 16px);
+  }
+
+  .aw-zoom {
+    position: absolute;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--ink) 78%, transparent);
+    color: var(--paper);
+    opacity: 0;
+    transform: translateY(6px) scale(0.9);
+    transition: all var(--dur) var(--ease);
+    backdrop-filter: blur(4px);
+  }
+
+  .aw-frame:hover {
+    box-shadow: var(--shadow-md), inset 0 0 0 1px var(--ochre-line);
+    transform: translateY(-3px);
+  }
+  .aw-frame:hover .aw-mat img {
+    transform: scale(1.035);
+    box-shadow: 0 4px 16px rgba(20, 17, 13, 0.18), 0 18px 44px rgba(20, 17, 13, 0.14);
+  }
+  .aw-frame:hover .aw-zoom {
+    opacity: 1;
+    transform: none;
+  }
+
+  .aw-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-right: 0.2rem;
+  }
+  .aw-name {
+    font-family: var(--serif-zh);
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .aw-en {
+    font-family: var(--serif-en);
+    font-size: 0.78rem;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    line-height: 1.4;
+  }
+  .aw-spec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 0.3rem;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+  }
+  .aw-code {
+    color: var(--ochre);
+    letter-spacing: 0.1em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aw-frame:hover {
+      transform: none;
+    }
+    .aw-frame:hover .aw-mat img {
+      transform: none;
+    }
+  }
+</style>

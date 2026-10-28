@@ -1,0 +1,38 @@
+# 建置產物與相依套件（容器裡會重新安裝、重新建置）
+node_modules/
+site/node_modules/
+site/dist/
+site/.astro/
+
+# 快取與暫存
+.cache/
+.npm-cache/
+.npx-cache/
+.wrangler-home/
+.tmp-npmtest/
+.tmp-npmtest2/
+*.log
+
+# 原始爬取資料不進 image（55 MB 的未處理 HTML 與原圖，執行期不需要）
+raw/
+
+# 中介資料也不進 image：Astro 讀的是 site/src/data/model.json（內容相同）
+content/
+
+# 版本控制與編輯器
+.git/
+.gitignore
+.vscode/
+.idea/
+.DS_Store
+
+# 文件與工具（執行期不需要）
+docs/
+tools/
+README.md
+*.md
+
+# Docker 自己的檔案
+Dockerfile
+docker-compose.yml
+.dockerignore

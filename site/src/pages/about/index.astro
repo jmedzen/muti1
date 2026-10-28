@@ -1,0 +1,460 @@
+---
+/**
+ * 關於黃磊生 — 生平與畫歷
+ * 資料來源：原站 /index.php/artist-luisang（分類頁）、/artist-luisang/huang-leisheng（我的繪畫觀）
+ * 以及年譜文章。文字全部取自原文，未改寫。
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { biography, paintingView, timeline, stats, artworks, media } from "../../lib/content.js";
+
+const eras = [
+  { years: "1928—1949", title: "臺山啟蒙", text: "生於廣東省臺山縣。少時臨摹古今名冊，並隨國內名師研習西洋畫。" },
+  { years: "1949—1959", title: "嶺南入室", text: "拜趙少昂門下，入嶺南藝苑深造。1956 年於香港聖約翰藝術廳首度個展，次年獲日本亞洲青年畫展優勝獎與費里斯曼藝術獎金。" },
+  { years: "1960—1982", title: "美洲行旅", text: "遷居美國舊金山，創辦國風藝苑。此後二十餘年巡展於美洲、歐洲、亞洲各大學與美術館，以畫宣揚中華文化。" },
+  { years: "1983—2011", title: "返臺傳薪", text: "任中國文化大學美術學院美術系專任教授、美國中華藝術學會理事長，創辦三石畫會。2008 年於國立國父紀念館舉行八十彩墨新韻展。" },
+];
+
+const portrait = media("/images/2026/07/14/aaa1.jpg", { fallback: 960 }) ?? { src: "", srcset: "", width: 760, height: 1013 };
+
+const bio = biography?.bodyText || "";
+const firstParagraphs = bio.split("\n").filter(Boolean).slice(0, 3);
+
+const disciplines = [
+  { title: "山水", text: "以嶺南渲染法處理煙雲與空間，留白處見空氣感。", href: "/collection/landscape", count: 34 },
+  { title: "花鳥蟲魚", text: "撞粉、撞水、撞色，色彩在層層渲染中見絢麗。", href: "/collection/flowers-birds", count: 44 },
+  { title: "書法", text: "線條的輕重提頓，是筆墨功力的另一面。", href: "/collection/calligraphy", count: 2 },
+];
+
+const byDecade = (() => {
+  const map = new Map();
+  for (const a of artworks) {
+    if (!a.year) continue;
+    const d = Math.floor(a.year / 10) * 10;
+    map.set(d, (map.get(d) || 0) + 1);
+  }
+  return [...map.entries()].sort((x, y) => x[0] - y[0]);
+})();
+const maxDecade = Math.max(...byDecade.map(([, n]) => n));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "黃磊生",
+  alternateName: "Huang LuiSang",
+  birthDate: "1928-09-29",
+  deathDate: "2011-07-25",
+  birthPlace: { "@type": "Place", name: "中國廣東省臺山縣" },
+  nationality: "中華民國",
+  jobTitle: "畫家、藝術教育家",
+  description: "嶺南畫派代表人物，師承趙少昂。曾任中國文化大學美術系專任教授、美國中華藝術學會理事長。",
+  knowsAbout: ["嶺南畫派", "水墨畫", "山水畫", "花鳥畫", "書法"],
+};
+---
+
+<BaseLayout
+  title="關於黃磊生"
+  description="黃磊生（1928–2011），嶺南畫派大師，師承趙少昂。生於廣東臺山，1960 年遷居美國舊金山創辦國風藝苑，1983 年返臺任中國文化大學美術系教授。"
+  schema={schema}
+>
+  <!-- 頁首 -->
+  <header class="page-hero">
+    <div class="container">
+      <p class="eyebrow">關於藝術家</p>
+      <h1 class="page-title">黃磊生</h1>
+      <p class="page-subtitle">Huang LuiSang　1928—2011</p>
+      <p class="page-lede">
+        嶺南畫派大師，師承趙少昂。一生行走於臺山、香港、舊金山與臺北之間，
+        以六十年時間把嶺南的撞粉撞水，帶到美洲與歐洲的美術館裡。
+      </p>
+    </div>
+  </header>
+
+  <!-- 生平 -->
+  <section class="bio">
+    <div class="container bio-grid">
+      <div class="bio-portrait" data-reveal>
+        <img
+          src={portrait.src}
+          srcset={portrait.srcset}
+          sizes="(max-width: 900px) 90vw, 420px"
+          alt="黃磊生於畫室"
+          width={portrait.width}
+          height={portrait.height}
+          loading="eager"
+          fetchpriority="high"
+        />
+        <p class="bio-caption">黃磊生於畫室，攝於臺北</p>
+      </div>
+
+      <div class="bio-text" data-reveal>
+        <h2 class="bio-heading">生平</h2>
+        {firstParagraphs.map((p) => <p>{p}</p>)}
+        {bio.length > 0 && (
+          <details class="bio-more">
+            <summary>續讀完整畫歷</summary>
+            <div class="bio-rest">
+              {bio.split("\n").filter(Boolean).slice(3).map((p) => <p>{p}</p>)}
+            </div>
+          </details>
+        )}
+        <div class="bio-links">
+          <a href="/about/chronology" class="btn btn--ghost">完整年譜</a>
+          <a href="/about/painting-view" class="btn btn--ghost">我的繪畫觀</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 四個時期 -->
+  <section class="eras">
+    <div class="container">
+      <p class="eyebrow">四個時期</p>
+      <h2 class="section-title">從臺山到舊金山，再回到臺北</h2>
+      <ol class="era-list">
+        {eras.map((e, i) => (
+          <li class="era" data-reveal style={`--i:${i}`}>
+            <span class="era-years">{e.years}</span>
+            <h3 class="era-title">{e.title}</h3>
+            <p class="era-text">{e.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 三個畫科 -->
+  <section class="disciplines">
+    <div class="container">
+      <p class="eyebrow">畫科</p>
+      <h2 class="section-title">山水、花鳥、書法</h2>
+      <div class="disc-grid">
+        {disciplines.map((d) => (
+          <a class="disc" href={d.href} data-reveal>
+            <span class="disc-count">{String(d.count).padStart(2, "0")}</span>
+            <h3>{d.title}</h3>
+            <p>{d.text}</p>
+            <span class="disc-link">檢視作品 →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 創作年份分布 -->
+  <section class="decades">
+    <div class="container">
+      <p class="eyebrow">創作分布</p>
+      <h2 class="section-title">作品年份分布</h2>
+      <p class="decades-lede">
+        本館典藏 {stats.artworks} 件作品，其中 {artworks.filter((a) => a.year).length} 件可考創作年份，
+        橫跨 {stats.yearsSpan?.[0]} 至 {stats.yearsSpan?.[1]} 年。以下按十年為單位統計。
+      </p>
+      <div class="decade-chart" role="img" aria-label="作品年份分布長條圖">
+        {byDecade.map(([d, n], i) => (
+          <div class="decade-col" data-reveal style={`--i:${i}`}>
+            <span class="decade-num">{n}</span>
+            <div class="decade-bar" style={`--h:${(n / maxDecade) * 100}%`}></div>
+            <span class="decade-label">{d}s</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 引言 -->
+  <section class="pv-teaser">
+    <div class="container">
+      <blockquote data-reveal>
+        <p>{paintingView?.bodyText.split("。")[0]}。</p>
+        <footer><cite>黃磊生</cite>〈我的繪畫觀〉</footer>
+      </blockquote>
+      <a href="/about/painting-view" class="btn btn--ghost">讀全文</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--s-9) 0 var(--s-7);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .page-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    line-height: 1.15;
+    margin: 0;
+  }
+  .page-subtitle {
+    margin: 0.5rem 0 0;
+    font-family: var(--serif-en);
+    font-size: 0.85rem;
+    font-style: italic;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .page-lede {
+    max-width: 36em;
+    margin: 1.8rem 0 0;
+    font-size: 1rem;
+    line-height: 2.05;
+    color: var(--ink-muted);
+  }
+
+  .bio {
+    padding: var(--s-9) 0;
+  }
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--s-8);
+    align-items: start;
+  }
+  .bio-portrait img {
+    width: 100%;
+    height: auto;
+    box-shadow: var(--shadow-lg);
+    filter: saturate(0.95);
+  }
+  .bio-caption {
+    margin: 0.75rem 0 0;
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+  }
+  .bio-heading {
+    font-family: var(--serif-zh);
+    font-size: var(--t-xl);
+    letter-spacing: 0.14em;
+    margin: 0 0 1.5rem;
+  }
+  .bio-text {
+    font-size: 0.98rem;
+    line-height: 2.1;
+    color: var(--ink-soft);
+  }
+  .bio-text p {
+    margin-bottom: 1.3em;
+  }
+  .bio-more {
+    margin: 0 0 1.5rem;
+    border-top: 1px solid var(--paper-edge);
+    padding-top: 0.5rem;
+  }
+  .bio-more summary {
+    cursor: pointer;
+    font-family: var(--sans-zh);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    color: var(--ochre);
+    padding: 0.7rem 0;
+    list-style: none;
+  }
+  .bio-more summary::before {
+    content: "＋ ";
+  }
+  .bio-more[open] summary::before {
+    content: "− ";
+  }
+  .bio-more summary::-webkit-details-marker {
+    display: none;
+  }
+  .bio-rest {
+    padding-top: 0.5rem;
+  }
+  .bio-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .eras,
+  .decades {
+    padding: var(--s-9) 0;
+    background: var(--paper-warm);
+    border-block: 1px solid var(--paper-edge);
+  }
+  .section-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    margin: 0 0 var(--s-6);
+  }
+  .era-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--s-5);
+  }
+  .era {
+    padding-top: 1.3rem;
+    border-top: 2px solid var(--ink);
+  }
+  .era-years {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--ochre);
+  }
+  .era-title {
+    font-family: var(--serif-zh);
+    font-size: 1.15rem;
+    letter-spacing: 0.14em;
+    margin: 0.45rem 0 0.7rem;
+  }
+  .era-text {
+    font-size: 0.84rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .disciplines {
+    padding: var(--s-9) 0;
+  }
+  .disc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+  }
+  .disc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem 1.6rem;
+    background: var(--paper-warm);
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--dur) var(--ease);
+  }
+  .disc:hover {
+    border-color: var(--ochre-line);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background: var(--paper);
+  }
+  .disc-count {
+    font-family: var(--serif-en);
+    font-size: 2.4rem;
+    line-height: 1;
+    color: var(--ochre);
+    opacity: 0.32;
+  }
+  .disc h3 {
+    font-family: var(--serif-zh);
+    font-size: 1.3rem;
+    letter-spacing: 0.16em;
+    margin: 0.7rem 0 0.6rem;
+  }
+  .disc p {
+    font-size: 0.86rem;
+    line-height: 1.9;
+    color: var(--ink-muted);
+    margin: 0 0 1.2rem;
+    flex: 1;
+  }
+  .disc-link {
+    font-family: var(--sans-zh);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--ochre);
+  }
+
+  .decades-lede {
+    max-width: 38em;
+    font-size: 0.9rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+    margin: -1.5rem 0 var(--s-6);
+  }
+  .decade-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(0.5rem, 2vw, 1.6rem);
+    height: 240px;
+    padding-top: 2rem;
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .decade-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    height: 100%;
+  }
+  .decade-num {
+    font-family: var(--serif-en);
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+  }
+  .decade-bar {
+    width: 100%;
+    max-width: 72px;
+    height: var(--h);
+    min-height: 4px;
+    background: linear-gradient(to top, var(--ochre-deep), color-mix(in srgb, var(--ochre) 60%, var(--paper)));
+    transform-origin: bottom;
+    animation: growBar 900ms var(--ease-out) both;
+  }
+  @keyframes growBar {
+    from { transform: scaleY(0.02); }
+    to { transform: scaleY(1); }
+  }
+  .decade-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    padding-bottom: 0.5rem;
+  }
+
+  .pv-teaser {
+    padding: var(--s-9) 0;
+    text-align: center;
+  }
+  .pv-teaser blockquote {
+    max-width: 34em;
+    margin: 0 auto var(--s-5);
+  }
+  .pv-teaser blockquote p {
+    font-family: var(--serif-zh);
+    font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+    line-height: 1.95;
+    letter-spacing: 0.04em;
+    margin: 0 0 1.2rem;
+  }
+  .pv-teaser blockquote footer {
+    font-family: var(--sans-zh);
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    color: var(--ink-faint);
+  }
+  .pv-teaser cite {
+    font-style: normal;
+    color: var(--ochre);
+    margin-right: 0.7rem;
+  }
+
+  @media (max-width: 980px) {
+    .bio-grid {
+      grid-template-columns: 1fr;
+    }
+    .bio-portrait {
+      max-width: 22rem;
+    }
+    .era-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 680px) {
+    .disc-grid,
+    .era-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

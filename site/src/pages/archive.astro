@@ -1,0 +1,226 @@
+---
+/**
+ * 全站年表 — /archive
+ *
+ * 把「作品年份」「文章年份」「年譜年份」三條時間軸疊在一起，
+ * 讓訪客用一條線看完 1928–2018。
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { timeline, articles, artworks } from "../lib/content.js";
+
+const years = timeline.map((t) => t.year);
+const minY = Math.min(...years, 1928);
+const maxY = Math.max(...years, 2018);
+
+const artByYear = new Map();
+for (const a of artworks) if (a.year) artByYear.set(a.year, (artByYear.get(a.year) || 0) + 1);
+
+const newsByYear = new Map();
+for (const a of articles) {
+  const y = a.eventDate?.year ?? Number(a.publishedAt?.slice(0, 4));
+  if (y >= 1900 && y <= 2100) newsByYear.set(y, (newsByYear.get(y) || 0) + 1);
+}
+
+const rows = [];
+for (let y = minY; y <= maxY; y++) {
+  const t = timeline.find((x) => x.year === y);
+  const nArt = artByYear.get(y) || 0;
+  const nNews = newsByYear.get(y) || 0;
+  if (!t && !nArt && !nNews) continue;
+  rows.push({ year: y, events: t?.events ?? [], nArt, nNews });
+}
+
+const peakArt = Math.max(1, ...rows.map((r) => r.nArt));
+const decades = [];
+for (const r of rows) {
+  const d = Math.floor(r.year / 10) * 10;
+  if (!decades.length || decades.at(-1).decade !== d) decades.push({ decade: d, rows: [] });
+  decades.at(-1).rows.push(r);
+}
+---
+
+<BaseLayout
+  title="全站年表"
+  description={`黃磊生 1928–2018 全站年表：${rows.length} 個年份，疊合生平事件、創作與報導。`}
+>
+  <header class="ar-hero">
+    <div class="container">
+      <p class="eyebrow">時間軸</p>
+      <h1 class="ar-title">全站年表</h1>
+      <p class="ar-lede">
+        把三條時間軸疊在一起：生平事件（年譜）、創作年份（作品）、報導年份（新聞）。
+        共 {rows.length} 個年份有紀錄。
+      </p>
+      <div class="ar-legend">
+        <span><i class="lg lg--life"></i>生平事件</span>
+        <span><i class="lg lg--art"></i>創作</span>
+        <span><i class="lg lg--news"></i>報導</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container ar-body">
+    {decades.map((d) => (
+      <section class="dc">
+        <h2 class="dc-head">{d.decade}s</h2>
+        <div class="dc-rows">
+          {d.rows.map((r) => (
+            <div class="dc-row" id={`y${r.year}`}>
+              <span class="dr-year">{r.year}</span>
+              <span class="dr-bars" aria-hidden="true">
+                <i class="lg lg--art" style={`--w:${(r.nArt / peakArt) * 100}%`}></i>
+                <i class="lg lg--news" style={`--w:${Math.min(100, (r.nNews / 4) * 100)}%`}></i>
+              </span>
+              <span class="dr-text">
+                {r.events.length > 0 ? r.events.join("　") : <span class="dr-silent">（該年僅有作品或報導紀錄）</span>}
+                <span class="dr-counts">
+                  {r.nArt > 0 && <a href={`/collection/years#y${r.year}`}>{r.nArt} 件作品</a>}
+                  {r.nNews > 0 && <span>{r.nNews} 則報導</span>}
+                </span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .ar-hero {
+    padding: var(--s-9) 0 var(--s-6);
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .ar-title {
+    font-family: var(--serif-zh);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    margin: 0;
+  }
+  .ar-lede {
+    max-width: 36em;
+    margin: 1.4rem 0 0;
+    font-size: 0.94rem;
+    line-height: 2;
+    color: var(--ink-muted);
+  }
+  .ar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 1.5rem;
+    font-family: var(--sans-zh);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+  }
+  .ar-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .lg {
+    display: inline-block;
+    width: 14px;
+    height: 3px;
+    background: var(--ochre);
+  }
+  .lg--art {
+    background: var(--ochre);
+  }
+  .lg--news {
+    background: var(--indigo, #2c3e50);
+    opacity: 0.55;
+  }
+  .lg--life {
+    background: var(--ink);
+    opacity: 0.3;
+  }
+
+  .ar-body {
+    padding: var(--s-7) 0 var(--s-9);
+  }
+  .dc {
+    margin-bottom: var(--s-6);
+  }
+  .dc-head {
+    font-family: var(--serif-en);
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    margin: 0 0 0.4rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--paper-edge);
+  }
+  .dc-rows {
+    display: grid;
+  }
+  .dc-row {
+    display: grid;
+    grid-template-columns: 4rem 90px 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted color-mix(in srgb, var(--paper-edge) 55%, transparent);
+    scroll-margin-top: 6rem;
+  }
+  .dr-year {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink);
+  }
+  .dr-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    padding-top: 0.35rem;
+  }
+  .dr-bars .lg {
+    width: var(--w);
+    min-width: 2px;
+    transition: width 700ms var(--ease-out);
+  }
+  .dr-text {
+    font-size: 0.86rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .dr-silent {
+    font-family: var(--sans-zh);
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    opacity: 0.75;
+  }
+  .dr-counts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-left: 0.6rem;
+    font-family: var(--sans-zh);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    color: var(--ochre);
+  }
+  .dr-counts span {
+    color: var(--ink-faint);
+  }
+  .dr-counts a {
+    color: var(--ochre);
+    text-decoration: none;
+  }
+  .dr-counts a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .dc-row {
+      grid-template-columns: 3.2rem 1fr;
+      gap: 0.6rem;
+    }
+    .dr-bars {
+      display: none;
+    }
+  }
+</style>

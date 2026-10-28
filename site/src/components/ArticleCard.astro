@@ -1,0 +1,177 @@
+---
+/**
+ * ArticleCard — 文章卡（新聞 / 評論共用）
+ * 大卡（feature）與小卡（list）兩種密度。
+ */
+import { IMAGES, formatDate } from "../lib/content.js";
+
+const { article, variant = "default", showImage = true } = Astro.props;
+const meta = article.hero ? IMAGES[article.hero] : null;
+const variants = meta?.variants ?? [];
+const srcsetStr = variants.map((v) => `${v.file} ${v.width}w`).join(", ");
+const fallback = variants.at(-1)?.file ?? null;
+const dateLabel = formatDate(article.eventDate?.iso || article.publishedAt);
+const excerpt = (article.bodyText || "").replace(/\s+/g, " ").slice(0, 96);
+---
+
+<article class:list={["ac", `ac--${variant}`, { "ac--no-image": !fallback || !showImage }]}>
+  <a class="ac-link" href={article.route}>
+    {showImage && fallback && (
+      <div class="ac-media">
+        <img
+          src={fallback}
+          srcset={srcsetStr || undefined}
+          sizes={variant === "feature" ? "(max-width: 900px) 100vw, 620px" : "(max-width: 720px) 40vw, 220px"}
+          alt=""
+          width={meta?.width ?? 800}
+          height={meta?.height ?? 600}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    )}
+    <div class="ac-body">
+      <div class="ac-top">
+        <span class="ac-cat">{article.categoryName}</span>
+        {dateLabel && <time datetime={article.eventDate?.iso || article.publishedAt}>{dateLabel}</time>}
+      </div>
+      <h3 class="ac-title">{article.title}</h3>
+      {variant === "feature" && excerpt && <p class="ac-excerpt">{excerpt}{article.bodyText.length > 96 ? "…" : ""}</p>}
+      <span class="ac-more" aria-hidden="true">閱讀</span>
+    </div>
+  </a>
+</article>
+
+<style>
+  .ac {
+    margin: 0;
+  }
+  .ac-link {
+    display: grid;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    transition: color var(--dur) var(--ease);
+  }
+
+  /* --- 預設：橫向小卡，圖在左 --- */
+  .ac--default .ac-link {
+    grid-template-columns: 132px 1fr;
+    gap: 1.15rem;
+    align-items: start;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--paper-edge) 60%, transparent);
+  }
+  .ac--default .ac-media {
+    overflow: hidden;
+    background: var(--paper-warm);
+    aspect-ratio: 4 / 3;
+  }
+  .ac--default .ac-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms var(--ease-out);
+  }
+  .ac--default .ac-link:hover .ac-media img {
+    transform: scale(1.05);
+  }
+  .ac--default.ac--no-image .ac-link {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- feature：大卡，圖在上 --- */
+  .ac--feature .ac-link {
+    gap: 1.15rem;
+  }
+  .ac--feature .ac-media {
+    overflow: hidden;
+    background: var(--paper-warm);
+    aspect-ratio: 16 / 10;
+  }
+  .ac--feature .ac-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 900ms var(--ease-out);
+  }
+  .ac--feature .ac-link:hover .ac-media img {
+    transform: scale(1.035);
+  }
+  .ac--feature .ac-title {
+    font-size: clamp(1.15rem, 2vw, 1.42rem);
+    line-height: 1.55;
+  }
+
+  /* --- 純文字卡 --- */
+  .ac--text .ac-link {
+    padding: 1.1rem 0;
+    border-bottom: 1px dotted color-mix(in srgb, var(--paper-edge) 80%, transparent);
+  }
+
+  .ac-top {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.45rem;
+    font-family: var(--sans-zh);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
+  }
+  .ac-cat {
+    color: var(--ochre);
+    letter-spacing: 0.18em;
+  }
+  .ac-top time {
+    font-family: var(--mono);
+    letter-spacing: 0.05em;
+  }
+
+  .ac-title {
+    font-family: var(--serif-zh);
+    font-size: 1.02rem;
+    font-weight: 500;
+    line-height: 1.65;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    transition: color var(--dur) var(--ease);
+    text-wrap: pretty;
+  }
+  .ac-link:hover .ac-title {
+    color: var(--ochre-deep);
+  }
+
+  .ac-excerpt {
+    margin: 0.5rem 0 0;
+    font-size: 0.86rem;
+    line-height: 1.85;
+    color: var(--ink-muted);
+  }
+
+  .ac-more {
+    display: inline-block;
+    margin-top: 0.55rem;
+    font-family: var(--sans-zh);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    color: var(--ochre);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all var(--dur) var(--ease);
+  }
+  .ac-link:hover .ac-more {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: 520px) {
+    .ac--default .ac-link {
+      grid-template-columns: 96px 1fr;
+      gap: 0.9rem;
+    }
+    .ac-more {
+      display: none;
+    }
+  }
+</style>

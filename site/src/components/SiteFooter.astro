@@ -1,0 +1,183 @@
+---
+import { SITE, contact, galleries, stats, routes } from "../lib/content.js";
+
+const year = new Date().getFullYear();
+const colophon = [
+  { label: "山水", href: "/collection/landscape", count: galleries.find((g) => g.slug === "landscape")?.count },
+  { label: "花鳥蟲魚", href: "/collection/flowers-birds", count: galleries.find((g) => g.slug === "flowers-birds")?.count },
+  { label: "書法", href: "/collection/calligraphy", count: galleries.find((g) => g.slug === "calligraphy")?.count },
+];
+
+const nav2 = [
+  { label: "關於黃磊生", href: "/about" },
+  { label: "年譜", href: "/about/chronology" },
+  { label: "我的繪畫觀", href: "/about/painting-view" },
+  { label: "本站新聞", href: "/news" },
+  { label: "藝術評論", href: "/art-reviews" },
+];
+const nav3 = [
+  { label: "藝術生活", href: "/life" },
+  { label: "作品索引", href: "/collection/years" },
+  { label: "典藏與聯絡", href: "/contact" },
+  { label: "全站搜尋", href: "/search" },
+  { label: "網站索引", href: "/archive" },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.1">
+            <rect x="7.5" y="5.5" width="33" height="37" rx="0.5" />
+            <path d="M7.5 33.5h33M24 9.5v20M17 15.5c2.4 3.2 2.4 7.2 0 10.4M31 15.5c-2.4 3.2-2.4 7.2 0 10.4" stroke-linecap="round" />
+          </svg>
+        </div>
+        <p class="footer-name">{SITE.name}</p>
+        <p class="footer-en">{SITE.nameEn}</p>
+        <p class="footer-desc">
+          嶺南畫派大師黃磊生（1928–2011）之藝術生命紀念館暨數位美術館。收錄山水、花鳥蟲魚、書法作品
+          {stats.artworks} 件與年譜、評論、新聞紀錄。
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="關於與消息">
+        <h2 class="footer-head">關於</h2>
+        <ul>
+          {nav2.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+        <h2 class="footer-head">探索</h2>
+        <ul>
+          {nav3.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h2 class="footer-head">作品集</h2>
+        <ul class="footer-collections">
+          {colophon.map((c) => (
+            <li><a href={c.href}><span>{c.label}</span><span class="count">{c.count}</span></a></li>
+          ))}
+        </ul>
+
+        <h2 class="footer-head">聯絡</h2>
+        <ul class="contact-list">
+          <li><a href={`tel:${contact.phones[0].tel}`}>{contact.phones[0].value}</a></li>
+          <li><a href={`mailto:${contact.emails[1].value}`}>{contact.emails[1].value}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {year} {SITE.name}　{contact.im.map((i) => `${i.label} ${i.value}`).join("　")}</p>
+      <p class="footer-fine">本站為原 Joomla 網站之靜態重構版 · 內容版權屬黃磊生藝術生命紀念館所有</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--s-10);
+    padding: var(--s-9) 0 var(--s-6);
+    background: var(--paper-warm);
+    border-top: 1px solid var(--paper-edge);
+    font-family: var(--sans-zh);
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: var(--s-6) var(--s-7);
+    padding-bottom: var(--s-7);
+  }
+  .footer-mark {
+    color: var(--ochre);
+    margin-bottom: 0.7rem;
+  }
+  .footer-name {
+    font-family: var(--serif-zh);
+    font-size: 1.02rem;
+    letter-spacing: 0.14em;
+    color: var(--ink);
+    margin: 0 0 0.15rem;
+  }
+  .footer-en {
+    font-family: var(--serif-en);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 1rem;
+  }
+  .footer-desc {
+    line-height: 1.9;
+    max-width: 30em;
+    margin: 0;
+  }
+  .footer-head {
+    font-family: var(--sans-zh);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.85rem;
+  }
+  .footer-head:not(:first-child) {
+    margin-top: 1.7rem;
+  }
+  .footer-nav ul,
+  .footer-collections,
+  .contact-list {
+    display: grid;
+    gap: 0.45rem;
+  }
+  .site-footer a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color var(--dur) var(--ease);
+  }
+  .site-footer a:hover {
+    color: var(--ochre);
+  }
+  .footer-collections a {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px dotted color-mix(in srgb, var(--paper-edge) 80%, transparent);
+    padding-bottom: 0.4rem;
+  }
+  .footer-collections .count {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+  }
+  .footer-bottom {
+    border-top: 1px solid var(--paper-edge);
+    padding-top: var(--s-5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 2rem;
+    justify-content: space-between;
+    font-size: 0.74rem;
+    color: var(--ink-faint);
+  }
+  .footer-bottom p {
+    margin: 0;
+  }
+  @media (max-width: 860px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 520px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

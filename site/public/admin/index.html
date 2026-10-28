@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <!--
+      後台（Sveltia CMS）的 CSP。
+      全站的嚴格 CSP 在 _headers 對 /admin 拆掉了（見 tools/redirects.mjs），
+      改在這裡放一份後台專用的：要能載入 unpkg 上的 Sveltia、
+      連 GitHub API 與登入用的 Worker、顯示 blob: 預覽圖。
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self' blob: data: https:; frame-src 'self' blob:; worker-src 'self' blob:; base-uri 'self'; form-action 'self'"
+    />
+    <title>內容管理 · 黃磊生官方網站</title>
+  </head>
+  <body>
+    <!-- 版本鎖定：升級時改這裡的版本號，先在本機試過再推 -->
+    <script src="https://unpkg.com/@sveltia/cms@0.236.0/dist/sveltia-cms.js"></script>
+  </body>
+</html>

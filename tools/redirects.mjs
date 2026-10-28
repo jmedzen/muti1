@@ -179,6 +179,19 @@ const headers = `# 由 tools/redirects.mjs 自動產生
   X-Robots-Tag: noindex, follow
 /search/*
   X-Robots-Tag: noindex, follow
+
+# 後台（Sveltia CMS）：
+#   - 全站 CSP 會擋掉 unpkg 的程式與 GitHub API，所以用「!」把 /* 的 CSP 拆掉，
+#     改由 admin/index.html 裡的 <meta> CSP 管（同名標頭是串接，兩份會同時生效，只能拆）。
+#   - COOP same-origin 會切斷 GitHub 登入彈窗與後台之間的 window.opener，登入會卡住。
+/admin
+  ! Content-Security-Policy
+  ! Cross-Origin-Opener-Policy
+  X-Robots-Tag: noindex, nofollow
+/admin/*
+  ! Content-Security-Policy
+  ! Cross-Origin-Opener-Policy
+  X-Robots-Tag: noindex, nofollow
 `;
 fs.writeFileSync(path.join(OUT, "_headers"), headers, "utf8");
 

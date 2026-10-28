@@ -47,7 +47,15 @@ model.homeBlocks.forEach((b) =>
   })
 );
 
-const out = {};
+/**
+ * --incremental：只處理 images.json 裡還沒有的圖（後台新上傳的），既有項目原封不動。
+ * 建置時用這個模式（site/package.json 的 build），每次只多花新圖的時間，
+ * images.json 也不會因為並行處理的完成順序不同而整份重排。
+ */
+const INCREMENTAL = process.argv.includes("--incremental");
+const MANIFEST = path.join(DATA, "images.json");
+const out = INCREMENTAL && fs.existsSync(MANIFEST) ? JSON.parse(await fsp.readFile(MANIFEST, "utf8")) : {};
+if (INCREMENTAL) for (const k of Object.keys(out)) wanted.delete(k);
 let done = 0;
 let totalOut = 0;
 const t0 = Date.now();
@@ -94,7 +102,8 @@ async function processOne([srcPath, cfg]) {
       await fsp.rm(outAbs, { force: true });
       continue;
     }
-    variants.push({ w, file: `/media/${outFile}`, width: m2.width, height: m2.height, bytes: fs.statSync(outAbs).size });
+    // encodeURI：後台上傳的檔名可能有空白或中文，srcset 以空白分隔，不編碼會斷掉
+    variants.push({ w, file: encodeURI(`/media/${outFile}`), width: m2.width, height: m2.height, bytes: fs.statSync(outAbs).size });
   }
 
   // LQIP：20px WebP 內嵌 data URI
@@ -122,7 +131,11 @@ await Promise.all(
   })
 );
 
-await fsp.writeFile(path.join(DATA, "images.json"), JSON.stringify(out, null, 1));
+if (INCREMENTAL && !jobs.length) {
+  console.log("[images] 沒有新圖，images.json 不變");
+  process.exit(0);
+}
+await fsp.writeFile(MANIFEST, JSON.stringify(out, null, 1));
 
 const inBytes = Object.values(out).reduce((s, v) => s + v.originalBytes, 0);
 console.log(

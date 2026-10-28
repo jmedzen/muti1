@@ -1,0 +1,486 @@
+# ═══════════════════════════════════════════════════════════
+#  Sveltia CMS 後台設定（/admin）
+#
+#  後台只讀寫 content/md/ 底下的 Markdown，存檔＝一次 Git commit，
+#  push 到 main 之後 .github/workflows/deploy.yml 會自動建置部署。
+#
+#  欄位必須與這兩處一致，改其中一邊時三邊一起看：
+#    - site/src/content.config.ts（Astro schema）
+#    - tools/md-to-model.mjs（MD → model.json 的必要欄位與格式檢查）
+#
+#  內文一律用 text（純文字框），不用 markdown 編輯器：
+#  md-to-model.mjs 只認段落、<br>、連結、單獨一行的   空段落，
+#  所見即所得編輯器存檔時會把這些改寫掉。
+# ═══════════════════════════════════════════════════════════
+
+backend:
+  name: github
+  repo: jmedzen/muti1
+  branch: main
+  # GitHub 登入要經過 OAuth 中介（sveltia-cms-auth，部署在 Cloudflare Workers）。
+  # 部署好之後把網址填在這裡，例如：
+  # base_url: https://sveltia-cms-auth.<你的子網域>.workers.dev
+  commit_messages:
+    create: "內容：新增 {{collection}}「{{slug}}」"
+    update: "內容：更新 {{collection}}「{{slug}}」"
+    delete: "內容：刪除 {{collection}}「{{slug}}」"
+    uploadMedia: "內容：上傳圖片 {{path}}"
+    deleteMedia: "內容：刪除圖片 {{path}}"
+
+# 上傳的圖片放在原圖目錄，網址沿用原站的 /images/… 形式，
+# 建置時 tools/images.mjs --incremental 會替新圖產生 WebP 尺寸版本。
+media_folder: raw/assets/images/uploads
+public_folder: /images/uploads
+
+site_url: https://luisang.rumotan.com
+logo:
+  src: /favicon.svg
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+output:
+  # 空白的選填欄位不寫進 frontmatter（等同原本的 null），
+  # md-to-model.mjs 才會照舊從 caption 推導 name、尺寸等欄位。
+  omit_empty_optional_fields: true
+
+# ─────────────────────────────────────────── 共用欄位
+# （YAML 錨點，只在這個檔案裡重複使用；不會寫進內容。
+#   瀏覽器 console 會提示 x-article-fields / x-item-fields「未定義」，那是預期的，可忽略）
+x-article-fields:
+  title: &a_title { name: title, label: 標題, widget: string }
+  order: &a_order
+    { name: order, label: 排序, widget: number, value_type: int, required: false, hint: 數字越小越前面 }
+  publishedAt: &a_publishedAt
+    name: publishedAt
+    label: 發布時間
+    widget: datetime
+    format: YYYY-MM-DDTHH:mm:ssZ
+    picker_utc: true
+    required: false
+  eventDate: &a_eventDate
+    name: eventDate
+    label: 事件日期
+    widget: string
+    required: false
+    hint: 2008、2008-09 或 2008-09-22
+    pattern: ['^\d{4}(-\d{2}(-\d{2})?)?$', 格式應為 2008、2008-09 或 2008-09-22]
+  hero: &a_hero { name: hero, label: 文章主圖, widget: image, required: false }
+  hits: &a_hits { name: hits, label: 點擊數（原站文字）, widget: string, required: false }
+  isStub: &a_isStub
+    { name: isStub, label: 內容待補, widget: boolean, required: false, default: false }
+  bodyHtmlRaw: &a_bodyHtmlRaw
+    name: bodyHtmlRaw
+    label: 原始 HTML（進階）
+    widget: text
+    required: false
+    hint: 有填的話會取代下面的內文，直接輸出這段 HTML。一般請留空。
+  body: &a_body
+    name: body
+    label: 內文
+    widget: text
+    required: false
+    hint: 空一行＝新段落；段落內換行用 <br>；連結寫 [文字](網址)。不支援粗體、標題、清單。
+
+x-item-fields:
+  code: &i_code { name: code, label: 編號, widget: string, hint: 例如 M033，也是檔名 }
+  order: &i_order
+    { name: order, label: 排序, widget: number, value_type: int, required: false }
+  name: &i_name { name: name, label: 作品名稱, widget: string, required: false, hint: 留空則從圖說推導 }
+  dimensions: &i_dimensions
+    { name: dimensions, label: 尺寸, widget: string, required: false, hint: 例如 62x128cm }
+  year: &i_year
+    { name: year, label: 年份, widget: number, value_type: int, required: false }
+  yearGanzhi: &i_yearGanzhi { name: yearGanzhi, label: 干支紀年, widget: string, required: false }
+  titleEn: &i_titleEn { name: titleEn, label: 英文名稱, widget: string, required: false }
+  medium: &i_medium { name: medium, label: 媒材, widget: string, required: false }
+  note: &i_note { name: note, label: 附註, widget: string, required: false }
+  image: &i_image { name: image, label: 圖片, widget: image }
+  caption: &i_caption
+    { name: caption, label: 圖說, widget: string, hint: 例如「L005 黃磊生---牡丹（風）96x186cm 2006」 }
+  eventDate: &i_eventDate
+    name: eventDate
+    label: 日期
+    widget: string
+    required: false
+    hint: 作品只看年份；照片可寫 2008、2008-09 或 2008-09-22
+    pattern: ['^\d{4}(-\d{2}(-\d{2})?)?$', 格式應為 2008、2008-09 或 2008-09-22]
+  body: &i_body { name: body, label: 說明, widget: text, required: false }
+
+# ─────────────────────────────────────────── 內容
+collections:
+  # ── 作品／照片：每個專輯一個資料夾，檔名＝編號 ──
+  - name: landscape
+    label: 作品・山水
+    label_singular: 山水作品
+    folder: content/md/collections/landscape
+    create: true
+    slug: "{{code}}"
+    identifier_field: code
+    summary: "{{code}} {{name}}"
+    sortable_fields: [order, code, year]
+    fields:
+      - { name: album, widget: hidden, default: landscape }
+      - { name: kind, widget: hidden, default: artwork }
+      - *i_code
+      - *i_order
+      - *i_name
+      - *i_dimensions
+      - *i_year
+      - *i_yearGanzhi
+      - *i_titleEn
+      - *i_medium
+      - *i_note
+      - *i_image
+      - *i_caption
+      - *i_eventDate
+      - *i_body
+
+  - name: flowers-birds
+    label: 作品・花鳥蟲魚
+    label_singular: 花鳥作品
+    folder: content/md/collections/flowers-birds
+    create: true
+    slug: "{{code}}"
+    identifier_field: code
+    summary: "{{code}} {{name}}"
+    sortable_fields: [order, code, year]
+    fields:
+      - { name: album, widget: hidden, default: flowers-birds }
+      - { name: kind, widget: hidden, default: artwork }
+      - *i_code
+      - *i_order
+      - *i_name
+      - *i_dimensions
+      - *i_year
+      - *i_yearGanzhi
+      - *i_titleEn
+      - *i_medium
+      - *i_note
+      - *i_image
+      - *i_caption
+      - *i_eventDate
+      - *i_body
+
+  - name: calligraphy
+    label: 作品・書法
+    label_singular: 書法作品
+    folder: content/md/collections/calligraphy
+    create: true
+    slug: "{{code}}"
+    identifier_field: code
+    summary: "{{code}} {{name}}"
+    sortable_fields: [order, code, year]
+    fields:
+      - { name: album, widget: hidden, default: calligraphy }
+      - { name: kind, widget: hidden, default: artwork }
+      - *i_code
+      - *i_order
+      - *i_name
+      - *i_dimensions
+      - *i_year
+      - *i_yearGanzhi
+      - *i_titleEn
+      - *i_medium
+      - *i_note
+      - *i_image
+      - *i_caption
+      - *i_eventDate
+      - *i_body
+
+  - name: exhibition-exchange
+    label: 照片・展覽交流
+    label_singular: 展覽照片
+    folder: content/md/collections/exhibition-exchange
+    create: true
+    slug: "{{code}}"
+    identifier_field: code
+    summary: "{{code}} {{caption}}"
+    sortable_fields: [order, code, eventDate]
+    fields:
+      - { name: album, widget: hidden, default: exhibition-exchange }
+      - { name: kind, widget: hidden, default: photo }
+      - *i_code
+      - *i_order
+      - *i_name
+      - *i_year
+      - *i_image
+      - *i_caption
+      - *i_eventDate
+      - *i_note
+      - *i_body
+
+  - name: life-footprint
+    label: 照片・生活足跡
+    label_singular: 生活照片
+    folder: content/md/collections/life-footprint
+    create: true
+    slug: "{{code}}"
+    identifier_field: code
+    summary: "{{code}} {{caption}}"
+    sortable_fields: [order, code, eventDate]
+    fields:
+      - { name: album, widget: hidden, default: life-footprint }
+      - { name: kind, widget: hidden, default: photo }
+      - *i_code
+      - *i_order
+      - *i_name
+      - *i_year
+      - *i_image
+      - *i_caption
+      - *i_eventDate
+      - *i_note
+      - *i_body
+
+  - name: art-exchange
+    label: 照片・藝術交流
+    label_singular: 交流照片
+    folder: content/md/collections/art-exchange
+    create: true
+    slug: "{{code}}"
+    identifier_field: code
+    summary: "{{code}} {{caption}}"
+    sortable_fields: [order, code, eventDate]
+    fields:
+      - { name: album, widget: hidden, default: art-exchange }
+      - { name: kind, widget: hidden, default: photo }
+      - *i_code
+      - *i_order
+      - *i_name
+      - *i_year
+      - *i_image
+      - *i_caption
+      - *i_eventDate
+      - *i_note
+      - *i_body
+
+  # ── 文章：資料夾路徑＝網址（articles/news/auction-news/x.md → /news/auction-news/x）──
+  # 新文章檔名用建立時間，避免中文標題變成網址。
+  - name: auction-news
+    label: 新聞・拍賣新聞
+    label_singular: 拍賣新聞
+    folder: content/md/articles/news/auction-news
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    sortable_fields: [order, publishedAt, title]
+    fields:
+      - { name: category, widget: hidden, default: auction }
+      - *a_title
+      - *a_order
+      - *a_publishedAt
+      - *a_eventDate
+      - *a_hero
+      - *a_hits
+      - *a_isStub
+      - *a_bodyHtmlRaw
+      - *a_body
+
+  - name: exhibition-news
+    label: 新聞・展覽新聞
+    label_singular: 展覽新聞
+    folder: content/md/articles/news/exhibition-news
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    sortable_fields: [order, publishedAt, title]
+    fields:
+      - { name: category, widget: hidden, default: exhibition }
+      - *a_title
+      - *a_order
+      - *a_publishedAt
+      - *a_eventDate
+      - *a_hero
+      - *a_hits
+      - *a_isStub
+      - *a_bodyHtmlRaw
+      - *a_body
+
+  - name: memorial-exhibition
+    label: 新聞・紀念展
+    label_singular: 紀念展
+    folder: content/md/articles/news/memorial-exhibition
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    sortable_fields: [order, publishedAt, title]
+    fields:
+      - { name: category, widget: hidden, default: memorial }
+      - *a_title
+      - *a_order
+      - *a_publishedAt
+      - *a_eventDate
+      - *a_hero
+      - *a_hits
+      - *a_isStub
+      - *a_bodyHtmlRaw
+      - *a_body
+
+  - name: media-coverage
+    label: 新聞・媒體報導
+    label_singular: 媒體報導
+    folder: content/md/articles/news/media-coverage
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    sortable_fields: [order, publishedAt, title]
+    fields:
+      - { name: category, widget: hidden, default: media }
+      - *a_title
+      - *a_order
+      - *a_publishedAt
+      - *a_eventDate
+      - *a_hero
+      - *a_hits
+      - *a_isStub
+      - *a_bodyHtmlRaw
+      - *a_body
+
+  - name: official-reports
+    label: 新聞・官方報導
+    label_singular: 官方報導
+    folder: content/md/articles/news/official-reports
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    sortable_fields: [order, publishedAt, title]
+    fields:
+      - { name: category, widget: hidden, default: official }
+      - *a_title
+      - *a_order
+      - *a_publishedAt
+      - *a_eventDate
+      - *a_hero
+      - *a_hits
+      - *a_isStub
+      - *a_bodyHtmlRaw
+      - *a_body
+
+  - name: art-reviews
+    label: 藝術評論
+    label_singular: 藝術評論
+    folder: content/md/articles/art-reviews
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    sortable_fields: [order, publishedAt, title]
+    fields:
+      - { name: category, widget: hidden, default: reviews }
+      - *a_title
+      - *a_order
+      - *a_publishedAt
+      - *a_eventDate
+      - *a_hero
+      - *a_hits
+      - *a_isStub
+      - *a_bodyHtmlRaw
+      - *a_body
+
+  - name: artist-luisang
+    label: 關於黃磊生
+    label_singular: 關於藝術家文章
+    folder: content/md/articles/artist-luisang
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    sortable_fields: [order, publishedAt, title]
+    fields:
+      - { name: category, widget: hidden, default: artist }
+      - *a_title
+      - *a_order
+      - *a_publishedAt
+      - *a_eventDate
+      - *a_hero
+      - *a_hits
+      - *a_isStub
+      - *a_bodyHtmlRaw
+      - *a_body
+
+  # ── 單頁：生平、畫論 ──
+  - name: longform
+    label: 長文
+    files:
+      - name: biography
+        label: 生平
+        file: content/md/longform/biography.md
+        fields:
+          - { name: title, label: 標題, widget: string }
+          - { name: route, widget: hidden }
+          - { name: legacyRoute, widget: hidden }
+          - *a_body
+      - name: painting-view
+        label: 我的繪畫觀
+        file: content/md/longform/painting-view.md
+        fields:
+          - { name: title, label: 標題, widget: string }
+          - { name: route, widget: hidden }
+          - { name: legacyRoute, widget: hidden }
+          - *a_body
+
+  # ── 站台設定 ──
+  # ⚠️ 從後台存檔會移除 site.md 裡的 YAML 註解（# 開頭的說明文字），內容本身不受影響。
+  - name: settings
+    label: 站台設定
+    files:
+      - name: site
+        label: 站名、選單、聯絡方式、首頁大圖
+        file: content/md/site.md
+        fields:
+          - { name: name, label: 站名, widget: string }
+          - { name: nameEn, label: 英文站名, widget: string, required: false }
+          - { name: tagline, label: 標語, widget: string, required: false }
+          - { name: description, label: 網站描述（SEO）, widget: text, required: false }
+          - { name: lang, label: 語言代碼, widget: string, default: zh-Hant }
+          - { name: footerText, label: 頁尾文字, widget: string, required: false }
+          - name: menu
+            label: 主選單
+            widget: list
+            summary: "{{fields.title}} → {{fields.href}}"
+            fields:
+              - { name: title, label: 名稱, widget: string }
+              - { name: href, label: 連結, widget: string }
+              - name: children
+                label: 子選單
+                widget: list
+                required: false
+                summary: "{{fields.title}} → {{fields.href}}"
+                fields:
+                  - { name: title, label: 名稱, widget: string }
+                  - { name: href, label: 連結, widget: string }
+                  - { name: children, widget: hidden, default: [] }
+          - name: contact
+            label: 聯絡方式
+            widget: object
+            fields:
+              - name: phones
+                label: 電話
+                widget: list
+                required: false
+                summary: "{{fields.label}}：{{fields.value}}"
+                fields:
+                  - { name: label, label: 標籤, widget: string }
+                  - { name: value, label: 顯示文字, widget: string }
+                  - { name: tel, label: 撥號號碼, widget: string, required: false, hint: 例如 +886289935275 }
+              - name: emails
+                label: 信箱
+                widget: list
+                required: false
+                summary: "{{fields.label}}：{{fields.value}}"
+                fields:
+                  - { name: label, label: 標籤, widget: string }
+                  - { name: value, label: 信箱, widget: string }
+              - name: im
+                label: 通訊軟體
+                widget: list
+                required: false
+                summary: "{{fields.label}}：{{fields.value}}"
+                fields:
+                  - { name: label, label: 標籤, widget: string }
+                  - { name: value, label: 帳號, widget: string }
+              - { name: website, label: 網站, widget: string, required: false }
+              - { name: hours, label: 開放時間, widget: string, required: false }
+              - { name: address, label: 地址, widget: string, required: false }
+          - name: hero
+            label: 首頁大圖（輪播）
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: 標題, widget: string }
+              - { name: image, label: 圖片, widget: image }
+              - { name: cta, label: 按鈕文字, widget: string, required: false }
+              - { name: ctaHref, label: 按鈕連結, widget: string, required: false }
+          - { name: body, label: 首頁區塊摘要（僅供參考，不影響版面）, widget: text, required: false }

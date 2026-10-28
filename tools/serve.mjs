@@ -116,8 +116,11 @@ function parseHeaders() {
     const line = raw.replace(/\s+$/, "");
     if (!line.trim() || line.trim().startsWith("#")) continue;
     if (!/^\s/.test(line)) {
-      cur = { pattern: line.trim(), headers: {} };
+      cur = { pattern: line.trim(), headers: {}, detach: [] };
       blocks.push(cur);
+    } else if (cur && line.trim().startsWith("!")) {
+      // 「! Header-Name」：拆掉先前規則加上的同名標頭（Cloudflare _headers 語法）
+      cur.detach.push(line.trim().slice(1).trim().toLowerCase());
     } else if (cur) {
       const i = line.indexOf(":");
       if (i > 0) cur.headers[line.slice(0, i).trim()] = line.slice(i + 1).trim();
@@ -139,6 +142,12 @@ const headersFor = (pathname) => {
   for (const r of HEADER_RULES) {
     const hit = r.exact ? r.pattern === pathname : r.re?.test(pathname);
     if (hit) Object.assign(out, r.headers);
+  }
+  // 拆除放在最後做：Cloudflare 的「!」不受規則先後影響
+  for (const r of HEADER_RULES) {
+    const hit = r.exact ? r.pattern === pathname : r.re?.test(pathname);
+    if (!hit || !r.detach.length) continue;
+    for (const k of Object.keys(out)) if (r.detach.includes(k.toLowerCase())) delete out[k];
   }
   return out;
 };

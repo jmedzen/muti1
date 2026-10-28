@@ -6,7 +6,7 @@
   "description": "黃磊生藝術生命紀念館暨數位美術館 — 官方網站（重構版）",
   "scripts": {
     "dev": "node ../tools/ensure-deps.mjs && ASTRO_TELEMETRY_DISABLED=1 astro dev",
-    "build": "node ../tools/ensure-deps.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "build": "node ../tools/ensure-deps.mjs && node ../tools/images.mjs --incremental && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "serve": "node ../tools/serve.mjs",

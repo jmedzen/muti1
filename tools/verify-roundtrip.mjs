@@ -79,10 +79,10 @@ console.log("Markdown 往返一致性");
     fail("編譯 content/md/ 失敗", r.out);
   } else {
     const after = fs.readFileSync(MODEL, "utf8");
-    // generatedAt 是時間戳，本來就會變
-    const strip = (s) => s.replace(/"generatedAt":\s*"[^"]*"/, '"generatedAt":""');
-    if (strip(before) === strip(after)) {
-      pass("md → model.json 編譯結果穩定（除時間戳外逐位元組相同）");
+    // 產物現在是可重現的（沒有編譯時間戳，改用 MD 的 mtime 與內容雜湊），
+    // 所以這裡可以要求逐位元組完全相同 —— 不必再排除任何欄位。
+    if (before === after) {
+      pass("md → model.json 編譯結果穩定（逐位元組相同、可重現）");
     } else {
       fail("編譯結果與現有 model.json 不同（有人手改了產物，或編譯器行為變了）");
     }

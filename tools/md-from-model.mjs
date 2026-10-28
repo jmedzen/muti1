@@ -262,6 +262,31 @@ function buildSiteMd() {
   }
   L.push("");
 
+  // ── 首頁區塊（原站 SP Page Builder 的原始結構）──
+  //
+  // 這 13 個區塊前端目前沒有渲染（首頁是另外設計的版型），
+  // 但它是原站首頁的完整紀錄，不該憑空消失。
+  // 放進 MD 的理由是：不能讓「MD 是唯一真實來源」出現例外，
+  // 否則就會有第二個檔案在某天悄悄變成必要的補充資料。
+  if (model.homeBlocks?.length) {
+    L.push("# ── 首頁區塊（原站 SP Page Builder 結構，目前未渲染，僅留存紀錄）──");
+    L.push("homeBlocks:");
+    for (const b of model.homeBlocks) {
+      L.push(`  - id: ${JSON.stringify(b.id)}`);
+      if (b.addons?.length) {
+        L.push("    addons:");
+        for (const a of b.addons) {
+          L.push(`      - type: ${yamlScalar(a.type)}`);
+          if (a.title) L.push(`        title: ${yamlScalar(a.title)}`);
+          if (a.content) L.push(`        content: ${yamlScalar(a.content)}`);
+          L.push(`        image: ${a.image ? yamlScalar(a.image) : "null"}`);
+          L.push(`        cta: ${a.cta ? yamlScalar(a.cta) : "null"}`);
+        }
+      }
+    }
+    L.push("");
+  }
+
   L.push("---");
   L.push("");
   L.push("# 首頁區塊");

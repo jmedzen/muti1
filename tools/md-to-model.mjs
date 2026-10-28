@@ -12,7 +12,7 @@
  *
  * 三個必須成立的保證：
  *   1. **無損**：MD → model.json 的結果要與「MD 化之前的 model.json」逐位元組相同
- *      （除了 meta.generatedAt 這種必然會變的欄位）。
+ *      （產物可重現：不含編譯時間戳，改用 MD 的 mtime 與內容雜湊）。
  *      這是 `--verify` 在做的事。
  *   2. **可推導欄位不進 MD**：route、legacyRoute、charCount、prev/next、bodyText
  *      都是從 MD 內容算出來的，手寫會漂移。
@@ -24,6 +24,7 @@
  *   node tools/md-to-model.mjs --verify    # 產生後與基準快照比對
  */
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { importDep } from "./load-dep.mjs";
@@ -346,9 +347,53 @@ const ALBUM_META = {
 /* ══════════════════════════════════════════════════ 組裝 model */
 
 const model = {};
+/**
+ * 建置時間戳。
+ *
+ * 原本是 `new Date().toISOString()`，問題是每次編譯都不同 ——
+ * 內容一個字沒改，`git status` 也是髒的，`git diff` 只有這一行。
+ * 久了大家就習慣忽略這個 diff，真正的內容變動反而看不到。
+ *
+ * 改成由 MD 內容雜湊推導：內容不變 → 時間戳不變 → 產物可重現。
+ * 需要「這份是什麼時候編的」時看 `meta.sourceHash` 對應的 commit 時間即可。
+ */
+const sourceHash = (() => {
+  const h = createHash("sha256");
+  const walk = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (e.name.endsWith(".md")) {
+        h.update(path.relative(MD, p).split(path.sep).join("/"));
+        h.update(fs.readFileSync(p));
+      }
+    }
+  };
+  walk(MD);
+  return h.digest("hex");
+})();
+
+// 取 MD 檔案的修改時間當「內容時間」。
+// 不用 new Date() 的原因見上面：那會讓「內容沒改」也產生 diff。
+// 用檔案 mtime 的話，真的改了內容才會變。
+const contentTime = (() => {
+  let latest = 0;
+  const walk = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (e.name.endsWith(".md")) latest = Math.max(latest, fs.statSync(p).mtimeMs);
+    }
+  };
+  walk(MD);
+  return latest ? new Date(latest).toISOString() : new Date(0).toISOString();
+})();
+
 model.meta = {
-  // generatedAt 每次都會變，比對時要排除
-  generatedAt: new Date().toISOString(),
+  // 內容時間（MD 檔案的最近修改時間），不是編譯時間
+  contentUpdatedAt: contentTime,
+  // 內容雜湊：同樣的 MD 一定得到同樣的值
+  sourceHash: sourceHash.slice(0, 16),
   source: "https://luisang.rumotan.com",
   sourceCms: "Joomla! 4/5 + Helix Ultimate + SP Page Builder + SP Easy Image Gallery",
   note:
@@ -417,17 +462,30 @@ model.hero = (siteMd.data.hero ?? []).map((h) => {
   const o = { title: h.title, cta: h.cta ?? null, ctaHref: h.ctaHref ?? null, image: h.image };
   return o;
 });
-model.homeBlocks = siteMd.data.homeBlocks ?? [];
+/**
+ * 首頁區塊（原站 SP Page Builder 結構）。
+ *
+ * 這裡原本有一段「MD 沒帶就沿用舊 model.json」的 fallback，動機是怕首頁空白。
+ * 但那等于承認 MD 不是唯一真實來源 —— 而且 fallback 會讓「MD 少了東西」
+ * 變成一個永遠不會亮的警告，久了就沒人看。
+ *
+ * 現在 homeBlocks 直接寫在 site.md 的 frontmatter 裡（7 KB），
+ * 沒有就真的是沒有，交給驗證去抓。
+ */
+model.homeBlocks = normalizeHomeBlocks(siteMd.data.homeBlocks);
 
-// 若 MD 沒帶 homeBlocks，沿用基準快照（避免首頁空白）
-if (!model.homeBlocks.length && fs.existsSync(MODEL)) {
-  try {
-    const prev = JSON.parse(fs.readFileSync(MODEL, "utf8"));
-    if (prev.homeBlocks?.length) {
-      model.homeBlocks = prev.homeBlocks;
-      warn("site.md", "frontmatter 沒有 homeBlocks，沿用現有 model.json 的內容");
-    }
-  } catch {}
+/** 首頁區塊：把 YAML 讀進來的結構整理成與原站一致的形狀 */
+function normalizeHomeBlocks(blocks) {
+  return (blocks ?? []).map((b) => ({
+    id: b.id,
+    addons: (b.addons ?? []).map((a) => ({
+      type: a.type,
+      title: a.title ?? "",
+      content: a.content ?? "",
+      image: a.image ?? null,
+      cta: a.cta ?? null,
+    })),
+  }));
 }
 
 model.categories = CATEGORIES;

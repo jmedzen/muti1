@@ -1,6 +1,7 @@
 {
   "meta": {
-    "generatedAt": "2026-10-28T11:18:45.160Z",
+    "contentUpdatedAt": "2026-10-28T12:29:20.290Z",
+    "sourceHash": "4cc8e04b54e51d15",
     "source": "https://luisang.rumotan.com",
     "sourceCms": "Joomla! 4/5 + Helix Ultimate + SP Page Builder + SP Easy Image Gallery",
     "note": "本檔由 tools/md-to-model.mjs 從 content/md/ 的 Markdown 編譯產生。MD 是唯一真實來源；要改內容請改 content/md/，不要改這個檔。",

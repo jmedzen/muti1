@@ -76,17 +76,19 @@ npm run dev        # 存檔就會看到變化（會自動同步）
 | 年譜某一條 | `timeline[]` |
 | 首頁六大區塊的文案 | `homeBlocks` |
 
-改壞了也不用怕 —— 但這裡要誠實說：**這個目錄目前不是 git repo**，
-所以沒有 `git checkout` 可以救。保險的做法是改之前先複製一份：
+改壞了也不用怕，`content/model.json` 在版控裡：
 
 ```bash
-cp content/model.json content/model.backup.json    # 改之前
-mv content/model.backup.json content/model.json    # 想還原時
+git checkout content/model.json     # 還原到最後一次提交
+git diff content/model.json         # 看自己改了什麼
 ```
 
-`content/` 底下的 `articles.json`、`galleries.json`、`site.json` 是抽取階段的中介產物，
-真的救不回來的話，跑 `node tools/model.mjs` 可以從它們重新產生 `model.json`
-（會蓋掉你對 `model.json` 的手動修改，但至少回到原站的真實內容）。
+（這個目錄已經是 git repo，首次提交包含 956 個檔案。
+`raw/`、`node_modules/`、`dist/` 都不進版控 —— 前兩者太大，後者可再生。）
+
+如果連 commit 都沒了，`content/` 底下的 `articles.json`、`galleries.json`、
+`site.json` 是抽取階段的中介產物，跑 `node tools/model.mjs` 可以從它們重新產生
+`model.json`（會蓋掉你對 `model.json` 的手動修改，但至少回到原站的真實內容）。
 
 ### 只想改樣式
 

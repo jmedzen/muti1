@@ -18,6 +18,7 @@ import fs from "node:fs";
 import fsp from "node:fs/promises";
 import path from "node:path";
 import { requireDep } from "./load-dep.mjs";
+import { requireChrome } from "./chrome-path.mjs";
 
 // puppeteer-core 裝在 site/node_modules（見 tools/load-dep.mjs 的說明）
 const puppeteer = requireDep("puppeteer-core");
@@ -25,7 +26,8 @@ const puppeteer = requireDep("puppeteer-core");
 const ROOT = path.resolve(import.meta.dirname, "..");
 const DIST = path.join(ROOT, "site", "dist");
 const SHOTS = path.join(ROOT, ".cache", "shots");
-const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+// 跨平台找 Chrome（macOS / Linux / Windows），可用 CHROME_PATH 覆寫
+const CHROME = requireChrome();
 
 const args = process.argv.slice(2);
 const argOf = (n, d) => {

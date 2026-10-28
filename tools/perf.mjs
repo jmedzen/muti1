@@ -16,6 +16,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { requireDep } from "./load-dep.mjs";
+import { requireChrome } from "./chrome-path.mjs";
 
 const puppeteer = requireDep("puppeteer-core");
 
@@ -28,7 +29,8 @@ const arg = (k, d) => {
 
 // 受測站台基底網址：預設 astro preview（4319）；--url / --base 都能指到別的地方。
 const BASE = (arg("url", arg("base", "http://localhost:4319")) || "").replace(/\/$/, "");
-const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+// 跨平台找 Chrome（macOS / Linux / Windows），可用 CHROME_PATH 覆寫
+const CHROME = requireChrome();
 
 const ROUTES = (arg("routes") || "/,/collection/landscape,/about/chronology,/news,/art-reviews,/life/exhibition-exchange,/contact,/search")
   .split(",")

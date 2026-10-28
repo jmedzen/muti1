@@ -26,20 +26,10 @@ const FAST = process.argv.includes("--fast");
 //    傳進去的 --port 會被它吃到變成 "Unknown arguments: port, …"，
 //    然後 wrangler 用預設埠起來，看起來像「port 一直被佔用」。
 //    直接用 wrangler-dist/cli.js 才是真正的 CLI。
-const WRANGLER_CANDIDATES = [
-  // 首選：專案自己的 node_modules（npm install 裝的，版本由 package-lock 鎖定）
-  path.join(ROOT, "site", "node_modules", "wrangler", "wrangler-dist", "cli.js"),
-  // 退路：npx 的暫存副本（沒有 node_modules 的環境）
-  ...(function findNpx() {
-    const base = path.join(ROOT, ".npm-cache", "_npx");
-    if (!fs.existsSync(base)) return [];
-    return fs
-      .readdirSync(base)
-      .map((d) => path.join(base, d, "node_modules", "wrangler", "wrangler-dist", "cli.js"))
-      .filter((p) => fs.existsSync(p));
-  })(),
-];
-const WRANGLER = WRANGLER_CANDIDATES.find((p) => fs.existsSync(p));
+// 用 tools/wrangler.mjs 當啟動器 —— 它會自己找 wrangler 並用真正的 node 執行。
+// 直接呼叫 node_modules/.bin/wrangler 會被 shebang 帶到 Electron（見該檔說明）。
+const WRANGLER_LAUNCHER = path.join(ROOT, "tools", "wrangler.mjs");
+const WRANGLER = fs.existsSync(WRANGLER_LAUNCHER) ? WRANGLER_LAUNCHER : null;
 
 // 起伺服器前先確認 port 沒被別人佔著，否則會出現
 // 「wrangler 說 Address already in use」卻看不出是誰佔的。
@@ -211,7 +201,7 @@ const main = async () => {
     console.log(
       WRANGLER
         ? "\n（略過部署驗證：wrangler 沒起來，看 .cache/wrangler-dev.log）"
-        : "\n（略過部署驗證：找不到 wrangler。在 site/ 跑 npm install 就會裝好）"
+        : "\n（略過部署驗證：找不到 tools/wrangler.mjs）"
     );
     results.push({ name: "6. 部署驗證", ok: null });
   }

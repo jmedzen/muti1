@@ -87,6 +87,8 @@ const fetchPage = async (p) => {
       "Accept-Language": "zh-TW,zh;q=0.9",
     },
     redirect: "follow",
+    // 原站不穩或網路慢時，沒有 timeout 會讓整個列舉卡死（CI 上尤其致命）
+    signal: AbortSignal.timeout(20000),
   });
   const html = res.ok ? await res.text() : "";
   return { status: res.status, html, finalUrl: res.url };

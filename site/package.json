@@ -11,7 +11,9 @@
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "serve": "node ../tools/serve.mjs",
     "sync": "node ../tools/sync.mjs",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && node ../tools/wrangler.mjs deploy",
+    "deploy:dry": "npm run build && node ../tools/wrangler.mjs deploy --dry-run",
+    "worker:dev": "node ../tools/wrangler.mjs dev"
   },
   "dependencies": {
     "astro": "^7.4.2",

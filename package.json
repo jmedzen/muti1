@@ -20,6 +20,9 @@
     "model": "node tools/model.mjs",
     "images": "node tools/images.mjs",
     "redirects": "node tools/redirects.mjs",
-    "pipeline": "node tools/crawl.mjs && node tools/extract.mjs && node tools/model.mjs && node tools/images.mjs && node tools/redirects.mjs"
+    "pipeline": "node tools/crawl.mjs && node tools/extract.mjs && node tools/model.mjs && node tools/images.mjs && node tools/redirects.mjs",
+    "deploy": "node tools/sync.mjs && cd site && npm run deploy",
+    "deploy:dry": "node tools/sync.mjs && cd site && npm run deploy:dry",
+    "worker:dev": "node tools/wrangler.mjs dev"
   }
 }

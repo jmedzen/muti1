@@ -1,0 +1,114 @@
+name: 建置與驗證
+
+# 為什麼要有這個 workflow：
+#   「同時兼容本地與 Cloudflare」如果只靠人工記得驗，遲早會走鐘。
+#   這裡在每次 push 時用乾淨的 runner 從零建置，
+#   並比對「本機預覽伺服器」與「wrangler dev（Cloudflare 執行時）」的行為。
+#
+#   注意：這個 workflow **不需要任何 secret**。
+#   wrangler dev 是本機模式，不連 Cloudflare 帳號；
+#   真正的 deploy 是另一個 workflow（deploy.yml），需要 Cloudflare API token。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: 建置 + 八項驗證
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: 安裝相依套件
+        working-directory: site
+        run: npm ci
+
+      - name: 內容同步檢查
+        run: node tools/sync.mjs --check
+
+      - name: 建置
+        working-directory: site
+        run: npm run build
+        env:
+          ASTRO_TELEMETRY_DISABLED: "1"
+
+      - name: 內容完整性
+        run: node tools/verify-content.mjs
+
+      - name: 連結與資源
+        run: node tools/link-check.mjs
+
+      - name: Docker 建置模擬
+        run: node tools/verify-docker.mjs
+
+      # 起兩個伺服器：本機預覽（Node）與 wrangler dev（Cloudflare 執行時）
+      - name: 起本機預覽伺服器
+        run: |
+          node tools/serve.mjs --port 4321 > /tmp/serve.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:4321/ > /dev/null && exit 0
+            sleep 1
+          done
+          echo "本機伺服器起不來"; cat /tmp/serve.log; exit 1
+
+      - name: 起 wrangler dev（Cloudflare 執行時）
+        run: |
+          node tools/wrangler.mjs dev --port 8788 > /tmp/wrangler.log 2>&1 &
+          for i in $(seq 1 90); do
+            curl -sf http://localhost:8788/ > /dev/null && exit 0
+            sleep 1
+          done
+          echo "wrangler dev 起不來"; cat /tmp/wrangler.log; exit 1
+        env:
+          XDG_CONFIG_HOME: ${{ github.workspace }}/.wrangler-home
+          WRANGLER_SEND_METRICS: "false"
+
+      # 這是「同時兼容」的核心斷言：兩邊行為必須逐條一致
+      - name: 本機 vs Cloudflare 行為對照
+        run: node tools/verify-serve.mjs --local 4321 --cf 8788
+
+      - name: 部署規則驗證
+        run: node tools/verify-deploy.mjs
+
+      - name: 視覺與響應式
+        run: node tools/visual-check.mjs --width 1440,768,390 --max 60 --base http://127.0.0.1:4321
+
+      - name: 效能
+        run: node tools/perf.mjs --url http://127.0.0.1:4321
+
+      - name: 上傳驗證報告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-reports
+          path: .cache/*.json
+          retention-days: 14
+
+  # 來源站點列舉要連外網，而且原站隨時可能消失，
+  # 所以獨立一個 job、允許失敗，不擋住主要的建置驗證。
+  source-enumeration:
+    name: 原站列舉（允許失敗）
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 廣度優先列舉原站
+        run: node tools/verify-source.mjs --limit 300

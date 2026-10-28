@@ -312,18 +312,23 @@ nginx 版把 `_redirects` 的規則改寫成 `location` 區塊（見 `docker/ngi
 
 ## 維護
 
-原站不會再更新，所以這個站也不需要定期同步。要改內容時：
+原站不會再更新，所以這個站不需要定期同步。要改內容時（在根目錄）：
 
 ```bash
-# 改 content/model.json 或 content/articles.json
-cd site && npm run build
-
-# 重新驗證
-cd .. && node tools/verify-content.mjs && node tools/link-check.mjs
+npm run dev          # 邊改邊看，存檔即反映
+# 或
+npm run build        # 只產出檔案
+npm run verify       # 確認沒改壞
 ```
 
-要重新爬站（例如原站復活）：
+### 要重新爬站（例如原站復活、補了新文章）
 
 ```bash
-node tools/crawl.mjs && node tools/extract.mjs && node tools/model.mjs && node tools/images.mjs && node tools/redirects.mjs
+npm run pipeline     # 爬取 → 抽取 → 正規化 → 圖片 → 轉址
 ```
+
+這會依序跑 `crawl → extract → model → images → redirects`，約 3–5 分鐘
+（圖片重壓最久）。跑完記得 `npm run verify` 確認八項驗證還是綠的。
+
+⚠️ `pipeline` 會**覆蓋** `content/model.json` —— 你對它做的手動修改會消失。
+所以改過內容之後不要再跑 pipeline；只有真的要重新抓原站時才跑。

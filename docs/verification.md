@@ -1,6 +1,20 @@
 # 驗證報告
 
-五趟驗證，每趟用不同方法，不互相採信。全部在 2026-10-28 於本機實際跑過。
+原本規劃五趟，實際做了**八趟**。每一趟用不同方法，不互相採信。
+全部在 2026-10-28 於本機實際跑過。
+
+為什麼會多三趟：第五趟寫完後發現一個邏輯盲點 ——
+**前五趟的起點都是 `model.json`，沒有人驗證「來源有沒有完整變成 model」**。
+如果爬蟲的種子清單漏掉一整個區塊，前五趟全部會通過。
+所以補了第六趟（原站廣度優先重新列舉）、第七趟（Docker 建置模擬）、
+第八趟（本機可執行性）。
+
+一次跑完：
+
+```bash
+npm run verify        # 全部，約 3 分鐘
+npm run verify:fast   # 跳過視覺與效能，約 40 秒
+```
 
 ```
 npm run build                      60 pages / 0.6s
@@ -9,7 +23,12 @@ node tools/link-check.mjs          60 頁 497 檔　問題 0
 node tools/visual-check.mjs        177 次渲染　問題 0
 node tools/perf.mjs                LCP 平均 931ms　CLS 0
 node tools/verify-deploy.mjs       兩條部署路線一致　全部通過
+node tools/verify-source.mjs       原站 59 條可達路徑　0 條漏抓
+node tools/verify-docker.mjs       乾淨 context 建出 60 頁
+node tools/verify-serve.mjs        160 條路徑　本機與 Cloudflare 一致
 ```
+
+下面八節依序是每一趟的方法、發現的問題與修法。
 
 ---
 

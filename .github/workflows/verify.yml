@@ -26,7 +26,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          # Astro 7 要求 >=22.23.4，指定 22 會拿到較舊的 patch 版本而被拒絕。
+          # 用 24（LTS，Actions 一定拿得到）。
+          node-version: 24
           cache: npm
           cache-dependency-path: site/package-lock.json
 
@@ -108,7 +110,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       - name: 廣度優先列舉原站
         run: node tools/verify-source.mjs --limit 300

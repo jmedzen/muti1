@@ -5,7 +5,7 @@
   "description": "黃磊生官方網站 — 爬取、重構、驗證工具鏈",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.23.4"
   },
   "scripts": {
     "dev": "node tools/dev.mjs",

@@ -3,10 +3,29 @@
 `tools/` 底下全是純 Node 腳本，沒有框架、沒有 TypeScript、沒有 bundler。
 每一支都能獨立執行，彼此只透過檔案溝通。
 
+## 內容的真實來源是 Markdown
+
+```
+content/md/  ──md-to-model.mjs──►  content/model.json  ──sync.mjs──►  site/src/data/model.json
+   ▲                                  （產物）                          （產物）
+   │                                                                        │
+   └──────────────── 你編輯這裡 ────────────────────────────────────────────┘
+                                                                     Astro 讀這裡
+```
+
+- **`content/md/` 是唯一真實來源**。156 個 `.md`：站台設定 1、文章 36、
+  作品與照片 117、長文 2。
+- `content/model.json` 與 `site/src/data/model.json` 都是**編譯產物**，手改會被蓋掉。
+- `npm run dev` / `build` / `deploy` 都會自動跑 `md-to-model` + `sync`，不必手動。
+
+為什麼要繞這一段：12 支驗證工具在 repo 根目錄跑、需要結構化資料，
+而 Vite 只能 import `site/` 內的檔案。與其讓兩邊各有一套資料，
+不如從同一批 Markdown 編譯出兩份形狀相同的 JSON。
+
 ## 日常用的（不需要 Docker）
 
 ```bash
-npm run dev        # 開發模式：同步 + Astro 熱更新 → 4321
+npm run dev        # 開發模式：編譯 MD + 同步 + Astro 熱更新 → 4321
 npm run preview    # 建置 + 起預覽伺服器 → 4321
 npm run serve      # 只起預覽伺服器（dist 已是最新時）
 npm run build      # 只建置
@@ -17,10 +36,42 @@ npm run verify     # 全部驗證（自動起停伺服器）
 
 | 指令 | 實際執行 | 說明 |
 |---|---|---|
-| `npm run dev` | `tools/dev.mjs` | 同步 + `astro dev`，改檔即時反映 |
-| `npm run preview` | `tools/preview.mjs` | 同步 → 建置 → `tools/serve.mjs` |
+| `npm run dev` | `tools/dev.mjs` → `sync.mjs --watch` | 監看 `content/md/`，改任何 `.md` 就重編 |
+| `npm run preview` | `tools/preview.mjs` | 編譯 → 同步 → 建置 → `tools/serve.mjs` |
 | `npm run serve` | `tools/serve.mjs` | 零依賴靜態伺服器，模擬 Cloudflare 行為 |
 | `npm run verify` | `tools/verify-all.mjs` | 跑完下面所有驗證項目 |
+
+## Markdown 工具
+
+| 檔案 | 方向 | 說明 |
+|---|---|---|
+| `tools/md-to-model.mjs` | `content/md/` → `model.json` | 編譯器。`--check` 只比對不寫入、`--verify` 與基準快照逐位元組比對 |
+| `tools/md-from-model.mjs` | `model.json` → `content/md/` | 一次性遷移與救援。`--force` 才覆寫 |
+| `tools/sync.mjs` | 編譯 + 複製到 `site/` | `--check` 只檢查、`--watch` 監看 MD、`--no-build` 只複製 |
+| `tools/verify-roundtrip.mjs` | 往返驗證 | MD → model → MD 是否逐位元組相同 |
+
+### 編譯器會吃掉的東西（都已修掉，並由 `verify-roundtrip` 釘住）
+
+這些都是**靜默**的 —— 畫面上看不太出來，但資料已經變了。
+每一條都是實際踩到才發現的：
+
+| 症狀 | 原因 | 處理 |
+|---|---|---|
+| `B3~4頁` 的 `~` 消失 | GFM 把 `~` 當刪除線 | 產生時轉義成 `\~`，反向解回 |
+| 瀏覽器顯示字面的 `&lt;藝術概論&gt;` | `bodyText` 純文字被二次轉義 | Markdown 路徑只轉義一次（修好了原本的 bug） |
+| 照片日期 `1996-11-21` 退化成 `1996` | YAML 把 ISO 日期解析成 `Date` | 產生時加引號，反向依精度還原 |
+| 相簿順序由「新→舊」變成「編號序」 | 沒記錄原站排列 | frontmatter 加 `order` |
+| 選單葉節點多了 `children: []` | 對稱化處理 | 照原結構：只有真的有小孩才帶 `children` |
+| 電話 `+886289935275` 變成 `886289935275` | YAML 當成數字 | 電話一律加引號 |
+| `<p>&nbsp;</p>` 空段落消失 | `trim()` 把 nbsp 當空白 | 用單行 `\u00a0` 表示，反向還原 |
+| 全形空格被壓縮 | 文字正規化太積極 | 只去行尾半形空白 |
+
+### 編輯時的注意事項
+
+- **`<br>` 要留著**：原站用它做行內換行，Markdown 會原樣保留。改成空行會變兩個段落。
+- **`~` 寫成 `\~`**：否則被當刪除線。
+- **電話號碼的引號不要拆**：`tel: "+886289935275"`。
+- **`order` 是原站列表順序**，不是日期序。刪檔案會讓後面的遞補。
 
 ## 資料管線（改版、重爬時才需要）
 

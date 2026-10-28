@@ -1,5 +1,45 @@
 import model from "../data/model.json";
 import images from "../data/images.json";
+import { getCollection, render } from "astro:content";
+
+/**
+ * 正文的渲染方式
+ *
+ * 資料有兩個來源，但只有一份是真實來源：
+ *   content/md/**.md          ← 你編輯的地方（唯一真實來源）
+ *   content/model.json        ← tools/md-to-model.mjs 從 MD 編譯出來的產物
+ *   site/src/data/model.json  ← 上面那份的複本（Vite 只能 import 專案內的檔案）
+ *
+ * Astro 這邊有兩條路可以拿到正文 HTML：
+ *   (a) 讀 model.json 的 bodyHtml（現成的字串）
+ *   (b) 用內容集合讀同一批 .md，讓 Astro 自己渲染
+ *
+ * 這裡選 (b)：讓 Astro 用它自己的 Markdown 管線渲染，
+ * 行內 <br>、連結、段落都會照 Markdown 規則處理，不必我們自己維護轉換器。
+ * (a) 仍然存在，因為 12 個驗證工具需要結構化的資料。
+ *
+ * 兩條路的內容都來自同一批 .md，而 tools/verify-content.mjs 會拿 dist 的
+ * 實際輸出與 raw/ 的原文做字元多重集比對 —— 所以「兩邊不小心分岔」會被擋下來。
+ */
+const articleEntries = await getCollection("articles");
+const longformEntries = await getCollection("longform");
+
+/** id → 已渲染的正文元件（給 ArticleView 用） */
+export const bodyOf = {};
+for (const e of articleEntries) {
+  // 少數文章原文不是段落結構（例如整篇是 issuu 嵌入器），
+  // 這種情況 MD 裡保留了原始 HTML（bodyHtmlRaw），走 model.json 那條路。
+  if (e.data.bodyHtmlRaw) continue;
+  const { Content } = await render(e);
+  bodyOf[e.id] = Content;
+}
+
+/** 長文（生平、畫論）的正文元件 */
+export const longformBody = {};
+for (const e of longformEntries) {
+  const { Content } = await render(e);
+  longformBody[e.id] = Content;
+}
 
 export const SITE = {
   ...model.site,

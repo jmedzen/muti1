@@ -83,32 +83,95 @@ Node 一定要 24 —— Astro 7 要求 `>=22.23.4`，選 22 會拿到較舊的 
 
 ## 怎麼改內容
 
-內容全部在 `content/model.json` 這一個檔案裡（744 KB 的 JSON）。
-**改這一份就好**，不要改 `site/src/data/model.json` ——
-那份是自動複製過去的，`npm run dev` 與 `npm run build` 都會先幫你同步。
+內容全部是 Markdown，放在 **`content/md/`**。
 
-```bash
-# 改完之後
-npm run dev        # 存檔就會看到變化（會自動同步）
+```
+content/md/
+├── site.md                       站名、標語、選單、聯絡方式、首頁大圖
+├── articles/                     36 篇文章（新聞、評論、藝術家文稿）
+│   ├── news/memorial-exhibition/…
+│   ├── news/auction-news/…
+│   ├── art-reviews/…
+│   └── artist-luisang/…
+├── collections/                  117 件作品與照片
+│   ├── landscape/O004.md
+│   ├── flowers-birds/L004.md
+│   └── …
+└── longform/                     長文（生平、我的繪畫觀）
 ```
 
-你可以改什麼：
-
-| 想改的東西 | 在 model.json 的哪裡 |
-|---|---|
-| 站名、標語、頁尾 | `site.name`、`site.tagline`、`site.footerText` |
-| 電話、Email、Line | `contact` |
-| 選單 | `menu` |
-| 某篇文章的標題或正文 | `articles[]`、`artistArticles[]` |
-| 作品名稱、尺寸、年份 | `galleries[].items[]` |
-| 年譜某一條 | `timeline[]` |
-| 首頁六大區塊的文案 | `homeBlocks` |
-
-改壞了也不用怕，`content/model.json` 在版控裡：
+就是普通 Markdown：`#` 是標題、`**粗體**`、`[連結](網址)`、空行分段。
+Astro 會自己把這些轉成 HTML —— 你不用碰 HTML。
 
 ```bash
-git checkout content/model.json     # 還原到最後一次提交
-git diff content/model.json         # 看自己改了什麼
+npm run dev        # 存檔就即時反映
+```
+
+### 資料是怎麼流的
+
+```
+content/md/*.md          ← 你編輯這裡（唯一真實來源）
+      │  tools/md-to-model.mjs
+      ▼
+content/model.json       ← 產物：給驗證工具用的結構化資料
+      │  tools/sync.mjs
+      ▼
+site/src/data/model.json ← 產物：Astro 讀的
+```
+
+`npm run dev` 與 `npm run build` 都會**自動**跑上面兩步，所以改了 MD 存檔就會生效。
+
+⚠️ `content/model.json` 和 `site/src/data/model.json` 都是**產物**。
+手改它們會在下次 build 時被覆蓋。要改內容，改 `content/md/` 裡的 `.md`。
+
+### 想改的東西在哪
+
+| 想改的東西 | 改哪個檔案 |
+|---|---|
+| 站名、標語、頁尾 | `content/md/site.md` |
+| 電話、Email、Line、微信 | `content/md/site.md` 的 `contact` |
+| 選單 | `content/md/site.md` 的 `menu` |
+| 首頁大圖 | `content/md/site.md` 的 `hero` |
+| 某篇文章的標題或正文 | `content/md/articles/…` 對應的 `.md` |
+| 作品名稱、尺寸、年份 | `content/md/collections/<相簿>/<編號>.md` |
+| 年譜某一條 | `content/md/site.md` 的 `timeline` |
+| 首頁六大區塊的文案 | `content/md/site.md` 的 `homeBlocks` |
+
+每篇文章的 frontmatter 長這樣，`title` 與正文之間用 `---` 隔開：
+
+```markdown
+---
+title: 福建華夏2014春拍 3.2億元圓滿收官
+category: auction-news
+order: 3
+publishedAt: "2026-07-17T01:53:50+00:00"
+eventDate: "2014"
+---
+
+5月12日，彙集楹聯狀元書法、匾額扇面文人小品…
+
+書畫拍賣現場盛況<br>福建華夏2014春拍書畫部分763件…
+```
+
+`order` 是原站列表的排列順序（不是日期序）。改標題不影響它，但**刪除檔案**會讓後面的
+順序遞補 —— 這通常是你想要的。
+
+### 幾個要小心的地方
+
+**`<br>` 可以留著。** 原站的正文用 `<br>` 做行內換行（例如「新聞稿」後面接著一句話），
+Markdown 會原樣保留。不要改成空行，那會變成兩個段落。
+
+**`~` 要寫成 `\~`。** 波浪號在 Markdown 裡是刪除線語法，`B3~4頁` 會被吃掉。
+寫 `B3\~4頁` 才會顯示成 `B3~4頁`。（從原站匯入的檔案已經處理好了。）
+
+**電話號碼的引號不要拆。** `tel: "+886289935275"` 的引號拿掉，`+` 和前導 0 會被當成數字吃掉。
+
+**改壞了不用怕**，全部在版控裡：
+
+```bash
+git status                       # 看動了哪些檔
+git diff content/md/             # 看改了什麼
+git checkout content/md/         # 全部還原
 ```
 
 （這個目錄已經是 git repo，已推上
@@ -119,9 +182,13 @@ git diff content/model.json         # 看自己改了什麼
 `node_modules/`、`dist/`、`site/.wrangler/` 不進版控 —— 前兩者可再生，
 後者是本機執行時狀態。）
 
-如果連 commit 都沒了，`content/` 底下的 `articles.json`、`galleries.json`、
-`site.json` 是抽取階段的中介產物，跑 `node tools/model.mjs` 可以從它們重新產生
-`model.json`（會蓋掉你對 `model.json` 的手動修改，但至少回到原站的真實內容）。
+如果真的整個 `content/md/` 都沒了，`content/` 底下的 `articles.json`、`galleries.json`、
+`site.json` 是抽取階段的中介產物，可以這樣救回來：
+
+```bash
+node tools/model.mjs            # 中介產物 → model.json
+node tools/md-from-model.mjs    # model.json  → content/md/*.md
+```
 
 ### 只想改樣式
 
@@ -158,7 +225,12 @@ muti1/
 │   └── manifest.json    ← 爬取紀錄：每個網址的狀態碼、大小、時間
 │
 ├── content/             ← 抽取後的結構化資料（744 KB，進版控）
-│   ├── model.json       ← 正規化模型，Astro 的唯一資料來源
+│   ├── md/              ← ★ 內容的唯一真實來源（Markdown，你編輯這裡）
+│   │   ├── site.md
+│   │   ├── articles/
+│   │   ├── collections/
+│   │   └── longform/
+│   ├── model.json       ← 產物：從 content/md/ 編譯出來的結構化資料
 │   ├── articles.json    ← 36 篇文章（正文、主圖、日期、分類）
 │   ├── galleries.json   ← 6 本相簿（117 個條目）
 │   ├── site.json        ← 全站設定、導覽、聯絡資訊
@@ -173,7 +245,9 @@ muti1/
 │   ├── dev.mjs          ← 開發模式（同步 + Astro 熱更新）
 │   ├── preview.mjs      ← 建置 + 起預覽伺服器
 │   ├── serve.mjs        ← 本機預覽伺服器（模擬 Cloudflare 行為，零依賴）
-│   ├── sync.mjs         ← content/model.json → site/src/data/
+│   ├── sync.mjs         ← 編譯 MD 並同步到 site/src/data/
+│   ├── md-to-model.mjs  ← content/md/ → model.json（編譯）
+│   ├── md-from-model.mjs← model.json → content/md/（一次性遷移）
 │   │
 │   │  【資料管線】
 │   ├── crawl.mjs        ← 爬蟲
@@ -184,6 +258,7 @@ muti1/
 │   │
 │   │  【驗證】
 │   ├── verify-all.mjs   ← 一次跑完所有驗證
+│   ├── verify-roundtrip.mjs ← MD 往返一致性（編譯不能吃掉東西）
 │   ├── verify-content.mjs ← 內容完整性（對照原文）
 │   ├── link-check.mjs   ← 連結與資源完整性
 │   ├── verify-source.mjs ← 原站廣度優先列舉
@@ -361,7 +436,22 @@ npm run pipeline     # 爬取 → 抽取 → 正規化 → 圖片 → 轉址
 ```
 
 這會依序跑 `crawl → extract → model → images → redirects`，約 3–5 分鐘
-（圖片重壓最久）。跑完記得 `npm run verify` 確認八項驗證還是綠的。
+（圖片重壓最久）。跑完記得 `npm run verify` 確認全部驗證還是綠的。
 
-⚠️ `pipeline` 會**覆蓋** `content/model.json` —— 你對它做的手動修改會消失。
-所以改過內容之後不要再跑 pipeline；只有真的要重新抓原站時才跑。
+⚠️ **`pipeline` 會覆蓋 `content/model.json`，但不會動 `content/md/`。**
+
+這點很重要，因為現在 MD 才是真實來源：
+
+- 資料流是 `原站 → raw/ → content/*.json → model.json → md/*.md`
+- `pipeline` 只重跑前半段（到 `model.json`）
+- 你的 MD 不會被碰，但 **`npm run dev` 一跑就會用 MD 蓋掉剛爬到的 model.json**
+
+所以「重新爬站」與「用 MD 編內容」是兩條互斥的路線，別混著用：
+
+| 你想做的事 | 該跑的指令 |
+|---|---|
+| 改文案、改作品資料、加文章 | 改 `content/md/`，然後 `npm run dev` |
+| 從原站重新抓一次全部資料 | `npm run pipeline`，**然後** `node tools/md-from-model.mjs --force` 讓 MD 跟著更新 |
+
+重新爬完之後如果不跑 `md-from-model --force`，下次 build 會拿舊的 MD 蓋回 model.json，
+你會以為「爬了但沒變」。

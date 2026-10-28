@@ -9,12 +9,22 @@
  *   4. 文章內的圖片抽出成圖版，可點開放大（沿用 Lightbox 的深連結慣例）。
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { SITE, media, mediaFull } from "../lib/content.js";
+import { SITE, media, mediaFull, bodyOf } from "../lib/content.js";
 
 const { article, section, upgrade = null, titleOverride = null } = Astro.props;
 
 const hero = article.hero ? media(article.hero, { fallback: 960 }) : null;
 const heroFull = article.hero ? mediaFull(article.hero) : null;
+/* 正文改用 Markdown 渲染（見 lib/content.js 的說明）。
+ *
+ * 原本是拿 bodyText 用 \n 切段落再逐段 <p>，這樣做會丟掉行內換行：
+ * 原站的「新聞稿<br>「中華民國三石畫藝學會」…」渲染出來會變成兩個段落，
+ * 語意上「新聞稿」是下面那句的標籤，不是獨立段落。
+ *
+ * 改走 Markdown 之後，<br> 保持行內，段落也照原文。
+ * 少數原文不是段落結構的文章（bodyHtmlRaw）沒有元件，退回原本的切段落方式。
+ */
+const Body = bodyOf[article.id] ?? null;
 const paras = (article.bodyText || "").split(/\n+/).map((p) => p.trim()).filter(Boolean);
 
 /* 圖檔型文章的說明文字：原站常寫成「展覽日期：2013.7.4～2013.7.8」「地點：廈門美術館」，
@@ -124,7 +134,7 @@ const allInSeries = series;
             )}
 
             <div class="prose art-prose">
-              {paras.map((p) => <p>{p}</p>)}
+              {Body ? <Body /> : paras.map((p) => <p>{p}</p>)}
             </div>
           </>
         )}

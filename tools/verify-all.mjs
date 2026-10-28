@@ -134,8 +134,14 @@ process.on("SIGINT", () => {
 /* ══════════════════════ 開始 */
 console.log("黃磊生官方網站 — 完整驗證（本機，無需 Docker）");
 
-// 0. 內容同步
-run("0. 內容同步（兩份 model.json 一致）", () => node("tools/sync.mjs", ["--check"]));
+// 0. 推導函式回歸（兩條產生路線共用的邏輯，必須先釘住）
+run("0. 推導函式回歸", () => node("tools/test-derive.mjs"));
+
+// 0b. Markdown 往返一致性（MD 是唯一真實來源，編譯不能吃掉東西）
+run("0b. Markdown 往返一致性", () => node("tools/verify-roundtrip.mjs"));
+
+// 0c. 內容同步
+run("0c. 內容同步（兩份 model.json 一致）", () => node("tools/sync.mjs", ["--check"]));
 
 // 1. 建置（後面很多驗證要看 dist）
 const built = run("1. 建置", () => {

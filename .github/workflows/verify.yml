@@ -83,6 +83,14 @@ jobs:
       - name: 部署規則驗證
         run: node tools/verify-deploy.mjs
 
+      # Cloudflare Workers Builds 是在 repo 根目錄跑 `npx wrangler deploy`，
+      # 這裡先確認根目錄的設定也找得到 assets（曾經因缺 wrangler.jsonc 而失敗）
+      - name: 根目錄部署 dry-run（模擬 Cloudflare Workers Builds）
+        run: node tools/wrangler.mjs deploy --dry-run
+        env:
+          XDG_CONFIG_HOME: ${{ github.workspace }}/.wrangler-home
+          WRANGLER_SEND_METRICS: "false"
+
       - name: 視覺與響應式
         run: node tools/visual-check.mjs --width 1440,768,390 --max 60 --base http://127.0.0.1:4321
 

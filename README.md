@@ -46,11 +46,38 @@ npm run verify     # 全部驗證跑一遍（不需要 Docker）
 
 ```bash
 # Cloudflare Workers（建議）
-cd site && npx wrangler deploy
+npm run deploy          # 從 repo 根目錄，用 wrangler.jsonc
+npm run deploy:dry      # 先看看會上傳什麼，不真的部署
 
 # 或者自架
 docker compose up -d --build      # → http://localhost:8080
 ```
+
+> **兩份 wrangler 設定，為什麼？**
+> 根目錄的 `wrangler.jsonc` 給 Cloudflare Workers Builds 用（它在 repo 根目錄
+> 跑 `npx wrangler deploy`），`site/wrangler.jsonc` 給本機用。
+> 兩份只有 `./site/dist` 與 `./dist` 的路徑差別，其他欄位必須一致 ——
+> `npm run verify` 會檢查這件事，不一致就報錯。
+
+### 讓 Cloudflare 自動部署（Git 整合）
+
+在 Cloudflare dashboard → Workers & Pages → 建立 Worker → 連接這個 repo，設定：
+
+| 項目 | 值 |
+|---|---|
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Root directory | **留空**（用 repo 根目錄） |
+| Node version | **24** |
+
+Root directory 一定要留空：根目錄的 `npm run build` 會先確保相依套件、
+同步內容，再進 `site/` 建置。只建 `site/` 會跳過前兩步。
+
+Node 一定要 24 —— Astro 7 要求 `>=22.23.4`，選 22 會拿到較舊的 patch 版本被拒絕。
+
+**或者用 GitHub Actions**（`.github/workflows/deploy.yml`）：在 repo 設定
+`CLOUDFLARE_API_TOKEN` 與 `CLOUDFLARE_ACCOUNT_ID` 兩個 secret 就會自動部署；
+沒設定則明確跳過，不會一直紅燈。
 
 ---
 

@@ -196,6 +196,43 @@ check(fallback.code >= 300 && fallback.code < 400, `未知的舊路徑沒有降�
 }
 
 /* ══════════════════════════════════════ 報告 */
+/* ── 兩份 wrangler 設定的關鍵欄位必須相符 ──
+ * repo 根目錄一份（Cloudflare CI 用）、site/ 一份（本機用）。
+ * 兩份只有 assets 路徑前綴不同，其他都該一樣 ——
+ * 任何一邊改了而另一邊忘了改，就會出現「本機能部署、CI 不能」這種事。 */
+const stripJsonc = (t) => t.replace(/^\s*\/\/.*$/gm, "").replace(/\/\*[\s\S]*?\*\//g, "");
+const rootWr = path.join(ROOT, "wrangler.jsonc");
+const siteWr = path.join(ROOT, "site", "wrangler.jsonc");
+if (fs.existsSync(rootWr) && fs.existsSync(siteWr)) {
+  const a = JSON.parse(stripJsonc(fs.readFileSync(rootWr, "utf8")));
+  const b = JSON.parse(stripJsonc(fs.readFileSync(siteWr, "utf8")));
+
+  for (const key of ["name", "compatibility_date"]) {
+    if (a[key] !== b[key]) {
+      problems.push(`兩份 wrangler 設定的 ${key} 不一致：根目錄 "${a[key]}" vs site/ "${b[key]}"`);
+    }
+  }
+  for (const key of ["binding", "not_found_handling", "html_handling"]) {
+    if (a.assets?.[key] !== b.assets?.[key]) {
+      problems.push(`兩份 wrangler 的 assets.${key} 不一致`);
+    }
+  }
+  // main 與 directory 只該差 ./site/ 前綴
+  const norm = (p) => (p || "").replace(/^\.\/site\//, "./").replace(/^\.\//, "");
+  if (norm(a.main) !== norm(b.main)) problems.push(`兩份 wrangler 的 main 不一致：${a.main} vs ${b.main}`);
+  if (norm(a.assets?.directory) !== norm(b.assets?.directory)) {
+    problems.push(`兩份 wrangler 的 assets.directory 不一致：${a.assets?.directory} vs ${b.assets?.directory}`);
+  }
+
+  // 兩份指到的 dist 都必須存在且是同一份
+  for (const [label, file] of [["根目錄", rootWr], ["site/", siteWr]]) {
+    const cfg = JSON.parse(stripJsonc(fs.readFileSync(file, "utf8")));
+    const dir = path.resolve(path.dirname(file), cfg.assets.directory);
+    if (!fs.existsSync(dir)) problems.push(`${label} wrangler 的 assets.directory 不存在：${dir}`);
+  }
+  console.log(`wrangler 設定：兩份關鍵欄位一致`);
+}
+
 console.log(`\n════ 部署驗證 ════`);
 console.log(`受測：舊文章 ${legacy.length} 條、分類/相簿/單頁 ${misc.length} 條、現役頁面 ${alive.length} 條`);
 console.log(`Cloudflare 轉址成功：${cfOk}/${legacy.length}`);

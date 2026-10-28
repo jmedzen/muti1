@@ -1,0 +1,34 @@
+{
+  "$schema": "./site/node_modules/wrangler/config-schema.json",
+  "name": "luisang-museum",
+  "compatibility_date": "2026-01-01",
+
+  // ── 這一版放在 repo 根目錄 ──
+  //
+  // 為什麼根目錄也要一份（site/ 底下已有一份）：
+  //   Cloudflare Workers Builds（Git 整合）預設在 **repo 根目錄** 跑
+  //   `npx wrangler deploy`，它只會找當前目錄的 wrangler 設定。
+  //   只有 site/wrangler.jsonc 的話，它會在根目錄找不到設定而報
+  //     "Could not detect a directory containing static files"
+  //   —— 因為它連 assets 在哪都不知道。
+  //
+  //   兩份的差別只有路徑前綴（./dist → ./site/dist），設定本身完全一致。
+  //   tools/verify-deploy.mjs 會檢查兩份的關鍵欄位是否相符。
+  //
+  // 本機：cd site && npm run deploy（用 site/ 那份）
+  // CI  ：npm run deploy（用這份）
+
+  // Worker 入口：只為了修正快取標頭（見 site/src/worker.js 說明）
+  "main": "./site/src/worker.js",
+
+  "assets": {
+    "directory": "./site/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}

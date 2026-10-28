@@ -46,8 +46,14 @@ if (!cli) {
   process.exit(1);
 }
 
+// 工作目錄決定 wrangler 讀哪一份設定：
+//   repo 根目錄 → wrangler.jsonc（assets: ./site/dist，Cloudflare CI 用這份）
+//   site/       → site/wrangler.jsonc（assets: ./dist，本機用這份）
+// 所以不要硬編成 SITE —— 使用者從哪裡叫，就在哪裡跑。
+const cwd = process.cwd();
+
 const child = spawn(findNode(), [cli, ...process.argv.slice(2)], {
-  cwd: SITE,
+  cwd,
   stdio: "inherit",
   env: {
     ...process.env,

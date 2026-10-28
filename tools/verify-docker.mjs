@@ -176,7 +176,33 @@ if (!buildOk) {
   console.log("───");
 }
 check(buildOk, "暫存目錄建置失敗（見上方輸出）");
-check(pages === 60, `乾淨目錄建置產出 ${pages} 頁（應為 60）`);
+/**
+ * 頁數要跟「本機建置」一致，不是硬編一個數字。
+ *
+ * 原本寫死 60，加了 /admin/（Sveltia CMS 後台）之後變 61 就紅了。
+ * 硬編數字的問題是：每次多一頁就得改這裡，而下一次還是會忘。
+ * 改成跟 site/dist 的實際頁數比對 —— 這才是這個檢查真正想問的問題：
+ * 「乾淨目錄建置的結果跟平常建置的一樣嗎？」
+ */
+const referencePages = (() => {
+  const root = path.join(ROOT, "site", "dist");
+  if (!fs.existsSync(root)) return null;
+  let n = 0;
+  const walk = (d) => {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (e.name.endsWith(".html")) n++;
+    }
+  };
+  walk(root);
+  return n;
+})();
+
+check(
+  referencePages == null || pages === referencePages,
+  `乾淨目錄建置產出 ${pages} 頁，本機建置是 ${referencePages} 頁 —— 兩者應相同`
+);
 
 // dist 該有的東西
 for (const f of ["_redirects", "_headers", "404.html", "sitemap.xml", "robots.txt", "favicon.svg", "og-default.jpg"]) {

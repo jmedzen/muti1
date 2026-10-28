@@ -51,6 +51,16 @@ function walk(dir, out = []) {
   return out;
 }
 
+/** 這個請求是不是打在本機預覽伺服器上（vs 外部 CDN） */
+function isInternal(url) {
+  try {
+    const u = new URL(url);
+    return u.hostname === "127.0.0.1" || u.hostname === "localhost";
+  } catch {
+    return true;
+  }
+}
+
 const files = walk(DIST).sort();
 const routes = files.map((f) => {
   let r = "/" + path.relative(DIST, f).replace(/index\.html$/, "");
@@ -284,7 +294,12 @@ for (const width of WIDTHS) {
       docHeight: audit.docHeight,
       imgCount: audit.imgCount,
       issues: audit.issues,
-      failedRequests: failedRequests.filter((f) => !f.url.includes("favicon")).slice(0, 6),
+      // 站內資源失敗才是缺陷；站外（CDN、OAuth）失敗是環境問題。
+      // /admin 要從 unpkg 載入 Sveltia、從 GitHub API 取資料，
+      // 離線或 CI 沙箱連不出去是正常的 —— 把它算成頁面缺陷會讓這個檢查永遠紅，
+      // 久了就沒人看它了。
+      failedRequests: failedRequests.filter((f) => !f.url.includes("favicon") && isInternal(f.url)).slice(0, 6),
+      externalFailed: failedRequests.filter((f) => isInternal(f.url) === false && !f.url.includes("favicon")).length,
       shot: shotName,
     });
   }

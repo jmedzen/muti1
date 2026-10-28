@@ -63,27 +63,41 @@ for (const { rel, abs } of htmlFiles) {
   const html = fs.readFileSync(abs, "utf8");
   const page = pageUrlOf(rel);
 
+  /**
+   * 非公開頁面（`<meta name="robots" content="noindex…">`）不做 SEO 檢查。
+   *
+   * 為什麼：/admin/ 是 Sveltia CMS 後台，它本來就不該有 description、
+   * canonical、og:image，也沒有語意上的 h1 —— 那些標籤對一個要求
+   * 「不要被搜尋引擎索引」的頁面沒有意義。用同一套標準去審它只會
+   * 產生四個永遠不會修的假警報，然後大家就開始忽略這個檢查。
+   *
+   * 但**連結與資源檢查照做** —— 後台指到的檔案一樣不能 404。
+   */
+  const noindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
+
   // ── title / description / canonical
   const title = /<title>([^<]*)<\/title>/.exec(html)?.[1] ?? "";
   const desc = /<meta name="description" content="([^"]*)"/.exec(html)?.[1] ?? "";
   const canonical = /<link rel="canonical" href="([^"]*)"/.exec(html)?.[1] ?? "";
 
-  if (!title) problems.push({ page, type: "missing-title" });
-  else {
-    if (!titles.has(title)) titles.set(title, []);
-    titles.get(title).push(page);
-  }
-  if (!desc) problems.push({ page, type: "missing-description" });
-  else {
-    if (!descs.has(desc)) descs.set(desc, []);
-    descs.get(desc).push(page);
-  }
-  if (!canonical) problems.push({ page, type: "missing-canonical" });
+  if (!noindex) {
+    if (!title) problems.push({ page, type: "missing-title" });
+    else {
+      if (!titles.has(title)) titles.set(title, []);
+      titles.get(title).push(page);
+    }
+    if (!desc) problems.push({ page, type: "missing-description" });
+    else {
+      if (!descs.has(desc)) descs.set(desc, []);
+      descs.get(desc).push(page);
+    }
+    if (!canonical) problems.push({ page, type: "missing-canonical" });
 
-  // ── h1 數量
-  const h1s = [...html.matchAll(/<h1[\s>]/g)].length;
-  if (h1s === 0) problems.push({ page, type: "no-h1" });
-  if (h1s > 1) problems.push({ page, type: "multiple-h1", detail: h1s });
+    // ── h1 數量
+    const h1s = [...html.matchAll(/<h1[\s>]/g)].length;
+    if (h1s === 0) problems.push({ page, type: "no-h1" });
+    if (h1s > 1) problems.push({ page, type: "multiple-h1", detail: h1s });
+  }
 
   // ── 站內連結
   for (const m of html.matchAll(/href="(\/[^"]*)"/g)) {
@@ -126,7 +140,8 @@ for (const { rel, abs } of htmlFiles) {
       const p = ogImage.replace("https://luisang.rumotan.com", "");
       if (!files.has(p)) problems.push({ page, type: "broken-og-image", target: p });
     }
-  } else {
+  } else if (!noindex) {
+    // 同上：noindex 的頁面（/admin/）不需要分享預覽圖
     problems.push({ page, type: "missing-og-image" });
   }
 }

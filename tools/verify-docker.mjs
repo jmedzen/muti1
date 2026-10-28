@@ -167,7 +167,15 @@ const pages = buildOk && fs.existsSync(distDir)
     })(distDir)
   : 0;
 
-check(buildOk, `乾淨目錄建置失敗：\n${buildOut.split("\n").filter((l) => /error/i.test(l)).slice(0, 8).join("\n")}`);
+if (!buildOk) {
+  // 建置失敗時立刻把尾巴印出來 —— 不要等到最後才彙總，
+  // 因為後面任何一步出錯都會讓這些線索消失（CI 上就發生過）。
+  console.log("\n─── 暫存目錄建置失敗，輸出尾巴 ───");
+  const lines = buildOut.split("\n").filter((l) => l.trim());
+  for (const l of lines.slice(-25)) console.log(`  ${l}`);
+  console.log("───");
+}
+check(buildOk, "暫存目錄建置失敗（見上方輸出）");
 check(pages === 60, `乾淨目錄建置產出 ${pages} 頁（應為 60）`);
 
 // dist 該有的東西
@@ -223,15 +231,21 @@ check(selfLoop.length === 0, `nginx.conf 有自我轉址迴圈：${selfLoop.join
 
 notes.push(`nginx location 區塊：${blocks.length} 個（含 return ${blocks.filter(([,,b]) => /return/.test(b)).length} 條轉址）`);
 
-// 轉址目標（不含捕獲組的）必須是新站真的有的頁面
+// 轉址目標（不含捕獲組的）必須是新站真的有的頁面。
+// 建置若失敗，distDir 根本不存在 —— 要讓它變成一個「問題」，
+// 而不是讓 readdirSync 丟 ENOENT 把整個腳本炸掉（那樣看不到其他診斷）。
 const distRoutes = new Set();
-(function collect(d, base = "") {
-  for (const e of fs.readdirSync(d, { withFileTypes: true })) {
-    const p = path.join(d, e.name);
-    if (e.isDirectory()) collect(p, base + "/" + e.name);
-    else if (e.name === "index.html") distRoutes.add(base || "/");
-  }
-})(distDir);
+if (fs.existsSync(distDir)) {
+  (function collect(d, base = "") {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) collect(p, base + "/" + e.name);
+      else if (e.name === "index.html") distRoutes.add(base || "/");
+    }
+  })(distDir);
+} else {
+  check(false, "暫存目錄裡沒有 dist（建置階段失敗，往上找錯誤訊息）");
+}
 if (distRoutes.size) {
   const literalTargets = [...nginx.matchAll(/return\s+30\d\s+(\S+?);/g)]
     .map((m) => m[1])

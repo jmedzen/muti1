@@ -5,15 +5,16 @@
   "type": "module",
   "description": "黃磊生藝術生命紀念館暨數位美術館 — 官方網站（重構版）",
   "scripts": {
-    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "dev": "node ../tools/ensure-deps.mjs && ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "node ../tools/ensure-deps.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "serve": "node ../tools/serve.mjs",
     "sync": "node ../tools/sync.mjs",
     "deploy": "npm run build && node ../tools/wrangler.mjs deploy",
     "deploy:dry": "npm run build && node ../tools/wrangler.mjs deploy --dry-run",
-    "worker:dev": "node ../tools/wrangler.mjs dev"
+    "worker:dev": "node ../tools/wrangler.mjs dev",
+    "deps": "node ../tools/ensure-deps.mjs"
   },
   "dependencies": {
     "astro": "^7.4.2",

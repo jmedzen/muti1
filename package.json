@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "node tools/dev.mjs",
-    "build": "node tools/sync.mjs && cd site && npm run build",
+    "build": "node tools/ensure-deps.mjs && node tools/sync.mjs && cd site && npm run build",
     "preview": "node tools/preview.mjs",
     "serve": "node tools/serve.mjs",
     "sync": "node tools/sync.mjs",
@@ -23,6 +23,7 @@
     "pipeline": "node tools/crawl.mjs && node tools/extract.mjs && node tools/model.mjs && node tools/images.mjs && node tools/redirects.mjs",
     "deploy": "node tools/sync.mjs && cd site && npm run deploy",
     "deploy:dry": "node tools/sync.mjs && cd site && npm run deploy:dry",
-    "worker:dev": "node tools/wrangler.mjs dev"
+    "worker:dev": "node tools/wrangler.mjs dev",
+    "deps": "node tools/ensure-deps.mjs"
   }
 }

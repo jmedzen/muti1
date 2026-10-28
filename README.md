@@ -83,8 +83,13 @@ git checkout content/model.json     # 還原到最後一次提交
 git diff content/model.json         # 看自己改了什麼
 ```
 
-（這個目錄已經是 git repo，首次提交包含 956 個檔案。
-`raw/`、`node_modules/`、`dist/` 都不進版控 —— 前兩者太大，後者可再生。）
+（這個目錄已經是 git repo，已推上
+[github.com/jmedzen/muti1](https://github.com/jmedzen/muti1)。
+
+**`raw/` 有進版控**（55 MB）—— 這是有意的。整個專案的前提是「原站總有一天會消失」，
+`raw/` 是唯一能證明新站沒有捏造內容的東西，它必須跟著 repo 一起走。
+`node_modules/`、`dist/`、`site/.wrangler/` 不進版控 —— 前兩者可再生，
+後者是本機執行時狀態。）
 
 如果連 commit 都沒了，`content/` 底下的 `articles.json`、`galleries.json`、
 `site.json` 是抽取階段的中介產物，跑 `node tools/model.mjs` 可以從它們重新產生

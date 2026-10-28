@@ -27,7 +27,9 @@ const FAST = process.argv.includes("--fast");
 //    然後 wrangler 用預設埠起來，看起來像「port 一直被佔用」。
 //    直接用 wrangler-dist/cli.js 才是真正的 CLI。
 const WRANGLER_CANDIDATES = [
+  // 首選：專案自己的 node_modules（npm install 裝的，版本由 package-lock 鎖定）
   path.join(ROOT, "site", "node_modules", "wrangler", "wrangler-dist", "cli.js"),
+  // 退路：npx 的暫存副本（沒有 node_modules 的環境）
   ...(function findNpx() {
     const base = path.join(ROOT, ".npm-cache", "_npx");
     if (!fs.existsSync(base)) return [];

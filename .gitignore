@@ -17,3 +17,12 @@ site/.astro/
 
 # 系統
 .DS_Store
+
+# wrangler 本機執行時狀態（每次 wrangler dev 都會變，不該進版控）
+site/.wrangler/
+.wrangler/
+
+# 環境變數檔（可能有帳號資訊）
+.env
+.env.*
+!.env.example

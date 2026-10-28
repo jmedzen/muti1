@@ -547,3 +547,98 @@ node tools/verify-all.mjs
 ```
 
 （改完已還原，`diff` 確認兩份 model.json 與改動前完全一致。）
+
+---
+
+## 第九趟：GitHub 與 Cloudflare 部署環境
+
+程式碼推上 [github.com/jmedzen/muti1](https://github.com/jmedzen/muti1) 之後，
+在**別人的機器上**（GitHub Actions 的 Linux runner、Cloudflare 的建置容器）
+跑起來才是真的驗證。這一趟抓到的都是「本機好好的、換個環境就死」的問題。
+
+### 抓到的問題
+
+1. **Node 版本。** CI 用 `node-version: 22`，拿到 22.23.3，而
+   Astro 7 要求 `>=22.23.4`：
+
+   ```
+   Node.js v22.23.3 is not supported by Astro!
+   Please upgrade Node.js to a supported version: ">=22.23.4"
+   ```
+
+   本機是 26.8.2，所以從來沒遇到。修法：CI 改用 Node 24，
+   並在 `package.json` 宣告 `engines`，讓本機也能提早發現。
+
+2. **`sh: 1: astro: not found`（Cloudflare Workers Builds）。**
+   Cloudflare 的建置環境沒有 `node_modules`，它把 `npm run build` 叫起來了，
+   但沒有任何一步確保依賴存在。
+
+   原本的想法是「在文件裡寫清楚要把 Root directory 設成 `site`」，
+   但那是在要求使用者記住一件事 —— 遲早會忘。
+   改成讓 build **自己處理**：`tools/ensure-deps.mjs` 缺什麼裝什麼，
+   已裝好則安靜通過（本機幾乎零成本）。
+
+3. **`Could not detect a directory containing static files`。**
+   依賴問題解決後，換 deploy 失敗。原因是 Cloudflare Workers Builds 在
+   **repo 根目錄**執行 `npx wrangler deploy`，而 `wrangler.jsonc` 只在 `site/` 底下。
+   在根目錄找不到設定，它連 `assets.directory` 都不知道。
+
+   修法：根目錄也放一份 `wrangler.jsonc`（`directory` 改成 `./site/dist`）。
+   兩份只有路徑前綴不同，其餘欄位必須一致 —— `verify-deploy.mjs` 現在會比對，
+   不一致就報錯。
+
+4. **`process.execPath` 不是 node。** 這台機器的 PATH 裡排在最前面的是
+   DSH 的 node（其實是 Electron helper），`#!/usr/bin/env node` 會解析到它，
+   於是 wrangler 的 wrapper 用 Electron 去 spawn，argv 整個錯位：
+
+   ```
+   ✘ [ERROR] Unknown argument: …/wrangler-dist/cli.js
+   ```
+
+   看起來像參數寫錯，其實根本沒在跑 node。
+   修法：`tools/node-path.mjs` 明示地找真正的 node，
+   `tools/wrangler.mjs` 直接執行 `wrangler-dist/cli.js`，跳過 shebang 與 wrapper 兩層。
+
+5. **Chrome 路徑硬編碼 macOS。** `visual-check.mjs` 與 `perf.mjs` 原本寫死
+   `/Applications/Google Chrome.app/…`，在 Linux runner 上一定失敗。
+   `tools/chrome-path.mjs` 依序找 macOS / Linux / Windows 的常見位置，
+   可用 `CHROME_PATH` 覆寫。GitHub Actions 的 `ubuntu-latest` 內建
+   `/usr/bin/google-chrome`，不用另外裝。
+
+6. **Docker 模擬在建置失敗時崩潰。** `readdirSync` 對不存在的 `dist`
+   直接丟 `ENOENT`，把整個腳本炸掉，反而看不到真正的建置錯誤。
+   現在會把它變成一個「問題」並印出建置輸出的尾巴。
+
+### 驗證結果
+
+GitHub Actions 上（Linux、Node 24、乾淨 checkout）：
+
+```
+建置與驗證 / 建置 + 八項驗證        ✓
+  ├─ 安裝相依套件                    ✓
+  ├─ 內容同步檢查                    ✓
+  ├─ 建置                            ✓ 60 pages
+  ├─ 內容完整性                      ✓
+  ├─ 連結與資源                      ✓
+  ├─ Docker 建置模擬                 ✓
+  ├─ 起本機預覽伺服器                ✓
+  ├─ 起 wrangler dev                 ✓
+  ├─ 本機 vs Cloudflare 行為對照     ✓ 160 條路徑
+  ├─ 部署規則驗證                    ✓
+  ├─ 根目錄部署 dry-run              ✓ 581 files
+  ├─ 視覺與響應式                    ✓
+  └─ 效能                            ✓
+建置與驗證 / 原站列舉（允許失敗）    ✓
+```
+
+### 同時兼容的具體含義
+
+這一輪之後，「本地」與「Cloudflare」在這些點上是**被斷言相等**的，不是靠祈禱：
+
+| 項目 | 怎麼保證 |
+|---|---|
+| 轉址（94 條）、標頭、404、補斜線 | `verify-serve.mjs` 逐條比對兩個執行時 |
+| 建置輸入 | 同一個 `npm run build`，缺依賴會自癒 |
+| 部署設定 | 兩份 `wrangler.jsonc` 關鍵欄位由 `verify-deploy.mjs` 比對 |
+| Node 版本 | `engines` + CI 的 `node-version: 24` |
+| 產出 | 兩邊都是 581 檔、60 頁 |

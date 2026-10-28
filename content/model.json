@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generatedAt": "2026-10-28T07:07:57.019Z",
+    "generatedAt": "2026-10-28T11:18:45.160Z",
     "source": "https://luisang.rumotan.com",
     "sourceCms": "Joomla! 4/5 + Helix Ultimate + SP Page Builder + SP Easy Image Gallery",
-    "note": "本檔由 tools/model.mjs 從 raw/ 的原始 HTML 產生。原文一字未改，推導欄位（eventDate、name、width…）皆為機器解析，原始 caption 保留在 caption 欄位。",
+    "note": "本檔由 tools/md-to-model.mjs 從 content/md/ 的 Markdown 編譯產生。MD 是唯一真實來源；要改內容請改 content/md/，不要改這個檔。",
     "sourceAliases": {
       "note": "原站同一本相簿有多個入口路徑（不同選單深度指到同一頁）。這些路徑不是獨立頁面，內容與 canonical 路徑完全相同，因此只保留一份 raw/，但轉址規則全部覆蓋。",
       "artLifeAliases": [

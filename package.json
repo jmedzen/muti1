@@ -24,6 +24,7 @@
     "deploy": "node tools/sync.mjs && cd site && npm run deploy",
     "deploy:dry": "node tools/sync.mjs && cd site && npm run deploy:dry",
     "worker:dev": "node tools/wrangler.mjs dev",
-    "deps": "node tools/ensure-deps.mjs"
+    "deps": "node tools/ensure-deps.mjs",
+    "test": "node tools/test-derive.mjs"
   }
 }
